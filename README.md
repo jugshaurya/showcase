@@ -2,23 +2,26 @@
 
 ### Colors Palette: [choose](https://coolors.co/)
 
+![](./color-palette.png)
+
 ### TypeScale: [choose](https://type-scale.com/)
 
-### Icons: [choose](https://thenounproject.com/)
+- Font Family: Gloria Hallelujah && Roboto Mono
+
+![](./typo.png)
+
+- Icons: [choose](https://thenounproject.com/)
 
 ## CSS:
 
 - Options:
 
   - ❌ css - using sass actually
-  - ✅ module-css
-  - ✅ sass
-  - ❌ styled-component - later
+  - ❌ module-css
+  - ❌ sass
   - ❌ emotion - later
+  - ✅ styled-component
   - ✅ classnames - A simple JavaScript utility for conditionally joining classNames together.
-
-- Going with:
-  - Sass, css Modules and classnames
 
 * <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
