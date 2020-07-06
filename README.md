@@ -1,8 +1,16 @@
 # Shaurya Showcase
 
+#### Shaurya Personal Portfolio to showcase shaurya and his work at one place from various places.
+
+[![PR](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/jugshaurya/showcase)
+[![PR](https://img.shields.io/badge/PR-Welcome-blue.svg)](https://github.com/jugshaurya/showcase)
+[![GitLicense](https://gitlicense.com/badge/jugshaurya/showcase)](https://github.com/jugshaurya/showcase)
+
 ### Colors Palette: [choose](https://coolors.co/)
 
 ![](./color-palette.png)
+![](./primary-light.png)
+![](./primary-dark.png)
 
 ### TypeScale: [choose](https://type-scale.com/)
 
@@ -18,10 +26,12 @@
 
   - ❌ css - using sass actually
   - ❌ module-css
-  - ❌ sass
   - ❌ emotion - later
+  - ✅ sass
   - ✅ styled-component
   - ✅ classnames - A simple JavaScript utility for conditionally joining classNames together.
+
+- Using a combination of sass and styled component along with classnames.
 
 * <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
@@ -51,3 +61,18 @@
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/gatsbyjs/gatsby-starter-default)
 
 <!-- AUTO-GENERATED-CONTENT:END -->
+
+## App Info
+
+### Author
+
+Shaurya Singhal
+[jugshaurya](https://shaurya.now.sh)
+
+### Version
+
+1.0.0
+
+### License
+
+This project is licensed under the 0BSD License
