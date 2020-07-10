@@ -8,19 +8,19 @@
 
 ### Colors Palette: [choose](https://coolors.co/)
 
-![](./color-palette.png)
-![](./primary-light.png)
-![](./primary-dark.png)
+<img src="./readme-images/color-palette.png" width="350" title="color Pallette">
+<img src="./readme-images/primary-light.png" width="350" title="Light Version">
+<img src="./readme-images/primary-dark.png" width="350" title="Dark Version">
 
 ### TypeScale: [choose](https://type-scale.com/)
 
-- Font Family: Gloria Hallelujah && Roboto Mono
+Font Family: Gloria Hallelujah && Roboto Mono
+<br>
+<img src="./readme-images/typo.png" width="350" title="Typography">
 
-![](./typo.png)
+### Icons: [choose](https://thenounproject.com/)
 
-- Icons: [choose](https://thenounproject.com/)
-
-## CSS:
+### CSS:
 
 - Options:
 
@@ -31,48 +31,34 @@
   - ✅ styled-component
   - ✅ classnames - A simple JavaScript utility for conditionally joining classNames together.
 
-- Using a combination of sass and styled component along with classnames.
+- Choice: Using a combination of sass and styled component along with classnames.
 
-* <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<p align="center">
-  <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby's default starter
-</h1>
+### Features:
 
-1.  **Start developing.**
+- [x] Adding Machine Learning Repo as Blogs : Issue #1
 
-    Navigate into your new site’s directory and start it up.
+  - [x] Render jupyter notebook with their respective pages.
 
-    ```shell
-    gatsby develop
-    ```
+- [] Adding Learn Python Repo as Blogs: Issue #2
+  - [] Render jupyter notebook with their respective pages.
 
-    Your site is now running at `http://localhost:8000`!
-    `http://localhost:8000/___graphql`
+### Run Project
 
-## 💫 Deploy
+- yarn develop or gatsby develop or yarn dev
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
+### Resources
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/gatsbyjs/gatsby-starter-default)
+### App Info
 
-<!-- AUTO-GENERATED-CONTENT:END -->
-
-## App Info
-
-### Author
+#### Author
 
 Shaurya Singhal
 [jugshaurya](https://shaurya.now.sh)
 
-### Version
+#### Version
 
 1.0.0
 
-### License
+#### License
 
 This project is licensed under the 0BSD License
