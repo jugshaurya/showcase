@@ -41,5 +41,13 @@ module.exports = {
         branch: `master`,
       },
     },
+    {
+      resolve: `gatsby-source-git`,
+      options: {
+        name: `learn-python`,
+        remote: `https://github.com/jugshaurya/learn-python`,
+        branch: `master`,
+      },
+    },
   ],
 };

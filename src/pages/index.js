@@ -10,6 +10,7 @@ const IndexPage = () => {
       <h2>Machine Learning</h2>
       {/* mltc - machine learning table of content */}
       <Link to="/mltc/"> Go to Learn ML</Link>
+      <Link to="/lptc/"> Go to Learn Python</Link>
     </Layout>
   );
 };
