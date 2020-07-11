@@ -56,5 +56,23 @@ module.exports = {
         name: 'MediumFeed', // GraphQL query AllMediumFeed
       },
     },
+    // Note: gatsby-transformer-remark should always be above gatsby-remark-prismjs
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: [
+          {
+            resolve: 'gatsby-remark-embed-gist',
+            options: {
+              username: 'jugshaurya',
+              gistDefaultCssInclude: true || false,
+              gistCssPreload: true || false,
+              gistCssUrlAddress:
+                'https://github.githubassets.com/assets/gist-embed-b3b573358bfc66d89e1e95dbf8319c09.css',
+            },
+          },
+        ],
+      },
+    },
   ],
 };
