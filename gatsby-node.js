@@ -77,7 +77,7 @@ exports.onCreateNode = async (
 // programmatically create pages from data.
 // when plugin will get published allFiles will become allWantedBooks
 exports.createPages = async ({ graphql, actions: { createPage } }) => {
-  const result = await graphql(`
+  const notebooksResult = await graphql(`
     query {
       allFile(filter: { extension: { eq: "ipynb" } }) {
         totalCount
@@ -92,12 +92,42 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
     }
   `);
 
-  result.data.allFile.edges.forEach(({ node }) => {
+  notebooksResult.data.allFile.edges.forEach(({ node }) => {
     createPage({
       path: node.fields.slug,
       component: path.resolve(`./src/templates/notebook-template.js`),
       context: {
         slug: node.fields.slug,
+      },
+    });
+  });
+
+  const mediumFeedResult = await graphql(`
+    query {
+      allMediumFeed {
+        totalCount
+        edges {
+          node {
+            author
+            date(formatString: "dddd, MMMM Do YYYY, h:mm:ss a")
+            id
+            title
+            link
+            thumbnail
+            slug
+            content
+          }
+        }
+      }
+    }
+  `);
+
+  mediumFeedResult.data.allMediumFeed.edges.forEach(({ node }) => {
+    createPage({
+      path: node.slug,
+      component: path.resolve(`./src/templates/medium-template.js`),
+      context: {
+        slug: node.slug,
       },
     });
   });
