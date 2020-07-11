@@ -49,5 +49,12 @@ module.exports = {
         branch: `master`,
       },
     },
+    {
+      resolve: 'gatsby-source-medium-feed',
+      options: {
+        userName: '@shauryasinghal84', // Medium user name
+        name: 'MediumFeed', // GraphQL query AllMediumFeed
+      },
+    },
   ],
 };

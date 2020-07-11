@@ -39,8 +39,8 @@ Font Family: Gloria Hallelujah && Roboto Mono
 
   - [x] Render jupyter notebook with their respective pages.
 
-- [ ] Adding Learn Python Repo as Blogs: Issue #2
-  - [ ] Render jupyter notebook with their respective pages.
+- [x] Adding Learn Python Repo as Blogs: Issue #2
+  - [x] Render jupyter notebook with their respective pages.
 
 ### Run Project
 
