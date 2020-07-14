@@ -19,6 +19,9 @@ Font Family: Gloria Hallelujah && Roboto Mono
 <img src="./readme-images/typo.png" width="350" title="Typography">
 
 ### Icons: [choose](https://thenounproject.com/)
+## Figma
+<img src="./readme-images/sample1.png" width="350" title="Figma">
+<img src="./readme-images/sample2.png" width="350" title="Figma">
 
 ### CSS:
 
