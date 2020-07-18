@@ -1,9 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
-
-import Header from './header';
-import './layout.scss';
+import FigmaIcon from '../assets//icons/figma.svg';
+import GatsbyIcon from '../assets/icons/Gatsby.svg';
+import GraphqlIcon from '../assets/icons/graphql.svg';
+import JSIcon from '../assets/icons/js.svg';
+import NodeIcon from '../assets/icons/node.svg';
+import ReduxIcon from '../assets/icons/redux.svg';
+import ReactIcon from '../assets/icons/reacticon.svg';
+import '../styles/layout.scss';
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -18,27 +22,39 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        <main>{children}</main>
-        <footer>
+      <div id="shaurya-showcase">
+        {/* <Navbar/> */}
+        <div className="container">
+          {/* <main>{children}</main> */}
+          <div className="Homepage">
+            <div className="who-am-i">
+              <div className="hi">Hi, I'm</div>
+              <div className="bar">bar</div>
+              <div className="name">Shaurya Singhal</div>
+              <div className="bar2">bar</div>
+              <div className="description">Software Developer</div>
+              <div className="logos">
+                <JSIcon />
+                <NodeIcon />
+                <ReactIcon />
+                <ReduxIcon />
+                <GraphqlIcon />
+                <GatsbyIcon />
+                <FigmaIcon />
+              </div>
+              <div className="bar3">bar</div>
+            </div>
+          </div>
+          {/* <main>{children}</main> */}
+          {/* <footer>
           © {new Date().getFullYear()}, Built with
           {` `}
           <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
+        </footer> */}
+        </div>
       </div>
     </>
   );
-};
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
 };
 
 export default Layout;

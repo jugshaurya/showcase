@@ -14,3 +14,7 @@ $font_gloriahallelujah: 'gloriahallelujah';
 
 @include font-face($font_gabriela, $font-path);
 @include font-face($font_gloriahallelujah, $font-path);
+
+$text_large: 24px;
+$text_medium: 20px;
+$text: 16px;

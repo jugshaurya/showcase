@@ -1,0 +1,95 @@
+@import './colors';
+@import './typography';
+
+@mixin textColorGradient($gradient) {
+  background: -webkit-#{$gradient};
+  // linear-gradient(132deg, #0e0f25 10%, #ffb68f 61%);
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#shaurya-showcase {
+  background: $black url('../assets/navbarback.svg') no-repeat;
+  background-position: 100% -70%;
+  background-size: 110%;
+  color: $white;
+  position: relative;
+  .container {
+    width: 80%;
+    margin: 0 auto;
+    // delete .Homepage when moved to homepage.scss
+    .Homepage {
+      border: 1px solid $gray;
+      min-height: 100vh;
+      .who-am-i {
+        min-width: 550px;
+        width: 40%;
+        margin: 40vh auto;
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        grid-template-areas:
+          'hi hi bar bar bar bar bar bar bar bar'
+          'name name name name name name name name name name'
+          'bar2 bar2 bar2 bar2 bar2 bar2 description description description description'
+          'logos logos logos logos logos logos logos logos logos logos'
+          'bar3 bar3 bar3 bar3 bar3 bar3 bar3 bar3 bar3 bar3';
+        align-content: center;
+      }
+
+      .hi {
+        grid-area: hi;
+        color: $gray;
+        font-size: $text_medium;
+      }
+      .name {
+        grid-area: name;
+        @include textColorGradient($g_blackOrange);
+        font-weight: 600;
+        font-size: 85px;
+        line-height: 90px/16px * 1rem;
+        text-align: left;
+      }
+      .description {
+        grid-area: description;
+        color: $gray;
+        font-size: $text_large;
+        line-height: 140%;
+        text-align: right;
+        font-weight: 500;
+      }
+      .logos {
+        grid-area: logos;
+        padding-top: 60px;
+        * {
+          margin: 0 14px;
+        }
+      }
+      .bar {
+        grid-area: bar;
+      }
+      .bar2 {
+        grid-area: bar2;
+      }
+      .bar3 {
+        grid-area: bar3;
+      }
+
+      .bar,
+      .bar2,
+      .bar3 {
+        font-size: 0;
+        height: 6px;
+        width: 100%;
+        border-radius: 7px;
+        background-color: $green;
+        align-self: center;
+      }
+
+      //
+      //
+      //
+    }
+  }
+}
