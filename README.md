@@ -19,7 +19,9 @@ Font Family: Gloria Hallelujah && Roboto Mono
 <img src="./readme-images/typo.png" width="350" title="Typography">
 
 ### Icons: [choose](https://thenounproject.com/)
+
 ## Figma
+
 <img src="./readme-images/sample1.png" width="350" title="Figma">
 <img src="./readme-images/sample2.png" width="350" title="Figma">
 
@@ -56,7 +58,7 @@ Font Family: Gloria Hallelujah && Roboto Mono
 #### Author
 
 Shaurya Singhal
-[jugshaurya](https://shaurya.now.sh)
+@[jugshaurya](https://shaurya.now.sh)
 
 #### Version
 

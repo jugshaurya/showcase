@@ -1,0 +1,47 @@
+$white: #f2f2f2;
+$gray: #adadad;
+$black: #15171a;
+$black20: rgba(0, 0, 0, 0.2);
+$black100: #000000;
+$green: #e9fa66;
+$yellow: #ffd200;
+$sunlight: rgba(255, 210, 0, 0.35);
+$darkgreen: #3cc2af;
+$twitterBlue: #56b8ff;
+$orange: #fd7162;
+$pink: #e10098;
+$red: #e89090;
+$blue: #00cffd;
+$purple: #6c63ff;
+$mapPurple: #3f3d56;
+
+// Gradients
+$g_blackOrange: linear-gradient(
+  132deg,
+  #0e0f25 -15%,
+  #000000 -15%,
+  #ffb68f 61%
+);
+$g_blueGreen: linear-gradient(180deg, #00cffd 0%, #e9fa66 100%);
+$g_blueRed: linear-gradient(11deg, #0095ff -2%, #ff0000 100%);
+$g_pinkBluePurple: linear-gradient(
+  180deg,
+  #e10098 0%,
+  #78d2ee 40%,
+  #6c139c 100%
+);
+$g_redBlack: linear-gradient(220deg, #c85252 22%, #1c1d1d 77%);
+$g_bluePurple: linear-gradient(90deg, #2d6dd0 55858%, #6c139c 116081%);
+$g_greenBluePink: linear-gradient(
+  213deg,
+  rgba(10, 207, 131, 0.33) 3%,
+  rgba(0, 216, 255, 0.33) 74%,
+  rgba(225, 0, 152, 0.33) 116%
+);
+$g_blueGreen2: linear-gradient(93deg, #00cffd -35%, #e9fa66 52%);
+$g_twitter: linear-gradient(129deg, #2aa4f4 11%, #007ad9 89%);
+$g_credits: linear-gradient(
+  135deg,
+  rgba(255, 182, 143, 0.16) 47%,
+  rgba(0, 0, 0, 0.16) 67%
+);
