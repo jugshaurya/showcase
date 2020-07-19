@@ -625,32 +625,25 @@ pre tt:after {
     font-size: 100%;
   }
 }
+
 // Gatsby default end
 // Shaurya Styles
 
 html {
-  font-family: $font_gabriela monospace sans-serif;
+  overflow-x: hidden;
 }
 
 body {
+  background: $black;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: $font_gabriela monospace sans-serif;
   font-size: 1.4275rem;
   * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: $font_gabriela monospace sans-serif;
     font-size: 1.3rem;
-  }
-  * + * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    font-family: $font_gabriela monospace sans-serif;
-    font-size: 1.1rem;
   }
 }
 
@@ -689,6 +682,10 @@ p {
   }
 }
 
+* {
+  font-family: $font_gabriela;
+}
+
 *::-webkit-scrollbar {
   width: 0.2rem;
 }
@@ -698,11 +695,10 @@ p {
 }
 
 *::-webkit-scrollbar-thumb {
-  background: $blue;
-  outline: none;
-  border-radius: 10%;
+  background: $g_blueGreen;
+  border-radius: 10px;
 }
 
 body::-webkit-scrollbar {
-  width: 0.5rem;
+  width: 0.3rem;
 }

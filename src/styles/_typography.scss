@@ -1,10 +1,10 @@
-$font-path: '../assets/fonts';
+$font-path: '../static/fonts';
 $font_gabriela: 'gabriela';
 $font_gloriahallelujah: 'gloriahallelujah';
 
 @mixin font-face($font-family, $url) {
   @font-face {
-    font-family: '#{$font-family}';
+    font-family: $font-family;
     src: url('#{$url}/#{$font-family}.woff') format('woff'),
       url('#{$url}/#{$font-family}.woff2') format('woff2');
     font-weight: normal;
