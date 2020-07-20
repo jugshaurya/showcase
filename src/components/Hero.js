@@ -12,17 +12,6 @@ import FigmaIcon from '../static/icons/figma.svg';
 import BagIcon from '../static/icons/bag.svg';
 import '../styles/hero.scss';
 
-{
-  /* <a id="github" href="https://github.com/jugshaurya" target="_blank" >
-  <a
-    id="twitter"
-    href="https://twitter.com/jugshaurya"
-    target="_blank"
-  >
-
-  
-*/
-}
 const Hero = () => {
   return (
     <div className="hero" style={{ position: 'relative' }}>

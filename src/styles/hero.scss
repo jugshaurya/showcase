@@ -1,16 +1,7 @@
 @import './colors';
 @import './typography';
 
-@mixin textColorGradient($gradient) {
-  background: -webkit-#{$gradient};
-  background-clip: text;
-  text-fill-color: transparent;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
 .hero {
-  color: $white;
   height: 95vh;
   // border: 3px solid red;
   width: 100vw;

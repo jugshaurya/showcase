@@ -13,6 +13,14 @@ $font_normal: 'monospace';
   }
 }
 
+@mixin textColorGradient($gradient) {
+  background: -webkit-#{$gradient};
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 @include font-face($font_gabriela, $font-path);
 @include font-face($font_gloriahallelujah, $font-path);
 
@@ -21,4 +29,4 @@ $text_large: 1.8em;
 $text_medium: 1.4275em;
 $text: 1.1em;
 $text_small: 0.9em;
-$text_xsmall: 0.8em;
+$text_xsmall: 0.6em;
