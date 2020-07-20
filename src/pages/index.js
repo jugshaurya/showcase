@@ -1,10 +1,10 @@
 import React from 'react';
 import SEO from '../components/seo';
+import '../styles/global.scss';
 
 import Layout from '../components/Layout';
 import UI from '../components/UI';
 
-import '../styles/global.scss';
 const IndexPage = () => {
   return (
     <Layout>

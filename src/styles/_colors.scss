@@ -14,7 +14,7 @@ $red: #e89090;
 $blue: #00cffd;
 $purple: #6c63ff;
 $mapPurple: #3f3d56;
-$background: rgba(35, 37, 41, 0.51);
+$background: #23252982;
 
 // Gradients
 $g_blackOrange: linear-gradient(
@@ -24,6 +24,8 @@ $g_blackOrange: linear-gradient(
   #ffb68f 62%
 );
 $g_blueGreen: linear-gradient(180deg, #00cffd 0%, #e9fa66 100%);
+$g_blueGreen2: linear-gradient(93deg, #00cffd -35%, #e9fa66 52%);
+$g_blueGreen3: linear-gradient(166.81deg, #00cffd -34.74%, #e9fa66 79.43%);
 $g_blueRed: linear-gradient(11deg, #0095ff -2%, #ff0000 100%);
 $g_pinkBluePurple: linear-gradient(
   180deg,
@@ -39,7 +41,6 @@ $g_greenBluePink: linear-gradient(
   rgba(0, 216, 255, 0.33) 74%,
   rgba(225, 0, 152, 0.33) 116%
 );
-$g_blueGreen2: linear-gradient(93deg, #00cffd -35%, #e9fa66 52%);
 $g_twitter: linear-gradient(129deg, #2aa4f4 11%, #007ad9 89%);
 $g_credits: linear-gradient(
   135deg,
