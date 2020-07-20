@@ -126,7 +126,7 @@ const Layout = ({ children }) => {
                     transform="rotate(13.2468 843.671 338.949)"
                     fill="#1F1D1D"
                   />
-                  <g id="linkedin_2" clip-path="url(#clip0)">
+                  <g id="linkedin_2" clipPath="url(#clip0)">
                     <g id="Group">
                       <path
                         id="Vector_3"
@@ -157,9 +157,9 @@ const Layout = ({ children }) => {
               width="791.416"
               height="878.271"
               filterUnits="userSpaceOnUse"
-              color-interpolation-filters="sRGB"
+              colorInterpolationFilters="sRGB"
             >
-              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feFlood floodOpacity="0" result="BackgroundImageFix" />
               <feColorMatrix
                 in="SourceAlpha"
                 type="matrix"
@@ -190,9 +190,9 @@ const Layout = ({ children }) => {
               width="800.345"
               height="879.664"
               filterUnits="userSpaceOnUse"
-              color-interpolation-filters="sRGB"
+              colorInterpolationFilters="sRGB"
             >
-              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feFlood floodOpacity="0" result="BackgroundImageFix" />
               <feColorMatrix
                 in="SourceAlpha"
                 type="matrix"
@@ -223,9 +223,9 @@ const Layout = ({ children }) => {
               width="803.082"
               height="877.138"
               filterUnits="userSpaceOnUse"
-              color-interpolation-filters="sRGB"
+              colorInterpolationFilters="sRGB"
             >
-              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feFlood floodOpacity="0" result="BackgroundImageFix" />
               <feColorMatrix
                 in="SourceAlpha"
                 type="matrix"
@@ -257,8 +257,8 @@ const Layout = ({ children }) => {
               y2="409.951"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stop-color="#2AA4F4" />
-              <stop offset="1" stop-color="#007AD9" />
+              <stop stopColor="#2AA4F4" />
+              <stop offset="1" stopColor="#007AD9" />
             </linearGradient>
             <clipPath id="clip0">
               <rect
@@ -274,7 +274,7 @@ const Layout = ({ children }) => {
         {/* <Navbar/> */}
         <div className="container">
           {/* <main>{children}</main> */}
-          <div className="Homepage">
+          <div className="homepage">
             <div className="Hero">
               <div className="who-am-i">
                 <div className="hi">Hi, I'm</div>
@@ -284,7 +284,7 @@ const Layout = ({ children }) => {
                 <div className="description">Software Developer</div>
                 <div className="logos">
                   <img src={JSIcon} alt="js" title="Javascript" />
-                  <img src={NodeIcon} alt="node" title="Node" />
+                  <img id="node" src={NodeIcon} alt="node" title="Node" />
                   <img src={ReactIcon} alt="react" title="React" />
                   <img src={ReduxIcon} alt="redux" title="Redux" />
                   <img src={GraphqlIcon} alt="graphql" title="GraphQL" />
@@ -295,12 +295,6 @@ const Layout = ({ children }) => {
               </div>
             </div>
           </div>
-          {/* <main>{children}</main> */}
-          {/* <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer> */}
         </div>
       </div>
     </>
@@ -308,155 +302,3 @@ const Layout = ({ children }) => {
 };
 
 export default Layout;
-
-// <div id="book-cover">
-//           <svg
-//             id="book-pattern"
-//             width="2206"
-//             height="2310"
-//             viewBox="0 0 2206 2310"
-//             fill="none"
-//             xmlns="http://www.w3.org/2000/svg"
-//           >
-//             <g>
-//               <g id="box3" filter="url(#filter0_d)">
-//                 <rect
-//                   width="1297.75"
-//                   height="995.683"
-//                   rx="30.2987"
-//                   transform="matrix(-0.205645 0.978913 0.978199 0.206316 801.537 488.565)"
-//                   fill="#56B8FF"
-//                 />
-//               </g>
-//               <g id="box2" filter="url(#filter1_d)">
-//                 <rect
-//                   width="1297.75"
-//                   height="995.683"
-//                   rx="30.2987"
-//                   transform="matrix(-0.205645 0.978913 0.978199 0.206316 759.707 420.586)"
-//                   fill="#E9FA66"
-//                 />
-//               </g>
-//               <g id="box1" filter="url(#filter2_d)">
-//                 <rect
-//                   width="1297.75"
-//                   height="1020.23"
-//                   rx="30.2987"
-//                   transform="matrix(-0.205645 0.978913 0.978199 0.206316 696.377 344.928)"
-//                   fill="black"
-//                 />
-//               </g>
-//             </g>
-//             <defs>
-//               <filter
-//                 id="filter0_d"
-//                 x="536.198"
-//                 y="494.158"
-//                 width="1237.78"
-//                 height="1472.7"
-//                 filterUnits="userSpaceOnUse"
-//                 colIInterpolatioFilters="sRGB"
-//               >
-//                 <feFlood floodOpacity="0" result="BackgroundImageFix" />
-//                 <feColorMatrix
-//                   in="SourceAlpha"
-//                   type="matrix"
-//                   values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-//                 />
-//                 <feOffset dy="4.03982" />
-//                 <feGaussianBlur stdDeviation="2.01991" />
-//                 <feColorMatrix
-//                   type="matrix"
-//                   values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
-//                 />
-//                 <feBlend
-//                   mode="normal"
-//                   in2="BackgroundImageFix"
-//                   result="effect1_dropShadow"
-//                 />
-//                 <feBlend
-//                   mode="normal"
-//                   in="SourceGraphic"
-//                   in2="effect1_dropShadow"
-//                   result="shape"
-//                 />
-//               </filter>
-//               <filter
-//                 id="filter1_d"
-//                 x="494.369"
-//                 y="426.179"
-//                 width="1237.78"
-//                 height="1472.7"
-//                 filterUnits="userSpaceOnUse"
-//                 colIInterpolatioFilters="sRGB"
-//               >
-//                 <feFlood floodOpacity="0" result="BackgroundImageFix" />
-//                 <feColorMatrix
-//                   in="SourceAlpha"
-//                   type="matrix"
-//                   values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-//                 />
-//                 <feOffset dy="4.03982" />
-//                 <feGaussianBlur stdDeviation="2.01991" />
-//                 <feColorMatrix
-//                   type="matrix"
-//                   values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
-//                 />
-//                 <feBlend
-//                   mode="normal"
-//                   in2="BackgroundImageFix"
-//                   result="effect1_dropShadow"
-//                 />
-//                 <feBlend
-//                   mode="normal"
-//                   in="SourceGraphic"
-//                   in2="effect1_dropShadow"
-//                   result="shape"
-//                 />
-//               </filter>
-//               <filter
-//                 id="filter2_d"
-//                 x="431.038"
-//                 y="350.521"
-//                 width="1261.79"
-//                 height="1477.77"
-//                 filterUnits="userSpaceOnUse"
-//                 colIInterpolatioFilters="sRGB"
-//               >
-//                 <feFlood floodOpacity="0" result="BackgroundImageFix" />
-//                 <feColorMatrix
-//                   in="SourceAlpha"
-//                   type="matrix"
-//                   values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-//                 />
-//                 <feOffset dy="4.03982" />
-//                 <feGaussianBlur stdDeviation="2.01991" />
-//                 <feColorMatrix
-//                   type="matrix"
-//                   values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
-//                 />
-//                 <feBlend
-//                   mode="normal"
-//                   in2="BackgroundImageFix"
-//                   result="effect1_dropShadow"
-//                 />
-//                 <feBlend
-//                   mode="normal"
-//                   in="SourceGraphic"
-//                   in2="effect1_dropShadow"
-//                   result="shape"
-//                 />
-//               </filter>
-//             </defs>
-//           </svg>
-
-//           <a id="twitter" href="" target="_blank">
-//             <img src={TwitterIcon} alt="twitter" />
-//           </a>
-//           <a id="linkedin" href="" target="_blank">
-//             <img src={LinkedinIcon} alt="linkedin" />
-//           </a>
-//           <a id="github" href="" target="_blank">
-//             <img src={GithubIcon} alt="github" />
-//           </a>
-//         </div>

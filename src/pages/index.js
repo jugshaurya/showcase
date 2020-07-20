@@ -1,15 +1,15 @@
 import React from 'react';
 import SEO from '../components/seo';
 
-import Layout from '../components/layout';
-import Homepage from '../components/homepage';
+import Layout from '../components/Layout';
+import UI from '../components/UI';
 
 import '../styles/global.scss';
 const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Shaurya Showcase | Portfolio" />
-      <Homepage />
+      <UI />
       {/* <h2>Machine Learning</h2> */}
       {/* mltc - machine learning table of content */}
       {/* <Link to="/mltc/"> Go to Learn ML</Link> */}
