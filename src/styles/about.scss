@@ -3,11 +3,13 @@
 
 #about {
   height: 100vh;
-  padding-top: 30vh;
-  // border: 3px solid $gray;
+  // border: 3px solid red;
+  height: 160vh;
   .container {
+    // border: 3px solid $gray;
     text-align: center;
     width: 70%;
+    padding-bottom: 100px;
     margin: 0 auto;
 
     * {
@@ -81,14 +83,15 @@
   }
 
   #map {
-    position: absolute;
-    bottom: -800px;
-    right: 15px;
+    position: relative;
+    margin-top: 15vh;
+    text-align: right;
     .learning {
+      // border: 3px solid green;
       position: absolute;
       top: 20%;
-      left: 0;
-      width: 100%;
+      right: 0;
+      width: 50%;
       text-align: center;
       display: flex;
       flex-direction: column;

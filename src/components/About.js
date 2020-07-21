@@ -9,7 +9,7 @@ import '../styles/about.scss';
 
 const About = () => {
   return (
-    <div id="about" style={{ position: 'relative' }}>
+    <div id="about">
       <div className="container" style={{ position: 'relative' }}>
         <img
           className="about-bg"

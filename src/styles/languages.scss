@@ -2,11 +2,13 @@
 @import './colors';
 
 .languages {
+  // border: 3px solid orange;
+  height: 100vh;
   img#languages-bg {
     position: absolute;
     width: 100%;
     height: auto;
-    top: 35%;
+    top: 25%;
     left: 0;
     z-index: -1;
     transform: translateY(-300px);

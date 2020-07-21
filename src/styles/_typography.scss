@@ -26,6 +26,7 @@ $font_robotomono: 'Roboto Mono';
 @include font-face($font_gloriahallelujah, $font-path);
 @include font-face('robotomono', $font-path);
 
+$text_xxlarge: 3em;
 $text_xlarge: 2.4em;
 $text_large: 1.8em;
 $text_medium: 1.4275em;
