@@ -1,0 +1,110 @@
+@import './colors';
+@import './typography';
+
+.hero {
+  height: 95vh;
+  // border: 3px solid red;
+  width: 100vw;
+  .container {
+    // border: 3px solid red;
+    width: 70%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: column;
+    padding-top: 200px;
+    padding-right: 100px;
+    .top {
+      // border: 3px solid red;
+      width: 50%;
+      display: grid;
+      grid-template-columns: 70px 300px 220px;
+      #bag {
+        position: absolute;
+        top: -90px;
+        left: 45px;
+        transform: rotate(-90deg);
+        // display: none;
+      }
+      .hi {
+        font-size: $text_small * 0.9;
+        color: $gray;
+      }
+      .bar,
+      .bar2 {
+        grid-column: span 2;
+        height: 6px;
+        border-radius: 7px;
+        background: $g_blueGreen;
+        align-self: center;
+        width: 80%;
+      }
+
+      .bar2 {
+        width: 70%;
+      }
+
+      .name {
+        grid-column: span 3;
+        font-size: $text_xlarge;
+        line-height: $text_large * 0.7;
+        @include textColorGradient($g_blackOrange);
+      }
+
+      .desc {
+        text-align: left;
+        font-size: $text_small;
+        color: $gray;
+        margin-left: -86px;
+      }
+    }
+
+    .bottom {
+      width: 50%;
+      // border: 3px solid orange;
+
+      .logos {
+        padding-top: 40px;
+        padding-bottom: 10px;
+        width: 80%;
+        // border: 3px solid yellow;
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        #node {
+          align-self: flex-end;
+          margin-left: -10px;
+        }
+      }
+      .bar3 {
+        height: 6px;
+        border-radius: 7px;
+        background: $g_blueGreen;
+        align-self: center;
+        width: 80%;
+      }
+    }
+  }
+  #navbar-bg {
+    position: absolute;
+    top: -200px;
+    right: 0;
+    width: 80%;
+  }
+  #book-pattern {
+    z-index: 1;
+    position: absolute;
+    top: 200px;
+    left: -400px;
+    width: 45%;
+    height: auto;
+  }
+  #box-pattern {
+    position: absolute;
+    top: 350px;
+    width: 20%;
+    height: auto;
+    right: 0;
+  }
+}

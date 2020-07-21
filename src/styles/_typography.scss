@@ -1,6 +1,8 @@
 $font-path: '../static/fonts';
 $font_gabriela: 'gabriela';
 $font_gloriahallelujah: 'gloriahallelujah';
+$font_normal: 'monospace';
+$font_robotomono: 'Roboto Mono';
 
 @mixin font-face($font-family, $url) {
   @font-face {
@@ -12,9 +14,21 @@ $font_gloriahallelujah: 'gloriahallelujah';
   }
 }
 
+@mixin textColorGradient($gradient) {
+  background: -webkit-#{$gradient};
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 @include font-face($font_gabriela, $font-path);
 @include font-face($font_gloriahallelujah, $font-path);
+@include font-face('robotomono', $font-path);
 
-$text_large: 24px;
-$text_medium: 20px;
-$text: 16px;
+$text_xlarge: 2.4em;
+$text_large: 1.8em;
+$text_medium: 1.4275em;
+$text: 1.1em;
+$text_small: 0.9em;
+$text_xsmall: 0.6em;
