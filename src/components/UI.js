@@ -3,6 +3,8 @@ import Hero from './Hero';
 import Languages from './Languages';
 import About from './About';
 import Github from './Github';
+import LatestPRs from './LatestPRs';
+
 const UI = () => {
   return (
     <div id="shaurya-showcase">
@@ -10,6 +12,7 @@ const UI = () => {
       <Languages />
       <About />
       <Github />
+      <LatestPRs />
     </div>
   );
 };

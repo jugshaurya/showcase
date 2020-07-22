@@ -1,0 +1,94 @@
+@import './colors';
+@import './typography';
+
+#latestPRs {
+  height: 120vh;
+  margin-top: 50px;
+  // border: 3px dotted greenyellow;
+
+  .container {
+    img#latestPR-bg {
+      position: absolute;
+      top: 0;
+      right: 20px;
+      z-index: -1;
+      width: 40%;
+      height: auto;
+      transform: rotate(-10deg);
+    }
+    width: 70%;
+    margin: 50px auto;
+    .header {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin-bottom: 80px;
+      img {
+        margin-right: 20px;
+        width: 40px;
+        height: auto;
+      }
+      h2 {
+        margin-bottom: 0;
+        font-size: $text_medium;
+        line-height: 1em;
+        color: $orange;
+        span {
+          font-size: $text_xsmall;
+        }
+        &::after {
+          content: '';
+          display: table;
+          width: 180px;
+          height: 6px;
+          background: $g_blueGreen;
+          display: block;
+          border-radius: 7px;
+          margin-top: 10px;
+        }
+      }
+    }
+
+    .prs {
+      position: relative;
+      width: 90%;
+      padding: 60px 0;
+      margin: 0 auto;
+      background: $g_greenBluePink;
+      border-radius: 45px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      img.triangle {
+        position: absolute;
+        top: -50px;
+        left: 30px;
+      }
+      .pr {
+        background: $g_greenBluePink;
+        border-radius: 45px;
+        padding: 10px;
+        width: 90%;
+        margin: 0 auto;
+        border-bottom: 2px solid $gray;
+        display: flex;
+        align-items: flex-end;
+        .logo {
+          margin-left: 20px;
+          width: 24px;
+          height: auto;
+        }
+        .text {
+          width: 90%;
+          margin-left: 20px;
+          font-family: $font_gabriela;
+          font-size: $text_small;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+  }
+}
