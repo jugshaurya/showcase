@@ -1,0 +1,69 @@
+@import './colors';
+@import './typography';
+
+#rutherford {
+  // border: 3px solid red;
+  margin-top: 160px;
+  position: relative;
+  .container {
+    width: 70%;
+    margin: 50px auto;
+    .header {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin-bottom: 80px;
+      img {
+        margin-right: 20px;
+        width: 40px;
+        height: auto;
+      }
+      h2 {
+        margin-bottom: 0;
+        font-size: $text_medium;
+        line-height: 1em;
+        color: $orange;
+        span {
+          color: $darkgreen;
+          font-weight: bold;
+        }
+        &::after {
+          content: '';
+          display: table;
+          width: 180px;
+          height: 6px;
+          background: $g_blueGreen;
+          display: block;
+          border-radius: 7px;
+          margin-top: 10px;
+        }
+      }
+    }
+
+    .rutherford {
+      img {
+        display: flex;
+        justify-content: center;
+        height: 80vh;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  img#rutherford-bg {
+    // border: 3px dotted greenyellow;
+    position: absolute;
+    z-index: -1;
+    top: -420px;
+    left: 0px;
+    width: 100%;
+  }
+
+  img#swiggly-bg {
+    position: absolute;
+    z-index: -1;
+    top: -80px;
+    left: 100px;
+    width: 10%;
+  }
+}

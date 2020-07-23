@@ -1,4 +1,5 @@
 import React from 'react';
+import GithubBackground2 from '../static/patterns/bg-swiggly.svg';
 import GithubBackground from '../static/patterns/bg-github.svg';
 import GithubGradIcon from '../static/icons/githubgrad.svg';
 import DotPattern1 from '../static/patterns/dotpattern1.svg';
@@ -63,7 +64,7 @@ const Github = () => {
         <div className="github-info"></div>
       </div>
 
-      <div className="extra">
+      <div className="graphs">
         <div className="container">
           {/* TODO */}
           <div className="github-stats">
@@ -79,6 +80,8 @@ const Github = () => {
         </div>
       </div>
 
+      <img id="github-bg2" src={GithubBackground2} alt="Github background 2" />
+      <img id="github-bg3" src={GithubBackground2} alt="Github background 3" />
       <img id="github-bg" src={GithubBackground} alt="github background" />
     </div>
   );

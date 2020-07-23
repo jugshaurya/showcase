@@ -1,7 +1,7 @@
 import React from 'react';
 import PRIcon from '../static/icons/PR.svg';
 import TriangleIcon from '../static/icons/triangle.svg';
-import LatestPRBackground from '../static/patterns/bg-latestpr.svg';
+import LatestPRBackground from '../static/patterns/bg-swiggly.svg';
 import '../styles/latestPRs.scss';
 
 const LatestPRs = () => {
@@ -165,6 +165,11 @@ const LatestPRs = () => {
 
         <img
           id="latestPR-bg"
+          src={LatestPRBackground}
+          alt="latest PRs background"
+        />
+        <img
+          id="latestPR-bg2"
           src={LatestPRBackground}
           alt="latest PRs background"
         />

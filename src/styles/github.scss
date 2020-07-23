@@ -5,12 +5,31 @@
   height: 160vh;
   margin-top: 50px;
   // border: 3px dotted orange;
-  img#github-bg {
+  img#github-bg,
+  img#github-bg2,
+  img#github-bg3 {
     position: absolute;
     top: -1000px;
     left: 0;
     z-index: -1;
     width: 100%;
+    height: auto;
+    opacity: 0.5;
+    // border: 3px solid gray;
+  }
+
+  img#github-bg2 {
+    top: 60%;
+    left: 45%;
+    z-index: -10;
+    width: 10%;
+    height: auto;
+    // border: 3px solid gray;
+  }
+  img#github-bg3 {
+    top: -5%;
+    left: 5%;
+    width: 10%;
     height: auto;
     // border: 3px solid gray;
   }
@@ -73,7 +92,7 @@
     }
   }
 
-  .extra {
+  .graphs {
     .container {
       width: 70%;
       position: relative;
