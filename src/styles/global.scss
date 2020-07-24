@@ -678,8 +678,13 @@ p {
 
 * {
   font-family: $font_gabriela;
+  
+  // for mozilla firefox
+  scrollbar-color: $green $black;
+  scrollbar-width: thin;
 }
 
+// for chrome
 *::-webkit-scrollbar {
   width: 0.2rem;
 }

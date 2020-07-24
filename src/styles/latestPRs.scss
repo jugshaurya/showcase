@@ -2,11 +2,13 @@
 @import './typography';
 
 #latestPRs {
-  height: 120vh;
+  height: 90vh;
   margin-top: 130px;
   // border: 3px dotted greenyellow;
 
   .container {
+    width: 70%;
+    margin: 50px auto;
     img#latestPR-bg,
     img#latestPR-bg2 {
       position: absolute;
@@ -25,8 +27,6 @@
       width: 15%;
     }
 
-    width: 70%;
-    margin: 50px auto;
     .header {
       display: flex;
       justify-content: flex-start;
@@ -60,10 +60,10 @@
 
     .prs {
       position: relative;
-      width: 90%;
-      padding: 60px 0;
+      width: 80%;
+      // padding: 40px 0;
       margin: 0 auto;
-      background: $g_greenBluePink;
+      // background: $g_greenBluePink;
       border-radius: 45px;
       display: flex;
       flex-direction: column;
@@ -72,30 +72,49 @@
       img.triangle {
         position: absolute;
         top: -50px;
-        left: 30px;
+        left: 20px;
       }
       .pr {
         background: $g_greenBluePink;
         border-radius: 45px;
+        border-top-left-radius: 10px;
+        border-bottom-right-radius: 10px;
         padding: 10px;
-        width: 90%;
+        width: 100%;
         margin: 0 auto;
         border-bottom: 2px solid $gray;
         display: flex;
         align-items: flex-end;
         .logo {
           margin-left: 20px;
-          width: 24px;
+          width: 20px;
           height: auto;
         }
         .text {
           width: 90%;
           margin-left: 20px;
           font-family: $font_gabriela;
-          font-size: $text_small;
+          font-size: $text_small * 0.8;
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
+        }
+
+        &:nth-of-type(2n) {
+          transform: translateX(40px);
+          background: $g_blueGreen2;
+          color: $black;
+          border-radius: 45px;
+          border-top-right-radius: 10px;
+          border-bottom-left-radius: 10px;
+        }
+        &:nth-of-type(4n) {
+          transform: translateX(-40px);
+          background: $g_twitter;
+          color: $black;
+          border-radius: 45px;
+          border-top-right-radius: 10px;
+          border-bottom-left-radius: 10px;
         }
       }
     }

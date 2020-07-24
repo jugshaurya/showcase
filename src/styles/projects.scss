@@ -1,0 +1,116 @@
+@import './colors';
+@import './typography';
+
+#projects {
+  // border: 3px solid red;
+  margin-top: 160px;
+  .container {
+    // border: 3px solid orangered;
+    width: 70%;
+    margin: 50px auto;
+    .header {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin-bottom: 80px;
+      img {
+        margin-right: 20px;
+        width: 40px;
+        height: auto;
+      }
+      h2 {
+        margin-bottom: 0;
+        font-size: $text_medium;
+        line-height: 1em;
+        color: $orange;
+        &::after {
+          content: '';
+          display: table;
+          width: 90px;
+          height: 6px;
+          background: $g_blueGreen;
+          display: block;
+          border-radius: 7px;
+          margin-top: 10px;
+        }
+      }
+    }
+
+    .project-all {
+      padding: 20px;
+      display: grid;
+      grid-template-rows: repeat(5, 1fr);
+      gap: 100px;
+      .project {
+        display: grid;
+        position: relative;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 150px;
+        align-items: flex-start;
+        // border: 3px solid red;
+        .project-left {
+          position: relative;
+          margin-top: 100px;
+          .editor {
+            position: absolute;
+            left: 0;
+            z-index: -1;
+            transform: rotate(-7deg);
+          }
+          .code {
+            position: absolute;
+            top: 25px;
+            left: 17px;
+            transform: rotate(-7deg);
+          }
+          .icons {
+            transform: rotate(-3deg);
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 170px;
+            right: 90px;
+          }
+        }
+        .project-right {
+          transform: rotate(14deg) translateX(100px);
+        }
+        &:nth-of-type(2n) {
+          .project-left {
+            order: 2;
+            .editor {
+              transform: rotate(7deg);
+            }
+            .code {
+              transform: rotate(7deg);
+            }
+            .icons {
+              transform: rotate(3deg);
+            }
+          }
+          .project-right {
+            order: 1;
+            transform: rotate(-15deg);
+          }
+        }
+      }
+    }
+  }
+
+  img#projects-bg {
+    // border: 3px dotted greenyellow;
+    position: absolute;
+    z-index: -5;
+    top: -570px;
+    left: 0px;
+    width: 100%;
+  }
+
+  // img#swiggly-bg {
+  //   position: absolute;
+  //   z-index: -1;
+  //   top: -80px;
+  //   left: 100px;
+  //   width: 10%;
+  // }
+}

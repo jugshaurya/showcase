@@ -4,7 +4,8 @@ import Languages from './Languages';
 import About from './About';
 import Github from './Github';
 import LatestPRs from './LatestPRs';
-import Toolbox from './Toolbox';
+// import Toolbox from './Toolbox';
+import Projects from './Projects';
 
 const UI = () => {
   return (
@@ -14,7 +15,8 @@ const UI = () => {
       <About />
       <Github />
       <LatestPRs />
-      <Toolbox />
+      <Projects />
+      {/* <Toolbox /> */}
     </div>
   );
 };

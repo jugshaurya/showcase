@@ -12,7 +12,6 @@ import PRIcon from '../static/icons/PR.svg';
 import GithubStats from '../static/github-stats.svg';
 import Lady from '../static/lady.svg';
 import Boy from '../static/boy.svg';
-import Boysad from '../static/boy.svg';
 
 import '../styles/github.scss';
 

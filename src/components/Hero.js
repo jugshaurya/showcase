@@ -1,6 +1,5 @@
 import React from 'react';
 import NavbarBackground from '../static/patterns/bg-navbar.svg';
-import BookPattern from '../static/patterns/book-pattern.svg';
 import BoxPattern from '../static/patterns/box-pattern.svg';
 import JSIcon from '../static/icons/js.svg';
 import NodeIcon from '../static/icons/node.svg';
@@ -74,7 +73,12 @@ const Hero = () => {
               fill="black"
             />
           </g>
-          <a id="github" href="https://github.com/jugshaurya" target="_blank">
+          <a
+            id="github"
+            href="https://github.com/jugshaurya"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <g id="githubgroup">
               <ellipse
                 id="Ellipse 23"
@@ -91,7 +95,12 @@ const Hero = () => {
               />
             </g>
           </a>
-          <a id="twitter" href="https://twitter.com/jugshaurya" target="_blank">
+          <a
+            id="twitter"
+            href="https://twitter.com/jugshaurya"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <g id="twittergroup">
               <ellipse
                 id="Ellipse 23_2"
@@ -114,6 +123,7 @@ const Hero = () => {
             id="linkedin"
             href="https://www.linkedin.com/in/jugshaurya/"
             target="_blank"
+            rel="noopener noreferrer"
           >
             <g id="linkedingroup">
               <ellipse

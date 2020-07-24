@@ -143,24 +143,6 @@ const LatestPRs = () => {
               Some Commmit Some Commmit Some Commmit
             </div>
           </div>
-          <div className="pr">
-            <div className="logo">
-              <img src={PRIcon} alt="contribution" />
-            </div>
-            <div className="text">
-              PR 1: Some Commmit Meassge... Some Commmit Meassge...Some Commmit
-              Some Commmit Some Commmit Some Commmit
-            </div>
-          </div>
-          <div className="pr">
-            <div className="logo">
-              <img src={PRIcon} alt="contribution" />
-            </div>
-            <div className="text">
-              PR 1: Some Commmit Meassge... Some Commmit Meassge...Some Commmit
-              Some Commmit Some Commmit Some Commmit
-            </div>
-          </div>
         </div>
 
         <img
