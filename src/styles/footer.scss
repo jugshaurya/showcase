@@ -1,0 +1,20 @@
+@import './colors';
+@import './typography';
+
+#footer {
+  // border: 3px solid red;
+  margin: 0;
+  margin-top: 60px;
+  background: $g_pinkBluePurple;
+  .container {
+    // border: 3px solid orangered;
+    width: 70%;
+    margin: 0px auto;
+    display: grid;
+    grid-template-columns: 1fr 200px 1fr;
+    justify-content: space-between;
+    font-size: $text_small;
+    color: $black100;
+    padding: 20px 20px;
+  }
+}

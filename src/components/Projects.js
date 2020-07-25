@@ -25,6 +25,7 @@ import GoLiveIcon from '../static/icons/live.svg';
 
 import RocketIcon from '../static/icons/rocket.svg';
 import '../styles/projects.scss';
+
 const Projects = () => {
   return (
     <div id="projects" style={{ position: 'relative' }}>

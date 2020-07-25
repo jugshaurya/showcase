@@ -4,9 +4,10 @@ import Languages from './Languages';
 import About from './About';
 import Github from './Github';
 import LatestPRs from './LatestPRs';
-// import Toolbox from './Toolbox';
+import Toolbox from './Toolbox';
 import Projects from './Projects';
-
+import Extra from './extra';
+import Footer from './footer';
 const UI = () => {
   return (
     <div id="shaurya-showcase">
@@ -16,7 +17,9 @@ const UI = () => {
       <Github />
       <LatestPRs />
       <Projects />
-      {/* <Toolbox /> */}
+      <Toolbox />
+      <Extra />
+      <Footer />
     </div>
   );
 };
