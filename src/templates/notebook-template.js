@@ -1,20 +1,17 @@
 import React from 'react';
-import Layout from '../components/Layout';
 import { graphql } from 'gatsby';
+import BlogTemplate from '../components/BlogTemplate';
 
 export default function BlogPost({ data }) {
-  console.log(data);
   const html = data.file.childWantedBook.html;
   return (
-    <Layout>
-      <div>
-        <div
-          dangerouslySetInnerHTML={{
-            __html: html,
-          }}
-        ></div>
-      </div>
-    </Layout>
+    <BlogTemplate>
+      <div
+        dangerouslySetInnerHTML={{
+          __html: html,
+        }}
+      ></div>
+    </BlogTemplate>
   );
 }
 

@@ -1,0 +1,13 @@
+#blogs {
+  border: 3px solid yellow;
+  display: grid;
+  grid-template-columns: 500px auto 200px;
+  border: 3px solid green;
+  section {
+    border: 3px solid grey;
+    &.blog {
+      height: 90vh;
+      overflow: scroll;
+    }
+  }
+}

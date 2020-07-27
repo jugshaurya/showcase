@@ -31,10 +31,11 @@ exports.onCreateNode = async (
   // createFilePath uses: node relative and basePath to generate a slug.
   // Proof: https://github.com/gatsbyjs/gatsby/blob/1c3ebf7624329f53ee3aeee7b35388d34ac88bf6/packages/gatsby-source-filesystem/src/create-file-path.js#L39
   const slug = createFilePath({ node, getNode });
+  const modifiedSlug = slug.toLowerCase().split(' ').join('-');
   createNodeField({
     node,
     name: `slug`,
-    value: slug.toLowerCase().split(' ').join('-'),
+    value: `/blogs${modifiedSlug}`,
   });
   // END: not a part of future plugin
 

@@ -1,0 +1,77 @@
+@import './colors';
+@import './typography';
+
+nav {
+  // border: 3px solid red;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+    height: 12vh;
+    // border: 3px solid yellow;
+    margin: 0 auto;
+    // @media screen and (max-width: 1440px) {
+    //   width: 90%;
+    // }
+
+    // @media screen and (max-width: 960px) {
+    //   width: 100%;
+    // }
+    .logo {
+      // border: 3px solid yellow;
+      width: 44px;
+      height: 44px;
+      align-self: center;
+      margin-top: 30px;
+      margin-left: 80px;
+    }
+    .links-list {
+      margin-top: 25px;
+      // border: 3px solid yellow;
+      display: flex;
+      height: 100%;
+      justify-content: flex-end;
+      align-items: center;
+      a {
+        text-decoration: none;
+        font-size: $text_small;
+        color: $white;
+        margin: 0 10px;
+        &.active {
+          color: $green;
+          position: relative;
+          &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            background: $blue;
+            width: 40px;
+            height: 6px;
+            border-radius: 7px;
+          }
+        }
+
+        // @media screen and (max-width: 1440px) {
+        //   font-size: $text_small * 0.8;
+        // }
+        // @media screen and (max-width: 960px) {
+        //   font-size: $text_xsmall;
+        // }
+      }
+      // @media screen and (max-width: 960px) {
+      //   margin-left: -50px;
+      // }
+    }
+  }
+
+  // @media screen and (max-width: 728px) {
+  //   display: none;
+  // }
+}

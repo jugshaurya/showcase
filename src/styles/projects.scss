@@ -23,15 +23,16 @@
         font-size: $text_medium;
         line-height: 1em;
         color: $orange;
+        position: relative;
         &::after {
           content: '';
-          display: table;
+          position: absolute;
+          left: 0;
+          bottom: -10px;
+          background: $g_blueGreen;
           width: 90px;
           height: 6px;
-          background: $g_blueGreen;
-          display: block;
           border-radius: 7px;
-          margin-top: 10px;
         }
       }
     }

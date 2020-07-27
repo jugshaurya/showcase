@@ -46,12 +46,7 @@ const TableContent = ({ table, paths }) => {
   return (
     <div>
       <h3>Table Content</h3>
-      <div
-        className="content"
-        style={{ background: 'lightblue', padding: '10px' }}
-      >
-        {getTableLayout(table, paths)}
-      </div>
+      <div className="content">{getTableLayout(table, paths)}</div>
     </div>
   );
 };

@@ -8,16 +8,22 @@ import Toolbox from './Toolbox';
 import Projects from './Projects';
 import Extra from './extra';
 import Footer from './footer';
+import Experience from './experience';
+
+import Navbar from './Navbar';
+
 const UI = () => {
   return (
     <div id="shaurya-showcase">
+      <Navbar />
       <Hero />
       <Languages />
       <About />
-      <Github />
       <LatestPRs />
       <Projects />
       <Toolbox />
+      <Github />
+      <Experience />
       <Extra />
       <Footer />
     </div>

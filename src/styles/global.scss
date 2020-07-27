@@ -6,6 +6,8 @@ html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  top: -100px;
 }
 
 body {
@@ -678,7 +680,7 @@ p {
 
 * {
   font-family: $font_gabriela;
-  
+
   // for mozilla firefox
   scrollbar-color: $green $black;
   scrollbar-width: thin;
