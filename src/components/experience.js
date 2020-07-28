@@ -1,5 +1,5 @@
 import React from 'react';
-import ExperienceBackground from '../static/patterns/bg-languages.svg';
+import ExperienceBackground from '../static/patterns/bg-experience.png';
 import CardPattern from '../static/patterns/cardoutline2.svg';
 import CodingNinjasIcon from '../static/icons/codingninjas.png';
 import NewCompanyLogo from '../static/icons/newCompany.png';
@@ -9,7 +9,7 @@ import '../styles/experience.scss';
 
 const Experience = () => {
   return (
-    <div className="experience" style={{ position: 'relative' }}>
+    <div id="experience" style={{ position: 'relative' }}>
       <div className="container">
         <div className="header">
           <img src={ExperienceIcon} alt="Experience icon" />
@@ -30,14 +30,14 @@ const Experience = () => {
               </div>
               <div className="info">
                 <p>
-                  🎖 Solved 1500+ Doubts of more than 60 students divided over
+                  🌱 Solved 1500+ Doubts of more than 60 students divided over
                   two batches.
                 </p>
                 <p>
-                  🎖 Taking one to one doubt sessions over chat and video-call.
+                  🌱 Taking one to one doubt sessions over chat and video-call.
                 </p>
                 <p>
-                  🎖 Debugging students’ Code for various types of errors in
+                  🌱 Debugging students’ Code for various types of errors in
                   Basics and Advanced Data Structure and Algorithms in Python
                   Language.
                 </p>

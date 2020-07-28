@@ -1,12 +1,12 @@
 @import './typography';
 @import './colors';
 
-.experience {
+#experience {
   // border: 3px solid orange;
-  height: 100vh;
+  height: 120vh;
   img#experience-bg {
     position: absolute;
-    width: 100%;
+    width: 250%;
     height: auto;
     top: 25%;
     left: 0;

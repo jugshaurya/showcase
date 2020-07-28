@@ -9,6 +9,7 @@ import Projects from './Projects';
 import Extra from './extra';
 import Footer from './footer';
 import Experience from './experience';
+import Contacts from './contacts';
 
 import Navbar from './Navbar';
 
@@ -24,6 +25,7 @@ const UI = () => {
       <Projects />
       <Toolbox />
       <Experience />
+      <Contacts />
       <Extra />
       <Footer />
     </div>
