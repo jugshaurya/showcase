@@ -125,7 +125,7 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
 
   mediumFeedResult.data.allMediumFeed.edges.forEach(({ node }) => {
     createPage({
-      path: node.slug,
+      path: `/medium/${node.slug}`,
       component: path.resolve(`./src/templates/medium-template.js`),
       context: {
         slug: node.slug,

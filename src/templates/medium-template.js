@@ -1,12 +1,11 @@
 import React from 'react';
-import Layout from '../components/Layout';
+import BlogTemplate from '../components/BlogTemplate';
 import { graphql } from 'gatsby';
 
 export default function BlogPost({ data }) {
-  console.log(data);
   const html = data.mediumFeed.content;
   return (
-    <Layout>
+    <BlogTemplate>
       <div>
         <div
           dangerouslySetInnerHTML={{
@@ -14,7 +13,7 @@ export default function BlogPost({ data }) {
           }}
         ></div>
       </div>
-    </Layout>
+    </BlogTemplate>
   );
 }
 

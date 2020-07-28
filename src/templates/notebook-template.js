@@ -1,12 +1,14 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import BlogTemplate from '../components/BlogTemplate';
+import '../styles/notebook-template.scss';
 
 export default function BlogPost({ data }) {
   const html = data.file.childWantedBook.html;
   return (
     <BlogTemplate>
       <div
+        className="code-start"
         dangerouslySetInnerHTML={{
           __html: html,
         }}

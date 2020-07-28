@@ -1,0 +1,108 @@
+@import './colors';
+@import './typography';
+
+.code-start {
+  * {
+    font-family: $font_normal;
+  }
+  // border: 3px solid pink;
+  padding: 20px;
+  .nb-notebook {
+    .nb-worksheet {
+      .nb-cell {
+        &.nb-markdown-cell {
+          // border: 3px solid slateblue;
+          * {
+            color: $gray;
+          }
+          display: flex;
+          flex-direction: column;
+          p {
+            display: inline;
+            text-align: center;
+          }
+          strong {
+            color: $white;
+          }
+          img {
+            display: block;
+            border-radius: 25px;
+            min-width: 200px;
+            min-height: 200px;
+            margin: 10px auto;
+          }
+          h1 {
+            text-align: center;
+            font-family: $font_gloriahallelujah;
+            color: $green;
+            font-size: $text_medium;
+          }
+
+          h2,
+          h3 {
+            text-align: left;
+            position: relative;
+            margin-top: 25px;
+            &::after {
+              content: '';
+              position: absolute;
+              left: 0;
+              bottom: -10px;
+              background: $blue;
+              width: 40px;
+              height: 6px;
+              border-radius: 7px;
+            }
+          }
+          ul,
+          ol {
+            list-style-type: circle;
+            li {
+              font-size: $text_xsmall;
+              p {
+                display: inline;
+              }
+              ol {
+                font-size: $text_large;
+              }
+            }
+          }
+          table {
+            tr,
+            td,
+            th {
+              border: 1px solid $gray;
+            }
+            border: 1px solid $gray;
+          }
+        }
+        &.nb-code-cell {
+          font-size: 1em;
+          .nb-input {
+            background: $codeblocks;
+            border-radius: 10px;
+            pre {
+              border-radius: 10px;
+              border-left: 10px solid $codeblocks_input_border;
+              border-right: 10px solid $codeblocks_input_border;
+              scrollbar-color: $codeblocks;
+              code:empty {
+                display: none;
+              }
+            }
+          }
+          .nb-output {
+            background: $codeblocks;
+            border-radius: 10px;
+            margin-left: 10px;
+            pre {
+              border-left: 10px solid $codeblocks_output_border;
+              border-right: 10px solid $codeblocks_output_border;
+              border-radius: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

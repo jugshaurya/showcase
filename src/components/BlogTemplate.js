@@ -5,7 +5,7 @@ import SEO from '../components/seo';
 import BlogLayout from '../components/BlogLayout';
 
 import getTableContent from '../utils/javascript/getTableContent';
-import '../styles/blogs.scss';
+import '../styles/blogTemplate.scss';
 
 // uuid's id length is of 36 character.
 const removeUUID = (str) => str.slice(0, -37);
@@ -14,11 +14,11 @@ const getTableLayout = (table, paths) => {
     <>
       {Object.keys(table).map((section, index) => {
         return (
-          <div key={index}>
+          <div className="level" key={index}>
             {section === 'files' ? null : (
-              <div>
+              <>
                 <h6>{section}</h6>
-              </div>
+              </>
             )}
             <div>
               {Array.isArray(table[section]) ? (
@@ -29,7 +29,7 @@ const getTableLayout = (table, paths) => {
                         to={`/${removeUUID(paths[file])}/`}
                         className="file"
                       >
-                        {removeUUID(file)}
+                        - {removeUUID(file).split('-').splice(1).join(' ')}
                       </Link>
                     </div>
                   ))}
@@ -63,32 +63,68 @@ const BlogTemplate = ({ children }) => {
           }
         }
       }
+
+      mlBooks: allFile(
+        filter: {
+          extension: { eq: "ipynb" }
+          sourceInstanceName: { eq: "Machine-Learning" }
+        }
+      ) {
+        totalCount
+        edges {
+          node {
+            fields {
+              slug
+            }
+          }
+        }
+      }
+
+      mediumPosts: allMediumFeed {
+        totalCount
+        edges {
+          node {
+            author
+            date(formatString: "dddd, MMMM Do YYYY, h:mm:ss a")
+            id
+            title
+            link
+            thumbnail
+            slug
+            content
+          }
+        }
+      }
     }
   `;
 
   const data = useStaticQuery(query);
   const contents = data.pythonBooks.edges.map((edge) => edge.node.fields.slug);
-  console.log(contents);
-  const [table, paths] = getTableContent(contents);
+  const contentsML = data.mlBooks.edges.map((edge) => edge.node.fields.slug);
+  const contentsMedium = data.mediumPosts.edges.map(
+    (edge) => `/medium/${edge.node.slug}/`
+  );
+
+  console.log(contentsMedium);
+  const [table, paths] = getTableContent([
+    ...contentsMedium,
+    ...contents,
+    ...contentsML,
+  ]);
+
+  // console.log(table);
 
   return (
     <BlogLayout>
       <SEO title="Shaurya Blogs | Portfolio | Showcase" />
       <div id="blogs">
-        <section>
-          <h5>Read outs | Shaurya Showcase</h5>
+        <section className="toc">
+          <h5>Shaurya Showcase</h5>
           <div className="table-of-content">{getTableLayout(table, paths)}</div>
         </section>
         <section className="blog">{children}</section>
         <aside>Follow BRO!</aside>
       </div>
-      <h2>Machine Learning</h2>
-      mltc - machine learning table of content
-      <Link to="/mltc/"> Go to Learn ML</Link>
-      <br />
-      <Link to="/lptc/"> Go to Learn Python</Link>
-      <br />
-      <Link to="/medium-post-page/"> Go to Meduim Posts</Link>
     </BlogLayout>
   );
 };
