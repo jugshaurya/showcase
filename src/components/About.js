@@ -17,7 +17,7 @@ const About = () => {
           alt="shaurya background"
         />
         <div className="box"></div>
-        <h4 className="hi">Hello, I'm Shaurya.</h4>
+        <h3 className="hi">Hello, I'm Shaurya.</h3>
         <div className="me">
           <img src={Shaurya} alt="shaurya" title="shaurya" />
         </div>

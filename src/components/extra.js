@@ -77,6 +77,15 @@ const Extra = () => {
                 </a>
                 <sub> (for Css Help)</sub>
               </li>
+              <li>
+                <a
+                  href="https://anuraghazra.github.io/"
+                  rel="noopener noreferrer"
+                >
+                  Anurag Hazra
+                </a>
+                <sub> (for Motivation)</sub>
+              </li>
             </ul>
           </section>
           <section>

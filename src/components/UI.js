@@ -19,10 +19,10 @@ const UI = () => {
       <Hero />
       <Languages />
       <About />
+      <Github />
       <LatestPRs />
       <Projects />
       <Toolbox />
-      <Github />
       <Experience />
       <Extra />
       <Footer />
