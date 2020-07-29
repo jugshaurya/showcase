@@ -5,12 +5,16 @@ import LinkedInIcon from '../static/icons/linkedin.svg';
 import GithubIcon from '../static/icons/github.svg';
 import TwitterIcon from '../static/icons/twitter.svg';
 import Shaurya from '../static/shaurya.png';
+import PolygonRed from '../static/patterns/polygonred.svg';
+import PolygonGreen from '../static/patterns/polygongreen.svg';
 
 import '../styles/contacts.scss';
 
 const Contacts = () => {
   return (
     <div id="contacts" style={{ position: 'relative' }}>
+      <img className="polygon green" src={PolygonGreen} alt="green poly" />
+      <img className="polygon red" src={PolygonRed} alt="red ploy" />
       <div className="container">
         <div className="header">
           <img src={ContactIcon} alt="Contact icon" />

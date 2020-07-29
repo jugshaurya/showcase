@@ -13,7 +13,7 @@ import '../styles/hero.scss';
 
 const Hero = () => {
   return (
-    <div className="hero" style={{ position: 'relative' }}>
+    <div className="hero" name="hero" style={{ position: 'relative' }}>
       <div className="container">
         <div className="top" style={{ position: 'relative' }}>
           <img id="bag" src={BagIcon} alt="bag" title="Bag" />

@@ -4,9 +4,9 @@ const Footer = () => {
   return (
     <div id="footer">
       <div className="container">
-        <div className="left"> Created with 🖤 BY Shaurya Singhal</div>
+        <div className="left"> Created with 💛 using Gatsby & Figma</div>
         <div className="middle"> - &copy; 2020 - </div>
-        <div className="right"> Created with 🖤 with Gatsby & Figma</div>
+        <div className="right"> Created with 💛 by Shaurya Singhal</div>
       </div>
     </div>
   );

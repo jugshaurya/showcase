@@ -3,7 +3,7 @@
 
 #contacts {
   // border: 3px solid orange;
-  height: 100vh;
+  height: 70vh;
   img#experience-bg {
     position: absolute;
     width: 250%;
@@ -12,6 +12,19 @@
     left: 0;
     z-index: -1;
     transform: translateY(-300px);
+  }
+  img.polygon {
+    position: absolute;
+    z-index: -1;
+    opacity: 0.8;
+    &.green {
+      top: 0;
+      right: 0;
+    }
+    &.red {
+      bottom: 0;
+      left: 0;
+    }
   }
   .container {
     width: 70%;

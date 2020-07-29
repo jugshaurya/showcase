@@ -1,5 +1,6 @@
 import React from 'react';
 import ExtraIcon from '../static/icons/extra.svg';
+import BackIcon from '../static/icons/back.svg';
 import '../styles/extra.scss';
 
 const Extra = () => {
@@ -13,6 +14,47 @@ const Extra = () => {
             <sub>Thank you...</sub>
           </h2>
         </div>
+        <section className="section">
+          <div className="back">
+            <a href="#top">
+              Back to Top <img src={BackIcon} alt="back button" />
+            </a>
+          </div>
+          <div className="colors">
+            <div className="color" style={{ background: '#F2F2F2' }}></div>
+            <div className="color" style={{ background: '#56B8FF' }}></div>
+            <div className="color" style={{ background: '#FD7162' }}></div>
+            <div className="color" style={{ background: '#E9FA66' }}></div>
+            <div className="color" style={{ background: '#3CC2AF' }}></div>
+            <div className="color" style={{ background: '#E89090' }}></div>
+            <div className="color" style={{ background: '#15171A' }}></div>
+            <div className="color" style={{ background: '#3F3D56' }}></div>
+            <div className="color" style={{ background: '#ADADAD' }}></div>
+            <div className="color" style={{ background: '#000000' }}></div>
+            <div className="color" style={{ background: '#FFD200' }}></div>
+            <div className="color" style={{ background: '#E10098' }}></div>
+            <div className="color" style={{ background: '#6C63FF' }}></div>
+            <div className="color" style={{ background: '#3F3D56' }}></div>
+            <div
+              className="color"
+              style={{
+                background: 'linear-gradient(180deg, #00cffd 0%, #e9fa66 100%)',
+              }}
+            ></div>
+            <div
+              className="color"
+              style={{
+                background: 'linear-gradient(11deg, #0095ff -2%, #ff0000 100%)',
+              }}
+            ></div>
+            <div
+              className="color"
+              style={{
+                background: 'linear-gradient(129deg, #2aa4f4 11%, #007ad9 89%)',
+              }}
+            ></div>
+          </div>
+        </section>
         <div className="main">
           <section>
             <div className="title">Credits/Attributions</div>
