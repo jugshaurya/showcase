@@ -7,7 +7,7 @@ import '../styles/toolbox.scss';
 
 const Toolbox = () => {
   return (
-    <div id="rutherford" style={{ position: 'relative' }}>
+    <div id="skills" style={{ position: 'relative' }}>
       <div className="container" style={{ position: 'relative' }}>
         <div className="header">
           <img src={ToolboxIcon} alt="PR icon" />
