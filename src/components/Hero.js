@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import NavbarBackground from '../static/patterns/bg-navbar.svg';
 import BoxPattern from '../static/patterns/box-pattern.svg';
 import JSIcon from '../static/icons/js.svg';
@@ -12,6 +12,20 @@ import BagIcon from '../static/icons/bag.svg';
 import '../styles/hero.scss';
 
 const Hero = () => {
+  useEffect(() => {
+    const bag = document.getElementById('bag');
+    const scrollBag = (e) => {
+      const Yoffset = Math.round(window.scrollY / 4);
+      console.log(Yoffset);
+      bag.style.transform = `translateX(${-Yoffset}px) rotate(270deg)`;
+      bag.style.transition = `0.01s ease-in-out`;
+    };
+
+    window.addEventListener('scroll', scrollBag);
+    return () => {
+      window.removeEventListener('scroll', scrollBag);
+    };
+  }, []);
   return (
     <div className="hero" name="hero" style={{ position: 'relative' }}>
       <div className="container">
@@ -45,7 +59,7 @@ const Hero = () => {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <g id="book-pattern">
+        <g>
           <g id="box" filter="url(#filter0_d)">
             <rect
               width="829.322"

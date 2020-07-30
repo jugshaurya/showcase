@@ -2,7 +2,7 @@
 @import './typography';
 
 .hero {
-  height: 95vh;
+  height: 100vh;
   // border: 3px solid red;
   width: 100vw;
   .container {
@@ -24,7 +24,7 @@
       #bag {
         position: absolute;
         top: -90px;
-        left: 45px;
+        left: 150px;
         transform: rotate(-90deg);
         // display: none;
       }
@@ -92,7 +92,7 @@
     right: 0;
     width: 80%;
   }
-  #book-pattern {
+  svg#book-pattern {
     z-index: 1;
     position: absolute;
     top: 200px;
