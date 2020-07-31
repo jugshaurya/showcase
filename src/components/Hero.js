@@ -15,9 +15,10 @@ const Hero = () => {
   useEffect(() => {
     const bag = document.getElementById('bag');
     const scrollBag = (e) => {
-      const Yoffset = Math.round(window.scrollY / 4);
+      const Yoffset = Math.round(window.scrollY / 2);
       console.log(Yoffset);
-      bag.style.transform = `translateX(${-Yoffset}px) rotate(270deg)`;
+      if (Yoffset > 200) return;
+      bag.style.transform = `translateX(${Yoffset}px) rotate(270deg)`;
       bag.style.transition = `0.01s ease-in-out`;
     };
 

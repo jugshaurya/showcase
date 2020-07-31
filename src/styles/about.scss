@@ -37,8 +37,20 @@
       border-radius: 39px;
       transform: rotate(50deg);
       z-index: -2;
+      -webkit-animation: boxRotate 1s infinite; /* Safari 4+ */
+      -moz-animation: boxRotate 1s infinite; /* Fx 5+ */
+      -o-animation: boxRotate 1s infinite; /* Opera 12+ */
+      animation: boxRotate 3s infinite; /* IE 10+, Fx 29+ */
     }
 
+    @keyframes boxRotate {
+      from {
+        transform: rotate(50deg);
+      }
+      to {
+        transform: rotate(410deg);
+      }
+    }
     h3.hi {
       font-weight: 500;
       color: $blue;

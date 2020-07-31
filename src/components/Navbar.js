@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'gatsby';
-import GraphqlIcon from '../static/icons/graphql.svg';
+import Logo from '../static/logo/logo-green.svg';
 import '../styles/navbar.scss';
 
 const links = [
@@ -44,7 +44,7 @@ const Navbar = ({ defaultRoute }) => {
     <nav>
       <div className="container">
         <div className="logo">
-          <img src={GraphqlIcon} alt="Logo" />
+          <img src={Logo} alt="Logo" />
         </div>
         <div className="links-list">
           {links.map((link) => (
