@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import CountUp from 'react-countup';
 import GithubBackground2 from '../static/patterns/bg-swiggly.svg';
 import GithubBackground from '../static/patterns/bg-github.svg';
 import GithubGradIcon from '../static/icons/githubgrad.svg';
@@ -114,35 +115,46 @@ const Github = () => {
         </div>
         <div className="values">
           <div className="value">
-            <div className="count">{stats.totalContributedTo}</div>
+            <div className="count">
+              <CountUp start={0} end={stats.totalContributedTo} duration={5} />
+            </div>
             <div className="type">
               <img src={ContributionIcon} alt="contribution" />
               Contributed to
             </div>
           </div>
           <div className="value">
-            <div className="count">{stats.totalPRs}</div>
+            {' '}
+            <div className="count">
+              <CountUp start={0} end={stats.totalPRs} duration={5} />
+            </div>
             <div className="type">
               <img src={PRIcon} alt="PRs" />
               PRs
             </div>
           </div>
           <div className="value">
-            <div className="count">{stats.totalStars}</div>
+            <div className="count">
+              <CountUp start={0} end={stats.totalStars} duration={5} />
+            </div>
             <div className="type">
               <img src={StarsIcon} alt="stars" />
               Stars
             </div>
           </div>
           <div className="value">
-            <div className="count">{stats.totalIssues}</div>
+            <div className="count">
+              <CountUp start={0} end={stats.totalIssues} duration={5} />
+            </div>
             <div className="type">
               <img src={IssueIcon} alt="issues" />
               Issues
             </div>
           </div>
           <div className="value">
-            <div className="count">{stats.totalCommits}</div>
+            <div className="count">
+              <CountUp start={0} end={stats.totalCommits} duration={4} />
+            </div>
             <div className="type">
               <img src={CommitIcon} alt="commits" />
               Commits
