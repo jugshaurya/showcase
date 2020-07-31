@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import GithubBackground2 from '../static/patterns/bg-swiggly.svg';
 import GithubBackground from '../static/patterns/bg-github.svg';
 import GithubGradIcon from '../static/icons/githubgrad.svg';
@@ -15,7 +16,95 @@ import Boy from '../static/boy.svg';
 
 import '../styles/github.scss';
 
+const fetchGithubStats = async (username) => {
+  const query = `
+    query shauStats($login: String!) {
+      user(login: $login) {
+        name
+        repositoriesContributedTo(first: 100, contributionTypes: [COMMIT, PULL_REQUEST, ISSUE, REPOSITORY]) {
+          totalCount
+        }
+        pullRequests(first: 100) {
+          totalCount
+        }
+        repositories(first: 100) {
+          nodes {
+            stargazers {
+              totalCount
+            }
+          }
+        }
+        issues(first: 100) {
+          totalCount
+        }
+        contributionsCollection {
+          totalCommitContributions
+        }
+      }
+    }
+  `;
+
+  const res = await axios({
+    url: 'https://api.github.com/graphql',
+    method: 'post',
+    headers: {
+      Authorization: `Bearer ${process.env.GATSBY_GITHUB_ACCESS_TOKEN}`,
+    },
+    data: {
+      query: query,
+      variables: {
+        login: username,
+      },
+    },
+  });
+
+  const stats = {
+    name: '',
+    totalContributedTo: 0,
+    totalPRs: 0,
+    totalStars: 0,
+    totalIssues: 0,
+    totalCommits: 0,
+  };
+
+  const user = res.data.data.user;
+  stats.name = user.name;
+  stats.totalContributedTo = user.repositoriesContributedTo.totalCount;
+  stats.totalPRs = user.pullRequests.totalCount;
+  stats.totalIssues = user.issues.totalCount;
+  stats.totalCommits = user.contributionsCollection.totalCommitContributions;
+  stats.totalStars = user.repositories.nodes.reduce(
+    (acc, node) => acc + node.stargazers.totalCount,
+    0
+  );
+
+  const currencyBinder = (amount) => {
+    return amount >= 1000 ? `${amount / 1000}K` : amount;
+  };
+
+  stats.totalContributedTo = currencyBinder(stats.totalContributedTo);
+  stats.totalPRs = currencyBinder(stats.totalPRs);
+  stats.totalIssues = currencyBinder(stats.totalIssues);
+  stats.totalCommits = currencyBinder(stats.totalCommits);
+  stats.totalStars = currencyBinder(stats.totalStars);
+
+  return stats;
+};
+
 const Github = () => {
+  const [stats, setStats] = useState({
+    name: '',
+    totalContributedTo: 0,
+    totalPRs: 0,
+    totalStars: 0,
+    totalIssues: 0,
+    totalCommits: 0,
+  });
+
+  useEffect(() => {
+    fetchGithubStats('jugshaurya').then((stats) => setStats(stats));
+  }, [fetchGithubStats]);
+
   return (
     <div id="github" style={{ position: 'relative' }}>
       <div className="container" style={{ position: 'relative' }}>
@@ -25,35 +114,35 @@ const Github = () => {
         </div>
         <div className="values">
           <div className="value">
-            <div className="count">4</div>
+            <div className="count">{stats.totalContributedTo}</div>
             <div className="type">
               <img src={ContributionIcon} alt="contribution" />
               Contributed to
             </div>
           </div>
           <div className="value">
-            <div className="count">30</div>
+            <div className="count">{stats.totalPRs}</div>
             <div className="type">
               <img src={PRIcon} alt="PRs" />
               PRs
             </div>
           </div>
           <div className="value">
-            <div className="count">400</div>
+            <div className="count">{stats.totalStars}</div>
             <div className="type">
               <img src={StarsIcon} alt="stars" />
               Stars
             </div>
           </div>
           <div className="value">
-            <div className="count">100</div>
+            <div className="count">{stats.totalIssues}</div>
             <div className="type">
               <img src={IssueIcon} alt="issues" />
               Issues
             </div>
           </div>
           <div className="value">
-            <div className="count">100K</div>
+            <div className="count">{stats.totalCommits}</div>
             <div className="type">
               <img src={CommitIcon} alt="commits" />
               Commits
