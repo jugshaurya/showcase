@@ -21,7 +21,6 @@ const UI = () => {
       <Languages />
       <About />
       <Github />
-      <LatestPRs />
       <Projects />
       <Toolbox />
       <Experience />

@@ -4,145 +4,28 @@ import TriangleIcon from '../static/icons/triangle.svg';
 import LatestPRBackground from '../static/patterns/bg-swiggly.svg';
 import '../styles/latestPRs.scss';
 
-const LatestPRs = () => {
+const LatestPRs = ({ jugshauryaPRs, otherPRs }) => {
+  const filteredPRs = otherPRs.length > 15 ? otherPRs.slice(0, 15) : otherPRs;
   return (
     <div id="latestPRs" style={{ position: 'relative' }}>
       <div className="container" style={{ position: 'relative' }}>
         <div className="header">
           <img src={PRIcon} alt="PR icon" />
           <h2>
-            Latest Merged Pull Requests <span>(15)</span>
+            Latest Merged Pull Requests <span>({filteredPRs.length})</span>
           </h2>
         </div>
 
         <div className="prs">
           <img className="triangle" src={TriangleIcon} alt="triangle" />
-          <div className="pr">
-            <div className="logo">
-              <img src={PRIcon} alt="contribution" />
+          {filteredPRs.map((pr) => (
+            <div className="pr">
+              <div className="logo">
+                <img src={pr.repository.owner.avatarUrl} alt="contribution" />
+              </div>
+              <div className="text">{pr.title}</div>
             </div>
-            <div className="text">
-              PR 1: Some Commmit Meassge... Some Commmit Meassge...Some Commmit
-              Some Commmit Some Commmit Some Commmit
-            </div>
-          </div>
-          <div className="pr">
-            <div className="logo">
-              <img src={PRIcon} alt="contribution" />
-            </div>
-            <div className="text">
-              PR 1: Some Commmit Meassge... Some Commmit Meassge...Some Commmit
-              Some Commmit Some Commmit Some Commmit
-            </div>
-          </div>
-          <div className="pr">
-            <div className="logo">
-              <img src={PRIcon} alt="contribution" />
-            </div>
-            <div className="text">
-              PR 1: Some Commmit Meassge... Some Commmit Meassge...Some Commmit
-              Some Commmit Some Commmit Some Commmit
-            </div>
-          </div>
-          <div className="pr">
-            <div className="logo">
-              <img src={PRIcon} alt="contribution" />
-            </div>
-            <div className="text">
-              PR 1: Some Commmit Meassge... Some Commmit Meassge...Some Commmit
-              Some Commmit Some Commmit Some Commmit
-            </div>
-          </div>
-          <div className="pr">
-            <div className="logo">
-              <img src={PRIcon} alt="contribution" />
-            </div>
-            <div className="text">
-              PR 1: Some Commmit Meassge... Some Commmit Meassge...Some Commmit
-              Some Commmit Some Commmit Some Commmit
-            </div>
-          </div>
-          <div className="pr">
-            <div className="logo">
-              <img src={PRIcon} alt="contribution" />
-            </div>
-            <div className="text">
-              PR 1: Some Commmit Meassge... Some Commmit Meassge...Some Commmit
-              Some Commmit Some Commmit Some Commmit
-            </div>
-          </div>
-          <div className="pr">
-            <div className="logo">
-              <img src={PRIcon} alt="contribution" />
-            </div>
-            <div className="text">
-              PR 1: Some Commmit Meassge... Some Commmit Meassge...Some Commmit
-              Some Commmit Some Commmit Some Commmit
-            </div>
-          </div>
-          <div className="pr">
-            <div className="logo">
-              <img src={PRIcon} alt="contribution" />
-            </div>
-            <div className="text">
-              PR 1: Some Commmit Meassge... Some Commmit Meassge...Some Commmit
-              Some Commmit Some Commmit Some Commmit
-            </div>
-          </div>
-          <div className="pr">
-            <div className="logo">
-              <img src={PRIcon} alt="contribution" />
-            </div>
-            <div className="text">
-              PR 1: Some Commmit Meassge... Some Commmit Meassge...Some Commmit
-              Some Commmit Some Commmit Some Commmit
-            </div>
-          </div>
-          <div className="pr">
-            <div className="logo">
-              <img src={PRIcon} alt="contribution" />
-            </div>
-            <div className="text">
-              PR 1: Some Commmit Meassge... Some Commmit Meassge...Some Commmit
-              Some Commmit Some Commmit Some Commmit
-            </div>
-          </div>
-          <div className="pr">
-            <div className="logo">
-              <img src={PRIcon} alt="contribution" />
-            </div>
-            <div className="text">
-              PR 1: Some Commmit Meassge... Some Commmit Meassge...Some Commmit
-              Some Commmit Some Commmit Some Commmit
-            </div>
-          </div>
-          <div className="pr">
-            <div className="logo">
-              <img src={PRIcon} alt="contribution" />
-            </div>
-            <div className="text">
-              PR 1: Some Commmit Meassge... Some Commmit Meassge...Some Commmit
-              Some Commmit Some Commmit Some Commmit
-            </div>
-          </div>
-          <div className="pr">
-            <div className="logo">
-              <img src={PRIcon} alt="contribution" />
-            </div>
-            <div className="text">
-              PR 1: Some Commmit Meassge... Some Commmit Meassge...Some Commmit
-              Some Commmit Some Commmit Some Commmit
-            </div>
-          </div>
-          <div className="pr">
-            <div className="logo">
-              <img src={PRIcon} alt="contribution" />
-            </div>
-            <div className="text">
-              PR 1: Some Commmit Meassge... Some Commmit Meassge...Some Commmit
-              Some Commmit Some Commmit Some Commmit
-            </div>
-          </div>
+          ))}
         </div>
 
         <img

@@ -14,6 +14,7 @@ import PRIcon from '../static/icons/PR.svg';
 import GithubStats from '../static/github-stats.svg';
 import Lady from '../static/lady.svg';
 import Boy from '../static/boy.svg';
+import LatestPRs from './LatestPRs';
 
 import '../styles/github.scss';
 
@@ -22,12 +23,39 @@ const fetchGithubStats = async (username) => {
     query shauStats($login: String!) {
       user(login: $login) {
         name
-        repositoriesContributedTo(first: 100, contributionTypes: [COMMIT, PULL_REQUEST, ISSUE, REPOSITORY]) {
+        repositoriesContributedTo(first: 100, contributionTypes: [COMMIT, PULL_REQUEST, PULL_REQUEST_REVIEW, ISSUE, REPOSITORY]) {
+          nodes{
+            name
+            id
+          }
           totalCount
         }
-        pullRequests(first: 100) {
+        pullRequests(first: 100, states: [OPEN, MERGED, CLOSED], orderBy: {field: CREATED_AT, direction: DESC}) {
           totalCount
+          nodes {
+            id
+            title
+            url
+            createdAt
+            state
+            repository {
+              id
+              nameWithOwner
+              languages(first : 5){
+                nodes{
+                  id
+                  name
+                }
+              }
+              owner{
+                url
+                login
+                avatarUrl
+              }
+            }
+          }
         }
+       
         repositories(first: 100) {
           nodes {
             stargazers {
@@ -62,21 +90,31 @@ const fetchGithubStats = async (username) => {
   const stats = {
     name: '',
     totalContributedTo: 0,
-    totalPRs: 0,
     totalStars: 0,
     totalIssues: 0,
     totalCommits: 0,
+    totalPRs: 0,
+    contributionRepos: [],
+    jugshauryaPRs: [],
+    otherPRs: [],
   };
 
   const user = res.data.data.user;
   stats.name = user.name;
   stats.totalContributedTo = user.repositoriesContributedTo.totalCount;
   stats.totalPRs = user.pullRequests.totalCount;
+  stats.contributionRepos = user.repositoriesContributedTo.nodes;
   stats.totalIssues = user.issues.totalCount;
   stats.totalCommits = user.contributionsCollection.totalCommitContributions;
   stats.totalStars = user.repositories.nodes.reduce(
     (acc, node) => acc + node.stargazers.totalCount,
     0
+  );
+  stats.jugshauryaPRs = user.pullRequests.nodes.filter(
+    (node) => node.repository.owner.login === 'jugshaurya'
+  );
+  stats.otherPRs = user.pullRequests.nodes.filter(
+    (node) => node.repository.owner.login !== 'jugshaurya'
   );
 
   const currencyBinder = (amount) => {
@@ -100,6 +138,9 @@ const Github = () => {
     totalStars: 0,
     totalIssues: 0,
     totalCommits: 0,
+    contributionRepos: [],
+    jugshauryaPRs: [],
+    otherPRs: [],
   });
 
   useEffect(() => {
@@ -107,83 +148,101 @@ const Github = () => {
   }, [fetchGithubStats]);
 
   return (
-    <div id="github" style={{ position: 'relative' }}>
-      <div className="container" style={{ position: 'relative' }}>
-        <div className="header">
-          <img src={GithubGradIcon} alt="github icon" />
-          <h2>Github Stats</h2>
+    <>
+      <div id="github" style={{ position: 'relative' }}>
+        <div className="container" style={{ position: 'relative' }}>
+          <div className="header">
+            <img src={GithubGradIcon} alt="github icon" />
+            <h2>Github Stats</h2>
+          </div>
+          <div className="values">
+            <div className="value">
+              <div className="count">
+                <CountUp
+                  start={0}
+                  end={stats.totalContributedTo}
+                  duration={5}
+                />
+              </div>
+              <div className="type">
+                <img src={ContributionIcon} alt="contribution" />
+                Contributed to
+              </div>
+            </div>
+            <div className="value">
+              {' '}
+              <div className="count">
+                <CountUp start={0} end={stats.totalPRs} duration={5} />
+              </div>
+              <div className="type">
+                <img src={PRIcon} alt="PRs" />
+                PRs
+              </div>
+            </div>
+            <div className="value">
+              <div className="count">
+                <CountUp start={0} end={stats.totalStars} duration={5} />
+              </div>
+              <div className="type">
+                <img src={StarsIcon} alt="stars" />
+                Stars
+              </div>
+            </div>
+            <div className="value">
+              <div className="count">
+                <CountUp start={0} end={stats.totalIssues} duration={5} />
+              </div>
+              <div className="type">
+                <img src={IssueIcon} alt="issues" />
+                Issues
+              </div>
+            </div>
+            <div className="value">
+              <div className="count">
+                <CountUp start={0} end={stats.totalCommits} duration={4} />
+              </div>
+              <div className="type">
+                <img src={CommitIcon} alt="commits" />
+                Commits
+              </div>
+            </div>
+          </div>
+          <div className="github-info"></div>
         </div>
-        <div className="values">
-          <div className="value">
-            <div className="count">
-              <CountUp start={0} end={stats.totalContributedTo} duration={5} />
-            </div>
-            <div className="type">
-              <img src={ContributionIcon} alt="contribution" />
-              Contributed to
-            </div>
-          </div>
-          <div className="value">
-            {' '}
-            <div className="count">
-              <CountUp start={0} end={stats.totalPRs} duration={5} />
-            </div>
-            <div className="type">
-              <img src={PRIcon} alt="PRs" />
-              PRs
-            </div>
-          </div>
-          <div className="value">
-            <div className="count">
-              <CountUp start={0} end={stats.totalStars} duration={5} />
-            </div>
-            <div className="type">
-              <img src={StarsIcon} alt="stars" />
-              Stars
-            </div>
-          </div>
-          <div className="value">
-            <div className="count">
-              <CountUp start={0} end={stats.totalIssues} duration={5} />
-            </div>
-            <div className="type">
-              <img src={IssueIcon} alt="issues" />
-              Issues
-            </div>
-          </div>
-          <div className="value">
-            <div className="count">
-              <CountUp start={0} end={stats.totalCommits} duration={4} />
-            </div>
-            <div className="type">
-              <img src={CommitIcon} alt="commits" />
-              Commits
-            </div>
-          </div>
-        </div>
-        <div className="github-info"></div>
-      </div>
 
-      <div className="graphs">
-        <div className="container">
-          {/* TODO */}
-          <div className="github-stats">
-            <img id="stats" src={GithubStats} alt="github-stats-later" />
+        <div className="graphs">
+          <div className="container">
+            {/* TODO */}
+            <div className="github-stats">
+              <img id="stats" src={GithubStats} alt="github-stats-later" />
+            </div>
+            <figure className="wakatime-langs">
+              <embed src="https://wakatime.com/share/@jugshaurya/a750f08f-2404-4f77-8df8-849d0a8f4109.svg" />
+            </figure>
+            <img id="pattern1" src={DotPattern1} alt="dot pattern 1" />
+            <img id="lady" src={Lady} alt="lady" title="Lady" />
+            <img id="pattern2" src={DotPattern2} alt="dot pattern 2" />
+            <img id="boy" src={Boy} alt="shaurya" title="shaurya" />
           </div>
-          <figure className="wakatime-langs">
-            <embed src="https://wakatime.com/share/@jugshaurya/a750f08f-2404-4f77-8df8-849d0a8f4109.svg" />
-          </figure>
-          <img id="pattern1" src={DotPattern1} alt="dot pattern 1" />
-          <img id="lady" src={Lady} alt="lady" title="Lady" />
-          <img id="pattern2" src={DotPattern2} alt="dot pattern 2" />
-          <img id="boy" src={Boy} alt="shaurya" title="shaurya" />
         </div>
-      </div>
 
-      <img id="github-bg2" src={GithubBackground2} alt="Github background 2" />
-      <img id="github-bg3" src={GithubBackground2} alt="Github background 3" />
-      <img id="github-bg" src={GithubBackground} alt="github background" />
-    </div>
+        <img
+          id="github-bg2"
+          src={GithubBackground2}
+          alt="Github background 2"
+        />
+        <img
+          id="github-bg3"
+          src={GithubBackground2}
+          alt="Github background 3"
+        />
+        <img id="github-bg" src={GithubBackground} alt="github background" />
+      </div>
+      <LatestPRs
+        jugshauryaPRs={stats.jugshauryaPRs}
+        otherPRs={stats.otherPRs}
+      />
+    </>
   );
 };
 
