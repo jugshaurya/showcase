@@ -68,7 +68,7 @@ const Languages = () => {
               <p>
                 First Language that introduced me to the Coding World. Concepts
                 of OOPS made me understand how computer mocks/maps real world
-                enitites.
+                entities.
               </p>
 
               <p>Made it easy to learn other languages.</p>
