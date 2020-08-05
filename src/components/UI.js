@@ -11,7 +11,8 @@ import Footer from './footer';
 import Experience from './experience';
 import Contacts from './contacts';
 
-import Navbar from './Navbar';
+// import Navbar from './Navbar';
+import Navbar from './Navbar/Navbar';
 
 const UI = () => {
   return (

@@ -14,17 +14,8 @@ nav {
     align-items: center;
     width: 70%;
     height: 12vh;
-    // border: 3px solid yellow;
     margin: 0 auto;
-    // @media screen and (max-width: 1440px) {
-    //   width: 90%;
-    // }
-
-    // @media screen and (max-width: 960px) {
-    //   width: 100%;
-    // }
     .logo {
-      // border: 3px solid yellow;
       width: 88px;
       height: 88px;
       align-self: center;
@@ -57,21 +48,95 @@ nav {
             border-radius: 7px;
           }
         }
-
-        // @media screen and (max-width: 1440px) {
-        //   font-size: $text_small * 0.8;
-        // }
-        // @media screen and (max-width: 960px) {
-        //   font-size: $text_xsmall;
-        // }
       }
-      // @media screen and (max-width: 960px) {
-      //   margin-left: -50px;
-      // }
     }
   }
 
-  // @media screen and (max-width: 728px) {
-  //   display: none;
-  // }
+  .navbar-cross {
+    display: none;
+  }
+}
+
+@media screen and (max-width: $desktop) {
+  nav {
+    // border: 3px solid red;
+    .container {
+      width: 80%;
+      .logo {
+        width: 66px;
+        height: 66px;
+      }
+      .links-list {
+        a {
+          font-size: $text_small * 0.8;
+          color: $white;
+          &.active {
+            &::after {
+              width: 30px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $ipadRotate) {
+  nav {
+    .container {
+      width: 80%;
+      .logo {
+        width: 66px;
+        height: 66px;
+        margin-left: 0px;
+      }
+      .links-list {
+        a {
+          font-size: $text_small * 0.8;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $ipad) {
+  nav {
+    width: 100%;
+    .container {
+      width: 100%;
+      .logo {
+        // border: 3px solid yellow;
+        width: 44px;
+        height: 44px;
+        margin-left: 80px;
+      }
+      .links-list {
+        a {
+          font-size: $text_xsmall;
+          &.active {
+            &::after {
+              width: 30px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $mobile) {
+  nav {
+    .container {
+      display: none;
+    }
+    .navbar-cross {
+      display: block;
+      text-align: right;
+      font-size: $text_large;
+      padding-right: 20px;
+      padding-top: 20px;
+      color: $white;
+      cursor: pointer;
+    }
+  }
 }

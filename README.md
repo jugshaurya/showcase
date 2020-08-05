@@ -6,6 +6,10 @@
 [![PR](https://img.shields.io/badge/PR-Welcome-blue.svg)](https://github.com/jugshaurya/showcase)
 [![GitLicense](https://gitlicense.com/badge/jugshaurya/showcase)](https://github.com/jugshaurya/showcase)
 
+### peek a Boo!
+
+![](./readme-images/showcase.png)
+
 ### Colors Palette: [choose](https://coolors.co/)
 
 <img src="./readme-images/color-palette.png" width="350" title="color Pallette">

@@ -108,3 +108,15 @@
     right: 0;
   }
 }
+
+@media screen and (max-width: $desktop) {
+  #navbar-bg {
+    height: 60%;
+  }
+}
+
+@media screen and (max-width: $ipadRotate) {
+  #navbar-bg {
+    height: 65%;
+  }
+}
