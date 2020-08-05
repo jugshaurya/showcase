@@ -1,15 +1,15 @@
 import React, { useEffect } from 'react';
-import NavbarBackground from '../static/patterns/bg-navbar.svg';
-import BoxPattern from '../static/patterns/box-pattern.svg';
-import JSIcon from '../static/icons/js.svg';
-import NodeIcon from '../static/icons/node.svg';
-import ReactIcon from '../static/icons/react.svg';
-import ReduxIcon from '../static/icons/redux.svg';
-import GraphqlIcon from '../static/icons/graphql.svg';
-import GatsbyIcon from '../static/icons/gatsby.svg';
-import FigmaIcon from '../static/icons/figma.svg';
-import BagIcon from '../static/icons/bag.svg';
-import '../styles/hero.scss';
+import NavbarBackground from '../../static/patterns/bg-navbar.svg';
+import BoxPattern from '../../static/patterns/box-pattern.svg';
+import JSIcon from '../../static/icons/js.svg';
+import NodeIcon from '../../static/icons/node.svg';
+import ReactIcon from '../../static/icons/react.svg';
+import ReduxIcon from '../../static/icons/redux.svg';
+import GraphqlIcon from '../../static/icons/graphql.svg';
+import GatsbyIcon from '../../static/icons/gatsby.svg';
+import FigmaIcon from '../../static/icons/figma.svg';
+import BagIcon from '../../static/icons/bag.svg';
+import '../../styles/hero.scss';
 
 const Hero = () => {
   useEffect(() => {
@@ -43,10 +43,10 @@ const Hero = () => {
             <img src={JSIcon} alt="js" title="Javascript" />
             <img id="node" src={NodeIcon} alt="node" title="Node" />
             <img src={ReactIcon} alt="react" title="React" />
-            <img src={ReduxIcon} alt="redux" title="Redux" />
+            <img className="redux" src={ReduxIcon} alt="redux" title="Redux" />
             <img src={GraphqlIcon} alt="graphql" title="GraphQL" />
             <img src={GatsbyIcon} alt="gatsby" title="Gatsby" />
-            <img src={FigmaIcon} alt="figma" title="Figma" />
+            <img className="figma" src={FigmaIcon} alt="figma" title="Figma" />
           </div>
           <div className="bar3"></div>
         </div>

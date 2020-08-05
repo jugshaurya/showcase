@@ -73,7 +73,14 @@ const Navbar = ({ defaultRoute }) => {
         </div>
       </div>
       <div className="navbar-cross" onClick={() => toggleNavbar(true)}>
-        &#9776;
+        <div className="logo">
+          <img src={Logo} alt="Logo" />
+        </div>
+        <div className="bars">
+          <div className="bar"></div>
+          <div className="bar bar2"></div>
+          <div className="bar bar3"> </div>
+        </div>
       </div>
       <CollapsedNavbar
         toggleNavbar={toggleNavbar}

@@ -103,16 +103,17 @@ nav {
   nav {
     width: 100%;
     .container {
-      width: 100%;
+      width: 95%;
       .logo {
         // border: 3px solid yellow;
         width: 44px;
         height: 44px;
-        margin-left: 80px;
+        margin-left: 60px;
       }
       .links-list {
         a {
           font-size: $text_xsmall;
+          margin: 0 5px;
           &.active {
             &::after {
               width: 30px;
@@ -130,13 +131,35 @@ nav {
       display: none;
     }
     .navbar-cross {
-      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px;
       text-align: right;
       font-size: $text_large;
       padding-right: 20px;
       padding-top: 20px;
-      color: $white;
-      cursor: pointer;
+      .logo {
+        width: 44px;
+        height: 44px;
+      }
+      .bars {
+        cursor: pointer;
+        overflow: hidden;
+        .bar {
+          margin: 2px 0;
+          height: 6px;
+          width: 30px;
+          background: $white;
+          border-radius: 10px;
+          &.bar2 {
+            transform: translateX(6px);
+          }
+          &.bar3 {
+            transform: translateX(12px);
+          }
+        }
+      }
     }
   }
 }

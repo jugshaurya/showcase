@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar from '../components/Navbar';
+import Navbar from './Navbar/Navbar';
 import Footer from '../components/footer';
 
 import '../styles/blogLayout.scss';

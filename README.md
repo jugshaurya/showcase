@@ -10,24 +10,7 @@
 
 ![](./readme-images/showcase.png)
 
-### Colors Palette: [choose](https://coolors.co/)
-
-<img src="./readme-images/color-palette.png" width="350" title="color Pallette">
-<img src="./readme-images/primary-light.png" width="350" title="Light Version">
-<img src="./readme-images/primary-dark.png" width="350" title="Dark Version">
-
-### TypeScale: [choose](https://type-scale.com/)
-
 Font Family: Gloria Hallelujah && Roboto Mono
-<br>
-<img src="./readme-images/typo.png" width="350" title="Typography">
-
-### Icons: [choose](https://thenounproject.com/)
-
-## Figma
-
-<img src="./readme-images/sample1.png" width="350" title="Figma">
-<img src="./readme-images/sample2.png" width="350" title="Figma">
 
 ### CSS:
 
