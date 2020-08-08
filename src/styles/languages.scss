@@ -3,7 +3,6 @@
 
 .languages {
   // border: 3px solid orange;
-  height: 100vh;
   img#languages-bg {
     position: absolute;
     width: 100%;
@@ -19,42 +18,41 @@
     // border: 1px solid red;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 60px;
 
     .primary,
     .secondary,
     .tertiary {
       transform: translateY(-50px);
       order: 2;
-      img {
-        width: 100%;
+      position: relative;
+      img.card-pattern {
+        transform: scale(1.6);
         height: auto;
+        position: absolute;
+        top: 60px;
+        left: 55px;
+        z-index: -1;
       }
       .content {
-        // border: 3px solid red;
-        position: absolute;
-        top: 70px;
-        left: 68px;
-
+        // border: 3px solid rebeccapurple;
+        width: 80%;
+        margin: 0 auto;
         .type {
           @include textColorGradient($g_blueRed);
           line-height: 1.2em;
-          margin-left: 50px;
+          text-align: center;
           font-family: $font_gabriela;
         }
-
         .name {
-          // border: 3px solid red;
           display: flex;
           font-size: $text_large;
-          margin-top: 40px;
-          margin-left: -78px;
           justify-content: center;
+          margin: 40px 0;
           img {
-            width: 72px;
-            height: 72px;
-            padding-left: -20px;
-            padding-right: 10px;
+            width: 64px;
+            height: 64px;
+            margin-right: 10px;
           }
           .lang {
             align-self: center;
@@ -66,21 +64,29 @@
           color: $blue;
           p {
             font-family: $font_normal;
-            font-size: $text_xsmall;
+            font-size: $text_xsmall * 0.95;
           }
           text-align: left;
           width: 90%;
-          margin-top: 55px;
+          padding: 10px;
         }
       }
     }
+    .primary {
+      .content {
+        width: 90%;
 
+        .desc {
+          padding: 0;
+          padding-left: 30px;
+        }
+      }
+    }
     .secondary {
       transform: translateY(100px);
       order: 1;
       .content {
         .type {
-          margin-left: 19px;
           @include textColorGradient($g_blueGreen);
         }
         .desc {
@@ -98,6 +104,242 @@
         .desc {
           color: $darkgreen;
         }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $desktop) {
+  .languages {
+    img#languages-bg {
+      top: 5%;
+    }
+    .container {
+      width: 80%;
+      .primary,
+      .secondary,
+      .tertiary {
+        img.card-pattern {
+          top: -10px;
+          left: 0;
+          transform: scale(1.2);
+        }
+        .content {
+          width: 90%;
+          .type {
+            font-size: $text_small * 0.8;
+          }
+
+          .name {
+            font-size: $text_small;
+            margin: 20px 0;
+          }
+
+          .desc {
+            width: 110%;
+            padding-left: 10px;
+            p {
+              margin: 0.8em;
+              font-size: $text_xsmall * 0.8;
+              line-height: 1.7em;
+            }
+          }
+        }
+      }
+      .primary {
+        transform: translateY(-100px);
+      }
+      .secondary {
+        transform: translateY(0px);
+      }
+      .tertiary {
+        transform: translateY(100px);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $ipadRotate) {
+  .languages {
+    img#languages-bg {
+      top: 25%;
+    }
+    .container {
+      padding-top: 180px;
+      gap: 100px;
+      .primary,
+      .secondary,
+      .tertiary {
+        img.card-pattern {
+          top: 10px;
+          transform: scale(1.45);
+        }
+        .content {
+          width: 100%;
+          .name {
+            img {
+              width: 44px;
+              height: 44px;
+            }
+          }
+          .desc {
+            padding-left: 0px;
+            width: 120%;
+            p {
+              margin: 0.8em;
+              font-size: $text_xsmall * 0.8;
+              line-height: 1.4em;
+            }
+          }
+        }
+      }
+      .primary {
+        transform: translateY(-120px);
+        order: 0;
+        .content {
+          .desc {
+            padding-left: 0;
+          }
+        }
+      }
+      .secondary {
+        order: 1;
+        transform: translateY(40px);
+      }
+      .tertiary {
+        order: 2;
+        transform: translateY(-80px);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $ipad) {
+  .languages {
+    margin-top: -100px;
+    // border: 3px solid silver;
+    img#languages-bg {
+      top: 25%;
+    }
+    .container {
+      // border: 3px solid silver;
+      gap: 100px;
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 100px;
+      .primary,
+      .secondary,
+      .tertiary {
+        img.card-pattern {
+          top: -20px;
+          transform: scale(1.2);
+        }
+        .content {
+          width: 100%;
+          .name {
+            img {
+              width: 44px;
+              height: 44px;
+            }
+          }
+          .desc {
+            padding-left: 10px;
+            width: 100%;
+
+            p {
+              margin: 0.8em;
+              font-size: $text_xsmall * 0.8;
+              line-height: 1.4em;
+            }
+          }
+        }
+      }
+      .primary {
+        transform: translateY(-120px);
+        order: 0;
+        .content {
+          .desc {
+            padding-left: 10px;
+          }
+        }
+      }
+      .secondary {
+        order: 1;
+        transform: translateY(40px);
+      }
+      .tertiary {
+        order: 2;
+        transform: translateY(-80px);
+      }
+    }
+  }
+}
+@media screen and (max-width: $mobile) {
+  .languages {
+    margin-top: -50px;
+    // border: 3px solid silver;
+    img#languages-bg {
+      top: 10%;
+      width: 100%;
+      transform: scale(2.4);
+    }
+    .container {
+      // border: 3px solid silver;
+      display: flex;
+      flex-direction: column;
+      row-gap: 200px;
+      .primary,
+      .secondary,
+      .tertiary {
+        position: relative;
+        img.card-pattern {
+          top: -20px;
+          left: 30px;
+          width: 80%;
+        }
+        .content {
+          width: 80%;
+          margin-left: 35px;
+          .name {
+            font-size: $text_medium;
+            img {
+              width: 44px;
+              height: 44px;
+            }
+          }
+          .desc {
+            padding-left: 20px;
+            width: 100%;
+
+            p {
+              margin: 0.8em;
+              font-size: $text_xsmall;
+              line-height: 1.7em;
+            }
+          }
+        }
+      }
+      .primary {
+        transform: translateY(0px);
+        order: 0;
+        .content {
+          .desc {
+            padding-left: 10px;
+          }
+        }
+      }
+      .secondary {
+        .content {
+          margin-left: 20px;
+        }
+        order: 1;
+        transform: translateY(-20px);
+      }
+      .tertiary {
+        .content {
+          margin-left: 20px;
+        }
+        order: 2;
+        transform: translateY(0px);
       }
     }
   }

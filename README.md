@@ -5,14 +5,16 @@
 [![PR](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/jugshaurya/showcase)
 [![PR](https://img.shields.io/badge/PR-Welcome-blue.svg)](https://github.com/jugshaurya/showcase)
 [![GitLicense](https://gitlicense.com/badge/jugshaurya/showcase)](https://github.com/jugshaurya/showcase)
+<br/>
+<img src="https://img.shields.io/badge/made%20with-react-cyan.svg" alt="made with React"> <img src="https://img.shields.io/badge/made%20with-gatsby-purple.svg" alt="made with Gatsby"> <img src="https://img.shields.io/github/last-commit/jugshaurya/showcase" alt="last-commit"> <img src="https://img.shields.io/github/languages/code-size/jugshaurya/showcase" alt="code-size">
 
-### peek a Boo!
+### 👀 Peek a Boo!
 
 ![](./readme-images/showcase.png)
 
 Font Family: Gloria Hallelujah && Roboto Mono
 
-### CSS:
+### 🌈 CSS:
 
 - Options:
 
@@ -25,7 +27,7 @@ Font Family: Gloria Hallelujah && Roboto Mono
 
 - Choice: Using a combination of sass and styled component along with classnames.
 
-### Features:
+### ✨ Features:
 
 - [x] Adding Machine Learning Repo as Blogs : Issue #1
 

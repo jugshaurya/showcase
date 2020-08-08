@@ -2,137 +2,145 @@
 @import './colors';
 
 #about {
-  // border: 3px solid red;
-  height: 160vh;
-  .container {
-    // border: 3px solid $gray;
-    text-align: center;
-    width: 70%;
-    padding-bottom: 100px;
-    margin: 0 auto;
-
-    * {
-      font-family: $font_robotomono;
-    }
-
-    img.about-bg {
-      position: absolute;
-      width: 90%;
-      height: 90%;
-      height: auto;
-      top: 5%;
-      left: 5%;
-      z-index: -1;
-      transform: rotate(4deg);
-      opacity: 0.7;
-    }
-
-    .box {
-      position: absolute;
-      width: 335px;
-      height: 303px;
-      top: 600px;
-      left: 40px;
-      background: $green;
-      border-radius: 39px;
-      transform: rotate(50deg);
-      z-index: -2;
-      -webkit-animation: boxRotate 1s infinite; /* Safari 4+ */
-      -moz-animation: boxRotate 1s infinite; /* Fx 5+ */
-      -o-animation: boxRotate 1s infinite; /* Opera 12+ */
-      animation: boxRotate 3s infinite; /* IE 10+, Fx 29+ */
-    }
-
-    @keyframes boxRotate {
-      from {
-        transform: rotate(50deg);
-      }
-      to {
-        transform: rotate(410deg);
-      }
-    }
-    h3.hi {
-      font-weight: 500;
-      color: $blue;
-    }
-
-    .me {
-      margin: 60px 0;
-    }
-
-    p.desc {
-      width: 60%;
-      margin: 0 auto;
-      font-size: $text_small * 0.9;
-      line-height: $text_medium;
-      font-family: $font_normal;
-    }
-
-    .credits {
-      margin-top: 60px;
-      width: 60%;
+  .aboutme {
+    margin-top: 300px;
+    // border: 3px solid red;
+    .container {
+      // border: 3px solid $gray;
       text-align: center;
-      margin-left: auto;
-      // border: 3px solid red;
-      a {
-        text-decoration: none;
-        .type {
-          @include textColorGradient($g_blackOrange);
-          font-family: $font_gloriahallelujah;
-          font-size: $text_large;
-          line-height: $text_large;
+      width: 70%;
+      padding-bottom: 100px;
+      margin: 0 auto;
+
+      * {
+        font-family: $font_robotomono;
+      }
+
+      img.about-bg {
+        position: absolute;
+        width: 90%;
+        height: 90%;
+        height: auto;
+        top: 5%;
+        left: 5%;
+        z-index: -1;
+        transform: rotate(4deg);
+        opacity: 0.7;
+      }
+
+      .box {
+        position: absolute;
+        width: 335px;
+        height: 303px;
+        top: 600px;
+        left: 40px;
+        background: $green;
+        border-radius: 39px;
+        transform: rotate(60deg);
+        z-index: -2;
+        -webkit-animation: boxRotate 4s infinite; /* Safari 4+ */
+        -moz-animation: boxRotate 4s infinite; /* Fx 5+ */
+        -o-animation: boxRotate 4s infinite; /* Opera 12+ */
+        animation: boxRotate 4s infinite; /* IE 10+, Fx 29+ */
+      }
+
+      @keyframes boxRotate {
+        from {
+          transform: rotate(50deg);
+        }
+        to {
+          transform: rotate(410deg);
         }
       }
+      h3.hi {
+        font-weight: 500;
+        color: $blue;
+      }
 
-      .from-where {
-        font-size: $text_small;
-        span {
-          @include textColorGradient($g_blueGreen);
+      .me {
+        margin: 60px 0;
+      }
+
+      p.desc {
+        width: 60%;
+        margin: 0 auto;
+        font-size: $text_small * 0.9;
+        line-height: $text_medium;
+        font-family: $font_normal;
+      }
+
+      .credits {
+        margin-top: 60px;
+        width: 60%;
+        text-align: center;
+        margin-left: auto;
+        // border: 3px solid red;
+        a {
+          text-decoration: none;
+          .type {
+            @include textColorGradient($g_blackOrange);
+            font-family: $font_gloriahallelujah;
+            font-size: $text_large;
+            line-height: $text_large;
+          }
+        }
+
+        .from-where {
+          font-size: $text_small;
+          span {
+            @include textColorGradient($g_blueGreen);
+          }
+        }
+      }
+    }
+
+    #map {
+      position: relative;
+      margin-top: 15vh;
+      text-align: right;
+      .learning {
+        // border: 3px solid green;
+        position: absolute;
+        top: 20%;
+        right: 0;
+        width: 50%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .title {
+          font-family: $font_robotomono;
+          @include textColorGradient($g_pinkBluePurple);
+          margin-bottom: 100px;
+        }
+        .logos {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          width: 90%;
+          margin: 0 auto;
+          .logo {
+            align-self: flex-end;
+            display: grid;
+            grid-template-columns: 50px 100px;
+            justify-content: center;
+            img {
+              align-self: flex-end;
+              width: 44px;
+              height: 44px;
+            }
+            span {
+              align-self: center;
+              font-family: $font_gloriahallelujah;
+            }
+          }
         }
       }
     }
   }
+}
 
-  #map {
-    position: relative;
-    margin-top: 15vh;
-    text-align: right;
-    .learning {
-      // border: 3px solid green;
-      position: absolute;
-      top: 20%;
-      right: 0;
-      width: 50%;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      .title {
-        font-family: $font_robotomono;
-        @include textColorGradient($g_pinkBluePurple);
-        margin-bottom: 100px;
-      }
-      .logos {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        width: 90%;
-        margin: 0 auto;
-        .logo {
-          align-self: flex-end;
-          display: grid;
-          grid-template-columns: 50px 100px;
-          justify-content: center;
-          img {
-            align-self: flex-end;
-            width: 44px;
-            height: 44px;
-          }
-          span {
-            align-self: center;
-            font-family: $font_gloriahallelujah;
-          }
-        }
-      }
-    }
+@media screen and (max-width: $ipad) {
+  #about {
+    padding-top: 0px;
   }
 }
