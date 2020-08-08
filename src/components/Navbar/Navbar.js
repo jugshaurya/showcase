@@ -63,6 +63,7 @@ const Navbar = ({ defaultRoute }) => {
         <div className="links-list">
           {links.map((link) => (
             <Link
+              key={link.name}
               to={link.href}
               className={active === link.href ? 'active' : ''}
               onClick={() => setActive(link.href)}

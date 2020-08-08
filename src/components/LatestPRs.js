@@ -19,7 +19,7 @@ const LatestPRs = ({ jugshauryaPRs, otherPRs }) => {
         <div className="prs">
           <img className="triangle" src={TriangleIcon} alt="triangle" />
           {filteredPRs.map((pr) => (
-            <div className="pr">
+            <div className="pr" key={pr.id}>
               <div className="logo">
                 <img src={pr.repository.owner.avatarUrl} alt="contribution" />
               </div>

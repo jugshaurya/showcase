@@ -18,6 +18,7 @@ const CollapsedNavbar = ({
       <div className="overlay-content" onClick={() => toggleNavbar(false)}>
         {links.map((link) => (
           <Link
+            key={link.name}
             to={link.href}
             className={active === link.href ? 'active' : ''}
             onClick={() => setActive(link.href)}

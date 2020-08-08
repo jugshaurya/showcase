@@ -7,7 +7,7 @@ nav {
   top: 0;
   left: 0;
   z-index: 10;
-  width: 100%;
+  width: 100vw;
   .container {
     display: flex;
     justify-content: space-between;
@@ -16,8 +16,8 @@ nav {
     height: 12vh;
     margin: 0 auto;
     .logo {
-      width: 88px;
-      height: 88px;
+      width: 72px;
+      height: 72px;
       align-self: center;
       margin-top: 30px;
       margin-left: 80px;

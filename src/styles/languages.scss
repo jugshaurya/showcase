@@ -5,7 +5,7 @@
   // border: 3px solid orange;
   img#languages-bg {
     position: absolute;
-    width: 100%;
+    width: 100vw;
     height: auto;
     top: 25%;
     left: 0;
@@ -15,29 +15,28 @@
   .container {
     width: 70%;
     margin: 0 auto;
-    // border: 1px solid red;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 60px;
-
     .primary,
     .secondary,
     .tertiary {
+      width: 100%;
       transform: translateY(-50px);
       order: 2;
       position: relative;
       img.card-pattern {
-        transform: scale(1.6);
-        height: auto;
         position: absolute;
-        top: 60px;
-        left: 55px;
+        width: 100%;
+        top: 0px;
+        left: 0px;
+        height: 100%;
         z-index: -1;
       }
       .content {
-        // border: 3px solid rebeccapurple;
-        width: 80%;
-        margin: 0 auto;
+        width: 90%;
+        margin: 40px auto;
+        margin-top: 60px;
         .type {
           @include textColorGradient($g_blueRed);
           line-height: 1.2em;
@@ -46,7 +45,7 @@
         }
         .name {
           display: flex;
-          font-size: $text_large;
+          font-size: $text_medium;
           justify-content: center;
           margin: 40px 0;
           img {
@@ -62,26 +61,26 @@
 
         .desc {
           color: $blue;
-          p {
-            font-family: $font_normal;
-            font-size: $text_xsmall * 0.95;
-          }
           text-align: left;
           width: 90%;
-          padding: 10px;
+          padding-left: 50px;
+          p {
+            font-family: $font_normal;
+            font-size: $text_xsmall * 0.9;
+          }
         }
       }
     }
     .primary {
       .content {
-        width: 90%;
-
         .desc {
-          padding: 0;
-          padding-left: 30px;
+          p {
+            line-height: 1.3;
+          }
         }
       }
     }
+
     .secondary {
       transform: translateY(100px);
       order: 1;
@@ -111,9 +110,9 @@
 
 @media screen and (max-width: $desktop) {
   .languages {
-    margin-top: 80px;
+    margin-top: 60px;
     img#languages-bg {
-      top: 50%;
+      top: 70%;
     }
     .container {
       width: 80%;
@@ -121,8 +120,6 @@
       .secondary,
       .tertiary {
         img.card-pattern {
-          top: -10px;
-          left: 0;
           transform: scale(1.2);
         }
         .content {
@@ -223,18 +220,18 @@
       top: 25%;
     }
     .container {
-      // border: 3px solid silver;
-      gap: 100px;
+      gap: 80px;
       grid-template-columns: repeat(2, 1fr);
-      row-gap: 100px;
+      row-gap: 40px;
       .primary,
       .secondary,
       .tertiary {
         img.card-pattern {
-          top: -20px;
+          top: 0px;
           transform: scale(1.2);
         }
         .content {
+          margin-top: 30px;
           width: 100%;
           .name {
             img {
@@ -243,7 +240,7 @@
             }
           }
           .desc {
-            padding-left: 10px;
+            padding-left: 20px;
             width: 100%;
 
             p {
@@ -265,43 +262,46 @@
       }
       .secondary {
         order: 1;
-        transform: translateY(40px);
+        transform: translateY(-35px) translateX(10px);
       }
       .tertiary {
         order: 2;
-        transform: translateY(-80px);
+        transform: translateY(-80px) translateX(80px);
       }
     }
   }
 }
+
 @media screen and (max-width: $mobile) {
   .languages {
-    margin-top: -50px;
-    // border: 3px solid silver;
+    margin-top: 50px;
     img#languages-bg {
-      top: 10%;
+      top: 0;
       width: 100%;
-      transform: scale(2.4);
+      transform: scale(3) rotate(180deg);
     }
     .container {
-      // border: 3px solid silver;
+      padding-top: 0;
       display: flex;
       flex-direction: column;
-      row-gap: 200px;
       .primary,
       .secondary,
       .tertiary {
+        width: 100%;
         position: relative;
+        transform: translateX(-10px) translateY(0);
+        margin: 40px auto;
         img.card-pattern {
-          top: -20px;
-          left: 30px;
-          width: 80%;
+          top: 0px;
+          left: 45px;
+          width: 70%;
+          transform: scale(1.39);
         }
         .content {
-          width: 80%;
-          margin-left: 35px;
+          width: 75%;
+          margin: 0 auto;
           .name {
-            font-size: $text_medium;
+            font-size: $text_small;
             img {
               width: 44px;
               height: 44px;
@@ -314,33 +314,25 @@
             p {
               margin: 0.8em;
               font-size: $text_xsmall;
-              line-height: 1.7em;
+              line-height: 1.2em;
             }
           }
         }
       }
-      .primary {
-        transform: translateY(0px);
-        order: 0;
-        .content {
-          .desc {
-            padding-left: 10px;
-          }
+
+      .secondary,
+      .tertiary {
+        transform: translateX(40px) translateY(0);
+        img.card-pattern {
+          transform: scale(1.6);
         }
       }
+
       .secondary {
-        .content {
-          margin-left: 20px;
-        }
-        order: 1;
-        transform: translateY(-20px);
+        margin-bottom: 100px;
       }
       .tertiary {
-        .content {
-          margin-left: 20px;
-        }
-        order: 2;
-        transform: translateY(0px);
+        transform: translateX(-10px) translateY(0);
       }
     }
   }

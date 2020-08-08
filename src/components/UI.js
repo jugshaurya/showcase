@@ -18,13 +18,13 @@ const UI = () => {
       <Navbar />
       <Hero />
       <About />
-      <Github />
+      {/* <Github />
       <Projects />
       <Toolbox />
       <Experience />
       <Contacts />
       <Extra />
-      <Footer />
+      <Footer /> */}
     </div>
   );
 };

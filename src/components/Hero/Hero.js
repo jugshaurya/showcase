@@ -16,7 +16,6 @@ const Hero = () => {
     const bag = document.getElementById('bag');
     const scrollBag = (e) => {
       const Yoffset = Math.round(window.scrollY / 2);
-      console.log(Yoffset);
       if (Yoffset > 200) return;
       bag.style.transform = `translateX(${Yoffset}px) rotate(270deg)`;
       bag.style.transition = `0.01s ease-in-out`;
@@ -149,7 +148,7 @@ const Hero = () => {
                 ry="25.4219"
                 fill="black"
               />
-              <g id="linkedin" clip-path="url(#clip0)">
+              <g id="linkedin" clipPath="url(#clip0)">
                 <g id="Group">
                   <path
                     id="Vector_3"
@@ -179,9 +178,9 @@ const Hero = () => {
             width="862.814"
             height="984.798"
             filterUnits="userSpaceOnUse"
-            color-interpolation-filters="sRGB"
+            colorInterpolationFilters="sRGB"
           >
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feColorMatrix
               in="SourceAlpha"
               type="matrix"
@@ -212,9 +211,9 @@ const Hero = () => {
             width="745.453"
             height="910.648"
             filterUnits="userSpaceOnUse"
-            color-interpolation-filters="sRGB"
+            colorInterpolationFilters="sRGB"
           >
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feColorMatrix
               in="SourceAlpha"
               type="matrix"
@@ -245,9 +244,9 @@ const Hero = () => {
             width="656.954"
             height="835.211"
             filterUnits="userSpaceOnUse"
-            color-interpolation-filters="sRGB"
+            colorInterpolationFilters="sRGB"
           >
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feColorMatrix
               in="SourceAlpha"
               type="matrix"
@@ -279,8 +278,8 @@ const Hero = () => {
             y2="622.223"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#2AA4F4" />
-            <stop offset="1" stop-color="#007AD9" />
+            <stop stopColor="#2AA4F4" />
+            <stop offset="1" stopColor="#007AD9" />
           </linearGradient>
           <linearGradient
             id="paint1_linear"
@@ -290,8 +289,8 @@ const Hero = () => {
             y2="233.143"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#2AA4F4" />
-            <stop offset="1" stop-color="#007AD9" />
+            <stop stopColor="#2AA4F4" />
+            <stop offset="1" stopColor="#007AD9" />
           </linearGradient>
           <clipPath id="clip0">
             <rect
