@@ -139,8 +139,182 @@
   }
 }
 
+@media screen and (max-width: $desktop) {
+  #about {
+    .aboutme {
+      margin-top: 180px;
+      .container {
+        width: 85%;
+        img.about-bg {
+          width: 95%;
+          height: auto;
+        }
+
+        .box {
+          width: 300px;
+          height: 253px;
+          top: 550px;
+        }
+
+        p.desc {
+          width: 70%;
+          font-size: $text_small * 0.8;
+        }
+
+        .credits {
+          a {
+            .type {
+              font-size: $text_medium;
+            }
+          }
+
+          .from-where {
+            font-size: $text_small * 0.8;
+          }
+        }
+      }
+
+      #map {
+        text-align: center;
+        .learning {
+          top: 20%;
+          left: 25%;
+          .logos {
+            gap: 100px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $ipadRotate) {
+  #about {
+    .aboutme {
+      .container {
+        width: 85%;
+        img.about-bg {
+          width: 100%;
+          height: auto;
+        }
+        .box {
+          height: 250px;
+          width: 203px;
+          top: 500px;
+        }
+
+        .me {
+          img {
+            width: 20%;
+            height: auto;
+          }
+        }
+        p.desc {
+          width: 75%;
+          padding-left: 50px;
+          font-size: $text_xsmall;
+        }
+
+        .credits {
+          a {
+            .type {
+              font-size: $text_medium;
+            }
+          }
+
+          .from-where {
+            font-size: $text_xsmall;
+          }
+        }
+      }
+
+      #map {
+        text-align: center;
+        .learning {
+          top: 20%;
+          left: 25%;
+          .logos {
+            gap: 100px;
+          }
+        }
+      }
+    }
+  }
+}
 @media screen and (max-width: $ipad) {
   #about {
-    padding-top: 0px;
+    .aboutme {
+      margin-top: 100px;
+      .container {
+        width: 90%;
+        img.about-bg {
+          width: 100%;
+          height: auto;
+        }
+        .box {
+          height: 200px;
+          width: 153px;
+          top: 350px;
+        }
+
+        .me {
+          margin: 10px auto;
+          margin-bottom: 40px;
+          img {
+            width: 20%;
+            height: auto;
+          }
+        }
+        p.desc {
+          width: 80%;
+          padding-left: 40px;
+          font-size: $text_xsmall * 0.8;
+        }
+
+        .credits {
+          a {
+            .type {
+              font-size: $text_small;
+            }
+          }
+
+          .from-where {
+            font-size: $text_xsmall * 0.8;
+          }
+        }
+      }
+
+      #map {
+        margin: 150px auto;
+        width: 80vw;
+        .learning {
+          top: 20%;
+          left: 25%;
+          .logos {
+            left: 0;
+            gap: 10px;
+            margin-left: -40px;
+            align-content: flex-start;
+            justify-content: start;
+            .logo {
+              align-self: flex-start;
+              display: grid;
+              grid-template-columns: 50px 100px;
+              justify-content: center;
+              img {
+                align-self: flex-end;
+                width: 44px;
+                height: 44px;
+              }
+              span {
+                font-size: $text_xsmall;
+                align-self: center;
+                font-family: $font_gloriahallelujah;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }

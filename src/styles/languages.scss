@@ -111,8 +111,9 @@
 
 @media screen and (max-width: $desktop) {
   .languages {
+    margin-top: 80px;
     img#languages-bg {
-      top: 5%;
+      top: 50%;
     }
     .container {
       width: 80%;
