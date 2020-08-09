@@ -2,14 +2,14 @@
 @import './typography';
 
 #github {
-  height: 160vh;
-  margin-top: 50px;
+  margin-top: 20px;
+  // height: 160vh;
   // border: 3px dotted orange;
   img#github-bg,
   img#github-bg2,
   img#github-bg3 {
     position: absolute;
-    top: -1000px;
+    top: -660px;
     left: 0;
     z-index: -1;
     width: 100%;
@@ -18,26 +18,29 @@
     // border: 3px solid gray;
   }
 
+  img#github-bg {
+    transform: rotate(180deg);
+  }
+
   img#github-bg2 {
     top: 60%;
-    left: 45%;
+    left: 50%;
     z-index: -10;
     width: 10%;
     height: auto;
     // border: 3px solid gray;
   }
   img#github-bg3 {
-    top: -5%;
-    left: 5%;
+    top: -8%;
+    left: 12%;
     width: 10%;
     height: auto;
-    // border: 3px solid gray;
+    opacity: 0.3;
   }
 
   .container {
-    // border: 3px solid red;
     width: 70%;
-    margin: 50px auto;
+    margin: 0px auto;
     .header {
       display: flex;
       justify-content: flex-start;
@@ -45,47 +48,39 @@
       margin-bottom: 80px;
       img {
         margin-right: 20px;
-        width: 50px;
+        width: 44px;
         height: auto;
       }
       h2 {
         margin-bottom: 0;
         font-size: $text_medium;
         line-height: 1em;
-        color: $orange;
-
-        &::after {
-          content: '';
-          display: table;
-          width: 150px;
-          height: 6px;
-          background: $g_blueGreen;
-          display: block;
-          border-radius: 7px;
-          margin-top: 10px;
-        }
+        color: $green;
+        opacity: 0.9;
+        position: relative;
       }
     }
     .values {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
       width: 100%;
-      margin-bottom: 80px;
+      margin: 150px auto;
       .count {
         text-align: center;
         font-weight: bold;
         line-height: $text_large;
         font-size: $text_xxlarge;
-        color: $darkgreen;
+        color: $twitterBlue;
       }
       .type {
-        // border: 3px solid red;
+        border: 4px dashed $gray;
         text-align: center;
         align-items: center;
-        font-family: $font_gloriahallelujah;
+        padding: 5px;
+        color: $gray;
         img {
-          width: 36px;
-          height: 36px;
+          width: 24px;
+          height: 24px;
           margin-right: 8px;
         }
       }
@@ -94,25 +89,104 @@
 
   .graphs {
     .container {
-      width: 70%;
-      position: relative;
       // border: 3px solid orange;
+      width: 60%;
+      position: relative;
       display: flex;
       flex-direction: column;
       .github-stats {
+        border-radius: 48px;
+        border: 1px solid $gray;
         align-self: flex-end;
-        width: 60%;
-        img#stats {
-          width: 938px;
-          height: 605px;
-          border-radius: 48px;
+        width: 70%;
+        padding: 20px;
+        .svg {
+          margin: 0 auto;
+          width: 90%;
+          direction: rtl;
+          overflow-x: scroll;
+          svg {
+            background: $black;
+            font-size: 0.7em;
+            text {
+              fill: $gray;
+              font-size: 0.8em;
+            }
+          }
+        }
+        .stats {
+          display: flex;
+          margin-top: 20px;
+          .extra {
+            border-right: 1px solid $gray;
+            width: 50%;
+            .task {
+              margin: 10px 0;
+              font-size: $text_small;
+              color: $green;
+            }
+            .orgs {
+              width: 100%;
+              display: flex;
+              justify-content: start;
+              align-items: center;
+              flex-wrap: wrap;
+
+              .org {
+                margin: 5px;
+                justify-self: center;
+                padding: 5px;
+                border: 1px dashed $gray;
+                span {
+                  font-size: $text_xsmall * 0.8;
+                }
+                img {
+                  width: 22px;
+                  height: 22px;
+                  margin-right: 5px;
+                }
+              }
+            }
+            .activity {
+              margin: 10px 0;
+              font-size: $text_small;
+              color: $green;
+            }
+            .to {
+              color: $gray;
+              width: 100%;
+              font-size: $text_small * 0.7;
+              a {
+                word-break: normal;
+                text-decoration: underline;
+                color: $blue;
+                margin: 0 10px;
+                display: block;
+              }
+            }
+          }
+          svg {
+            margin-left: 40px;
+            width: 50%;
+            font-size: 0.8em;
+            fill: $gray;
+            overflow: visible;
+            // border: 3px solid green;
+            text {
+              font-size: 0.7em;
+            }
+          }
         }
       }
+
       figure {
         margin-top: 60px;
-        width: 60%;
+        width: 70%;
         box-shadow: 5px 5px 10px $background;
         align-self: flex-start;
+        border-radius: 50px;
+        border: 1px solid $gray;
+        padding: 20px;
         embed {
           width: 635px;
           height: 423px;
@@ -122,29 +196,32 @@
 
       img#pattern1 {
         position: absolute;
-        top: 15%;
-        left: 10%;
-        width: 20%;
+        top: 5%;
+        left: 3%;
+        width: 30%;
         transform: rotate(-9deg);
-        z-index: -1;
+        z-index: -2;
+        opacity: 0.4;
       }
 
       img#lady {
         position: absolute;
-        top: 20%;
+        top: 15%;
         left: 0;
         width: 40%;
         height: 30%;
         z-index: -1;
+        opacity: 0.8;
       }
 
       img#pattern2 {
         position: absolute;
         bottom: 5%;
         right: 10%;
-        width: 20%;
+        width: 30%;
         transform: rotate(-15deg);
-        z-index: -1;
+        z-index: -2;
+        opacity: 0.6;
       }
 
       img#boy {
@@ -154,6 +231,7 @@
         width: 20%;
         height: 20%;
         z-index: -1;
+        opacity: 0.8;
       }
     }
   }

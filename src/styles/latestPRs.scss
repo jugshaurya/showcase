@@ -9,22 +9,24 @@
   .container {
     width: 70%;
     margin: 50px auto;
-    img#latestPR-bg,
-    img#latestPR-bg2 {
+    img#latestPR-bg {
       position: absolute;
-      bottom: -220px;
-      right: -100px;
       z-index: -1;
+      bottom: -220px;
+      right: -400px;
       width: 40%;
       height: auto;
       transform: rotate(-10deg);
-      opacity: 0.5;
+      opacity: 0.2;
     }
 
     img#latestPR-bg2 {
-      left: -180px;
-      top: -80px;
-      width: 15%;
+      position: absolute;
+      z-index: -1;
+      opacity: 0.5;
+      left: -60px;
+      top: -50px;
+      width: 10%;
     }
 
     .header {
@@ -34,89 +36,84 @@
       margin-bottom: 80px;
       img {
         margin-right: 20px;
-        width: 40px;
+        width: 44px;
         height: auto;
       }
       h2 {
         margin-bottom: 0;
         font-size: $text_medium;
         line-height: 1em;
-        color: $orange;
+        color: $green;
+        opacity: 0.9;
+        position: relative;
         span {
           font-size: $text_xsmall;
         }
-        &::after {
-          content: '';
-          display: table;
-          width: 180px;
-          height: 6px;
-          background: $g_blueGreen;
-          display: block;
-          border-radius: 7px;
-          margin-top: 10px;
-        }
       }
     }
-
-    .prs {
-      position: relative;
-      width: 80%;
-      // padding: 40px 0;
-      margin: 0 auto;
-      // background: $g_greenBluePink;
-      border-radius: 45px;
+    .pppr {
       display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      img.triangle {
-        position: absolute;
-        top: -50px;
-        left: 20px;
-      }
-      .pr {
-        background: $g_greenBluePink;
-        border-radius: 45px;
-        border-top-left-radius: 10px;
-        border-bottom-right-radius: 10px;
-        padding: 10px;
-        width: 100%;
+      gap: 100px;
+      // border: 3px solid red;
+      .prs {
+        // border: 3px solid red;
+        position: relative;
+        width: 50%;
         margin: 0 auto;
-        border-bottom: 2px solid $gray;
+        border-radius: 45px;
         display: flex;
-        align-items: flex-end;
-        .logo {
-          margin-left: 20px;
-          width: 30px;
-          height: auto;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        img.triangle {
+          position: absolute;
+          top: 0px;
+          left: 45%;
+          transform: rotate(180deg);
         }
-        .text {
-          width: 90%;
-          margin-left: 20px;
-          font-family: $font_normal;
-          font-size: $text_small * 0.8;
-          white-space: nowrap;
-          overflow: hidden;
-          letter-spacing: 0.02em;
-          text-overflow: ellipsis;
-        }
-
-        &:nth-of-type(2n) {
-          transform: translateX(20px);
-          background: $g_blueGreen2;
-
-          color: $black;
-          border-radius: 45px;
-          border-top-right-radius: 10px;
-          border-bottom-left-radius: 10px;
-        }
-        &:nth-of-type(4n) {
-          transform: translateX(-30px);
-          background: $g_twitter;
-          color: $black;
-          border-radius: 45px;
-          border-top-right-radius: 10px;
-          border-bottom-left-radius: 10px;
+        .pr {
+          &:hover {
+            background: $twitterBlue;
+            .text {
+              color: $black;
+            }
+          }
+          border-radius: 15px;
+          padding: 5px 10px;
+          width: 100%;
+          margin: 0 auto;
+          border-bottom: 2px solid $gray;
+          display: flex;
+          align-items: flex-end;
+          .logo {
+            margin-left: 20px;
+            width: 44px;
+            height: 44px;
+            padding: 10px;
+            // border: 3px solid red;
+            border-radius: 50%;
+            overflow: hidden;
+            background-color: $black;
+          }
+          .text {
+            text-decoration: none;
+            cursor: pointer;
+            width: 85%;
+            color: $gray;
+            margin-left: 20px;
+            font-size: $text_small * 0.7;
+            white-space: nowrap;
+            overflow: hidden;
+            letter-spacing: 0.02em;
+            text-overflow: ellipsis;
+            span {
+              font-family: $font_normal;
+              img {
+                width: 22px !important;
+                height: 22px !important;
+              }
+            }
+          }
         }
       }
     }

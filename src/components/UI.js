@@ -18,9 +18,9 @@ const UI = () => {
       <Navbar />
       <Hero />
       <About />
-      {/* <Github />
-      <Projects />
-      <Toolbox />
+      <Github />
+      {/* <Projects /> */}
+      {/* <Toolbox />
       <Experience />
       <Contacts />
       <Extra />

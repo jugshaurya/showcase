@@ -143,7 +143,7 @@ const fetchGithubStats = async (username) => {
     totalContributions;
 
   const currencyBinder = (amount) => {
-    return amount >= 1000 ? `${Math.round(amount / 1000)}K` : amount;
+    return amount >= 1000 ? `${Math.floor(amount / 1000)}K` : amount;
   };
 
   stats.totalContributedTo = currencyBinder(stats.totalContributedTo);
@@ -155,7 +155,7 @@ const fetchGithubStats = async (username) => {
   return stats;
 };
 
-const GithubStatsGraph = (svg, totals) => {
+const GithubStatsGraph = (svg, totals, orgs, repos) => {
   const {
     totalPRsPercentage,
     totalCommitPercentage,
@@ -167,6 +167,27 @@ const GithubStatsGraph = (svg, totals) => {
         {renderHTML(svg)}
       </div>
       <div className="stats">
+        <div className="extra">
+          <div className="task">Recently Contributed to</div>
+          <div className="orgs">
+            {/* TODO: Make sure orgs has oly 5 elemets and all are unique */}
+            {orgs.slice(0, 5).map((org) => (
+              <div className="org" key={org.id}>
+                <img src={org.owner.avatarUrl} alt="" />
+                <span>{org.owner.login}</span>
+              </div>
+            ))}
+          </div>
+          <div className="activity">Activity overview</div>
+          <div className="to">
+            Recently Worked on
+            {repos.slice(0, 5).map((repo) => (
+              <a to="/" className="repo">
+                {repo.nameWithOwner}
+              </a>
+            ))}
+          </div>
+        </div>
         <svg
           className="mx-auto d-block"
           xmlns="http://www.w3.org/2000/svg"
@@ -177,8 +198,8 @@ const GithubStatsGraph = (svg, totals) => {
             <path
               className="js-highlight-blob"
               strokeLinejoin="round"
-              fill="#40c463"
-              stroke="#40c463"
+              fill="#56b8ff"
+              stroke="#56b8ff"
               strokeWidth="7"
               d="M171.5,171.5 L179.59105663764768,171.5 L171.5,175.19430876941215 L85.36666870117188,171.5 z"
             ></path>
@@ -260,7 +281,7 @@ const GithubStatsGraph = (svg, totals) => {
               dy="169.5"
               dx="278.96666717529297"
             >
-              {totalIssuePercentage}
+              {Math.floor(totalIssuePercentage * 100)}%
             </text>
             <text
               textAnchor="start"
@@ -268,7 +289,7 @@ const GithubStatsGraph = (svg, totals) => {
               dy="185.5"
               dx="271.6333312988281"
             >
-              Issuese9fa66
+              Issues
             </text>
             <text
               textAnchor="middle"
@@ -276,7 +297,7 @@ const GithubStatsGraph = (svg, totals) => {
               dx="171.5"
               dy="278.6333312988281"
             >
-              {totalPRsPercentage}
+              {Math.floor(totalPRsPercentage * 100)}%
             </text>
             <text
               textAnchor="middle"
@@ -292,7 +313,7 @@ const GithubStatsGraph = (svg, totals) => {
               dy="169.5"
               dx="55.69166564941406"
             >
-              {totalCommitPercentage}
+              {Math.floor(totalCommitPercentage * 100)}%
             </text>
             <text
               textAnchor="end"
@@ -309,6 +330,13 @@ const GithubStatsGraph = (svg, totals) => {
   );
 };
 
+// name
+//             id
+//             owner {
+//               id
+//               login
+//               avatarUrl
+//             }
 const fetchContribSvg = async () => {
   const SERVER_URL = 'https://productive-weekday-server.jugshaurya.now.sh';
   const response = await fetch(`${SERVER_URL}/user/jugshaurya?requireSvg=true`);
@@ -327,6 +355,7 @@ const Github = () => {
     contributionRepos: [],
     jugshauryaPRs: [],
     otherPRs: [],
+    repositories: [],
   });
   const [svg, setSvg] = useState('');
 
@@ -340,7 +369,7 @@ const Github = () => {
 
   return (
     <>
-      <div id="github" style={{ position: 'relative' }}>
+      <div id="github" name="stats" style={{ position: 'relative' }}>
         <div className="container" style={{ position: 'relative' }}>
           <div className="header">
             <img src={GithubGradIcon} alt="github icon" />
@@ -348,16 +377,16 @@ const Github = () => {
           </div>
           <div className="values">
             <div className="value">
+              <div className="type">
+                <img src={ContributionIcon} alt="contribution" />
+                Contributed to
+              </div>
               <div className="count">
                 <CountUp
                   start={0}
                   end={stats.totalContributedTo}
                   duration={5}
                 />
-              </div>
-              <div className="type">
-                <img src={ContributionIcon} alt="contribution" />
-                Contributed to
               </div>
             </div>
             <div className="value">
@@ -371,12 +400,12 @@ const Github = () => {
               </div>
             </div>
             <div className="value">
-              <div className="count">
-                <CountUp start={0} end={stats.totalStars} duration={5} />
-              </div>
               <div className="type">
                 <img src={StarsIcon} alt="stars" />
                 Stars
+              </div>
+              <div className="count">
+                <CountUp start={0} end={stats.totalStars} duration={5} />
               </div>
             </div>
             <div className="value">
@@ -389,12 +418,12 @@ const Github = () => {
               </div>
             </div>
             <div className="value">
-              <div className="count">
-                <CountUp start={0} end={stats.totalCommits} duration={4} />
-              </div>
               <div className="type">
                 <img src={CommitIcon} alt="commits" />
                 Commits
+              </div>
+              <div className="count">
+                <CountUp start={0} end={stats.totalCommits} duration={4} />
               </div>
             </div>
           </div>
@@ -403,16 +432,22 @@ const Github = () => {
 
         <div className="graphs">
           <div className="container">
-            {/* TODO */}
-            <div className="github-stats">
-              {GithubStatsGraph(svg, {
+            {GithubStatsGraph(
+              svg
+                .replaceAll('#ebedf0', '#222222')
+                .replaceAll('#9be9a8', '#4fffa7')
+                .replaceAll('#40c463', '#3DDC84')
+                .replaceAll('#30a14e', '#008D41')
+                .replaceAll('#216e39', '#00753b'),
+              {
                 totalPRsPercentage:
                   stats.totalPullRequestContributionsPercentage,
                 totalIssuePercentage: stats.totalIssueContributionsPercentage,
                 totalCommitPercentage: stats.totalCommitContributionsPercentage,
-              })}
-              {/* <img id="stats" src={GithubStats} alt="github-stats-later" /> */}
-            </div>
+              },
+              stats.contributionRepos,
+              stats.repositories
+            )}
             <figure className="wakatime-langs">
               <embed src="https://wakatime.com/share/@jugshaurya/a750f08f-2404-4f77-8df8-849d0a8f4109.svg" />
             </figure>
