@@ -19,16 +19,16 @@ const Toolbox = () => {
         <div className="rutherford">
           <img src={RutherfordModel} alt="language known" />
         </div>
+        <img
+          id="swiggly-bg"
+          src={RutherfordBackground2}
+          alt="rutherford background 2"
+        />
       </div>
       <img
         id="rutherford-bg"
         src={RutherfordBackground}
         alt="rutherford background"
-      />
-      <img
-        id="swiggly-bg"
-        src={RutherfordBackground2}
-        alt="rutherford background 2"
       />
     </div>
   );

@@ -12,7 +12,7 @@
       position: absolute;
       z-index: -1;
       bottom: -220px;
-      right: -400px;
+      right: -200px;
       width: 40%;
       height: auto;
       transform: rotate(-10deg);
@@ -76,11 +76,19 @@
             background: $twitterBlue;
             .text {
               color: $black;
+              font-weight: bold;
             }
           }
           &.rightBorder {
             border-left: none;
             border-right: 10px solid #4fffa7;
+            &:hover {
+              background: #4fffa7;
+              .text {
+                color: $black;
+                font-weight: bold;
+              }
+            }
           }
           border-radius: 15px;
           padding: 5px 10px;
@@ -154,6 +162,13 @@
       .pppr {
         display: flex;
         gap: 10px;
+        .prs {
+          .pr {
+            .logo {
+              margin-left: 0;
+            }
+          }
+        }
       }
     }
   }
@@ -175,6 +190,11 @@
         .prs {
           margin: 40px 0;
           width: 100%;
+          .pr {
+            .logo {
+              margin-left: 0;
+            }
+          }
           // border
         }
       }

@@ -2,12 +2,28 @@
 @import './typography';
 
 #projects {
-  // border: 3px solid red;
-  margin-top: 160px;
+  margin-top: 260px;
+
+  img#projects-bg {
+    // border: 3px dotted greenyellow;
+    position: absolute;
+    z-index: -5;
+    top: -580px;
+    left: 0px;
+    width: 100%;
+  }
+
   .container {
-    // border: 3px solid orangered;
+    position: relative;
     width: 70%;
     margin: 50px auto;
+    img#projects-bg2 {
+      position: absolute;
+      z-index: -1;
+      top: -40px;
+      left: -60px;
+      width: 10%;
+    }
     .header {
       display: flex;
       justify-content: flex-start;
@@ -15,25 +31,16 @@
       margin-bottom: 80px;
       img {
         margin-right: 20px;
-        width: 40px;
+        width: 44px;
         height: auto;
       }
       h2 {
         margin-bottom: 0;
         font-size: $text_medium;
         line-height: 1em;
-        color: $orange;
+        color: $green;
+        opacity: 0.9;
         position: relative;
-        &::after {
-          content: '';
-          position: absolute;
-          left: 0;
-          bottom: -10px;
-          background: $g_blueGreen;
-          width: 90px;
-          height: 6px;
-          border-radius: 7px;
-        }
       }
     }
 
@@ -97,21 +104,4 @@
       }
     }
   }
-
-  img#projects-bg {
-    // border: 3px dotted greenyellow;
-    position: absolute;
-    z-index: -5;
-    top: -580px;
-    left: 0px;
-    width: 100%;
-  }
-
-  // img#swiggly-bg {
-  //   position: absolute;
-  //   z-index: -1;
-  //   top: -80px;
-  //   left: 100px;
-  //   width: 10%;
-  // }
 }

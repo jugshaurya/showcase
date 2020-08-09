@@ -1,30 +1,30 @@
 import React from 'react';
-import ProjectBackground from '../static/patterns/bg-projects.png';
-import SwigglyBackground from '../static/patterns/bg-swiggly.svg';
+import ProjectBackground from '../../static/patterns/bg-projects.png';
+import SwigglyBackground from '../../static/patterns/bg-swiggly.svg';
 
-import ClosetProject from '../static/projects/closet.png';
-import TrelloProject from '../static/projects/trello.png';
-import CovidProject from '../static/projects/covid.png';
-import MarioProject from '../static/projects/mario.png';
-import WeekdayProject from '../static/projects/weekday.png';
+import ClosetProject from '../../static/projects/closet.png';
+import TrelloProject from '../../static/projects/trello.png';
+import CovidProject from '../../static/projects/covid.png';
+import MarioProject from '../../static/projects/mario.png';
+import WeekdayProject from '../../static/projects/weekday.png';
 
-import ClosetCode from '../static/projects/closetcode.svg';
-import TrelloCode from '../static/projects/trellocode.png';
-import CovidCode from '../static/projects/covidcode.png';
-import MarioCode from '../static/projects/mariocode.png';
-import WeekdayCode from '../static/projects/weekdaycode.png';
+import ClosetCode from '../../static/projects/closetcode.svg';
+import TrelloCode from '../../static/projects/trellocode.png';
+import CovidCode from '../../static/projects/covidcode.png';
+import MarioCode from '../../static/projects/mariocode.png';
+import WeekdayCode from '../../static/projects/weekdaycode.png';
 
-import ClosetEditor from '../static/patterns/closeteditor.svg';
-import TrelloEditor from '../static/patterns/trelloeditor.svg';
-import CovidEditor from '../static/patterns/covideditor.svg';
-import MarioEditor from '../static/patterns/marioeditor.svg';
-import WeekdayEditor from '../static/patterns/weekdayeditor.svg';
+import ClosetEditor from '../../static/patterns/closeteditor.svg';
+import TrelloEditor from '../../static/patterns/trelloeditor.svg';
+import CovidEditor from '../../static/patterns/covideditor.svg';
+import MarioEditor from '../../static/patterns/marioeditor.svg';
+import WeekdayEditor from '../../static/patterns/weekdayeditor.svg';
 
-import GithubIcon from '../static/icons/github.svg';
-import GoLiveIcon from '../static/icons/live.svg';
+import GithubIcon from '../../static/icons/github.svg';
+import GoLiveIcon from '../../static/icons/live.svg';
 
-import RocketIcon from '../static/icons/rocket.svg';
-import '../styles/projects.scss';
+import RocketIcon from '../../static/icons/rocket.svg';
+import '../../styles/projects.scss';
 
 const Projects = () => {
   return (
@@ -187,6 +187,11 @@ const Projects = () => {
             </div>
           </div>
         </div>
+        <img
+          id="projects-bg2"
+          src={SwigglyBackground}
+          alt="swiggly background"
+        />
       </div>
       <img id="projects-bg" src={ProjectBackground} alt="projects background" />
     </div>

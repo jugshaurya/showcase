@@ -2,60 +2,41 @@
 @import './colors';
 
 #experience {
+  margin-top: 200px;
   // border: 3px solid orange;
-  height: 120vh;
-  img#experience-bg {
-    position: absolute;
-    width: 250%;
-    height: auto;
-    top: 25%;
-    left: 0;
-    z-index: -1;
-    transform: translateY(-300px);
-  }
   .container {
     width: 70%;
     margin: 0 auto;
+    position: relative;
     // border: 1px solid red;
+    img#swiggly-bg {
+      position: absolute;
+      top: -10%;
+      left: -3%;
+      z-index: -10;
+      width: 10%;
+      height: auto;
+      // border: 3px solid gray;
+    }
     .header {
       display: flex;
       justify-content: flex-start;
       align-items: center;
       margin-bottom: 80px;
       img {
-        margin-right: 10px;
-        width: 40px;
+        margin-right: 20px;
+        width: 44px;
         height: auto;
       }
       h2 {
         margin-bottom: 0;
         font-size: $text_medium;
         line-height: 1em;
-        color: $orange;
+        color: $green;
+        opacity: 0.9;
         position: relative;
-        &::before {
-          content: '';
-          position: absolute;
-          left: -50px;
-          top: -20px;
-          background: $g_blueGreen;
-          width: 90px;
-          height: 6px;
-          border-radius: 7px;
-        }
-        &::after {
-          content: '';
-          position: absolute;
-          left: -50px;
-          bottom: -20px;
-          background: $g_blueGreen;
-          width: 90px;
-          height: 6px;
-          border-radius: 7px;
-        }
       }
     }
-
     .exp-list {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -145,5 +126,216 @@
         }
       }
     }
+  }
+}
+
+@media screen and (max-width: $desktop) {
+  #experience {
+    margin-top: 150px;
+    .container {
+      width: 80%;
+      img#swiggly-bg {
+        top: -5%;
+        left: -3%;
+      }
+      .exp-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 50px;
+
+        .exp {
+          img {
+            width: 100%;
+          }
+          .content {
+            top: 60px;
+            .desc {
+              font-size: $text_xsmall;
+              font-family: $font_normal;
+            }
+
+            .info {
+              width: 75%;
+              margin: 20px auto;
+              margin-top: 40px;
+              p,
+              img {
+                font-size: $text_xsmall;
+                font-family: $font_normal;
+                line-height: 1.2em;
+              }
+            }
+            // company logo
+            img {
+              width: 152px;
+              height: 71px;
+              margin: 20px auto;
+            }
+
+            .bottom {
+              display: grid;
+              grid-template-columns: 30% auto;
+              justify-content: center;
+              align-content: flex-end;
+              height: fit-content;
+              .certificates {
+                display: flex;
+                justify-content: flex-end;
+                width: fit-content;
+                height: 56px;
+                a {
+                  width: 56px;
+                  height: 56px;
+                  align-self: flex-start;
+                  img {
+                    width: 100%;
+                    height: 100%;
+                    margin-top: -10px;
+                  }
+                }
+              }
+              .date {
+                font-size: $text_xsmall;
+                height: fit-content;
+              }
+            }
+          }
+        }
+
+        .exp#sec {
+          img {
+            width: 100%;
+          }
+          .content {
+            margin-left: 60px;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: $ipadRotate) {
+  #experience {
+    .container {
+      width: 80%;
+      .exp-list {
+        .exp {
+          .content {
+            img {
+              // logo
+              width: 152px;
+              height: 71px;
+              margin: 10px auto;
+            }
+            .desc {
+              font-size: $text_xsmall;
+            }
+
+            .info {
+              width: 75%;
+              p,
+              img {
+                font-size: $text_xsmall * 0.8;
+                line-height: 1.1em;
+              }
+            }
+            .bottom {
+              .date {
+                font-size: $text_xsmall * 0.9;
+              }
+            }
+          }
+        }
+
+        .exp#sec {
+          img {
+            width: 100%;
+          }
+          .content {
+            margin-left: 40px;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: $ipad) {
+  #experience,
+  #sec {
+    .container {
+      width: 85%;
+      .exp-list {
+        gap: 0px;
+        .exp {
+          .content {
+            .position {
+              font-size: $text_small;
+            }
+            .desc {
+              font-size: $text_xsmall;
+            }
+
+            .info {
+              width: 85%;
+              p,
+              img {
+                font-size: $text_xsmall * 0.8;
+                line-height: 1em;
+              }
+            }
+            .bottom {
+              .certificates {
+                height: 36px;
+                a {
+                  width: 36px;
+                  height: 36px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: $mobile) {
+  #experience {
+    .container {
+      width: 90%;
+      .exp-list {
+        display: flex;
+        flex-direction: column;
+        .exp {
+          img {
+            width: 95%;
+          }
+          .content {
+            .info {
+              width: 70%;
+              font-size: $text_medium * 0.8;
+              p {
+                line-height: 1.6em;
+              }
+            }
+            .bottom {
+              .certificates {
+                height: 56px;
+                a {
+                  width: 56px;
+                  height: 56px;
+                }
+              }
+              .date {
+                font-size: $text_xsmall;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #sec {
+    display: none;
   }
 }

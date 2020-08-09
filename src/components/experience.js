@@ -1,10 +1,12 @@
 import React from 'react';
-import ExperienceBackground from '../static/patterns/bg-experience.png';
+// import ExperienceBackground from '../static/patterns/bg-experience.png';
 import CardPattern from '../static/patterns/cardoutline2.svg';
 import CodingNinjasIcon from '../static/icons/codingninjas.png';
 import NewCompanyLogo from '../static/icons/newCompany.png';
 import GoLiveLinksIcon from '../static/icons/live.svg';
 import ExperienceIcon from '../static/icons/exp.svg';
+import SwigglyBG from '../static/patterns/bg-swiggly.svg';
+
 import '../styles/experience.scss';
 
 const Experience = () => {
@@ -112,12 +114,13 @@ const Experience = () => {
             <img src={CardPattern} alt="" />
           </div>
         </div>
+        <img id="swiggly-bg" src={SwigglyBG} alt="swiggly background" />
       </div>
-      <img
+      {/* <img
         id="experience-bg"
         src={ExperienceBackground}
         alt="experience-background"
-      />
+      /> */}
     </div>
   );
 };

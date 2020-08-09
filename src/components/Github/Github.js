@@ -2,23 +2,21 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import CountUp from 'react-countup';
 import renderHTML from 'react-render-html';
-
-import GithubBackground2 from '../static/patterns/bg-swiggly.svg';
-import GithubBackground from '../static/patterns/bg-github.svg';
-import GithubGradIcon from '../static/icons/githubgrad.svg';
-import DotPattern1 from '../static/patterns/dotpattern1.svg';
-import DotPattern2 from '../static/patterns/dotpattern2.svg';
-import CommitIcon from '../static/icons/commits.svg';
-import IssueIcon from '../static/icons/issues.svg';
-import ContributionIcon from '../static/icons/contributedto.svg';
-import StarsIcon from '../static/icons/stars.svg';
-import PRIcon from '../static/icons/PR.svg';
-import GithubStats from '../static/github-stats.svg';
-import Lady from '../static/lady.svg';
-import Boy from '../static/boy.svg';
+import GithubBackground2 from '../../static/patterns/bg-swiggly.svg';
+import GithubBackground from '../../static/patterns/bg-github.svg';
+import GithubGradIcon from '../../static/icons/githubgrad.svg';
+import DotPattern1 from '../../static/patterns/dotpattern1.svg';
+import DotPattern2 from '../../static/patterns/dotpattern2.svg';
+import CommitIcon from '../../static/icons/commits.svg';
+import IssueIcon from '../../static/icons/issues.svg';
+import ContributionIcon from '../../static/icons/contributedto.svg';
+import StarsIcon from '../../static/icons/stars.svg';
+import PRIcon from '../../static/icons/PR.svg';
+import GithubStats from '../../static/github-stats.svg';
+import Lady from '../../static/lady.svg';
+import Boy from '../../static/boy.svg';
 import LatestPRs from './LatestPRs';
-
-import '../styles/github.scss';
+import '../../styles/github.scss';
 
 const fetchGithubStats = async (username) => {
   const query = `

@@ -1,9 +1,9 @@
 import React from 'react';
-import PRIcon from '../static/icons/PR.svg';
-import TriangleIcon from '../static/icons/triangle.svg';
-import LatestPRBackground from '../static/patterns/bg-swiggly.svg';
+import PRIcon from '../../static/icons/PR.svg';
+import TriangleIcon from '../../static/icons/triangle.svg';
+import LatestPRBackground from '../../static/patterns/bg-swiggly.svg';
 import { Emojione } from 'react-emoji-render';
-import '../styles/latestPRs.scss';
+import '../../styles/latestPRs.scss';
 
 const LatestPRs = ({ jugshauryaPRs, otherPRs }) => {
   const filteredPRs = otherPRs.length > 15 ? otherPRs.slice(0, 15) : otherPRs;
