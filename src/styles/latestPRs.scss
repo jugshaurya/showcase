@@ -2,7 +2,6 @@
 @import './typography';
 
 #latestPRs {
-  height: 100vh;
   margin-top: 130px;
   // border: 3px dotted greenyellow;
 
@@ -36,12 +35,12 @@
       margin-bottom: 80px;
       img {
         margin-right: 20px;
-        width: 44px;
+        width: 32px;
         height: auto;
       }
       h2 {
         margin-bottom: 0;
-        font-size: $text_medium;
+        font-size: $text_small;
         line-height: 1em;
         color: $green;
         opacity: 0.9;
@@ -53,7 +52,7 @@
     }
     .pppr {
       display: flex;
-      gap: 100px;
+      gap: 50px;
       // border: 3px solid red;
       .prs {
         // border: 3px solid red;
@@ -72,11 +71,16 @@
           transform: rotate(180deg);
         }
         .pr {
+          border-left: 10px solid $twitterBlue;
           &:hover {
             background: $twitterBlue;
             .text {
               color: $black;
             }
+          }
+          &.rightBorder {
+            border-left: none;
+            border-right: 10px solid #4fffa7;
           }
           border-radius: 15px;
           padding: 5px 10px;
@@ -114,6 +118,64 @@
               }
             }
           }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $desktop) {
+  #latestPRs {
+    margin-top: 130px;
+    .container {
+      width: 80%;
+    }
+  }
+}
+@media screen and (max-width: $ipadRotate) {
+  #latestPRs {
+    margin-top: 130px;
+    .container {
+      width: 85%;
+
+      img#latestPR-bg2 {
+        left: 0px;
+        top: -30px;
+        width: 10%;
+      }
+    }
+  }
+}
+@media screen and (max-width: $ipad) {
+  #latestPRs {
+    margin-top: 130px;
+    .container {
+      width: 90%;
+      .pppr {
+        display: flex;
+        gap: 10px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $mobile) {
+  #latestPRs {
+    margin-top: 130px;
+    .container {
+      width: 90%;
+      margin: 50px auto;
+      img#latestPR-bg2 {
+        left: -10px;
+        top: -30px;
+        width: 20%;
+      }
+      .pppr {
+        flex-direction: column;
+        .prs {
+          margin: 40px 0;
+          width: 100%;
+          // border
         }
       }
     }

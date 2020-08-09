@@ -369,7 +369,7 @@ const Github = () => {
 
   return (
     <>
-      <div id="github" name="stats" style={{ position: 'relative' }}>
+      <div id="stats" style={{ position: 'relative' }}>
         <div className="container" style={{ position: 'relative' }}>
           <div className="header">
             <img src={GithubGradIcon} alt="github icon" />
@@ -389,7 +389,7 @@ const Github = () => {
                 />
               </div>
             </div>
-            <div className="value">
+            <div className="value prval">
               {' '}
               <div className="count">
                 <CountUp start={0} end={stats.totalPRs} duration={5} />
@@ -399,7 +399,7 @@ const Github = () => {
                 PRs
               </div>
             </div>
-            <div className="value">
+            <div className="value stars">
               <div className="type">
                 <img src={StarsIcon} alt="stars" />
                 Stars
