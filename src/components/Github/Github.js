@@ -12,7 +12,6 @@ import IssueIcon from '../../static/icons/issues.svg';
 import ContributionIcon from '../../static/icons/contributedto.svg';
 import StarsIcon from '../../static/icons/stars.svg';
 import PRIcon from '../../static/icons/PR.svg';
-import GithubStats from '../../static/github-stats.svg';
 import Lady from '../../static/lady.svg';
 import Boy from '../../static/boy.svg';
 import LatestPRs from './LatestPRs';
@@ -180,7 +179,7 @@ const GithubStatsGraph = (svg, totals, orgs, repos) => {
           <div className="to">
             Recently Worked on
             {repos.slice(0, 5).map((repo) => (
-              <a to="/" className="repo">
+              <a href="/" className="repo">
                 {repo.nameWithOwner}
               </a>
             ))}

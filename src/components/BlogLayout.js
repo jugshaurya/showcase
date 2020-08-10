@@ -1,6 +1,6 @@
 import React from 'react';
 import Navbar from './Navbar/Navbar';
-import Footer from '../components/footer';
+import Footer from '../components/Footer/footer';
 
 import '../styles/blogLayout.scss';
 

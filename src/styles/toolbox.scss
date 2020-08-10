@@ -1,7 +1,7 @@
 @import './colors';
 @import './typography';
 
-#rutherford {
+#skills {
   margin-top: 160px;
   .container {
     position: relative;
@@ -48,14 +48,14 @@
     // border: 3px dotted greenyellow;
     position: absolute;
     z-index: -1;
-    top: -420px;
+    top: -450px;
     left: 0px;
     width: 100%;
   }
 }
 
 @media screen and (max-width: $desktop) {
-  #rutherford {
+  #skills {
     .container {
       width: 80%;
       img#swiggly-bg {
@@ -73,7 +73,7 @@
 @media screen and (max-width: $ipadRotate) {
 }
 @media screen and (max-width: $ipad) {
-  #rutherford {
+  #skills {
     .container {
       width: 85%;
       img#swiggly-bg {
@@ -97,7 +97,7 @@
   }
 }
 @media screen and (max-width: $mobile) {
-  #rutherford {
+  #skills {
     .container {
       width: 90%;
       img#swiggly-bg {

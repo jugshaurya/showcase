@@ -1,7 +1,7 @@
 import React from 'react';
-import ExtraIcon from '../static/icons/extra.svg';
-import BackIcon from '../static/icons/back.svg';
-import '../styles/extra.scss';
+import ExtraIcon from '../../static/icons/extra.svg';
+import BackIcon from '../../static/icons/back.svg';
+import '../../styles/extra.scss';
 
 const Extra = () => {
   return (

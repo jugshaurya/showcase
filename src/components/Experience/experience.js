@@ -1,13 +1,13 @@
 import React from 'react';
-// import ExperienceBackground from '../static/patterns/bg-experience.png';
-import CardPattern from '../static/patterns/cardoutline2.svg';
-import CodingNinjasIcon from '../static/icons/codingninjas.png';
-import NewCompanyLogo from '../static/icons/newCompany.png';
-import GoLiveLinksIcon from '../static/icons/live.svg';
-import ExperienceIcon from '../static/icons/exp.svg';
-import SwigglyBG from '../static/patterns/bg-swiggly.svg';
+// import ExperienceBackground from '../../static/patterns/bg-experience.png';
+import CardPattern from '../../static/patterns/cardoutline2.svg';
+import CodingNinjasIcon from '../../static/icons/codingninjas.png';
+import NewCompanyLogo from '../../static/icons/newCompany.png';
+import GoLiveLinksIcon from '../../static/icons/live.svg';
+import ExperienceIcon from '../../static/icons/exp.svg';
+import SwigglyBG from '../../static/patterns/bg-swiggly.svg';
 
-import '../styles/experience.scss';
+import '../../styles/experience.scss';
 
 const Experience = () => {
   return (
@@ -32,16 +32,24 @@ const Experience = () => {
               </div>
               <div className="info">
                 <p>
-                  🌱 Solved 1500+ Doubts of more than 60 students divided over
-                  two batches.
+                  <span role="img" aria-labelledby="emoji">
+                    🌱
+                  </span>{' '}
+                  Solved 1500+ Doubts of more than 60 students divided over two
+                  batches.
                 </p>
                 <p>
-                  🌱 Taking one to one doubt sessions over chat and video-call.
+                  <span role="img" aria-labelledby="emoji">
+                    🌱
+                  </span>{' '}
+                  Taking one to one doubt sessions over chat and video-call.
                 </p>
                 <p>
-                  🌱 Debugging students’ Code for various types of errors in
-                  Basics and Advanced Data Structure and Algorithms in Python
-                  Language.
+                  <span role="img" aria-labelledby="emoji">
+                    🌱
+                  </span>{' '}
+                  Debugging students’ Code for various types of errors in Basics
+                  and Advanced Data Structure and Algorithms in Python Language.
                 </p>
               </div>
               <div className="bottom">

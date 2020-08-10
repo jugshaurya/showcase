@@ -73,7 +73,13 @@ const Navbar = ({ defaultRoute }) => {
           ))}
         </div>
       </div>
-      <div className="navbar-cross" onClick={() => toggleNavbar(true)}>
+      <div
+        role="button"
+        tabIndex="0"
+        className="navbar-cross"
+        onClick={() => toggleNavbar(true)}
+        onKeyPress={() => toggleNavbar(true)}
+      >
         <div className="logo">
           <img src={Logo} alt="Logo" />
         </div>

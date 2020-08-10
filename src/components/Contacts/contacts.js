@@ -1,14 +1,14 @@
 import React from 'react';
-import ContactIcon from '../static/icons/extra.svg';
-import GmailIcon from '../static/icons/gmail.svg';
-import LinkedInIcon from '../static/icons/linkedin.svg';
-import GithubIcon from '../static/icons/github.svg';
-import TwitterIcon from '../static/icons/twitter.svg';
-import Shaurya from '../static/shaurya.png';
-import PolygonRed from '../static/patterns/polygonred.svg';
-import PolygonGreen from '../static/patterns/polygongreen.svg';
+import ContactIcon from '../../static/icons/extra.svg';
+import GmailIcon from '../../static/icons/gmail.svg';
+import LinkedInIcon from '../../static/icons/linkedin.svg';
+import GithubIcon from '../../static/icons/github.svg';
+import TwitterIcon from '../../static/icons/twitter.svg';
+import Shaurya from '../../static/shaurya.png';
+import PolygonRed from '../../static/patterns/polygonred.svg';
+import PolygonGreen from '../../static/patterns/polygongreen.svg';
 
-import '../styles/contacts.scss';
+import '../../styles/contacts.scss';
 
 const Contacts = () => {
   return (
@@ -55,7 +55,15 @@ const Contacts = () => {
             <div className="internal">
               Feel Free to reach out; whether you want my help or want to
               collaborate on some project. <br />
-              <span>🌱 Looking for Opportunities. 🌱</span>
+              <span>
+                <span role="img" aria-labelledby="emoji">
+                  🌱
+                </span>{' '}
+                Looking for Opportunities.{' '}
+                <span role="img" aria-labelledby="emoji">
+                  🌱
+                </span>
+              </span>
             </div>
           </div>
         </div>

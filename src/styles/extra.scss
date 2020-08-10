@@ -2,8 +2,10 @@
 @import './typography';
 
 #extra {
+  background: $black20;
   // border: 3px solid red;
-  margin-top: 160px;
+  margin-top: 140px;
+  padding-top: 30px;
   .container {
     // border: 3px solid orangered;
     width: 70%;

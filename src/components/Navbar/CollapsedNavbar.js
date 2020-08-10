@@ -11,11 +11,23 @@ const CollapsedNavbar = ({
 }) => {
   return (
     <div id="myNav" className="overlay" style={{ height }}>
-      <span className="closebtn" onClick={() => toggleNavbar(false)}>
+      <span
+        role="button"
+        tabIndex="0"
+        className="closebtn"
+        onClick={() => toggleNavbar(false)}
+        onKeyPress={() => toggleNavbar(false)}
+      >
         &times;
       </span>
 
-      <div className="overlay-content" onClick={() => toggleNavbar(false)}>
+      <div
+        role="button"
+        tabIndex="0"
+        className="overlay-content"
+        onClick={() => toggleNavbar(false)}
+        onKeyPress={() => toggleNavbar(false)}
+      >
         {links.map((link) => (
           <Link
             key={link.name}

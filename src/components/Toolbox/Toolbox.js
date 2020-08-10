@@ -1,13 +1,13 @@
 import React from 'react';
-import ToolboxIcon from '../static/icons/toolbox.svg';
-import RutherfordModel from '../static/rutherford.svg';
-import RutherfordBackground from '../static/patterns/bg-rutherford.svg';
-import RutherfordBackground2 from '../static/patterns/bg-swiggly.svg';
-import '../styles/toolbox.scss';
+import ToolboxIcon from '../../static/icons/toolbox.svg';
+import RutherfordModel from '../../static/rutherford.svg';
+import RutherfordBackground from '../../static/patterns/bg-rutherford.svg';
+import RutherfordBackground2 from '../../static/patterns/bg-swiggly.svg';
+import '../../styles/toolbox.scss';
 
 const Toolbox = () => {
   return (
-    <div id="rutherford" style={{ position: 'relative' }}>
+    <div id="skills" style={{ position: 'relative' }}>
       <div className="container" style={{ position: 'relative' }}>
         <div className="header">
           <img src={ToolboxIcon} alt="PR icon" />

@@ -2,6 +2,7 @@
 @import './colors';
 
 .languages {
+  margin-top: 200px;
   // border: 3px solid orange;
   img#languages-bg {
     position: absolute;
@@ -32,6 +33,7 @@
         left: 0px;
         height: 100%;
         z-index: -1;
+        transform: scale(1.4);
       }
       .content {
         width: 90%;
