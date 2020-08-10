@@ -1,11 +1,10 @@
-# Shaurya Showcase
-
 <p align="center">
   <a href="https://shaurya.now.sh/">
     <img alt="logo" src="./src/static/logo/logo-black.svg" width="60" />
     <h2 align="center">Shaurya Singhal</h2>
   </a>
 </p> 
+<p align="center">Shaurya Showcase | Portfolio</p>
 <p align="center">Software Developer + Open Source Contributor</p>
 
 [![PR](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/jugshaurya/showcase)

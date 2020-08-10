@@ -3,18 +3,64 @@
 
 #footer {
   // border: 3px solid red;
+  border-bottom: 3px solid $gray;
   margin: 0;
   margin-top: 60px;
-  background: $g_credits;
+  background: $background;
   .container {
     // border: 3px solid orangered;
     width: 70%;
     margin: 0px auto;
-    display: grid;
-    grid-template-columns: 1fr 200px 1fr;
+    display: flex;
     justify-content: space-between;
-    font-size: $text_small;
+    font-size: $text_small * 0.8;
     color: $white;
     padding: 20px 20px;
+  }
+}
+
+@media screen and (max-width: $desktop) {
+  #footer {
+    // border: 3px solid red;
+    .container {
+      // border: 3px solid orangered;
+      width: 80%;
+    }
+  }
+}
+@media screen and (max-width: $ipadRotate) {
+  #footer {
+    // border: 3px solid red;
+    .container {
+      // border: 3px solid orangered;
+      width: 85%;
+      font-size: $text_small * 0.7;
+    }
+  }
+}
+@media screen and (max-width: $ipad) {
+  #footer {
+    // border: 3px solid red;
+    .container {
+      // border: 3px solid orangered;
+      width: 90%;
+      font-size: $text_small * 0.7;
+      padding: 15px 10px;
+    }
+  }
+}
+@media screen and (max-width: $mobile) {
+  #footer {
+    // border: 3px solid red;
+    .container {
+      flex-direction: column;
+      * {
+        align-self: center;
+      }
+      // // border: 3px solid orangered;
+      // width: 90%;
+      // font-size: $text_small * 0.7;
+      // padding: 15px 10px;
+    }
   }
 }

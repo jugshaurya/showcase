@@ -15,27 +15,16 @@
       margin-bottom: 80px;
       img {
         margin-right: 20px;
-        width: 40px;
+        width: 44px;
         height: auto;
       }
       h2 {
         margin-bottom: 0;
         font-size: $text_medium;
         line-height: 1em;
-        span {
-          color: $darkgreen;
-        }
-        color: $orange;
-        &::after {
-          content: '';
-          display: table;
-          width: 90px;
-          height: 6px;
-          background: $g_blueGreen;
-          display: block;
-          border-radius: 7px;
-          margin-top: 10px;
-        }
+        color: $green;
+        opacity: 0.9;
+        position: relative;
       }
     }
 
@@ -77,6 +66,7 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 100px;
+      row-gap: 60px;
       section {
         .title {
           padding: 10px 10px;
@@ -90,12 +80,15 @@
           list-style-type: none;
           margin: 20px;
           padding: 20px;
+          transform: rotateZ(0deg);
+          color: $gray;
           li {
             line-height: 1.4em;
             a {
               text-decoration: none;
               // color: $green;
               padding-bottom: 10px;
+              font-size: $text_small;
               @include textColorGradient($g_blueGreen3);
             }
             sub {
@@ -112,6 +105,84 @@
               background-image: url('../static/icons/extra.svg');
               background-repeat: no-repeat;
               margin-right: 15px;
+              transform: rotateZ(-20deg) rotateX(-10deg);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $desktop) {
+  #extra {
+    .container {
+      width: 80%;
+    }
+  }
+}
+
+@media screen and (max-width: $ipadRotate) {
+  #extra {
+    .container {
+      width: 80%;
+      .main {
+        gap: 50px;
+        section {
+          ul {
+            margin: 0px;
+            padding: 0px;
+            margin-top: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: $ipad) {
+  #extra {
+    .container {
+      width: 90%;
+      section.section {
+        // border: 3px solid red;
+        .colors {
+          // border: 3px solid red;
+          margin: 40px auto;
+          flex-wrap: wrap;
+        }
+      }
+
+      .main {
+        gap: 20px;
+        row-gap: 60px;
+        section {
+          ul {
+            li {
+              line-height: 1em;
+              font-size: $text_small * 0.7;
+              &:before {
+                height: 24px;
+                width: 24px;
+                background-size: 24px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $mobile) {
+  #extra {
+    .container {
+      width: 90%;
+      .main {
+        grid-template-columns: repeat(1, 1fr);
+        section {
+          ul {
+            li {
+              font-size: $text_small * 0.8;
             }
           }
         }

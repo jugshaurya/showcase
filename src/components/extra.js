@@ -183,7 +183,7 @@ const Extra = () => {
             </ul>
           </section>
           <section>
-            <div className="title">Source Code</div>
+            <div className="title">Wanna Contribute?</div>
             <ul className="list">
               <li>
                 <a

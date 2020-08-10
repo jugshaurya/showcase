@@ -13,8 +13,8 @@ import '../styles/contacts.scss';
 const Contacts = () => {
   return (
     <div id="contacts" style={{ position: 'relative' }}>
-      <img className="polygon green" src={PolygonGreen} alt="green poly" />
-      <img className="polygon red" src={PolygonRed} alt="red ploy" />
+      {/* <img className="polygon green" src={PolygonGreen} alt="green poly" /> */}
+      {/* <img className="polygon red" src={PolygonRed} alt="red ploy" /> */}
       <div className="container">
         <div className="header">
           <img src={ContactIcon} alt="Contact icon" />

@@ -21,9 +21,9 @@ const UI = () => {
       {/* <Projects /> */}
       <Toolbox />
       <Experience />
-      {/* <Contacts />
+      <Contacts />
       <Extra />
-      <Footer /> */}
+      <Footer />
     </div>
   );
 };
