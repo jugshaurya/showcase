@@ -1,7 +1,25 @@
 const path = require('path');
 const nb = require('notebookjs');
-const { createFilePath } = require(`gatsby-source-filesystem`);
+const {
+  createFilePath,
+  createRemoteFileNode,
+} = require(`gatsby-source-filesystem`);
 
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      alias: {
+        src: path.join(__dirname, 'src'),
+        Src: path.join(__dirname, 'src'),
+        Shared: path.join(__dirname, 'src/components/styles-in-js/shared'),
+        Components: path.join(__dirname, 'src/components'),
+        Pages: path.join(__dirname, 'src/pages'),
+        Static: path.join(__dirname, 'src/static'),
+        Theme: path.join(__dirname, 'src/components/styles-in-js/theme'),
+      },
+    },
+  });
+};
 exports.onPreInit = () => {
   console.log('Creating node which had converted jupyter raw-content to html');
 };

@@ -5,18 +5,16 @@ import CodingNinjasIcon from '../../static/icons/codingninjas.png';
 import NewCompanyLogo from '../../static/icons/newCompany.png';
 import GoLiveLinksIcon from '../../static/icons/live.svg';
 import ExperienceIcon from '../../static/icons/exp.svg';
-import SwigglyBG from '../../static/patterns/bg-swiggly.svg';
 
+import { Flex, Container } from '../styles-in-js/shared';
+import Title from '../styles-in-js/Title';
 import '../../styles/experience.scss';
 
 const Experience = () => {
   return (
     <div id="experience" style={{ position: 'relative' }}>
-      <div className="container">
-        <div className="header">
-          <img src={ExperienceIcon} alt="Experience icon" />
-          <h2>Experience</h2>
-        </div>
+      <Container style={{ position: 'relative' }} className="container">
+        <Title IconComp={ExperienceIcon} iconDesc={'Experience'} />
         <div className="exp-list">
           <div className="exp" style={{ position: 'relative' }}>
             <div className="content">
@@ -122,8 +120,7 @@ const Experience = () => {
             <img src={CardPattern} alt="" />
           </div>
         </div>
-        <img id="swiggly-bg" src={SwigglyBG} alt="swiggly background" />
-      </div>
+      </Container>
       {/* <img
         id="experience-bg"
         src={ExperienceBackground}

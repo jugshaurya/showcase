@@ -1,77 +1,152 @@
 import React from 'react';
+import { Emojione } from 'react-emoji-render';
+import styled from 'styled-components';
+import * as Styles from '../styles-in-js/theme';
+
+import { Container, Flex, Icon, FloatingImage } from '../styles-in-js/shared';
+import Title from '../styles-in-js/Title';
+
+import SwigglyBG from '../../static/patterns/bg-swiggly.svg';
 import PRIcon from '../../static/icons/PR.svg';
 import TriangleIcon from '../../static/icons/triangle.svg';
-import LatestPRBackground from '../../static/patterns/bg-swiggly.svg';
-import { Emojione } from 'react-emoji-render';
 import '../../styles/latestPRs.scss';
 
-const LatestPRs = ({ jugshauryaPRs, otherPRs }) => {
-  const filteredPRs = otherPRs.length > 15 ? otherPRs.slice(0, 15) : otherPRs;
-  const filteredjugshauryaPRs =
-    jugshauryaPRs.length > 15 ? jugshauryaPRs.slice(0, 15) : jugshauryaPRs;
+const PRList = styled(Flex)`
+  position: relative;
+  width: 50%;
+  margin: 0 auto;
+  border-radius: 45px;
+`;
+
+const PRItem = styled(Flex)`
+  width: 100%;
+  border-radius: 15px;
+  padding: 5px 10px;
+  border-left: 10px solid ${Styles.mapPurple};
+  border-bottom: 2px solid ${Styles.gray};
+  &:hover {
+    background: ${Styles.mapPurple};
+    .hover-white {
+      color: ${Styles.white};
+      font-weight: bold;
+    }
+  }
+`;
+
+const Logo = styled(Flex)`
+  overflow: hidden;
+  background: ${Styles.black};
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  text-align: center;
+  border: 1px dashed ${Styles.gray};
+`;
+
+const PRDesc = styled.a`
+  width: 85%;
+  cursor: pointer;
+  text-decoration: none;
+  color: ${Styles.gray};
+  font-size: ${Styles.text_xsmall};
+  letter-spacing: 0.02em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  padding: 10px;
+  padding-left: 20px;
+  span {
+    img {
+      width: 22px !important;
+      height: 22px !important;
+    }
+  }
+`;
+
+const LatestPRs = ({ userSelfPRs, userContribPRs }) => {
   return (
-    <div id="latestPRs" style={{ position: 'relative' }}>
-      <div className="container" style={{ position: 'relative' }}>
-        <div className="header">
-          <img src={PRIcon} alt="PR icon" />
-          <h2>
-            Latest Merged Pull Requests <span>({15} each)</span>
-          </h2>
-        </div>
-
-        <div className="pppr">
-          <div className="prs">
-            <h3>Open Source Prs</h3>
-            <img className="triangle" src={TriangleIcon} alt="triangle" />
-            {filteredPRs.map((pr) => (
-              <div className="pr" key={pr.id}>
-                <div className="logo">
-                  <img src={pr.repository.owner.avatarUrl} alt="contribution" />
-                </div>
-                <a
-                  href={pr.url}
-                  className="text"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  <Emojione text={pr.title} />
-                </a>
-              </div>
-            ))}
-          </div>
-          <div className="prs">
-            <h3>Personal PRs</h3>
-            <img className="triangle" src={TriangleIcon} alt="triangle" />
-            {filteredjugshauryaPRs.map((pr) => (
-              <div className="pr rightBorder" key={pr.id}>
-                <div className="logo">
-                  <img src={pr.repository.owner.avatarUrl} alt="contribution" />
-                </div>
-                <a
-                  href={pr.url}
-                  className="text"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  <Emojione text={pr.title} />
-                </a>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <img
-          id="latestPR-bg"
-          src={LatestPRBackground}
-          alt="latest PRs background"
-        />
-        <img
-          id="latestPR-bg2"
-          src={LatestPRBackground}
-          alt="latest PRs background"
-        />
-      </div>
-    </div>
+    <Container style={{ position: 'relative' }}>
+      <Title
+        IconComp={PRIcon}
+        iconDesc={'Latest Merged Pull Requests'}
+        w={'36px'}
+        h={'36px'}
+      />
+      <Flex gap={'40px'}>
+        <PRList fd="column">
+          <FloatingImage
+            style={{ opacity: '0.2', transform: 'rotate(180deg)' }}
+            src={TriangleIcon}
+            alt={'TriangleIcon'}
+            t={0}
+            l={'45%'}
+          />
+          <h3>Open Source PRs'</h3>
+          {userContribPRs.map((pr) => (
+            <PRItem key={pr.id}>
+              <Logo>
+                <Icon
+                  src={pr.repository.owner.avatarUrl}
+                  alt={'Organization'}
+                  title={pr.repository.owner.login}
+                  w={'24px'}
+                  h={'24px'}
+                  mr={'0'}
+                />
+              </Logo>
+              <PRDesc
+                className="hover-white"
+                href={pr.url}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <Emojione text={pr.title} />
+              </PRDesc>
+            </PRItem>
+          ))}
+        </PRList>
+        <PRList fd="column">
+          <FloatingImage
+            style={{ opacity: '0.2', transform: 'rotate(180deg)' }}
+            src={TriangleIcon}
+            alt={'TriangleIcon'}
+            t={0}
+            l={'45%'}
+          />
+          <h3>Personal PRs'</h3>
+          {userSelfPRs.map((pr) => (
+            <PRItem key={pr.id}>
+              <Logo>
+                <Icon
+                  src={pr.repository.owner.avatarUrl}
+                  alt={'Organization'}
+                  title={pr.repository.owner.login}
+                  w={'24px'}
+                  h={'24px'}
+                  mr={'0'}
+                />
+              </Logo>
+              <PRDesc
+                className="hover-white"
+                href={pr.url}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <Emojione text={pr.title} />
+              </PRDesc>
+            </PRItem>
+          ))}
+        </PRList>
+      </Flex>
+      <FloatingImage
+        style={{ opacity: '0.2', transform: 'rotate(-10deg)' }}
+        src={SwigglyBG}
+        alt={'SwigglyBG'}
+        b={'-220px'}
+        r={'-200px'}
+        width={'40%'}
+      />
+    </Container>
   );
 };
 

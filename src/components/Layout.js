@@ -1,6 +1,7 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import '../styles/layout.scss';
+import GlobalStyles from './styles-in-js/global.styles';
+import '../styles/global.scss';
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -14,9 +15,10 @@ const Layout = ({ children }) => {
   `);
 
   return (
-    <>
+    <div className="layout">
+      <GlobalStyles />
       <main id="shaurya-showcase">{children}</main>
-    </>
+    </div>
   );
 };
 

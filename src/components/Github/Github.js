@@ -1,8 +1,22 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import styled from 'styled-components';
 import CountUp from 'react-countup';
-import renderHTML from 'react-render-html';
-import GithubBackground2 from '../../static/patterns/bg-swiggly.svg';
+
+import LatestPRs from './LatestPRs';
+import GithubActivityOverview from './GithubActivityOverview';
+import * as Styles from '../styles-in-js/theme';
+
+import fetchGithubSvg from '../../utils/fetchGithubSvg';
+import fetchGithubStats from '../../utils/fetchGithubStats';
+import {
+  Container,
+  Icon,
+  FloatingImage,
+  Flex,
+  Grid,
+} from '../styles-in-js/shared';
+import Title from '../styles-in-js/Title';
+
 import GithubBackground from '../../static/patterns/bg-github.svg';
 import GithubGradIcon from '../../static/icons/githubgrad.svg';
 import DotPattern1 from '../../static/patterns/dotpattern1.svg';
@@ -14,346 +28,70 @@ import StarsIcon from '../../static/icons/stars.svg';
 import PRIcon from '../../static/icons/PR.svg';
 import Lady from '../../static/lady.svg';
 import Boy from '../../static/boy.svg';
-import LatestPRs from './LatestPRs';
 import '../../styles/github.scss';
 
-const fetchGithubStats = async (username) => {
-  const query = `
-    query shauStats($login: String!) {
-      user(login: $login) {
-        name
-        repositoriesContributedTo(first: 100, contributionTypes: [COMMIT, PULL_REQUEST, PULL_REQUEST_REVIEW, ISSUE, REPOSITORY]) {
-          nodes{
-            name
-            id
-            owner {
-              id
-              login
-              avatarUrl
-            }
-          }
-          totalCount
-        }
-        contributionsCollection{
-          totalIssueContributions
-          totalCommitContributions
-          totalPullRequestContributions
-          totalPullRequestReviewContributions
-        }
-        pullRequests(first: 100, states: [OPEN, MERGED, CLOSED], orderBy: {field: CREATED_AT, direction: DESC}) {
-          nodes {
-            id
-            title
-            url
-            state
-            repository {
-              id
-              nameWithOwner
-              languages(first : 5){
-                nodes{
-                  id
-                  name
-                }
-              }
-              owner{
-                url
-                login
-                avatarUrl
-              }
-            }
-          }
-        }
-        repositories(first: 100,  isFork: false, orderBy: {field:UPDATED_AT , direction: DESC}) {
-          nodes {
-            nameWithOwner
-            updatedAt
-            stargazers {
-              totalCount
-            }
-          }
-        }
-      }
-    }
-  `;
+const GithubAction = styled.div`
+  /* border: 3px solid gray; */
+`;
 
-  const res = await axios({
-    url: 'https://api.github.com/graphql',
-    method: 'post',
-    headers: {
-      Authorization: `Bearer ${process.env.GATSBY_GITHUB_ACCESS_TOKEN}`,
-    },
-    data: {
-      query: query,
-      variables: {
-        login: username,
-      },
-    },
-  });
+const Type = styled.div`
+  border: 4px dashed ${Styles.gray};
+  text-align: center;
+  align-items: center;
+  padding: 5px;
+  color: ${Styles.gray};
+`;
 
-  const stats = {
-    name: '',
-    totalContributedTo: 0,
-    totalStars: 0,
-    totalIssues: 0,
-    totalCommits: 0,
-    totalPRs: 0,
-    totalPullRequestContributionsPercentage: 0,
-    totalCommitContributionsPercentage: 0,
-    totalIssueContributionsPercentage: 0,
-    contributionRepos: [],
-    jugshauryaPRs: [],
-    otherPRs: [],
-    repositories: [],
-  };
-
-  const user = res.data.data.user;
-  stats.name = user.name;
-  stats.totalContributedTo = user.repositoriesContributedTo.totalCount;
-  stats.totalPRs =
-    user.contributionsCollection.totalPullRequestReviewContributions +
-    user.contributionsCollection.totalPullRequestContributions;
-  stats.totalIssues = user.contributionsCollection.totalIssueContributions;
-  stats.totalCommits = user.contributionsCollection.totalCommitContributions;
-  stats.contributionRepos = user.repositoriesContributedTo.nodes;
-  stats.totalStars = user.repositories.nodes.reduce(
-    (acc, node) => acc + node.stargazers.totalCount,
-    0
-  );
-  stats.jugshauryaPRs = user.pullRequests.nodes.filter(
-    (node) => node.repository.owner.login === 'jugshaurya'
-  );
-  stats.otherPRs = user.pullRequests.nodes.filter(
-    (node) => node.repository.owner.login !== 'jugshaurya'
-  );
-  stats.repositories = user.repositories.nodes;
-  const totalContributions =
-    user.contributionsCollection.totalCommitContributions +
-    user.contributionsCollection.totalPullRequestContributions +
-    user.contributionsCollection.totalIssueContributions;
-
-  stats.totalCommitContributionsPercentage =
-    user.contributionsCollection.totalCommitContributions / totalContributions;
-  stats.totalIssueContributionsPercentage =
-    user.contributionsCollection.totalIssueContributions / totalContributions;
-  stats.totalPullRequestContributionsPercentage =
-    user.contributionsCollection.totalPullRequestContributions /
-    totalContributions;
-
-  const currencyBinder = (amount) => {
-    return amount >= 1000 ? `${Math.floor(amount / 1000)}K` : amount;
-  };
-
-  stats.totalContributedTo = currencyBinder(stats.totalContributedTo);
-  stats.totalPRs = currencyBinder(stats.totalPRs);
-  stats.totalIssues = currencyBinder(stats.totalIssues);
-  stats.totalCommits = currencyBinder(stats.totalCommits);
-  stats.totalStars = currencyBinder(stats.totalStars);
-
-  return stats;
-};
-
-const GithubStatsGraph = (svg, totals, orgs, repos) => {
-  const {
-    totalPRsPercentage,
-    totalCommitPercentage,
-    totalIssuePercentage,
-  } = totals;
+const GithubType = ({ IconComp, iconDesc }) => {
   return (
-    <div className="github-stats">
-      <div className="svg" style={{ background: 'white' }}>
-        {renderHTML(svg)}
-      </div>
-      <div className="stats">
-        <div className="extra">
-          <div className="task">Recently Contributed to</div>
-          <div className="orgs">
-            {/* TODO: Make sure orgs has oly 5 elemets and all are unique */}
-            {orgs.slice(0, 5).map((org) => (
-              <div className="org" key={org.id}>
-                <img src={org.owner.avatarUrl} alt="" />
-                <span>{org.owner.login}</span>
-              </div>
-            ))}
-          </div>
-          <div className="activity">Activity overview</div>
-          <div className="to">
-            Recently Worked on
-            {repos.slice(0, 5).map((repo) => (
-              <a href="/" className="repo">
-                {repo.nameWithOwner}
-              </a>
-            ))}
-          </div>
-        </div>
-        <svg
-          className="mx-auto d-block"
-          xmlns="http://www.w3.org/2000/svg"
-          width="287"
-          height="255"
-        >
-          <g transform="translate(-21.0166015625, -44.3499755859375)">
-            <path
-              className="js-highlight-blob"
-              strokeLinejoin="round"
-              fill="#56b8ff"
-              stroke="#56b8ff"
-              strokeWidth="7"
-              d="M171.5,171.5 L179.59105663764768,171.5 L171.5,175.19430876941215 L85.36666870117188,171.5 z"
-            ></path>
-            <line
-              fill="#e9fa66"
-              stroke="#e9fa66"
-              strokeWidth="2"
-              strokeLinecap="round"
-              className="js-highlight-x-axis activity-overview-axis "
-              x1="81.36666870117188"
-              y1="171.5"
-              x2="261.6333312988281"
-              y2="171.5"
-            ></line>
-            <line
-              fill="#e9fa66"
-              stroke="#e9fa66"
-              strokeWidth="2"
-              strokeLinecap="round"
-              className="js-highlight-y-axis activity-overview-axis "
-              x1="171.5"
-              y1="81.36666870117188"
-              x2="171.5"
-              y2="261.6333312988281"
-            ></line>
-            <ellipse
-              className="activity-overview-point js-highlight-top-ellipse d-none"
-              rx="3"
-              ry="3"
-              strokeWidth="2"
-              fill="white"
-            ></ellipse>
-            <ellipse
-              className="activity-overview-point js-highlight-right-ellipse "
-              rx="3"
-              ry="3"
-              strokeWidth="2"
-              fill="white"
-              cx="181.59105663764768"
-              cy="171.5"
-            ></ellipse>
-            <ellipse
-              className="activity-overview-point js-highlight-bottom-ellipse "
-              rx="3"
-              ry="3"
-              strokeWidth="2"
-              fill="white"
-              cx="171.5"
-              cy="177.19430876941215"
-            ></ellipse>
-            <ellipse
-              className="activity-overview-point js-highlight-left-ellipse "
-              rx="3"
-              ry="3"
-              strokeWidth="2"
-              fill="white"
-              cx="83.36666870117188"
-              cy="171.5"
-            ></ellipse>
-            <text
-              textAnchor="middle"
-              className="activity-overview-percentage js-highlight-percent-top"
-              dx="171.5"
-              dy="55.366668701171875"
-            >
-              &nbsp;
-            </text>
-            <text
-              textAnchor="middle"
-              className="text-small activity-overview-label js-highlight-label-top"
-              dx="171.5"
-              dy="71.36666870117188"
-            >
-              Code review
-            </text>
-            <text
-              textAnchor="start"
-              className="activity-overview-percentage js-highlight-percent-right"
-              dy="169.5"
-              dx="278.96666717529297"
-            >
-              {Math.floor(totalIssuePercentage * 100)}%
-            </text>
-            <text
-              textAnchor="start"
-              className="text-small activity-overview-label js-highlight-label-right"
-              dy="185.5"
-              dx="271.6333312988281"
-            >
-              Issues
-            </text>
-            <text
-              textAnchor="middle"
-              className="activity-overview-percentage js-highlight-percent-bottom"
-              dx="171.5"
-              dy="278.6333312988281"
-            >
-              {Math.floor(totalPRsPercentage * 100)}%
-            </text>
-            <text
-              textAnchor="middle"
-              className="text-small activity-overview-label js-highlight-label-bottom"
-              dx="171.5"
-              dy="294.6333312988281"
-            >
-              Pull requests
-            </text>
-            <text
-              textAnchor="end"
-              className="activity-overview-percentage js-highlight-percent-left"
-              dy="169.5"
-              dx="55.69166564941406"
-            >
-              {Math.floor(totalCommitPercentage * 100)}%
-            </text>
-            <text
-              textAnchor="end"
-              className="text-small activity-overview-label js-highlight-label-left"
-              dy="185.5"
-              dx="69.36666870117188"
-            >
-              Commits
-            </text>
-          </g>
-        </svg>
-      </div>
-    </div>
+    <Type>
+      <Icon w={'24px'} h={'24px'} mr={'8px'} src={IconComp} alt={iconDesc} />{' '}
+      {iconDesc}
+    </Type>
   );
 };
 
-// name
-//             id
-//             owner {
-//               id
-//               login
-//               avatarUrl
-//             }
-const fetchContribSvg = async () => {
-  const SERVER_URL = 'https://productive-weekday-server.jugshaurya.now.sh';
-  const response = await fetch(`${SERVER_URL}/user/jugshaurya?requireSvg=true`);
-  const result = await response.text();
-  return result;
-};
+const Counter = styled.div`
+  text-align: center;
+  font-weight: bold;
+  line-height: ${Styles.text_large};
+  font-size: ${Styles.text_xxlarge};
+  color: ${Styles.twitterBlue};
+`;
+
+const Figure = styled.figure`
+  width: 70%;
+  margin-top: 80px;
+  border: 1px solid ${Styles.gray};
+  border-radius: 50px;
+  box-shadow: 5px 5px 10px ${Styles.background};
+  border: 3px solid red;
+  padding: 30px;
+`;
+
+const Embed = styled.embed`
+  width: 100%;
+  height: 523px;
+  border-radius: 48px;
+`;
 
 const Github = () => {
   const [stats, setStats] = useState({
     name: '',
-    totalContributedTo: 0,
-    totalPRs: 0,
     totalStars: 0,
     totalIssues: 0,
     totalCommits: 0,
+    totalPRs: 0,
+    userSelfPRs: [],
+    userContribPRs: [],
+    totalContributedTo: 0,
     contributionRepos: [],
-    jugshauryaPRs: [],
-    otherPRs: [],
+    totalPullRequestContributionsPercentage: 0,
+    totalCommitContributionsPercentage: 0,
+    totalIssueContributionsPercentage: 0,
     repositories: [],
   });
+
   const [svg, setSvg] = useState('');
 
   useEffect(() => {
@@ -361,116 +99,140 @@ const Github = () => {
   }, []);
 
   useEffect(() => {
-    fetchContribSvg('jugshaurya').then((svg) => setSvg(svg));
+    fetchGithubSvg('jugshaurya').then((svg) => setSvg(svg));
   }, []);
+
+  const {
+    totalStars,
+    totalIssues,
+    totalCommits,
+    totalPRs,
+    userSelfPRs,
+    userContribPRs,
+    totalContributedTo,
+    contributionRepos,
+    totalPullRequestContributionsPercentage,
+    totalCommitContributionsPercentage,
+    totalIssueContributionsPercentage,
+    repositories,
+  } = stats;
 
   return (
     <>
-      <div id="stats" style={{ position: 'relative' }}>
-        <div className="container" style={{ position: 'relative' }}>
-          <div className="header">
-            <img src={GithubGradIcon} alt="github icon" />
-            <h2>Github Stats</h2>
-          </div>
-          <div className="values">
-            <div className="value">
-              <div className="type">
-                <img src={ContributionIcon} alt="contribution" />
-                Contributed to
-              </div>
-              <div className="count">
-                <CountUp
-                  start={0}
-                  end={stats.totalContributedTo}
-                  duration={5}
-                />
-              </div>
-            </div>
-            <div className="value prval">
-              {' '}
-              <div className="count">
-                <CountUp start={0} end={stats.totalPRs} duration={5} />
-              </div>
-              <div className="type">
-                <img src={PRIcon} alt="PRs" />
-                PRs
-              </div>
-            </div>
-            <div className="value stars">
-              <div className="type">
-                <img src={StarsIcon} alt="stars" />
-                Stars
-              </div>
-              <div className="count">
-                <CountUp start={0} end={stats.totalStars} duration={5} />
-              </div>
-            </div>
-            <div className="value">
-              <div className="count">
-                <CountUp start={0} end={stats.totalIssues} duration={5} />
-              </div>
-              <div className="type">
-                <img src={IssueIcon} alt="issues" />
-                Issues
-              </div>
-            </div>
-            <div className="value">
-              <div className="type">
-                <img src={CommitIcon} alt="commits" />
-                Commits
-              </div>
-              <div className="count">
-                <CountUp start={0} end={stats.totalCommits} duration={4} />
-              </div>
-            </div>
-          </div>
-          <div className="github-info"></div>
-        </div>
-
-        <div className="graphs">
-          <div className="container">
-            {GithubStatsGraph(
-              svg
-                .replaceAll('#ebedf0', '#222222')
-                .replaceAll('#9be9a8', '#4fffa7')
-                .replaceAll('#40c463', '#3DDC84')
-                .replaceAll('#30a14e', '#008D41')
-                .replaceAll('#216e39', '#00753b'),
-              {
-                totalPRsPercentage:
-                  stats.totalPullRequestContributionsPercentage,
-                totalIssuePercentage: stats.totalIssueContributionsPercentage,
-                totalCommitPercentage: stats.totalCommitContributionsPercentage,
-              },
-              stats.contributionRepos,
-              stats.repositories
-            )}
-            <figure className="wakatime-langs">
-              <embed src="https://wakatime.com/share/@jugshaurya/a750f08f-2404-4f77-8df8-849d0a8f4109.svg" />
-            </figure>
-            <img id="pattern1" src={DotPattern1} alt="dot pattern 1" />
-            <img id="lady" src={Lady} alt="lady" title="Lady" />
-            <img id="pattern2" src={DotPattern2} alt="dot pattern 2" />
-            <img id="boy" src={Boy} alt="shaurya" title="shaurya" />
-          </div>
-        </div>
-
-        <img
-          id="github-bg2"
-          src={GithubBackground2}
-          alt="Github background 2"
+      <section id="stats" style={{ position: 'relative' }}>
+        <FloatingImage
+          src={GithubBackground}
+          alt={'Wallpaper'}
+          style={{ transform: 'rotate(180deg)' }}
+          t={'-620px'}
+          l={0}
+          zi={-3}
+          w={'100%'}
         />
-        <img
-          id="github-bg3"
-          src={GithubBackground2}
-          alt="Github background 3"
+        <Container>
+          <Title
+            IconComp={GithubGradIcon}
+            iconDesc={'Github Stats'}
+            w={'36px'}
+            h={'36px'}
+          />
+          <Grid repeat={'repeat(5, 1fr)'} margin={'120px auto'}>
+            <GithubAction>
+              <GithubType
+                IconComp={ContributionIcon}
+                iconDesc={'Contributed to'}
+              />
+              <Counter>
+                <CountUp start={0} end={totalContributedTo} duration={5} />
+              </Counter>
+            </GithubAction>
+            <GithubAction>
+              <Counter>
+                <CountUp start={0} end={totalPRs} duration={5} />
+              </Counter>
+              <GithubType IconComp={PRIcon} iconDesc={'PRs'} />
+            </GithubAction>
+            <GithubAction>
+              <GithubType IconComp={StarsIcon} iconDesc={'Stars'} />
+              <Counter>
+                <CountUp start={0} end={totalStars} duration={5} />
+              </Counter>
+            </GithubAction>
+            <GithubAction>
+              <Counter>
+                <CountUp start={0} end={totalIssues} duration={5} />
+              </Counter>
+              <GithubType IconComp={IssueIcon} iconDesc={'Issues'} />
+            </GithubAction>
+            <GithubAction>
+              <GithubType IconComp={CommitIcon} iconDesc={'Commits'} />
+              <Counter>
+                <CountUp start={0} end={totalCommits} duration={5} />
+              </Counter>
+            </GithubAction>
+          </Grid>
+        </Container>
+
+        <Container>
+          <Flex jc={'flex-end'}>
+            <GithubActivityOverview
+              githubContribSvg={svg}
+              githubInfo={{
+                totalPRsPercentage: totalPullRequestContributionsPercentage,
+                totalIssuePercentage: totalIssueContributionsPercentage,
+                totalCommitPercentage: totalCommitContributionsPercentage,
+                orgs: contributionRepos,
+                repos: repositories,
+              }}
+            />
+          </Flex>
+          <Flex jc={'flex-start'}>
+            <Figure>
+              <Embed src="https://wakatime.com/share/@jugshaurya/a750f08f-2404-4f77-8df8-849d0a8f4109.svg" />
+            </Figure>
+          </Flex>
+
+          <FloatingImage
+            src={DotPattern1}
+            alt={'Dot Pattern 1'}
+            style={{ transform: 'rotate(-9deg)', opacity: '0.6' }}
+            t={'10%'}
+            l={'3%'}
+            zi={-2}
+            w={'20%'}
+          />
+          <FloatingImage
+            src={DotPattern2}
+            alt={'Dot Pattern 2'}
+            style={{ transform: 'rotate(-15deg)', opacity: '0.6' }}
+            b={'5%'}
+            r={'5%'}
+            zi={-2}
+            w={'20%'}
+          />
+          <FloatingImage
+            src={Lady}
+            alt={'Lady'}
+            t={'15%'}
+            l={0}
+            w={'40%'}
+            h={'30%'}
+          />
+          <FloatingImage
+            src={Boy}
+            alt={'Boy'}
+            b={'10%'}
+            r={'5%'}
+            w={'20%'}
+            h={'20%'}
+          />
+        </Container>
+        {/* Render only top 15 results */}
+        <LatestPRs
+          userSelfPRs={userSelfPRs.slice(0, 15)}
+          userContribPRs={userContribPRs.slice(0, 15)}
         />
-        <img id="github-bg" src={GithubBackground} alt="github background" />
-      </div>
-      <LatestPRs
-        jugshauryaPRs={stats.jugshauryaPRs}
-        otherPRs={stats.otherPRs}
-      />
+      </section>
     </>
   );
 };

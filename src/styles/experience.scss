@@ -5,38 +5,6 @@
   margin-top: 200px;
   // border: 3px solid orange;
   .container {
-    width: 70%;
-    margin: 0 auto;
-    position: relative;
-    // border: 1px solid red;
-    img#swiggly-bg {
-      position: absolute;
-      top: -10%;
-      left: -3%;
-      z-index: -10;
-      width: 10%;
-      height: auto;
-      // border: 3px solid gray;
-    }
-    .header {
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      margin-bottom: 80px;
-      img {
-        margin-right: 20px;
-        width: 44px;
-        height: auto;
-      }
-      h2 {
-        margin-bottom: 0;
-        font-size: $text_medium;
-        line-height: 1em;
-        color: $green;
-        opacity: 0.9;
-        position: relative;
-      }
-    }
     .exp-list {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
