@@ -21,88 +21,90 @@ const options = {
   },
 };
 
-const fetchGithubStats = async (username) => {
-  const res = await axios({
-    ...options,
-    data: {
-      query: `
-      query PersonStats($login: String!) {
-        user(login: $login) {
+const query = ` 
+  query PersonStats($login: String!) {
+    user(login: $login) {
+      name
+      repositoriesContributedTo(
+        first: 100
+        contributionTypes: [
+          COMMIT
+          PULL_REQUEST
+          PULL_REQUEST_REVIEW
+          ISSUE
+          REPOSITORY
+        ]
+      ) {
+        totalCount
+        nodes {
+          id
           name
-          repositoriesContributedTo(
-            first: 100
-            contributionTypes: [
-              COMMIT
-              PULL_REQUEST
-              PULL_REQUEST_REVIEW
-              ISSUE
-              REPOSITORY
-            ]
-          ) {
-            totalCount
-            nodes {
-              id
-              name
-              owner {
+          owner {
+            id
+            login
+            avatarUrl
+          }
+        }
+      }
+
+      contributionsCollection {
+        totalIssueContributions
+        totalCommitContributions
+        totalPullRequestContributions
+        totalPullRequestReviewContributions
+      }
+
+      pullRequests(
+        first: 100
+        states: [OPEN, MERGED, CLOSED]
+        orderBy: { field: CREATED_AT, direction: DESC }
+      ) {
+        nodes {
+          id
+          url
+          state
+          title
+          repository {
+            id
+            nameWithOwner
+            languages(first: 5) {
+              nodes {
                 id
-                login
-                avatarUrl
+                name
               }
             }
-          }
-  
-          contributionsCollection {
-            totalIssueContributions
-            totalCommitContributions
-            totalPullRequestContributions
-            totalPullRequestReviewContributions
-          }
-  
-          pullRequests(
-            first: 100
-            states: [OPEN, MERGED, CLOSED]
-            orderBy: { field: CREATED_AT, direction: DESC }
-          ) {
-            nodes {
-              id
+            owner {
               url
-              state
-              title
-              repository {
-                id
-                nameWithOwner
-                languages(first: 5) {
-                  nodes {
-                    id
-                    name
-                  }
-                }
-                owner {
-                  url
-                  login
-                  avatarUrl
-                }
-              }
-            }
-          }
-  
-          repositories(
-            first: 100
-            isFork: false
-            orderBy: { field: UPDATED_AT, direction: DESC }
-          ) {
-            nodes {
-              id
-              nameWithOwner
-              updatedAt
-              stargazers {
-                totalCount
-              }
+              login
+              avatarUrl
             }
           }
         }
       }
-    `,
+
+      repositories(
+        first: 100
+        isFork: false
+        orderBy: { field: UPDATED_AT, direction: DESC }
+      ) {
+        nodes {
+          id
+          nameWithOwner
+          updatedAt
+          stargazers {
+            totalCount
+          }
+        }
+      }
+    }
+  }
+  `;
+
+const fetchGithubStats = async (username) => {
+  const res = await axios({
+    ...options,
+    data: {
+      query,
       variables: {
         login: username,
       },

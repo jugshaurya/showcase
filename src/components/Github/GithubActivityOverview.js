@@ -28,6 +28,26 @@ const GithubActivitySection = styled.div`
   align-self: flex-end;
   width: 70%;
   padding: 30px;
+
+  @media ${Styles.device.laptopL} {
+    width: 80%;
+  }
+
+  @media ${Styles.device.laptop} {
+    width: 80%;
+  }
+
+  @media ${Styles.device.ipad} {
+  }
+
+  @media ${Styles.device.mobileL} {
+  }
+
+  @media ${Styles.device.mobileM} {
+  }
+
+  @media ${Styles.device.mobileS} {
+  }
 `;
 
 const GithubActivity = styled.div`
@@ -40,6 +60,7 @@ const ActivityHeading = styled.div`
   margin: 10px 0;
   font-size: ${Styles.text_small};
   color: ${Styles.green};
+  background: ${Styles.black};
 `;
 
 const GithubOrganization = styled.div`
@@ -47,6 +68,7 @@ const GithubOrganization = styled.div`
   padding: 5px;
   border: 1px dashed ${Styles.gray};
   font-size: ${Styles.text_xsmall};
+  background: ${Styles.black};
 `;
 
 const GithubRepo = styled.a`
@@ -80,6 +102,9 @@ const GithubGraph = styled.div`
     overflow: visible;
     text {
       font-size: 0.7em;
+    }
+    @media ${Styles.device.laptopL} {
+      margin-left: 0;
     }
   }
 `;

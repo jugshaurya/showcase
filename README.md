@@ -15,7 +15,7 @@
 
 ### 👀 Peek a Boo!
 
-#### Shaurya Personal Portfolio to showcase shaurya and his work at one place from various places.
+#### Shaurya Personal Portfolio to showcase shaurya and his work at one place from various other places like from Github Repos(Jupyter Notebooks & mdx files) and medium.
 
 ![](./readme-images/showcase.png)
 
@@ -27,12 +27,12 @@ Font Family: Gloria Hallelujah && Roboto Mono
 
   - ❌ css - using sass actually
   - ❌ module-css
-  - ❌ emotion - later
+  - ❌ emotion - leaving it 4 next time
   - ✅ sass
   - ✅ styled-component
   - ✅ classnames - A simple JavaScript utility for conditionally joining classNames together.
 
-- Choice: Using a combination of sass and styled component along with classnames.
+- **Choice**: Using a combination of sass and styled component along with classnames.
 
 ### ✨ Features:
 

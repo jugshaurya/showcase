@@ -1,10 +1,10 @@
 import React from 'react';
 import { Emojione } from 'react-emoji-render';
 import styled from 'styled-components';
-import * as Styles from '../styles-in-js/theme';
 
 import { Container, Flex, Icon, FloatingImage } from '../styles-in-js/shared';
 import Title from '../styles-in-js/Title';
+import * as Styles from '../styles-in-js/theme';
 
 import SwigglyBG from '../../static/patterns/bg-swiggly.svg';
 import PRIcon from '../../static/icons/PR.svg';
@@ -78,8 +78,8 @@ const LatestPRs = ({ userSelfPRs, userContribPRs }) => {
             style={{ opacity: '0.2', transform: 'rotate(180deg)' }}
             src={TriangleIcon}
             alt={'TriangleIcon'}
-            t={0}
-            l={'45%'}
+            t={[0]}
+            l={['45%']}
           />
           <h3>Open Source PRs'</h3>
           {userContribPRs.map((pr) => (
@@ -110,8 +110,8 @@ const LatestPRs = ({ userSelfPRs, userContribPRs }) => {
             style={{ opacity: '0.2', transform: 'rotate(180deg)' }}
             src={TriangleIcon}
             alt={'TriangleIcon'}
-            t={0}
-            l={'45%'}
+            t={[0]}
+            l={['45%']}
           />
           <h3>Personal PRs'</h3>
           {userSelfPRs.map((pr) => (
@@ -142,9 +142,9 @@ const LatestPRs = ({ userSelfPRs, userContribPRs }) => {
         style={{ opacity: '0.2', transform: 'rotate(-10deg)' }}
         src={SwigglyBG}
         alt={'SwigglyBG'}
-        b={'-220px'}
-        r={'-200px'}
-        width={'40%'}
+        b={['-220px']}
+        r={['-200px']}
+        width={['40%']}
       />
     </Container>
   );

@@ -1,6 +1,46 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import '../../styles/collapsedNavbar.scss';
+
+import styled from 'styled-components';
+import { Flex } from '../styles-in-js/shared';
+import * as Styles from '../styles-in-js/theme';
+
+const NavbarCurtain = styled.div`
+  width: 100vw;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  overflow-x: hidden;
+  transition: height 0.3s;
+  background-color: ${Styles.black};
+`;
+
+const CurtainContent = styled(Flex)`
+  position: absolute;
+  top: 10%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+`;
+
+const CrossButton = styled.span`
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: ${Styles.text};
+`;
+
+const NavLink = styled(Link)`
+  display: block;
+  cursor: pointer;
+  padding: 14px 0;
+  text-decoration: none;
+  font-size: ${Styles.text};
+  font-family: ${Styles.font_gloriahallelujah};
+  color: ${Styles.gray};
+`;
 
 const CollapsedNavbar = ({
   toggleNavbar,
@@ -10,8 +50,8 @@ const CollapsedNavbar = ({
   active,
 }) => {
   return (
-    <div id="myNav" className="overlay" style={{ height }}>
-      <span
+    <NavbarCurtain style={{ height }}>
+      <CrossButton
         role="button"
         tabIndex="0"
         className="closebtn"
@@ -19,27 +59,20 @@ const CollapsedNavbar = ({
         onKeyPress={() => toggleNavbar(false)}
       >
         &times;
-      </span>
-
-      <div
-        role="button"
-        tabIndex="0"
-        className="overlay-content"
-        onClick={() => toggleNavbar(false)}
-        onKeyPress={() => toggleNavbar(false)}
-      >
+      </CrossButton>
+      <CurtainContent fd={'column'}>
         {links.map((link) => (
-          <Link
+          <NavLink
             key={link.name}
             to={link.href}
             className={active === link.href ? 'active' : ''}
             onClick={() => setActive(link.href)}
           >
             {link.name}
-          </Link>
+          </NavLink>
         ))}
-      </div>
-    </div>
+      </CurtainContent>
+    </NavbarCurtain>
   );
 };
 

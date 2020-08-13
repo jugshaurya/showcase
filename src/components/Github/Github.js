@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import CountUp from 'react-countup';
 
-import LatestPRs from './LatestPRs';
 import GithubActivityOverview from './GithubActivityOverview';
 import * as Styles from '../styles-in-js/theme';
 
@@ -17,6 +16,7 @@ import {
 } from '../styles-in-js/shared';
 import Title from '../styles-in-js/Title';
 
+import LatestPRs from './LatestPRs';
 import GithubBackground from '../../static/patterns/bg-github.svg';
 import GithubGradIcon from '../../static/icons/githubgrad.svg';
 import DotPattern1 from '../../static/patterns/dotpattern1.svg';
@@ -65,7 +65,6 @@ const Figure = styled.figure`
   border: 1px solid ${Styles.gray};
   border-radius: 50px;
   box-shadow: 5px 5px 10px ${Styles.background};
-  border: 3px solid red;
   padding: 30px;
 `;
 
@@ -124,10 +123,18 @@ const Github = () => {
           src={GithubBackground}
           alt={'Wallpaper'}
           style={{ transform: 'rotate(180deg)' }}
-          t={'-620px'}
-          l={0}
+          t={[
+            '-580px',
+            '-480px',
+            '-300px',
+            '-220px',
+            '-180px',
+            '-180px',
+            '-180px',
+          ]}
+          l={[0, 0, 0, 0, 0, 0, 0]}
+          w={['100%', '100%', '100%', '100%', '100%', '100%', '100%']}
           zi={-3}
-          w={'100%'}
         />
         <Container>
           <Title
@@ -196,35 +203,35 @@ const Github = () => {
             src={DotPattern1}
             alt={'Dot Pattern 1'}
             style={{ transform: 'rotate(-9deg)', opacity: '0.6' }}
-            t={'10%'}
-            l={'3%'}
-            zi={-2}
-            w={'20%'}
+            t={['10%', '1%', '10%', '10%', '10%', '10%', '10%']}
+            l={['3%', '-3%', '3%', '3%', '3%', '3%', '3%']}
+            w={['20%', '30%', '20%', '30%', '20%', '30%', '20%']}
+            zi={[-2]}
           />
           <FloatingImage
             src={DotPattern2}
             alt={'Dot Pattern 2'}
-            style={{ transform: 'rotate(-15deg)', opacity: '0.6' }}
-            b={'5%'}
-            r={'5%'}
-            zi={-2}
-            w={'20%'}
+            style={{ transform: 'rotate(-15deg)', opacity: '0.8' }}
+            b={['5%', '5%', '5%', '5%', '5%', '5%', '5%']}
+            r={['5%', '1%', '5%', '5%', '5%', '5%', '5%']}
+            w={['20%', '30%', '20%', '20%', '20%', '20%', '20%']}
+            zi={[-2]}
           />
           <FloatingImage
             src={Lady}
             alt={'Lady'}
-            t={'15%'}
-            l={0}
-            w={'40%'}
-            h={'30%'}
+            t={['15%', '5%', '5%', '15%', '15%', '15%', '15%']}
+            l={['0', '-10%', '-10%', '0', '0', '0', '0']}
+            w={['40%', '40%', '40%', '40%', '40%', '40%', '40%']}
+            h={['30%', '30%', '30%', '30%', '30%', '30%', '30%']}
           />
           <FloatingImage
             src={Boy}
             alt={'Boy'}
-            b={'10%'}
-            r={'5%'}
-            w={'20%'}
-            h={'20%'}
+            b={['10%', '10%', '10%', '10%', '10%', '10%', '10%']}
+            r={['5%', '-5%', '-5%', '5%', '5%', '5%', '5%']}
+            w={['20%', '30%', '30%', '20%', '20%', '20%', '20%']}
+            h={['20%', '20%', '20%', '20%', '20%', '20%', '20%']}
           />
         </Container>
         {/* Render only top 15 results */}

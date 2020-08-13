@@ -8,10 +8,10 @@ const Title = ({ IconComp, iconDesc, w, h }) => {
       <Icon src={IconComp} alt={iconDesc} w={w} h={h} />
       <h2>{iconDesc}</h2>
       <FloatingImage
-        t={'0px'}
-        l={'-40px'}
-        w={'120px'}
-        h={'120px'}
+        t={['0', '0']}
+        l={['-40px', '-40px', '-40px', '-40px', '-40px', '-40px', '-40px']}
+        w={['120px', '120px', '120px', '120px', '120px', '120px', '120px']}
+        h={['120px', '120px', '120px', '120px', '120px', '120px', '120px']}
         src={SwigglyBG}
         alt={'swiggly bg'}
       />
