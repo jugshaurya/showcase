@@ -125,11 +125,11 @@ const createGithubActivityOverview = ({ githubContribSvg, githubInfo }) => {
       <ScrollableSvg>
         {renderHTML(
           githubContribSvg
-            .replaceAll('#ebedf0', '#222222')
-            .replaceAll('#9be9a8', '#4fffa7')
-            .replaceAll('#40c463', '#3DDC84')
-            .replaceAll('#30a14e', '#008D41')
-            .replaceAll('#216e39', '#00753b')
+            .replace(/#ebedf0/g, '#222222')
+            .replace(/#9be9a8/g, '#4fffa7')
+            .replace(/#40c463/g, '#3DDC84')
+            .replace(/#30a14e/g, '#008D41')
+            .replace(/#216e39/g, '#00753b')
         )}
       </ScrollableSvg>
       <Flex>
