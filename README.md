@@ -18,6 +18,8 @@
 #### Shaurya Personal Portfolio to showcase shaurya and his work at one place from various other places like from Github Repos(Jupyter Notebooks & mdx files) and medium.
 
 ![](./readme-images/showcase.png)
+![](./readme-images/showcase-1.png)
+![](./readme-images/showcase-2.png)
 
 Font Family: Gloria Hallelujah && Roboto Mono
 
@@ -33,6 +35,74 @@ Font Family: Gloria Hallelujah && Roboto Mono
   - ✅ classnames - A simple JavaScript utility for conditionally joining classNames together.
 
 - **Choice**: Using a combination of sass and styled component along with classnames.
+
+- Tech Used
+  - Gatsby
+  - React
+  - Styled-components
+  - Sass
+
+### 📔 Contribution Guides
+
+If you want to contribute to this repo follow the below steps:
+
+**1. Fork and Clone the repo**
+
+- Fork using the fork button above on this page only.
+- and then clone using
+
+```cmd
+  $ git clone https://github.com/jugshaurya/showcase.git
+```
+
+**2. Run the site Locally after step 1**
+
+- _2a. Install Dependendies_
+  ```cmd
+    $ yarn or npm install
+  ```
+- _2b. Start the gatsby server in development mode_
+  ```cmd
+    $ yarn develop or npm run develop
+  ```
+
+**3. Make changes/make PR**
+
+- create a new branch
+
+  ```cmd
+    $ git checkout -b <new-branch-anme>
+  ```
+
+- make changes and commit them
+
+  ```cmd
+    $ git add -A
+    $ git commit -m "some message and fixes#IssueNo. "
+  ```
+
+- push to origin
+  ```
+  $ git push origin master
+  ```
+- make a PR to upstream
+
+  - use GUI for doing so @github.com only
+
+- wait for it getting merged and talk to me in the chat.
+
+---
+
+Note:- **Problem Solution**
+
+- Sometimes port in use warning comes up:
+- Solve it using
+
+```
+  yarn portclean
+```
+
+---
 
 ### ✨ Features:
 

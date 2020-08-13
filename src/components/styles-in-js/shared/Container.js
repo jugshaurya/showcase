@@ -7,15 +7,17 @@ export const Container = styled.div`
   width: 70vw;
   height: ${(props) => props.height || 'auto'};
   margin: 0 auto;
-  @media ${Styles.device.laptop} {
+  @media ${Styles.device.laptopL} {
     width: 80vw;
   }
-  @media ${Styles.device.laptopL} {
-    width: 90vw;
+  @media ${Styles.device.laptop} {
+    width: 85vw;
   }
   @media ${Styles.device.ipad} {
+    width: 90vw;
   }
   @media ${Styles.device.mobileL} {
+    width: 90vw;
   }
   @media ${Styles.device.mobileM} {
   }

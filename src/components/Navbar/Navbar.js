@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { Link } from 'gatsby';
 
-import CollapsedNavbar from './CollapsedNavbar';
+import styled from 'styled-components';
+import { Container, Flex } from '../styles-in-js/shared';
+import * as Styles from '../styles-in-js/theme';
 
+import CollapsedNavbar from './CollapsedNavbar';
 import Logo from '../../static/logo/logo-green.svg';
-import '../../styles/navbar.scss';
 
 const links = [
   {
@@ -41,45 +43,148 @@ const links = [
   },
 ];
 
-import styled from 'styled-components';
-import { Container, Flex } from '../styles-in-js/shared';
-import * as Styles from '../styles-in-js/theme';
+const Navbar = ({ defaultRoute }) => {
+  const [active, setActive] = useState(defaultRoute || '/');
+  const [collapseHeight, setCollapseHeight] = useState(0);
+  const toggleNavbar = (val) =>
+    val ? setCollapseHeight(100) : setCollapseHeight(0);
 
-const SiteLogo = styled.div`
+  return (
+    <>
+      {/* hide-on-mobile */}
+      <Nav as="nav" className="hide-on-mobile">
+        <Container>
+          <Flex jc={'space-between'}>
+            <SiteLogo src={Logo} alt="site Logo" />
+            <NavList>
+              {links.map((link) => (
+                <NavItem
+                  key={link.name}
+                  to={link.href}
+                  className={active === link.href ? 'active' : ''}
+                  onClick={() => setActive(link.href)}
+                >
+                  {link.name}
+                </NavItem>
+              ))}
+            </NavList>
+          </Flex>
+        </Container>
+      </Nav>
+      {/* show-on-mobile */}
+      <Nav as="nav" className="show-on-mobile">
+        <Container>
+          <Flex jc={'space-between'}>
+            <SiteLogo src={Logo} alt="site Logo" />
+            <ThreeBars toggleNavbar={toggleNavbar} />
+          </Flex>
+        </Container>
+        <CollapsedNavbar
+          toggleNavbar={toggleNavbar}
+          height={`${collapseHeight}%`}
+          links={links}
+          setActive={setActive}
+          active={active}
+        />
+      </Nav>
+    </>
+  );
+};
+
+export default Navbar;
+
+const SiteLogo = styled.img`
   width: 60px;
   height: 60px;
+  /* border: 3px solid red; */
+  @media ${Styles.device.laptopL} {
+  }
+  @media ${Styles.device.laptop} {
+  }
+  @media ${Styles.device.ipad} {
+    height: 48px;
+    width: 48px;
+  }
+  @media ${Styles.device.mobileL} {
+  }
+  @media ${Styles.device.mobileM} {
+  }
+  @media ${Styles.device.mobileS} {
+  }
 `;
 
-const Nav = styled.nav`
+const Nav = styled(Flex)`
   position: fixed;
   top: 0;
   left: 0;
   z-index: 10;
   width: 100vw;
+  min-height: 150px;
+  &.hide-on-mobile {
+    display: flex;
+  }
+  &.show-on-mobile {
+    display: none;
+  }
+
+  @media ${Styles.device.laptopL} {
+  }
+  @media ${Styles.device.laptop} {
+  }
+  @media ${Styles.device.ipad} {
+  }
+  @media ${Styles.device.mobileL} {
+    min-height: 100px;
+    &.hide-on-mobile {
+      display: none;
+    }
+    &.show-on-mobile {
+      display: flex;
+    }
+  }
+  @media ${Styles.device.mobileM} {
+  }
+  @media ${Styles.device.mobileS} {
+  }
 `;
 
 const NavList = styled(Flex)`
-  border: 3px solid ${Styled.gray};
+/* font-family:${Styles.font_gabriela} */
 `;
 
 const NavItem = styled(Link)`
   text-decoration: none;
   font-size: ${Styles.text};
-  color: ${Styled.gray};
+  color: ${Styles.gray};
   margin: 0 10px;
   &.active {
     position: relative;
-    color: ${Styled.green};
+    color: ${Styles.green};
     &::after {
       content: '';
       position: absolute;
       left: 0;
-      bottom: -10px;
-      width: 40px;
-      height: 6px;
+      bottom: -5px;
+      width: 70%;
+      height: 5px;
       border-radius: 7px;
-      background: ${Styled.blue};
+      background: ${Styles.blue};
     }
+  }
+
+  @media ${Styles.device.laptopL} {
+  }
+  @media ${Styles.device.laptop} {
+    font-size: ${Styles.text_small};
+  }
+  @media ${Styles.device.ipad} {
+    font-size: ${Styles.text_xsmall};
+  }
+  @media ${Styles.device.mobileL} {
+  }
+  @media ${Styles.device.mobileM} {
+  }
+  @media ${Styles.device.mobileS} {
   }
 `;
 
@@ -89,7 +194,7 @@ const Bars = styled(Flex)`
 
 const Bar = styled.div`
   margin: 2px 0;
-  height: 6px;
+  height: 5px;
   width: 30px;
   border-radius: 10px;
   background: ${Styles.white};
@@ -98,7 +203,7 @@ const Bar = styled.div`
 const ThreeBars = ({ toggleNavbar }) => {
   return (
     <Bars
-      jc={'space-between'}
+      fd={'column'}
       role="button"
       tabIndex="0"
       onClick={() => toggleNavbar(true)}
@@ -111,47 +216,3 @@ const ThreeBars = ({ toggleNavbar }) => {
     </Bars>
   );
 };
-
-const Navbar = ({ defaultRoute }) => {
-  const [active, setActive] = useState(defaultRoute || '/');
-  const [collapseHeight, setCollapseHeight] = useState(0);
-  const toggleNavbar = (val) =>
-    val ? setCollapseHeight(100) : setCollapseHeight(0);
-
-  return (
-    <Nav>
-      <Container height={'12vh'} className="hide-on-mobile">
-        <Flex jc={'space-between'}>
-          <SiteLogo src={Logo} alt="site Logo" />
-          <NavList>
-            {links.map((link) => (
-              <NavItem
-                key={link.name}
-                to={link.href}
-                className={active === link.href ? 'active' : ''}
-                onClick={() => setActive(link.href)}
-              >
-                {link.name}
-              </NavItem>
-            ))}
-          </NavList>
-        </Flex>
-      </Container>
-      <Container height={'12vh'} className="show-on-mobile">
-        <Flex jc={'space-between'}>
-          <SiteLogo src={Logo} alt="site Logo" />
-          <ThreeBars toggleNavbar={toggleNavbar} />
-        </Flex>
-      </Container>
-      <CollapsedNavbar
-        toggleNavbar={toggleNavbar}
-        height={`${collapseHeight}%`}
-        links={links}
-        setActive={setActive}
-        active={active}
-      />
-    </Nav>
-  );
-};
-
-export default Navbar;

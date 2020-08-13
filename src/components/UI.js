@@ -14,14 +14,14 @@ import Contacts from './Contacts/contacts';
 const UI = () => {
   return (
     <div id="shaurya-showcase">
-      {/* <Navbar />
-      <Hero />
-      <About /> */}
+      <Navbar />
+      {/* <Hero />
+      <About />
       <Github />
-      {/* <Projects /> */}
-      {/* <Toolbox /> */}
-      {/* <Experience /> */}
-      {/* <Contacts />
+      <Projects />
+      <Toolbox />
+      <Experience />
+      <Contacts />
       <Extra />
       <Footer /> */}
     </div>
