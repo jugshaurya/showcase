@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'gatsby';
 
 import styled from 'styled-components';
@@ -49,10 +49,27 @@ const Navbar = ({ defaultRoute }) => {
   const toggleNavbar = (val) =>
     val ? setCollapseHeight(100) : setCollapseHeight(0);
 
+  // TODO: Change navbar Background on Scroll
+  useEffect(() => {
+    const navbar = document.getElementById('navbar');
+
+    const changeNavbarBackground = (e) => {
+      const Yoffset = Math.round(window.scrollY / 2);
+      if (Yoffset < 150) {
+      } else {
+      }
+    };
+
+    window.addEventListener('scroll', changeNavbarBackground);
+    return () => {
+      window.removeEventListener('scroll', changeNavbarBackground);
+    };
+  }, []);
+
   return (
     <>
       {/* hide-on-mobile */}
-      <Nav as="nav" className="hide-on-mobile">
+      <Nav as="nav" className="hide-on-mobile" id="navbar">
         <Container>
           <Flex jc={'space-between'}>
             <SiteLogo src={Logo} alt="site Logo" />
@@ -72,7 +89,7 @@ const Navbar = ({ defaultRoute }) => {
         </Container>
       </Nav>
       {/* show-on-mobile */}
-      <Nav as="nav" className="show-on-mobile">
+      <Nav as="nav" className="show-on-mobile" id="navbar">
         <Container>
           <Flex jc={'space-between'}>
             <SiteLogo src={Logo} alt="site Logo" />
@@ -114,7 +131,8 @@ const SiteLogo = styled.img`
 `;
 
 const Nav = styled(Flex)`
-  position: fixed;
+  /* position: fixed; */
+  position: absolute;
   top: 0;
   left: 0;
   z-index: 10;
@@ -154,7 +172,6 @@ const NavList = styled(Flex)`
 
 const NavItem = styled(Link)`
   text-decoration: none;
-  font-size: ${Styles.text};
   color: ${Styles.gray};
   margin: 0 10px;
   &.active {

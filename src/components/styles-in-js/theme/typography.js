@@ -9,11 +9,12 @@ export const helper = '0.8em';
 export const copyright = '0.7em';
 
 // text
-export const text_xxlarge = '3em';
+export const text_xxxlarge = '3em';
+export const text_xxlarge = '2.375em';
 export const text_xlarge = '1.6275em';
 export const text_large = '1.4275em';
 export const text_medium = '1.2275em';
-export const text = '1.1em';
+export const text = '1em';
 export const text_small = '0.9em';
 export const text_xsmall = '0.8em';
 export const text_xxsmall = '0.7em';

@@ -3,19 +3,21 @@
 
 #footer {
   // border: 3px solid red;
-  border-bottom: 3px solid $gray;
-  margin: 0;
-  background: $background;
-  .container {
-    // border: 3px solid orangered;
-    width: 70%;
-    margin: 0px auto;
-    display: flex;
-    justify-content: space-between;
-    font-size: $text_small * 0.8;
-    color: $white;
-    padding: 20px 20px;
-  }
+  // border-bottom: 3px solid $gray;
+  // margin: 0;
+  // background: $background;
+  // .container {
+  //   // border: 3px solid orangered;
+  //   width: 70%;
+  //   margin: 0px auto;
+  //   .content {
+  //     display: flex;
+  //     justify-content: space-between;
+  //     font-size: $text_small * 0.8;
+  //     color: $white;
+  //     padding: 20px 20px;
+  //   }
+  // }
 }
 
 @media screen and (max-width: $desktop) {
@@ -33,7 +35,9 @@
     .container {
       // border: 3px solid orangered;
       width: 85%;
-      font-size: $text_small * 0.7;
+      .content {
+        font-size: $text_small * 0.7;
+      }
     }
   }
 }
@@ -43,8 +47,10 @@
     .container {
       // border: 3px solid orangered;
       width: 90%;
-      font-size: $text_small * 0.7;
-      padding: 15px 10px;
+      .content {
+        font-size: $text_small * 0.7;
+        padding: 15px 10px;
+      }
     }
   }
 }

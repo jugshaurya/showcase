@@ -1,29 +1,47 @@
 import React from 'react';
+
+import styled from 'styled-components';
+import { Container, Flex } from '../styles-in-js/shared';
+import * as Styles from '../styles-in-js/theme';
+
 import '../../styles/footer.scss';
+
 const Footer = () => {
   return (
-    <div id="footer">
-      <div className="container">
-        <div className="left">
-          {' '}
-          Created with{' '}
-          <span role="img" aria-labelledby="emoji">
-            💛
-          </span>{' '}
-          using Gatsby & Figma
-        </div>
-        <div className="middle"> - &copy; 2020 - </div>
-        <div className="right">
-          {' '}
-          Created with{' '}
-          <span role="img" aria-labelledby="emoji">
-            💛
-          </span>{' '}
-          by Shaurya Singhal
-        </div>
-      </div>
-    </div>
+    <FooterSection>
+      <Container>
+        <Flex jc="space-between">
+          <Text>
+            Created with{' '}
+            <span role="img" aria-labelledby="emoji">
+              💛
+            </span>{' '}
+            using Gatsby & Figma
+          </Text>
+          <Text>- &copy; 2020 -</Text>
+          <Text>
+            Created with{' '}
+            <span role="img" aria-labelledby="emoji">
+              💛
+            </span>{' '}
+            by Shaurya Singhal
+          </Text>
+        </Flex>
+      </Container>
+    </FooterSection>
   );
 };
 
 export default Footer;
+
+const Text = styled.div`
+  font-size: ${Styles.text_small};
+  color: ${Styles.white};
+  padding: 20px;
+`;
+
+const FooterSection = styled.section`
+  border-bottom: 3px solid ${Styles.gray};
+  margin: 0;
+  background: ${Styles.background};
+`;

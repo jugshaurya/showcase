@@ -45,7 +45,13 @@ const Type = styled.div`
 const GithubType = ({ IconComp, iconDesc }) => {
   return (
     <Type>
-      <Icon w={'24px'} h={'24px'} mr={'8px'} src={IconComp} alt={iconDesc} />{' '}
+      <Icon
+        w={'24px'}
+        h={'24px'}
+        m={'0 8px 0 0'}
+        src={IconComp}
+        alt={iconDesc}
+      />{' '}
       {iconDesc}
     </Type>
   );
@@ -143,7 +149,7 @@ const Github = () => {
             w={'36px'}
             h={'36px'}
           />
-          <Grid repeat={'repeat(5, 1fr)'} margin={'120px auto'}>
+          <Grid gtc={'repeat(5, 1fr)'} margin={'120px auto'}>
             <GithubAction>
               <GithubType
                 IconComp={ContributionIcon}

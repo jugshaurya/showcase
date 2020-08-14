@@ -1,114 +1,115 @@
 @import './colors';
 @import './typography';
 
-.hero {
-  height: 100vh;
-  width: 100vw;
-  .container {
-    width: 70%;
-    height: 100vh;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: center;
-    padding-top: 200px;
-    padding-right: 100px;
-    .top {
-      // border: 3px solid red;
-      display: grid;
-      grid-template-columns: 70px 300px 220px;
-      #bag {
-        position: absolute;
-        top: -90px;
-        left: 50px;
-        transform: rotate(-90deg);
-        // display: none;
-      }
-      .hi {
-        font-size: $text_small * 0.9;
-        color: $gray;
-      }
-      .bar,
-      .bar2 {
-        grid-column: span 2;
-        height: 6px;
-        border-radius: 7px;
-        background: $g_blueGreen;
-        align-self: center;
-        width: 80%;
-      }
+// #hero {
+// height: 100vh;
+// width: 100vw;
+// .container {
+// width: 70%;
+// height: 100vh;
+// margin: 0 auto;
+// display: flex;
+// flex-direction: column;
+// align-items: flex-end;
+// justify-content: center;
+// padding-top: 200px;
+// padding-right: 100px;
+// .top {
+// border: 3px solid red;
+// display: grid;
+// grid-template-columns: 70px 300px 220px;
+// #bag {
+//   position: absolute;
+//   top: -90px;
+//   left: 50px;
+//   transform: rotate(-90deg);
+// display: none;
+// }
 
-      .bar2 {
-        width: 70%;
-      }
+// .bar,
+// .bar2 {
+//   grid-column: span 2;
+//   height: 6px;
+//   border-radius: 7px;
+//   background: $g_blueGreen;
+//   align-self: center;
+//   width: 80%;
+// }
 
-      .name {
-        grid-column: span 3;
-        font-size: $text_xlarge;
-        line-height: $text_large * 0.7;
-        @include textColorGradient($g_blackOrange);
-      }
+// .bar2 {
+//   width: 70%;
+// }
 
-      .desc {
-        text-align: left;
-        font-size: $text_small;
-        color: $gray;
-        margin-left: -86px;
-      }
-    }
+// .name {
+//   grid-column: span 3;
+//   font-size: $text_xlarge;
+//   line-height: $text_large * 0.7;
+//   @include textColorGradient($g_blackOrange);
+// }
 
-    .bottom {
-      // border: 3px solid orange;
-      width: 590px;
-      .logos {
-        padding-top: 40px;
-        padding-bottom: 10px;
-        width: 90%;
-        // border: 3px solid yellow;
-        display: grid;
-        grid-template-columns: repeat(7, 1fr);
-        #node {
-          align-self: flex-end;
-          margin-left: -10px;
-        }
-      }
-      .bar3 {
-        height: 6px;
-        border-radius: 7px;
-        background: $g_blueGreen;
-        align-self: center;
-        width: 84%;
-      }
-    }
-  }
-  #navbar-bg {
-    position: absolute;
-    top: -200px;
-    right: 0;
-    width: 80vw;
-    z-index: -1;
-  }
+// .hi {
+//   font-size: $text_small * 0.9;
+//   color: $gray;
+// }
+// .desc {
+//   text-align: left;
+//   font-size: $text_small;
+//   color: $gray;
+//   margin-left: -86px;
+// }
+// }
 
-  svg#book-pattern {
-    position: absolute;
-    top: 200px;
-    left: -400px;
-    width: 45vw;
-    height: auto;
-  }
-  #box-pattern {
-    position: absolute;
-    top: 350px;
-    width: 20vw;
-    height: auto;
-    right: 0;
-    z-index: -1;
-  }
-}
+// .bottom {
+// border: 3px solid orange;
+// width: 590px;
+// .logos {
+// padding-top: 40px;
+// padding-bottom: 10px;
+// width: 90%;
+// border: 3px solid yellow;
+// display: grid;
+// grid-template-columns: repeat(7, 1fr);
+// .node {
+//   align-self: flex-end;
+//   margin-left: -10px;
+// }
+// }
+// .bar3 {
+//   height: 6px;
+//   border-radius: 7px;
+//   background: $g_blueGreen;
+//   align-self: center;
+//   width: 84%;
+// }
+// }
+// }
+// #navbar-bg {
+//   position: absolute;
+//   top: -200px;
+//   right: 0;
+//   width: 80vw;
+//   z-index: -1;
+// }
+
+// svg#book-pattern {
+//   position: absolute;
+//   top: 200px;
+//   left: -400px;
+//   width: 45vw;
+//   height: auto;
+// }
+// #box-pattern {
+//   position: absolute;
+//   top: 350px;
+//   width: 20vw;
+//   height: auto;
+//   right: 0;
+//   z-index: -1;
+// }
+// }
 
 @media screen and (max-width: $desktop) {
-  .hero {
+  #hero {
     .container {
       width: 80%;
     }
@@ -125,7 +126,7 @@
 }
 
 @media screen and (max-width: $ipadRotate) {
-  .hero {
+  #hero {
     .container {
       width: 80%;
       padding-right: 0;
@@ -162,7 +163,7 @@
             width: 44px;
             height: 44px;
           }
-          #node {
+          .node {
             margin-left: 0px;
           }
         }
@@ -185,7 +186,7 @@
 }
 
 @media screen and (max-width: $ipad) {
-  .hero {
+  #hero {
     // border: 3px solid green;
     .container {
       width: 90%;
@@ -208,7 +209,7 @@
 }
 
 @media screen and (max-width: $mobile) {
-  .hero {
+  #hero {
     padding: 20px;
     .container {
       justify-content: center;
@@ -255,7 +256,7 @@
               margin-left: 0;
             }
           }
-          #node {
+          .node {
             margin-left: 0px;
           }
         }

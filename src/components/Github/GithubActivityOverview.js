@@ -144,7 +144,7 @@ const createGithubActivityOverview = ({ githubContribSvg, githubInfo }) => {
                   alt={org.owner.login}
                   w={'24px'}
                   h={'24px'}
-                  mr={'5px'}
+                  m={'0 5px 0 0'}
                 />
                 {org.owner.login}
               </GithubOrganization>

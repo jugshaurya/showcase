@@ -91,7 +91,6 @@ const LatestPRs = ({ userSelfPRs, userContribPRs }) => {
                   title={pr.repository.owner.login}
                   w={'24px'}
                   h={'24px'}
-                  mr={'0'}
                 />
               </Logo>
               <PRDesc
@@ -123,7 +122,6 @@ const LatestPRs = ({ userSelfPRs, userContribPRs }) => {
                   title={pr.repository.owner.login}
                   w={'24px'}
                   h={'24px'}
-                  mr={'0'}
                 />
               </Logo>
               <PRDesc
