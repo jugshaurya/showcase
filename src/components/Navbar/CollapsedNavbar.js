@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
-import styled, { keyframes } from 'styled-components';
-import { Flex } from '../styles-in-js/shared';
+import styled from 'styled-components';
+import { Flex, rotate } from '../styles-in-js/shared';
 import * as Styles from '../styles-in-js/theme';
 
 const CollapsedNavbar = ({
@@ -61,16 +61,6 @@ const CurtainContent = styled(Flex)`
   width: 100%;
   text-align: center;
   margin-top: 30px;
-`;
-
-const rotate = keyframes`
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
 `;
 
 const CrossButton = styled.span`

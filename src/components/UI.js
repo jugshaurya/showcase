@@ -18,7 +18,7 @@ const UI = () => {
       <Snow />
       <Navbar />
       <Hero />
-      {/* <About /> */}
+      <About />
       <Github />
       {/* <Projects />
       <Toolbox />

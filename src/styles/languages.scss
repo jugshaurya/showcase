@@ -2,7 +2,7 @@
 @import './colors';
 
 .languages {
-  margin-top: 200px;
+  margin-top: 100px;
   // border: 3px solid orange;
   img#languages-bg {
     position: absolute;
@@ -14,11 +14,11 @@
     transform: translateY(-300px);
   }
   .container {
-    width: 70%;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 60px;
+    // width: 70%;
+    // margin: 0 auto;
+    // display: grid;
+    // grid-template-columns: repeat(3, 1fr);
+    // gap: 60px;
     .primary,
     .secondary,
     .tertiary {
@@ -26,15 +26,15 @@
       transform: translateY(-50px);
       order: 2;
       position: relative;
-      img.card-pattern {
-        position: absolute;
-        width: 100%;
-        top: 0px;
-        left: 0px;
-        height: 100%;
-        z-index: -1;
-        transform: scale(1.4);
-      }
+      // img.card-pattern {
+      //   position: absolute;
+      //   width: 100%;
+      //   top: 0px;
+      //   left: 0px;
+      //   height: 100%;
+      //   z-index: -1;
+      //   transform: scale(1.1);
+      // }
       .content {
         width: 90%;
         margin: 40px auto;

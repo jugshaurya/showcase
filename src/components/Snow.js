@@ -54,6 +54,26 @@ const Snow = () => {
       <div className="snow"></div>
       <div className="snow"></div>
       <div className="snow"></div>
+      <div className="snow"></div>
+      <div className="snow"></div>
+      <div className="snow"></div>
+      <div className="snow"></div>
+      <div className="snow"></div>
+      <div className="snow"></div>
+      <div className="snow"></div>
+      <div className="snow"></div>
+      <div className="snow"></div>
+      <div className="snow"></div>
+      <div className="snow"></div>
+      <div className="snow"></div>
+      <div className="snow"></div>
+      <div className="snow"></div>
+      <div className="snow"></div>
+      <div className="snow"></div>
+      <div className="snow"></div>
+      <div className="snow"></div>
+      <div className="snow"></div>
+      <div className="snow"></div>
     </>
   );
 };

@@ -115,14 +115,14 @@ const Hero = () => {
           </ShowcaseTop>
           <ShowcaseBottom>
             <ShowcaseLogos gtc="repeat(7, 1fr)" margin="30px 0 5px 0">
-              <LangIcon
+              <Icon
                 w="44px"
                 h="44px"
                 src={JSIcon}
                 alt="JS Icon"
                 title="Javascript"
               />
-              <LangIcon
+              <Icon
                 src={NodeIcon}
                 alt="Node Icon"
                 title="Node"
@@ -131,35 +131,35 @@ const Hero = () => {
                 w="60px"
                 h="60px"
               />
-              <LangIcon
+              <Icon
                 w="44px"
                 h="44px"
                 src={ReactIcon}
                 alt="React Icon"
                 title="React"
               />
-              <LangIcon
+              <Icon
                 w="44px"
                 h="44px"
                 src={ReduxIcon}
                 alt="Redux Icon"
                 title="Redux"
               />
-              <LangIcon
+              <Icon
                 w="44px"
                 h="44px"
                 src={GraphqlIcon}
                 alt="Graphql Icon"
                 title="GraphQL"
               />
-              <LangIcon
+              <Icon
                 w="44px"
                 h="44px"
                 src={GatsbyIcon}
                 alt="Gatsby Icon"
                 title="Gatsby"
               />
-              <LangIcon
+              <Icon
                 w="44px"
                 h="44px"
                 src={FigmaIcon}
@@ -176,13 +176,6 @@ const Hero = () => {
 };
 
 export default Hero;
-
-const LangIcon = styled(Icon)`
-  &:hover {
-    cursor: hand;
-    transform: scale(1.2);
-  }
-`;
 
 const Showcase = styled(Flex)`
   height: 100%;
