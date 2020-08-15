@@ -2,10 +2,10 @@ import React from 'react';
 import { SectionTitle, Icon, FloatingImage } from './shared';
 import SwigglyBG from '../../static/patterns/bg-swiggly.svg';
 
-const Title = ({ IconComp, iconDesc, w, h }) => {
+const Title = ({ IconComp, iconDesc, w, h, m }) => {
   return (
     <SectionTitle jc="flex-start" style={{ position: 'relative' }}>
-      <Icon src={IconComp} alt={iconDesc} w={w} h={h} />
+      <Icon src={IconComp} alt={iconDesc} w={w} h={h} m={'0 15px 0 0'} />
       <h2>{iconDesc}</h2>
       <FloatingImage
         t={['0', '0']}

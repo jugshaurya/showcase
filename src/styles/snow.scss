@@ -1,4 +1,5 @@
-// https://codepen.io/alphardex/pen/dyPorwJ
+@import './colors';
+// https://codepen.io/alphardex/pen/dyPorwJ + minor Modifications
 
 @function random_range($min, $max) {
   $rand: random();
@@ -7,12 +8,13 @@
 }
 
 .snow {
-  $total: 70;
+  $total: 100;
   position: absolute;
   width: 10px;
   height: 10px;
-  background: white;
+  background: $twitterBlue;
   border-radius: 50%;
+  border-top-left-radius: 0;
 
   @for $i from 1 through $total {
     $width: 0.0001vw;

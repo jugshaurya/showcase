@@ -10,23 +10,22 @@ import Extra from './Extra/extra';
 import Footer from './Footer/footer';
 import Experience from './Experience/experience';
 import Contacts from './Contacts/contacts';
-import Snow from './Snow';
 
 const UI = () => {
   return (
-    <div id="shaurya-showcase">
-      <Snow />
+    <>
       <Navbar />
       <Hero />
       <About />
       <Github />
-      {/* <Projects />
       <Toolbox />
+      {/* <Projects />
       <Experience />
       <Contacts />
-      <Extra />
-      <Footer /> */}
-    </div>
+      <Extra /> */}
+      <div> Work in Progress... </div>
+      <Footer />
+    </>
   );
 };
 

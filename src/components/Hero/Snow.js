@@ -1,9 +1,40 @@
 import React from 'react';
-import '../styles/snow.scss';
+import '../../styles/snow.scss';
 
 const Snow = () => {
   return (
     <>
+      {/* 100 snow balls */}
+      <div className="snow"></div>
+      <div className="snow"></div>
+      <div className="snow"></div>
+      <div className="snow"></div>
+      <div className="snow"></div>
+      <div className="snow"></div>
+      <div className="snow"></div>
+      <div className="snow"></div>
+      <div className="snow"></div>
+      <div className="snow"></div>
+      <div className="snow"></div>
+      <div className="snow"></div>
+      <div className="snow"></div>
+      <div className="snow"></div>
+      <div className="snow"></div>
+      <div className="snow"></div>
+      <div className="snow"></div>
+      <div className="snow"></div>
+      <div className="snow"></div>
+      <div className="snow"></div>
+      <div className="snow"></div>
+      <div className="snow"></div>
+      <div className="snow"></div>
+      <div className="snow"></div>
+      <div className="snow"></div>
+      <div className="snow"></div>
+      <div className="snow"></div>
+      <div className="snow"></div>
+      <div className="snow"></div>
+      <div className="snow"></div>
       <div className="snow"></div>
       <div className="snow"></div>
       <div className="snow"></div>

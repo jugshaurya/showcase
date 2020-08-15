@@ -9,7 +9,10 @@ import {
   Flex,
 } from '../styles-in-js/shared';
 import * as Styles from '../styles-in-js/theme';
+
 import BookPattern from './BookPattern';
+import Snow from './Snow';
+
 import NavbarBackground from '../../static/patterns/bg-navbar.svg';
 import BoxPattern from '../../static/patterns/box-pattern.svg';
 import JSIcon from '../../static/icons/js.svg';
@@ -20,6 +23,7 @@ import GraphqlIcon from '../../static/icons/graphql.svg';
 import GatsbyIcon from '../../static/icons/gatsby.svg';
 import FigmaIcon from '../../static/icons/figma.svg';
 import Bag from '../../static/icons/bag.svg';
+
 // import '../../styles/hero.scss';
 
 const socialLink = {
@@ -29,7 +33,6 @@ const socialLink = {
 };
 
 const Hero = () => {
-  console.log(Styles.textColorGradient(Styles.g_blackOrange));
   // Bag Move Animation on scroll > 200
   useEffect(() => {
     const bag = document.getElementById('bag');
@@ -48,6 +51,7 @@ const Hero = () => {
 
   return (
     <section id="hero" style={{ position: 'relative', width: '100vw' }}>
+      <Snow />
       <FloatingImage
         src={NavbarBackground}
         alt={'Navbar BG'}
@@ -120,51 +124,51 @@ const Hero = () => {
                 h="44px"
                 src={JSIcon}
                 alt="JS Icon"
-                title="Javascript"
+                title={`Javascript\n(Intermediate)`}
               />
               <Icon
-                src={NodeIcon}
-                alt="Node Icon"
-                title="Node"
-                m="0 0 0 -10px"
-                style={{ alignSelf: 'flex-end' }}
                 w="60px"
                 h="60px"
+                src={NodeIcon}
+                alt="Node Icon"
+                title={`Node\n(Intermediate)`}
+                m="0 0 0 -10px"
+                style={{ alignSelf: 'flex-end' }}
               />
               <Icon
                 w="44px"
                 h="44px"
                 src={ReactIcon}
                 alt="React Icon"
-                title="React"
+                title="{`React\n(Intermediate)`}"
               />
               <Icon
                 w="44px"
                 h="44px"
                 src={ReduxIcon}
                 alt="Redux Icon"
-                title="Redux"
+                title={`Redux\n(Intermediate)`}
               />
               <Icon
                 w="44px"
                 h="44px"
                 src={GraphqlIcon}
                 alt="Graphql Icon"
-                title="GraphQL"
+                title={`Graphql\n(Intermediate)`}
               />
               <Icon
                 w="44px"
                 h="44px"
                 src={GatsbyIcon}
                 alt="Gatsby Icon"
-                title="Gatsby"
+                title={`Gatsby\n(Intermediate)`}
               />
               <Icon
                 w="44px"
                 h="44px"
                 src={FigmaIcon}
                 alt="Figma Icon"
-                title="Figma"
+                title={`Figma\n(Beginner)`}
               />
             </ShowcaseLogos>
             <ShowcaseBar w="84%" />

@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import styled from 'styled-components';
 import CountUp from 'react-countup';
 
 import GithubActivityOverview from './GithubActivityOverview';
-import * as Styles from '../styles-in-js/theme';
 
-import fetchGithubSvg from '../../utils/fetchGithubSvg';
-import fetchGithubStats from '../../utils/fetchGithubStats';
+import Title from '../styles-in-js/Title';
+import styled from 'styled-components';
+import * as Styles from '../styles-in-js/theme';
 import {
   Container,
   Icon,
@@ -14,7 +13,9 @@ import {
   Flex,
   Grid,
 } from '../styles-in-js/shared';
-import Title from '../styles-in-js/Title';
+
+import fetchGithubSvg from '../../utils/fetchGithubSvg';
+import fetchGithubStats from '../../utils/fetchGithubStats';
 
 import LatestPRs from './LatestPRs';
 import GithubBackground from '../../static/patterns/bg-github.svg';

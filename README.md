@@ -15,7 +15,7 @@
 
 ### 👀 Peek a Boo!
 
-#### Shaurya Personal Portfolio to showcase shaurya and his work at one place from various other places like from Github Repos(Jupyter Notebooks & mdx files) and medium.
+_🦄 Shaurya Personal Portfolio to showcase shaurya and his work at one place from various other places like from Github Repos(Jupyter Notebooks & mdx files) and medium. 🦄_
 
 ![](./readme-images/showcase1.png)
 ![](./readme-images/showcase2.png)
@@ -30,9 +30,9 @@ Font Family: Gloria Hallelujah && Roboto Mono
   - ❌ css - using sass actually
   - ❌ module-css
   - ❌ emotion - leaving it 4 next time
-  - ✅ sass
-  - ✅ styled-component
-  - ✅ classnames - A simple JavaScript utility for conditionally joining classNames together.
+  - ✔ sass
+  - ✔ styled-component
+  - ✔ classnames - A simple JavaScript utility for conditionally joining classNames together.
 
 - **Choice**: Using a combination of sass and styled component along with classnames.
 
@@ -55,10 +55,6 @@ Font Family: Gloria Hallelujah && Roboto Mono
 - [x] Adding Medium Blogs as well: Issue #3
 - [x] Using _Figma_ to Build the site: Issue #26
 - [x] Rendering _Github Activity Svgs_ :Issue #28
-
-### Run Project
-
-- yarn develop or gatsby develop or yarn dev
 
 ### 👥 Contribution Guides
 
@@ -114,8 +110,14 @@ Note:- _Problem Solution_
 - Sometimes port in use warning comes up:
 - Solve it using
   ```cmd
-    yarn portclean
+    $ yarn portclean
   ```
+
+### 🎮 Run Project
+
+```cmd
+$ yarn develop or gatsby develop or yarn dev
+```
 
 ### Resources
 

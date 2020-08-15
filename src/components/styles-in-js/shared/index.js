@@ -14,3 +14,13 @@ export const rotate = keyframes`
     transform: rotate(360deg);
   }
 `;
+export const fadein = keyframes`
+  from {
+    opacity: 0;
+    transform: translateX(-10px) translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(10px) translateY(10px);
+  }
+`;
