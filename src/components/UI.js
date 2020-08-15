@@ -20,10 +20,10 @@ const UI = () => {
       <Github />
       <Toolbox />
       {/* <Projects />
-      <Experience />
-      <Contacts />
-      <Extra /> */}
-      <div> Work in Progress... </div>
+       */}
+      {/* <Contacts /> */}
+      {/* <Experience /> */}
+      <Extra />
       <Footer />
     </>
   );

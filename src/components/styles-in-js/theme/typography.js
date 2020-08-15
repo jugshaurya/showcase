@@ -18,6 +18,7 @@ export const text = '1em';
 export const text_small = '0.9em';
 export const text_xsmall = '0.8em';
 export const text_xxsmall = '0.7em';
+export const text_xxxsmall = '0.6em';
 
 // fonts
 export const font_path = '../../../static/fonts';

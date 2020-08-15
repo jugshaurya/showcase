@@ -3,13 +3,7 @@ import React, { useRef, useState } from 'react';
 import Title from '../styles-in-js/Title';
 import styled from 'styled-components';
 import * as Styles from '../styles-in-js/theme';
-import {
-  Container,
-  FloatingImage,
-  Flex,
-  rotate,
-  fadein,
-} from '../styles-in-js/shared';
+import { Container, FloatingImage, Flex } from '../styles-in-js/shared';
 
 import ToolboxIcon from '../../static/icons/toolbox.svg';
 import RutherfordBackground from '../../static/patterns/bg-rutherford.svg';
@@ -49,7 +43,25 @@ const Toolbox = () => {
 
 export default Toolbox;
 
-const SkillsSVG = styled.svg``;
+const SkillsSVG = styled.svg`
+  #bulb-with-shadow {
+    cursor: pointer;
+    /* TODO: Adding a title attr like feeling here */
+    &::after {
+      border: 3px solid red;
+      content: 'Click me, I changes colors like Chameleon';
+      /* display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+
+      */
+      color: gray;
+    }
+    &:hover {
+    }
+  }
+`;
 
 let colorIndex = 0;
 
@@ -80,7 +92,7 @@ const RutherfordSkillsSVG = () => {
     const index = colorIndex % 7;
     colorIndex++;
     if (colorIndex > 15) {
-      colorIndex = 0;
+      colorIndex = 1;
     }
     const choice = colors[index];
     if (on) {

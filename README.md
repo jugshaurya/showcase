@@ -55,6 +55,8 @@ Font Family: Gloria Hallelujah && Roboto Mono
 - [x] Adding Medium Blogs as well: Issue #3
 - [x] Using _Figma_ to Build the site: Issue #26
 - [x] Rendering _Github Activity Svgs_ :Issue #28
+- [x] Snow Effect
+- [x] Bulb on/off @skills section
 
 ### 👥 Contribution Guides
 
