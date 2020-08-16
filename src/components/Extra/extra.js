@@ -133,6 +133,19 @@ const CreditSection = ({ title, credits }) => {
   );
 };
 
+// Thank you:- https://www.30secondsofcode.org/blog/s/copy-text-to-clipboard-with-javascript
+const copyToClipboard = (color) => {
+  console.log('Copied', color);
+  const el = document.createElement('textarea');
+  el.value = color;
+  el.setAttribute('readonly', '');
+  el.style.position = 'absolute';
+  el.style.left = '-9999px';
+  document.body.appendChild(el);
+  el.select();
+  document.execCommand('copy');
+  document.body.removeChild(el);
+};
 const Extra = () => {
   return (
     <section id="extra" style={{ position: 'relative' }}>
@@ -170,7 +183,7 @@ const Extra = () => {
 
         <BackToTop>
           <BackLink to="#top">
-            Back to Top{' '}
+            Back to Top
             <Icon
               src={BackIcon}
               alt={'back Icon'}
@@ -182,24 +195,78 @@ const Extra = () => {
         </BackToTop>
 
         <WebsiteColors>
-          <WebsiteColor color={Styles.black} />
-          <WebsiteColor color={Styles.green} />
-          <WebsiteColor color={Styles.twitterBlue} />
-          <WebsiteColor color={Styles.darkgreen} />
-          <WebsiteColor color={Styles.orange} />
-          <WebsiteColor color={Styles.yellow} />
-          <WebsiteColor color={Styles.black} />
-          <WebsiteColor color={Styles.pink} />
-          <WebsiteColor color={Styles.red} />
-          <WebsiteColor color={Styles.blue} />
-          <WebsiteColor color={Styles.purple} />
-          <WebsiteColor color={Styles.mapPurple} />
-          <WebsiteColor color={Styles.g_blueGreen} />
-          <WebsiteColor color={Styles.g_pinkBluePurple} />
-          <WebsiteColor color={Styles.g_blackOrange} />
-          <WebsiteColor color={Styles.g_bluePurple} />
-          <WebsiteColor color={Styles.g_greenBluePink} />
-          <WebsiteColor color={Styles.g_twitter} />
+          <WebsiteColor
+            color={Styles.black}
+            onClick={() => copyToClipboard(Styles.black)}
+          />
+          <WebsiteColor
+            color={Styles.green}
+            onClick={() => copyToClipboard(Styles.green)}
+          />
+          <WebsiteColor
+            color={Styles.twitterBlue}
+            onClick={() => copyToClipboard(Styles.twitterBlue)}
+          />
+          <WebsiteColor
+            color={Styles.darkgreen}
+            onClick={() => copyToClipboard(Styles.darkgreen)}
+          />
+          <WebsiteColor
+            color={Styles.orange}
+            onClick={() => copyToClipboard(Styles.orange)}
+          />
+          <WebsiteColor
+            color={Styles.yellow}
+            onClick={() => copyToClipboard(Styles.yellow)}
+          />
+          <WebsiteColor
+            color={Styles.black}
+            onClick={() => copyToClipboard(Styles.black)}
+          />
+          <WebsiteColor
+            color={Styles.pink}
+            onClick={() => copyToClipboard(Styles.pink)}
+          />
+          <WebsiteColor
+            color={Styles.red}
+            onClick={() => copyToClipboard(Styles.red)}
+          />
+          <WebsiteColor
+            color={Styles.blue}
+            onClick={() => copyToClipboard(Styles.blue)}
+          />
+          <WebsiteColor
+            color={Styles.purple}
+            onClick={() => copyToClipboard(Styles.purple)}
+          />
+          <WebsiteColor
+            color={Styles.mapPurple}
+            onClick={() => copyToClipboard(Styles.mapPurple)}
+          />
+          <WebsiteColor
+            color={Styles.g_blueGreen}
+            onClick={() => copyToClipboard(Styles.g_blueGreen)}
+          />
+          <WebsiteColor
+            color={Styles.g_pinkBluePurple}
+            onClick={() => copyToClipboard(Styles.g_pinkBluePurple)}
+          />
+          <WebsiteColor
+            color={Styles.g_blackOrange}
+            onClick={() => copyToClipboard(Styles.g_blackOrange)}
+          />
+          <WebsiteColor
+            color={Styles.g_bluePurple}
+            onClick={() => copyToClipboard(Styles.g_bluePurple)}
+          />
+          <WebsiteColor
+            color={Styles.g_greenBluePink}
+            onClick={() => copyToClipboard(Styles.g_greenBluePink)}
+          />
+          <WebsiteColor
+            color={Styles.g_twitter}
+            onClick={() => copyToClipboard(Styles.g_twitter)}
+          />
         </WebsiteColors>
 
         <Credits gtc="repeat(2, 1fr)" gap="100px" rgap="60px">
@@ -220,6 +287,7 @@ export default Extra;
 
 const BackToTop = styled(Flex)`
   margin-top: 30px;
+  text-decoration: underline;
 `;
 
 const BackLink = styled(Link)`
@@ -230,31 +298,60 @@ const BackLink = styled(Link)`
 
 const WebsiteColors = styled(Flex)`
   border: 3px dotted ${Styles.gray};
-  padding: 30px;
+  padding: 20px;
   margin: 0 auto;
   margin-top: 30px;
-  margin-bottom: 60px;
+  margin-bottom: 160px;
   width: fit-content;
   border-radius: 22px;
   background: ${Styles.codeblocks_output_border};
 `;
 
 const WebsiteColor = styled.div`
-  background: ${(props) => props.color};
+  position: relative;
+  cursor: pointer;
   width: 44px;
   height: 44px;
   border-radius: 5px;
   transform: rotate(45deg);
   margin: -2px;
+  background: ${(props) => props.color};
+
+  &:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s;
+  }
+
+  &:active {
+    border: 10px double ${Styles.codeblocks_output_border};
+  }
+
+  &:before {
+    border: 1px solid ${Styles.gray};
+    pointer-events: none;
+    position: absolute;
+    text-align: center;
+    content: 'Copy it';
+    /* opacity: 0; */
+    font-size: 12px;
+    width: 100px;
+    border-radius: 10px;
+    padding: 10px;
+    left: 50%;
+    bottom: -100%;
+    background: ${Styles.background};
+    transition: transform 1s;
+    transform: rotate(45deg);
+  }
 `;
 
 const Credits = styled(Grid)``;
 
 const CreditTitle = styled.div`
-  padding: 10px;
+  padding: 5px 10px;
   border-radius: 10px;
   color: ${Styles.white};
-  background: ${Styles.codeblocks_output_border};
+  background: ${Styles.background};
   font-family: ${Styles.font_gloriahallelujah};
   font-weight: bold;
 `;
