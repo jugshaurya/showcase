@@ -19,10 +19,9 @@ const UI = () => {
       <About />
       <Github />
       <Toolbox />
-      {/* <Projects />
-       */}
-      {/* <Contacts /> */}
-      {/* <Experience /> */}
+      {/* <Projects /> */}
+      <Experience />
+      <Contacts />
       <Extra />
       <Footer />
     </>

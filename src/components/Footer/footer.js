@@ -41,7 +41,6 @@ const Text = styled.div`
 `;
 
 const FooterSection = styled.section`
-  border-bottom: 3px solid ${Styles.gray};
   margin: 0;
   background: ${Styles.background};
 `;

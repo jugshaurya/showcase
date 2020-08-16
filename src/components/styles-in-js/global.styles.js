@@ -153,6 +153,7 @@ const GlobalStyles = createGlobalStyle`
   summary {
     display: block;
   }
+
   audio,
   canvas,
   progress,

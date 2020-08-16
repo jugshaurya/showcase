@@ -1,60 +1,140 @@
 import React from 'react';
+
 import ContactIcon from '../../static/icons/extra.svg';
 import GmailIcon from '../../static/icons/gmail.svg';
 import LinkedInIcon from '../../static/icons/linkedin.svg';
 import GithubIcon from '../../static/icons/github.svg';
 import TwitterIcon from '../../static/icons/twitter.svg';
 import Shaurya from '../../static/shaurya.png';
-import PolygonRed from '../../static/patterns/polygonred.svg';
-import PolygonGreen from '../../static/patterns/polygongreen.svg';
 
-import '../../styles/contacts.scss';
+// import '../../styles/contacts.scss';
+
+import Title from '../styles-in-js/Title';
+import styled from 'styled-components';
+import {
+  Container,
+  Flex,
+  FloatingImage,
+  Icon,
+  Grid,
+} from '../styles-in-js/shared';
+import * as Styles from '../styles-in-js/theme';
+
+const socialLink = [
+  {
+    link: 'https://github.com/jugshaurya',
+    type: 'Github',
+    icon: GithubIcon,
+  },
+  {
+    link: 'https://twitter.com/jugshaurya',
+    type: 'Twitter',
+    icon: TwitterIcon,
+  },
+  {
+    link: 'https://www.linkedin.com/in/jugshaurya/',
+    type: 'Linkedin',
+    icon: LinkedInIcon,
+  },
+];
+
+const ContactsLeft = styled(Flex)`
+  width: 541px;
+  height: 556px;
+  border-radius: 68px;
+  background: ${Styles.black20};
+  margin-left: 150px;
+`;
+
+const ContactLink = styled(Flex)`
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #1f1d1d;
+`;
+
+const SocialLinks = styled(Flex)`
+  background-color: ${Styles.mapPurple};
+  width: 246px;
+  border-radius: 26px;
+  height: auto;
+  padding: 5px 20px 0px;
+`;
+
+const ContactsRight = styled(Flex)`
+  background: ${Styles.black20};
+  border: 12px double ${Styles.darkgreen};
+  border-radius: 68px;
+  width: 150%;
+  height: 456px;
+  margin-left: -275px;
+  z-index: -1;
+  margin-top: 40px;
+`;
+
+const ContactRightInternal = styled(Flex)`
+  background: ${Styles.background};
+  border-radius: 68px;
+  z-index: -2;
+  width: 80%;
+  text-align: center;
+  height: 256px;
+  padding: 100px;
+  color: ${Styles.gray};
+  margin-left: -40px;
+  font-size: ${Styles.text_xsmall};
+  span {
+    margin-top: 10px;
+    color: ${Styles.blue};
+    &::selection {
+      background-color: ${Styles.black};
+      color: ${Styles.gray};
+    }
+  }
+`;
 
 const Contacts = () => {
   return (
-    <div id="contacts" style={{ position: 'relative' }}>
-      {/* <img className="polygon green" src={PolygonGreen} alt="green poly" /> */}
-      {/* <img className="polygon red" src={PolygonRed} alt="red ploy" /> */}
-      <div className="container">
-        <div className="header">
-          <img src={ContactIcon} alt="Contact icon" />
-          <h2>Contact me</h2>
-        </div>
-        <div className="main">
-          <div className="left">
-            <div className="gmail">
-              <a href="mailto: shauryasinghal84@gmail.com">
-                <img src={GmailIcon} alt="gmail icon" />
-              </a>
-            </div>
-            <div className="photo">
-              <img src={Shaurya} alt="Shaurya icon" />
-            </div>
-            <div className="social-links">
-              <a
-                href="/https://www.linkedin.com/in/jugshaurya/"
-                rel="noopener noreferrer"
-              >
-                <img src={LinkedInIcon} alt="linkedin Icon" />
-              </a>
-              <a
-                href="/https://github.com/jugshaurya/"
-                rel="noopener noreferrer"
-              >
-                <img src={GithubIcon} alt="Github Icon" />
-              </a>
-              <a
-                href="/https://twitter.com/jugshaurya/"
-                rel="noopener noreferrer"
-              >
-                <img src={TwitterIcon} alt="Twitter Icon" />
-              </a>
-            </div>
-          </div>
-          <div className="right">
-            <div className="internal">
-              Feel Free to reach out; whether you want my help or want to
-              collaborate on some project. <br />
+    <section id="contacts" style={{ position: 'relative', marginTop: '160px' }}>
+      <Container style={{ position: 'relative' }} className="container">
+        <Title IconComp={ContactIcon} iconDesc={'Contact me'} />
+        <Grid gtc="1fr 2fr">
+          <ContactsLeft fd="column">
+            <ContactLink as="a" href="mailto: shauryasinghal84@gmail.com">
+              <Icon
+                src={GmailIcon}
+                alt="gmail icon"
+                title="mail me @shauryasinghal84@gmail.com"
+              />
+            </ContactLink>
+            <Icon
+              w={'200px'}
+              h={'200px'}
+              src={Shaurya}
+              alt="Shaurya"
+              title="Shaurya Singhal"
+              m="50px auto"
+            />
+            <SocialLinks jc="space-evenly">
+              {socialLink.map((link) => (
+                <a href={link.link} rel="noopener noreferrer">
+                  <Icon
+                    src={link.icon}
+                    alt={link.type}
+                    title={link.type}
+                    w="44px"
+                    h="44px"
+                    m="0"
+                  />
+                </a>
+              ))}
+            </SocialLinks>
+          </ContactsLeft>
+          <ContactsRight>
+            <ContactRightInternal fd="column">
+              Feel Free to reach out;
+              <br /> whether you want my help or want to collaborate on some
+              project. <br />
               <span>
                 <span role="img" aria-labelledby="emoji">
                   🌱
@@ -64,11 +144,11 @@ const Contacts = () => {
                   🌱
                 </span>
               </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+            </ContactRightInternal>
+          </ContactsRight>
+        </Grid>
+      </Container>
+    </section>
   );
 };
 

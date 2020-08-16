@@ -12,7 +12,7 @@ import {
   Grid,
 } from '../styles-in-js/shared';
 
-import GithubBackground from '../../static/patterns/bg-github.svg';
+import ExtraBG from '../../static/patterns/bg-credit.svg';
 import ExtraIcon from '../../static/icons/extra.svg';
 import BackIcon from '../../static/icons/back.svg';
 
@@ -150,10 +150,10 @@ const Extra = () => {
   return (
     <section id="extra" style={{ position: 'relative' }}>
       <FloatingImage
-        src={GithubBackground}
+        src={ExtraBG}
         alt={'Wallpaper'}
-        b={[
-          '-500px',
+        t={[
+          '-300px',
           '-480px',
           '-300px',
           '-220px',

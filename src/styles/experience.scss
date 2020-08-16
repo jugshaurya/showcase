@@ -1,101 +1,101 @@
 @import './typography';
 @import './colors';
 
-#experience {
-  margin-top: 200px;
-  // border: 3px solid orange;
-  .container {
-    .exp-list {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 50px;
+// #experience {
+// margin-top: 200px;
+// border: 3px solid orange;
+// .container {
+//   .exp-list {
+//     display: grid;
+//     grid-template-columns: repeat(2, 1fr);
+//     gap: 50px;
 
-      .exp {
-        // border: 1px solid red;
-        text-align: center;
-        img {
-          width: 75%;
-          height: auto;
-          display: block;
-          margin: 0 auto;
-        }
-        .content {
-          position: absolute;
-          // border: 3px solid red;
-          top: 90px;
-          left: 38px;
+//     .exp {
+//       // border: 1px solid red;
+//       text-align: center;
+//       img {
+//         width: 75%;
+//         height: auto;
+//         display: block;
+//         margin: 0 auto;
+//       }
+//       .content {
+//         position: absolute;
+//         // border: 3px solid red;
+//         top: 90px;
+//         left: 38px;
 
-          .position,
-          .desc {
-            @include textColorGradient($g_blueGreen);
-          }
+//         .position,
+//         .desc {
+//           @include textColorGradient($g_blueGreen);
+//         }
 
-          .desc {
-            font-size: $text_small;
-            font-family: $font_normal;
-          }
+//         .desc {
+//           font-size: $text_small;
+//           font-family: $font_normal;
+//         }
 
-          .info {
-            width: 60%;
-            margin: 40px auto;
-            margin-top: 60px;
-            p,
-            img {
-              width: 100%;
-              text-align: left;
-              word-break: keep-all;
-              font-size: $text_xsmall;
-              font-family: $font_normal;
-            }
-          }
-          // company logo
-          img {
-            width: 202px;
-            height: 71px;
-            margin: 20px auto;
-          }
+//         .info {
+//           width: 60%;
+//           margin: 40px auto;
+//           margin-top: 60px;
+//           p,
+//           img {
+//             width: 100%;
+//             text-align: left;
+//             word-break: keep-all;
+//             font-size: $text_xsmall;
+//             font-family: $font_normal;
+//           }
+//         }
+//         // company logo
+//         img {
+//           width: 202px;
+//           height: 71px;
+//           margin: 20px auto;
+//         }
 
-          .bottom {
-            display: grid;
-            grid-template-columns: 30% auto;
-            justify-content: center;
-            align-content: flex-end;
-            height: fit-content;
-            .certificates {
-              display: flex;
-              justify-content: flex-end;
-              width: fit-content;
-              height: 56px;
-              a {
-                width: 56px;
-                height: 56px;
-                align-self: flex-start;
-                img {
-                  width: 100%;
-                  height: 100%;
-                  margin-top: -10px;
-                }
-              }
-            }
-            .date {
-              font-size: $text_xsmall;
-              height: fit-content;
-            }
-          }
-        }
-      }
+//         .bottom {
+//           display: grid;
+//           grid-template-columns: 30% auto;
+//           justify-content: center;
+//           align-content: flex-end;
+//           height: fit-content;
+//           .certificates {
+//             display: flex;
+//             justify-content: flex-end;
+//             width: fit-content;
+//             height: 56px;
+//             a {
+//               width: 56px;
+//               height: 56px;
+//               align-self: flex-start;
+//               img {
+//                 width: 100%;
+//                 height: 100%;
+//                 margin-top: -10px;
+//               }
+//             }
+//           }
+//           .date {
+//             font-size: $text_xsmall;
+//             height: fit-content;
+//           }
+//         }
+//       }
+//     }
 
-      .exp#sec {
-        img {
-          width: 70%;
-        }
-        .content {
-          margin-left: 160px;
-        }
-      }
-    }
-  }
-}
+//     .exp#sec {
+//       img {
+//         width: 70%;
+//       }
+//       .content {
+//         margin-left: 160px;
+//       }
+//     }
+//   }
+// }
+// }
 
 @media screen and (max-width: $desktop) {
   #experience {

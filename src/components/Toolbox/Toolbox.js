@@ -45,6 +45,7 @@ export default Toolbox;
 
 const SkillsSVG = styled.svg`
   #bulb-with-shadow {
+    color: gray;
     cursor: pointer;
     /* TODO: Adding a title attr like feeling here */
     &::after {
@@ -54,11 +55,7 @@ const SkillsSVG = styled.svg`
       position: absolute;
       bottom: 0;
       left: 0;
-
       */
-      color: gray;
-    }
-    &:hover {
     }
   }
 `;

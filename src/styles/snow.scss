@@ -13,8 +13,10 @@
   width: 10px;
   height: 10px;
   background: $white;
+  box-shadow: 2px 2px 25px $yellow;
   border-radius: 50%;
-  border-top-left-radius: 0;
+  // make it a leaf
+  // border-top-left-radius: 0;
 
   @for $i from 1 through $total {
     $width: 0.0001vw;
