@@ -1,8 +1,8 @@
 import React from 'react';
-import BlogTemplate from '../components/BlogTemplate';
+import Blogs from '../components/Blogs/Blogs';
 
 const BlogsPage = ({ children }) => {
-  return <BlogTemplate>{children}</BlogTemplate>;
+  return <Blogs>{children}</Blogs>;
 };
 
 export default BlogsPage;

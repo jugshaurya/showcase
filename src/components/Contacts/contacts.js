@@ -5,6 +5,9 @@ import GmailIcon from '../../static/icons/gmail.svg';
 import LinkedInIcon from '../../static/icons/linkedin.svg';
 import GithubIcon from '../../static/icons/github.svg';
 import TwitterIcon from '../../static/icons/twitter.svg';
+import DotPattern3 from '../../static/patterns/dotpattern3.svg';
+import DotPattern4 from '../../static/patterns/dotpattern4.svg';
+
 import Shaurya from '../../static/shaurya.png';
 
 // import '../../styles/contacts.scss';
@@ -97,9 +100,31 @@ const Contacts = () => {
   return (
     <section id="contacts" style={{ position: 'relative', marginTop: '160px' }}>
       <Container style={{ position: 'relative' }} className="container">
+        <FloatingImage
+          src={DotPattern3}
+          alt={'dot Pattern'}
+          t={['400px', '480px', '300px', '220px', '180px', '180px', '180px']}
+          r={[0, 0, 0, 0, 0, 0, 0]}
+          w={['auto', '100%', '100%', '100%', '100%', '100%', '100%']}
+        />
         <Title IconComp={ContactIcon} iconDesc={'Contact me'} />
         <Grid gtc="1fr 2fr">
-          <ContactsLeft fd="column">
+          <ContactsLeft fd="column" style={{ position: 'relative' }}>
+            <FloatingImage
+              src={DotPattern4}
+              alt={'dot Pattern'}
+              t={[
+                '-20px',
+                '480px',
+                '300px',
+                '220px',
+                '180px',
+                '180px',
+                '180px',
+              ]}
+              l={['-20px', 0, 0, 0, 0, 0, 0]}
+              w={['auto', '100%', '100%', '100%', '100%', '100%', '100%']}
+            />
             <ContactLink as="a" href="mailto: shauryasinghal84@gmail.com">
               <Icon
                 src={GmailIcon}

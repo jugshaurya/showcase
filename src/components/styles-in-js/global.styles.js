@@ -65,8 +65,9 @@ const GlobalStyles = createGlobalStyle`
   }
 
   *::selection {
-    background: whitesmoke;
-    color: $black;
+    background: gray;
+    font-weight: bold;
+    color: ${Styles.black};
   }
   
   html {

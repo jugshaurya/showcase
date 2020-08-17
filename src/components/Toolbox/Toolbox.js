@@ -7,6 +7,7 @@ import { Container, FloatingImage, Flex } from '../styles-in-js/shared';
 
 import ToolboxIcon from '../../static/icons/toolbox.svg';
 import RutherfordBackground from '../../static/patterns/bg-rutherford.svg';
+import DotPattern3 from '../../static/patterns/dotpattern3.svg';
 
 // import '../../styles/toolbox.scss';
 
@@ -29,6 +30,14 @@ const Toolbox = () => {
         w={['100%', '100%', '100%', '100%', '100%', '100%', '100%']}
       />
       <Container>
+        <FloatingImage
+          src={DotPattern3}
+          alt={'dot Pattern'}
+          t={['0px', '480px', '300px', '220px', '180px', '180px', '180px']}
+          l={[0, 0, 0, 0, 0, 0, 0]}
+          w={['auto', '100%', '100%', '100%', '100%', '100%', '100%']}
+          style={{ transform: 'rotate(45deg)' }}
+        />
         <Title
           IconComp={ToolboxIcon}
           iconDesc={'Skills/can work with...'}
@@ -45,7 +54,7 @@ export default Toolbox;
 
 const SkillsSVG = styled.svg`
   #bulb-with-shadow {
-    color: gray;
+    color: ${Styles.gray};
     cursor: pointer;
     /* TODO: Adding a title attr like feeling here */
     &::after {
@@ -80,19 +89,17 @@ const RutherfordSkillsSVG = () => {
     setOn(!on);
     const colors = [
       Styles.green,
+      Styles.red,
       Styles.yellow,
       Styles.twitterBlue,
+      Styles.darkgreen,
       Styles.codeblocks_input_border,
-      Styles.orange,
-      Styles.mapPurple,
     ];
-    const index = colorIndex % 7;
-    colorIndex++;
-    if (colorIndex > 15) {
-      colorIndex = 1;
-    }
-    const choice = colors[index];
     if (on) {
+      colorIndex++;
+      colorIndex = colorIndex % 6;
+      const choice = colors[colorIndex];
+      console.log(choice, colorIndex);
       lightsRef1.current.style.fill = choice;
       lightsRef2.current.style.fill = choice;
       lightsRef3.current.style.fill = choice;
@@ -104,16 +111,16 @@ const RutherfordSkillsSVG = () => {
       lightsRef9.current.style.fill = choice;
       lightsRef10.current.style.fill = choice;
     } else {
-      lightsRef1.current.style.fill = choice;
-      lightsRef2.current.style.fill = choice;
-      lightsRef3.current.style.fill = choice;
-      lightsRef4.current.style.fill = choice;
-      lightsRef5.current.style.fill = choice;
-      lightsRef6.current.style.fill = choice;
-      lightsRef7.current.style.fill = choice;
-      lightsRef8.current.style.fill = choice;
-      lightsRef9.current.style.fill = choice;
-      lightsRef10.current.style.fill = choice;
+      lightsRef1.current.style.fill = Styles.mapPurple;
+      lightsRef2.current.style.fill = Styles.mapPurple;
+      lightsRef3.current.style.fill = Styles.mapPurple;
+      lightsRef4.current.style.fill = Styles.mapPurple;
+      lightsRef5.current.style.fill = Styles.mapPurple;
+      lightsRef6.current.style.fill = Styles.mapPurple;
+      lightsRef7.current.style.fill = Styles.mapPurple;
+      lightsRef8.current.style.fill = Styles.mapPurple;
+      lightsRef9.current.style.fill = Styles.mapPurple;
+      lightsRef10.current.style.fill = Styles.mapPurple;
     }
   };
 
@@ -213,19 +220,19 @@ const RutherfordSkillsSVG = () => {
                 ref={lightsRef1}
                 id="Vector_11"
                 d="M47.4163 736.017L43.9325 724.254C43.8514 723.98 43.8715 723.682 43.9882 723.424C44.1049 723.167 44.3088 722.972 44.5549 722.882C44.801 722.792 45.0693 722.814 45.3006 722.944C45.532 723.074 45.7075 723.3 45.7885 723.574L49.2723 735.337C49.3534 735.611 49.3334 735.909 49.2166 736.166C49.0999 736.424 48.8961 736.619 48.6499 736.709C48.4038 736.799 48.1356 736.777 47.9042 736.647C47.6729 736.517 47.4974 736.291 47.4163 736.017Z"
-                fill="#FFD200"
+                fill={Styles.mapPurple}
               />
               <path
                 ref={lightsRef2}
                 id="Vector_12"
                 d="M51.5801 737.752L46.3544 720.107C46.2733 719.833 46.2933 719.535 46.4101 719.277C46.5268 719.02 46.7306 718.825 46.9768 718.735C47.2229 718.645 47.4911 718.667 47.7225 718.797C47.9538 718.927 48.1293 719.153 48.2104 719.427L53.4362 737.072C53.5172 737.346 53.4972 737.644 53.3804 737.901C53.2637 738.158 53.0599 738.354 52.8137 738.444C52.5676 738.534 52.2994 738.512 52.068 738.382C51.8367 738.252 51.6612 738.025 51.5801 737.752Z"
-                fill="#FFD200"
+                fill={Styles.mapPurple}
               />
               <path
                 ref={lightsRef3}
                 id="Vector_13"
                 d="M55.9892 736.138L59.9562 734.685C64.7498 732.929 71.0006 737.066 75.3492 739.642C81.4762 743.274 88.424 743.819 95.5961 741.192C101.897 738.885 107.119 733.893 110.115 727.311C113.112 720.73 113.639 713.095 111.581 706.082C109.524 699.069 105.049 693.249 99.1387 689.899C93.2282 686.548 86.3641 685.94 80.0513 688.209C80.0071 688.225 79.963 688.241 79.9189 688.257C73.003 690.79 67.3262 696.09 64.4622 702.882C62.3947 707.785 59.5736 715.266 54.7305 717.04L50.7634 718.493"
-                fill="#FFD200"
+                fill={Styles.mapPurple}
               />
             </g>
             <g id="lightway">
@@ -275,7 +282,7 @@ const RutherfordSkillsSVG = () => {
             <g id="lightshadow2" filter="url(#filter1_f)">
               <path
                 d="M695.075 520.199C661.57 521.988 650.011 477.933 679.473 460.734L848.457 362.085C867.325 351.07 890.719 360.777 895.199 381.48L914.367 470.082C918.611 489.697 903.559 509.066 883.228 510.152L695.075 520.199Z"
-                fill="#FFD200"
+                fill={Styles.mapPurple}
                 fill-opacity="0.32"
                 ref={lightsRef4}
               />
@@ -283,7 +290,7 @@ const RutherfordSkillsSVG = () => {
             <g id="lightshadow1" filter="url(#filter2_f)">
               <path
                 d="M175.093 705.916C151.338 710.015 141.448 677.658 163.043 666.494L566.23 458.065C577.275 452.355 590.523 457.127 594.98 468.42L646.275 598.411C651.211 610.92 643.032 625.155 629.575 627.478L175.093 705.916Z"
-                fill="#FFD200"
+                fill={Styles.mapPurple}
                 fill-opacity="0.32"
                 ref={lightsRef5}
               />
@@ -494,7 +501,7 @@ const RutherfordSkillsSVG = () => {
             <text
               id="React"
               transform="translate(437 520.222)"
-              fill="#E9FA66"
+              fill={Styles.mapPurple}
               font-family="Roboto"
               font-size="21.7075"
               font-weight="bold"
@@ -522,7 +529,7 @@ const RutherfordSkillsSVG = () => {
             <text
               id="Graphql"
               transform="translate(578.16 494.7)"
-              fill="#E9FA66"
+              fill={Styles.mapPurple}
               font-family="Roboto"
               font-size="21.7075"
               font-weight="bold"
@@ -535,7 +542,7 @@ const RutherfordSkillsSVG = () => {
             <text
               id="Apollo"
               transform="translate(552.23 592.814)"
-              fill="#E9FA66"
+              fill={Styles.mapPurple}
               font-family="Roboto"
               font-size="21.7075"
               font-weight="bold"
@@ -548,7 +555,7 @@ const RutherfordSkillsSVG = () => {
             <text
               id="Gatsby"
               transform="translate(466.89 442.818)"
-              fill="#E9FA66"
+              fill={Styles.mapPurple}
               font-family="Roboto"
               font-size="21.7075"
               font-weight="bold"

@@ -119,6 +119,7 @@ const CreditSection = ({ title, credits }) => {
               <CreditListItemLink
                 href={credit.companyLink}
                 rel="noopener noreferrer"
+                target="_blank"
               >
                 {credit.company}
               </CreditListItemLink>
@@ -340,7 +341,7 @@ const WebsiteColor = styled.div`
     left: 50%;
     bottom: -100%;
     background: ${Styles.background};
-    transition: transform 1s;
+    transition: transform 0.5s;
     transform: rotate(45deg);
   }
 `;

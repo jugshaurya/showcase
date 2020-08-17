@@ -1,19 +1,18 @@
 import React from 'react';
-import BlogTemplate from '../components/BlogTemplate';
+import Blogs from '../components/Blogs/Blogs';
+
 import { graphql } from 'gatsby';
 
 export default function BlogPost({ data }) {
   const html = data.mediumFeed.content;
   return (
-    <BlogTemplate>
-      <div>
-        <div
-          dangerouslySetInnerHTML={{
-            __html: html,
-          }}
-        ></div>
-      </div>
-    </BlogTemplate>
+    <Blogs>
+      <div
+        dangerouslySetInnerHTML={{
+          __html: html,
+        }}
+      ></div>
+    </Blogs>
   );
 }
 
