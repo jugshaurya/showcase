@@ -8,13 +8,13 @@
 }
 
 .snow {
-  $total: 100;
+  $total: 70;
   position: absolute;
   width: 10px;
   height: 10px;
   background: $white;
   box-shadow: 2px 2px 25px $yellow;
-  border-radius: 50%;
+  border-radius: 5px;
   // make it a leaf
   // border-top-left-radius: 0;
 

@@ -53,6 +53,8 @@ const Toolbox = () => {
 export default Toolbox;
 
 const SkillsSVG = styled.svg`
+  width: 70%;
+  height: auto;
   #bulb-with-shadow {
     color: ${Styles.gray};
     cursor: pointer;
@@ -125,7 +127,7 @@ const RutherfordSkillsSVG = () => {
   };
 
   return (
-    <Flex className="skills-svg" style={{ marginTop: '-100px' }}>
+    <Flex className="skills-svg" style={{ marginTop: '-160px' }}>
       <SkillsSVG
         width="1000"
         height="1000"

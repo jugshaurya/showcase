@@ -15,9 +15,10 @@ import {
 
 export default function BlogPost({ data }) {
   const html = data.file.childWantedBook.html;
+  const title = data.file.childWantedBook.fileAbsolutePath.split('/');
   return (
     <>
-      <Blogs>
+      <Blogs blogTitle={title[title.length - 1]}>
         <Blog
           dangerouslySetInnerHTML={{
             __html: html,
@@ -38,6 +39,7 @@ export const query = graphql`
       }
       childWantedBook {
         html
+        fileAbsolutePath
         metadata {
           kernelspec {
             display_name
@@ -65,8 +67,9 @@ export const query = graphql`
 const Blog = styled.div`
   * {
     font-family: ${Styles.font_normal};
+    scrollbar-color: ${Styles.gray} ${Styles.gray};
   }
-  padding: 0 20px;
+  padding: 0 40px;
   .nb-notebook {
     .nb-worksheet {
       .nb-cell {
@@ -74,20 +77,19 @@ const Blog = styled.div`
           color: ${Styles.gray};
           display: flex;
           flex-direction: column;
-
           p {
             display: block;
             text-align: center;
             margin-bottom: 20px;
             line-height: 1.4em;
             font-size: 0.6rem;
-            /* font-size: ${Styles.text_small}; */
           }
 
           strong,
           b {
             color: ${Styles.darkgreen};
-            font-size: ${Styles.text_small};
+            font-size: ${Styles.text};
+            font-weight: normal;
           }
 
           img {
@@ -103,28 +105,19 @@ const Blog = styled.div`
           }
 
           h1,
-          h2 {
+          h2,
+          h3 {
             text-align: center;
-            font-family: ${Styles.font_gloriahallelujah};
-            color: ${Styles.twitterBlue};
+            font-family: ${Styles.font_gabriela};
+            color: ${Styles.purple};
             font-size: ${Styles.text};
           }
-
-          h3 {
-            text-align: left;
-            position: relative;
-            margin-top: 25px;
-            &::after {
-              content: '';
-              position: absolute;
-              left: 0;
-              bottom: -10px;
-              background: ${Styles.blue};
-              width: 40px;
-              height: 6px;
-              border-radius: 7px;
-            }
+          h4 {
+            font-size: ${Styles.text_small};
+            font-weight: 400;
+            font-style: italic;
           }
+
           ul,
           ol {
             list-style-type: circle;
@@ -138,12 +131,20 @@ const Blog = styled.div`
               ol {
                 font-size: ${Styles.text_large};
               }
+              a {
+                text-decoration: none;
+                color: ${Styles.blue};
+                text-decoration: underline;
+              }
             }
           }
+
           table {
+            font-size: ${Styles.text_xxsmall};
             tr,
             td,
             th {
+              padding: 5px;
               border: 1px solid ${Styles.gray};
             }
             border: 1px solid ${Styles.gray};
@@ -157,22 +158,32 @@ const Blog = styled.div`
             margin: 5px;
             margin-bottom: 20px;
             padding: 20px;
-            scrollbar-color: ${Styles.gray} ${Styles.gray} !important;
+            code {
+              display: block;
+              font-size: ${Styles.text_xxsmall};
+              &::after {
+                display: none;
+              }
+            }
           }
         }
+
         &.nb-code-cell {
-          font-size: 1em;
           .nb-input {
             pre {
               width: 100%;
               padding: 0;
-              code{
-                width :100%;
-                padding: 10px;
-                height: fit-content;
-                border: 1px dotted   ${Styles.gray};
+              color: ${Styles.gray};
+              &::before {
+                content: 'Input: ';
+                color: ${Styles.mapPurple};
+                margin-bottom: 5px;
+                font-size: ${Styles.text_xxsmall};
+              }
+              code {
                 display: block;
-                &::after{
+                font-size: ${Styles.text_xxsmall};
+                &::after {
                   display: none;
                 }
               }
@@ -182,23 +193,16 @@ const Blog = styled.div`
             }
           }
           .nb-output {
-            background: ${Styles.codeblocks};
+            &::before {
+              content: 'Output: ';
+              color: ${Styles.mapPurple};
+              margin-bottom: 5px;
+              font-size: ${Styles.text_xxsmall};
+            }
             pre {
-              width: 100%;
-              padding: 0;
-              code{
-                width :100%;
-                padding: 10px;
-                height: fit-content;
-                border: 1px dotted   ${Styles.gray};
-                display: block;
-                &::after{
-                  display: none;
-                }
-              }
-              code:empty {
-                display: none;
-              }
+              padding: 5px;
+              color: ${Styles.gray};
+              font-size: ${Styles.text_xxxsmall};
             }
           }
         }

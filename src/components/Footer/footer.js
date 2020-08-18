@@ -35,7 +35,7 @@ const Footer = () => {
 export default Footer;
 
 const Text = styled.div`
-  font-size: ${Styles.text_small};
+  font-size: ${Styles.text_xsmall};
   color: ${Styles.white};
   padding: 20px;
 `;
