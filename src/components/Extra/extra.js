@@ -82,6 +82,11 @@ const creditsLink2 = [
     company: 'Notebookjs',
     whatFor: ' (for transforming raw notebookdata to HTML)',
   },
+  {
+    companyLink: 'https://www.npmjs.com/package/react-simple-code-editor',
+    company: 'react-simple-code-editor',
+    whatFor: ' (for Project Section Editors)',
+  },
 ];
 
 const creditsLink3 = [

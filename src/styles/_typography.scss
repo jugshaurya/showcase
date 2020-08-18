@@ -8,15 +8,15 @@ $font_robotomono: 'Roboto Mono';
 $font_robotomono_filename: 'RobotoMono-Regular';
 $font_normal: 'monospace';
 
-@mixin font-face($font-name, $font-family, $url) {
-  @font-face {
-    font-family: $font-name;
-    src: url('#{$url}/#{$font-family}.woff') format('woff'),
-      url('#{$url}/#{$font-family}.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-  }
-}
+// @mixin font-face($font-name, $font-family, $url) {
+//   @font-face {
+//     font-family: $font-name;
+//     src: url('#{$url}/#{$font-family}.woff') format('woff'),
+//       url('#{$url}/#{$font-family}.woff2') format('woff2');
+//     font-weight: normal;
+//     font-style: normal;
+//   }
+// }
 
 @mixin textColorGradient($gradient) {
   background: -webkit-#{$gradient};
@@ -26,13 +26,14 @@ $font_normal: 'monospace';
   -webkit-text-fill-color: transparent;
 }
 
-@include font-face($font_gabriela, $font_gabriela_filename, $font-path);
-@include font-face(
-  $font_gloriahallelujah,
-  $font_gloriahallelujah_filename,
-  $font-path
-);
-@include font-face($font_robotomono, $font_robotomono_filename, $font-path);
+// js includes fonts already
+// @include font-face($font_gabriela, $font_gabriela_filename, $font-path);
+// @include font-face(
+//   $font_gloriahallelujah,
+//   $font_gloriahallelujah_filename,
+//   $font-path
+// );
+// @include font-face($font_robotomono, $font_robotomono_filename, $font-path);
 
 $text_xxlarge: 3em;
 $text_xlarge: 2.4em;

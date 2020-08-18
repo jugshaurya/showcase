@@ -24,3 +24,18 @@ export const fadein = keyframes`
     transform: translateX(10px) translateY(10px);
   }
 `;
+
+export const windmove = keyframes`
+  0% {
+    transform: rotateX(-10deg) ;
+  }25% {
+    transform: rotateX(0deg) ;
+  }50% {
+    transform: rotateX(10deg) ;
+  }75% {
+    transform: rotateX(0deg) ;
+  }
+  100%{
+    transform: rotateX(-10deg) ;
+  }
+`;
