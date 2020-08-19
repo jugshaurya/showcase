@@ -11,7 +11,7 @@
 [![PR](https://img.shields.io/badge/PR-Welcome-blue.svg)](https://github.com/jugshaurya/showcase)
 [![GitLicense](https://gitlicense.com/badge/jugshaurya/showcase)](https://github.com/jugshaurya/showcase)
 <br/>
-<img src="https://img.shields.io/badge/made%20with-react-cyan.svg" alt="made with React"> <img src="https://img.shields.io/badge/made%20with-gatsby-purple.svg" alt="made with Gatsby"> <img src="https://img.shields.io/github/last-commit/jugshaurya/showcase" alt="last-commit"> <img src="https://img.shields.io/github/languages/code-size/jugshaurya/showcase" alt="code-size">
+<img src="https://img.shields.io/badge/made%20with-react-cyan.svg" alt="made with React"> <img src="https://img.shields.io/badge/made%20with-gatsby-purple.svg" alt="made with Gatsby"> <img src="https://img.shields.io/badge/made%20with-sass-ff69f4.svg" alt="made with Sass"> <img src="https://img.shields.io/badge/made%20with-styled--component-blueviolet.svg" alt="made with styled-component"><img src="https://img.shields.io/github/last-commit/jugshaurya/showcase" alt="last-commit"> <img src="https://img.shields.io/github/languages/code-size/jugshaurya/showcase" alt="code-size">
 
 ### 👀 Peek a Boo!
 
@@ -73,39 +73,39 @@ _1. Fork and Clone the repo_
 
 _2. Run the site Locally after step 1_
 
-- **2a. Install Dependendies**
+- _2a. Install Dependendies_
   ```cmd
     $ yarn or npm install
   ```
-- **2b. Start the gatsby server in development mode**
+- _2b. Start the gatsby server in development mode_
   ```cmd
     $ yarn develop or npm run develop
   ```
 
 _3. Make changes/make PR_
 
-- create a new branch
+- _3a. create a new branch_
 
   ```cmd
     $ git checkout -b <new-branch-anme>
   ```
 
-- make changes and commit them
+- _3b. make changes and commit them_
 
   ```cmd
     $ git add -A
     $ git commit -m "some message and fixes#IssueNo. "
   ```
 
-- push to origin
+- _3c. push to origin_
   ```cmd
   $ git push origin master
   ```
-- make a PR to upstream
+- _3d. make a PR to upstream_
   ```cmd
     use GUI for doing so @github.com only
   ```
-- wait for it getting merged and talk to me in the chat.
+- _3e. wait for it getting merged and talk to me in the chat._
 
 Note:- _Problem Solution_
 

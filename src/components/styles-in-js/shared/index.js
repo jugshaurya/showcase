@@ -26,16 +26,10 @@ export const fadein = keyframes`
 `;
 
 export const windmove = keyframes`
-  0% {
-    transform: rotateX(-10deg) ;
-  }25% {
-    transform: rotateX(0deg) ;
-  }50% {
-    transform: rotateX(10deg) ;
-  }75% {
+  from {
     transform: rotateX(0deg) ;
   }
-  100%{
-    transform: rotateX(-10deg) ;
+  to {
+    transform: rotateX(5deg) ;
   }
 `;

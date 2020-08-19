@@ -10,6 +10,7 @@ export const FloatingImage = styled.img`
   width: ${(p) => (p.w && p.w[0]) || 'auto'};
   height: ${(p) => (p.h && p.h[0]) || 'auto'};
   z-index: ${(p) => p.zi || -1};
+  opacity: ${(p) => (p.o && p.o[0]) || 1};
 
   @media ${Styles.device.laptopL} {
     top: ${(p) => p.t && p.t[1]};
@@ -18,6 +19,7 @@ export const FloatingImage = styled.img`
     left: ${(p) => p.l && p.l[1]};
     width: ${(p) => (p.w && p.w[1]) || 'auto'};
     height: ${(p) => (p.h && p.h[1]) || 'auto'};
+    opacity: ${(p) => (p.o && p.o[1]) || 1};
   }
 
   @media ${Styles.device.laptop} {
@@ -27,6 +29,7 @@ export const FloatingImage = styled.img`
     left: ${(p) => p.l && p.l[2]};
     width: ${(p) => (p.w && p.w[2]) || 'auto'};
     height: ${(p) => (p.h && p.h[2]) || 'auto'};
+    opacity: ${(p) => (p.o && p.o[2]) || 1};
   }
 
   @media ${Styles.device.ipad} {
@@ -36,6 +39,7 @@ export const FloatingImage = styled.img`
     left: ${(p) => p.l && p.l[3]};
     width: ${(p) => (p.w && p.w[3]) || 'auto'};
     height: ${(p) => (p.h && p.h[3]) || 'auto'};
+    opacity: ${(p) => (p.o && p.o[3]) || 1};
   }
 
   @media ${Styles.device.mobileL} {
@@ -45,6 +49,7 @@ export const FloatingImage = styled.img`
     left: ${(p) => p.l && p.l[4]};
     width: ${(p) => (p.w && p.w[4]) || 'auto'};
     height: ${(p) => (p.h && p.h[4]) || 'auto'};
+    opacity: ${(p) => (p.o && p.o[4]) || 1};
   }
 
   @media ${Styles.device.mobileM} {
@@ -54,6 +59,7 @@ export const FloatingImage = styled.img`
     left: ${(p) => p.l && p.l[5]};
     width: ${(p) => (p.w && p.w[5]) || 'auto'};
     height: ${(p) => (p.h && p.h[5]) || 'auto'};
+    opacity: ${(p) => (p.o && p.o[5]) || 1};
   }
 
   @media ${Styles.device.mobileS} {
@@ -63,5 +69,6 @@ export const FloatingImage = styled.img`
     left: ${(p) => p.l && p.l[6]};
     width: ${(p) => (p.w && p.w[6]) || 'auto'};
     height: ${(p) => (p.h && p.h[6]) || 'auto'};
+    opacity: ${(p) => (p.o && p.o[6]) || 1};
   }
 `;

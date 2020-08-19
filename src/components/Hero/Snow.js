@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../styles/snow.scss';
+import './snow.scss';
 
 const Snow = () => {
   return (

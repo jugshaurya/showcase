@@ -21,6 +21,7 @@ export const background = '#23252982';
 export const codeblocks = background;
 export const codeblocks_input_border = orange;
 export const codeblocks_output_border = '#25293e';
+export const snowColor = '#F0FFF0';
 
 // Gradients
 export const g_blackOrange =

@@ -5,7 +5,20 @@ import TrelloProject from '../../static/projects/trello.png';
 import CovidProject from '../../static/projects/covid.png';
 import MarioProject from '../../static/projects/mario.png';
 import WeekdayProject from '../../static/projects/weekday.png';
+import WeekdayGif from '../../static/projects/weekday.gif';
+import ClosetGif from '../../static/projects/closet.gif';
+import CovidGif from '../../static/projects/covid.gif';
+import ShortenerGig from '../../static/projects/urlshortner.gif';
 import ShowcaseProject from '../../static/projects/showcase.png';
+import AppleIMac from '../../static/AppleiMac.png';
+import AppleIMacSVG from '../../static/AppleiMac.svg';
+import JSIcon from '../../static/icons/js.svg';
+import NodeIcon from '../../static/icons/node.svg';
+import ReactIcon from '../../static/icons/react.svg';
+import ReduxIcon from '../../static/icons/redux.svg';
+import GraphqlIcon from '../../static/icons/graphql.svg';
+import GatsbyIcon from '../../static/icons/gatsby.svg';
+import FigmaIcon from '../../static/icons/figma.svg';
 
 import CodeEditor from './CodeEditor';
 import GithubIcon from '../../static/icons/github.svg';
@@ -24,6 +37,7 @@ import {
 } from '../styles-in-js/shared';
 
 import RocketIcon from '../../static/icons/rocket.svg';
+import '../../styles/projects.scss';
 
 const projects = [
   `{
@@ -152,27 +166,131 @@ const Projects = () => {
           w={'36px'}
           h={'36px'}
         />
-        <Grid gtc="repeat(2, 1fr)" gap="60px" rgap="100px">
-          <Flex style={{ position: 'relative', perspective: '10px' }}>
-            <CodeEditor code={projects[0]} color={Styles.twitterBlue} />
-          </Flex>
-          <Flex style={{ position: 'relative', perspective: '10px' }}>
-            <CodeEditor code={projects[1]} color={Styles.darkgreen} />
-          </Flex>
-          <Flex style={{ position: 'relative', perspective: '10px' }}>
-            <CodeEditor code={projects[2]} color={Styles.red} />
-          </Flex>
-          <Flex style={{ position: 'relative', perspective: '10px' }}>
-            <CodeEditor code={projects[3]} color={Styles.yellow} />
-          </Flex>
-          <Flex style={{ position: 'relative', perspective: '10px' }}>
-            <CodeEditor code={projects[4]} color={Styles.blue} />
-          </Flex>
-          <Flex style={{ position: 'relative', perspective: '10px' }}>
+        <Grid gtc="repeat(1, 1fr)" gap="60px" rgap="100px">
+          <Flex jc="space-between" style={{ position: 'relative' }}>
             <CodeEditor
-              code={projects[5]}
-              color={Styles.codeblocks_output_border}
+              code={projects[0]}
+              color={Styles.twitterBlue}
+              icons={[
+                {
+                  IconComp: ReactIcon,
+                  iconDesc: 'React',
+                },
+                {
+                  IconComp: JSIcon,
+                  iconDesc: 'JS',
+                },
+                {
+                  IconComp: FigmaIcon,
+                  iconDesc: 'Figma',
+                },
+              ]}
+              projLinks={{ githubLink: '/', liveLink: '/' }}
             />
+            <div className="project-img">
+              <img className="mac" src={AppleIMac} alt={'weekday'} />
+              <img className="proj" src={ShortenerGig} alt={'weekday'} />
+            </div>
+          </Flex>
+          <Flex jc="space-between" style={{ position: 'relative' }}>
+            <CodeEditor
+              code={projects[0]}
+              color={Styles.twitterBlue}
+              icons={[
+                {
+                  IconComp: ReactIcon,
+                  iconDesc: 'React',
+                },
+                {
+                  IconComp: JSIcon,
+                  iconDesc: 'JS',
+                },
+                {
+                  IconComp: FigmaIcon,
+                  iconDesc: 'Figma',
+                },
+              ]}
+              projLinks={{ githubLink: '/', liveLink: '/' }}
+            />
+            <div className="project-img">
+              <img className="mac" src={AppleIMac} alt={'weekday'} />
+              <img className="proj" src={ShortenerGig} alt={'weekday'} />
+            </div>
+          </Flex>
+          <Flex jc="space-between" style={{ position: 'relative' }}>
+            <CodeEditor
+              code={projects[0]}
+              color={Styles.twitterBlue}
+              icons={[
+                {
+                  IconComp: ReactIcon,
+                  iconDesc: 'React',
+                },
+                {
+                  IconComp: JSIcon,
+                  iconDesc: 'JS',
+                },
+                {
+                  IconComp: FigmaIcon,
+                  iconDesc: 'Figma',
+                },
+              ]}
+              projLinks={{ githubLink: '/', liveLink: '/' }}
+            />
+            <div className="project-img">
+              <img className="mac" src={AppleIMac} alt={'weekday'} />
+              <img className="proj" src={ShortenerGig} alt={'weekday'} />
+            </div>
+          </Flex>
+          <Flex jc="space-between" style={{ position: 'relative' }}>
+            <CodeEditor
+              code={projects[0]}
+              color={Styles.twitterBlue}
+              icons={[
+                {
+                  IconComp: ReactIcon,
+                  iconDesc: 'React',
+                },
+                {
+                  IconComp: JSIcon,
+                  iconDesc: 'JS',
+                },
+                {
+                  IconComp: FigmaIcon,
+                  iconDesc: 'Figma',
+                },
+              ]}
+              projLinks={{ githubLink: '/', liveLink: '/' }}
+            />
+            <div className="project-img">
+              <img className="mac" src={AppleIMac} alt={'weekday'} />
+              <img className="proj" src={ShortenerGig} alt={'weekday'} />
+            </div>
+          </Flex>
+          <Flex jc="space-between" style={{ position: 'relative' }}>
+            <CodeEditor
+              code={projects[0]}
+              color={Styles.twitterBlue}
+              icons={[
+                {
+                  IconComp: ReactIcon,
+                  iconDesc: 'React',
+                },
+                {
+                  IconComp: JSIcon,
+                  iconDesc: 'JS',
+                },
+                {
+                  IconComp: FigmaIcon,
+                  iconDesc: 'Figma',
+                },
+              ]}
+              projLinks={{ githubLink: '/', liveLink: '/' }}
+            />
+            <div className="project-img">
+              <img className="mac" src={AppleIMac} alt={'weekday'} />
+              <img className="proj" src={ShortenerGig} alt={'weekday'} />
+            </div>
           </Flex>
         </Grid>
       </Container>

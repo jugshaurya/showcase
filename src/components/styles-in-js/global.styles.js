@@ -64,11 +64,6 @@ const GlobalStyles = createGlobalStyle`
     width: 0.3rem;
   }
 
-  *::selection {
-    background: gray;
-    font-weight: bold;
-    color: ${Styles.black};
-  }
   
   html {
     overflow-x: hidden;

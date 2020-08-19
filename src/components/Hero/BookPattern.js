@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import * as Styles from '../styles-in-js/theme';
+import { socialLink } from '../../resources/socialLinks';
 
 const FloatingBook = styled.svg`
   position: absolute;
@@ -8,10 +10,40 @@ const FloatingBook = styled.svg`
   width: 45vw;
   height: auto;
   z-index: 1;
+  @media ${Styles.device.laptopL} {
+    left: -300px;
+  }
+  @media ${Styles.device.laptop} {
+    width: 50vw;
+    left: -250px;
+    top: 120px;
+  }
+  @media ${Styles.device.ipad} {
+    top: 100px;
+    width: 65vw;
+    left: -300px;
+  }
+  @media ${Styles.device.mobileL} {
+    width: 100vw;
+    left: -270px;
+  }
+  @media ${Styles.device.mobileM} {
+    top: 0;
+    width: 140vw;
+    left: -500px;
+    transform: rotate(55deg);
+  }
+  @media ${Styles.device.mobileS} {
+    top: -60px;
+    width: 140vw;
+    left: -490px;
+    transform: rotate(55deg);
+  }
 `;
 
 // TODO: Optimize the svgs
-const BookPattern = ({ githubLink, linkedinLink, twitterLink }) => {
+const BookPattern = () => {
+  const { githubLink, linkedinLink, twitterLink } = socialLink;
   return (
     <FloatingBook
       id="book-pattern"
