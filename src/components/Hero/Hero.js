@@ -46,7 +46,7 @@ const Hero = () => {
 
   return (
     <section id="hero" style={{ position: 'relative' }}>
-      <Snow />
+      {/* <Snow /> */}
       <FloatingImage
         src={NavbarBackground}
         alt={'Navbar BG'}

@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://shaurya.now.sh/">
+  <a href="/develop-site-link">
     <img alt="logo" src="./src/static/logo/logo-black.svg" width="60" />
     <h2 align="center">Shaurya Singhal</h2>
   </a>

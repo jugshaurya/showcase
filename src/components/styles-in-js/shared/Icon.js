@@ -8,14 +8,9 @@ export const Icon = styled.img`
     cursor: hand;
     transform: scale(1.2);
   }
-  @media ${Styles.device.mobileL} {
-    width: ${(p) => p.w * 0.6 + 'px' || 'auto'};
-    height: ${(p) => p.h * 0.6 + 'px' || 'auto'};
-  }
 
   &.node {
     margin: 10px 0 0 -10px;
-
     @media ${Styles.device.laptop} {
       margin: 5px 0 0 -5px;
       padding-top: 15px;
@@ -24,5 +19,10 @@ export const Icon = styled.img`
       margin: 5px 0 0 -5px;
       padding-top: 15px;
     }
+  }
+
+  @media ${Styles.device.mobileL} {
+    width: ${(p) => p.w * 0.6 + 'px' || 'auto'};
+    height: ${(p) => p.h * 0.6 + 'px' || 'auto'};
   }
 `;

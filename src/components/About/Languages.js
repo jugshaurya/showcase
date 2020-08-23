@@ -1,14 +1,17 @@
 import React from 'react';
-
-import styled from 'styled-components';
-import {
-  Container,
-  Flex,
-  FloatingImage,
-  Icon,
-  Grid,
-} from '../styles-in-js/shared';
+import { Container, FloatingImage, Icon } from '../styles-in-js/shared';
 import * as Styles from '../styles-in-js/theme';
+
+import {
+  Article,
+  Cards,
+  Card,
+  CardContent,
+  CardTitle,
+  CardMain,
+  CardSubTitle,
+  CardDesc,
+} from './Languages.styles';
 
 import LanguagesBackground from '../../static/patterns/bg-languages.svg';
 import CardPattern1 from '../../static/patterns/cardoutline1.svg';
@@ -18,30 +21,36 @@ import JSIcon from '../../static/icons/js.svg';
 import PythonIcon from '../../static/icons/python.svg';
 import CIcon from '../../static/icons/c.svg';
 
-import '../../styles/languages.scss';
-
 const Languages = () => {
   return (
-    <article className="languages" style={{ position: 'relative' }}>
+    <Article id="languages">
       <FloatingImage
         src={LanguagesBackground}
         alt={'Language BG'}
-        t={['-25%', '1%', '10%', '10%', '10%', '10%', '10%']}
-        l={['0', '-3%', '3%', '3%', '3%', '3%', '3%']}
-        w={['100vw', '30%', '20%', '30%', '20%', '30%', '20%']}
+        t={['-25%', '-5%', '-25%', '-25%', '-25%', '-25%', '-25%']}
+        w={['100vw', '100vw', '100vw', '100vw', '100vw', '100vw', '100vw']}
+        h={['auto', 'auto', 'auto', 'auto', '400px', 'auto', 'auto']}
       />
 
       <Container>
-        <Grid gtc="repeat(3, 1fr)" gap="60px">
-          <GridItem style={{ transform: 'translateY(200px)' }}>
+        <Cards>
+          <Card className="tertiary">
             <FloatingImage
               src={CardPattern3}
               alt={'Card Pattern 3'}
-              style={{ transform: 'scale(1.1)' }}
-              t={['0', '1%', '10%', '10%', '10%', '10%', '10%']}
-              l={['0', '-3%', '3%', '3%', '3%', '3%', '3%']}
-              w={['100%', '30%', '20%', '30%', '20%', '30%', '20%']}
-              h={['100%', '30%', '20%', '30%', '20%', '30%', '20%']}
+              t={['0', '0', '0', '0', '0', '0', '0']}
+              l={['0', '0', '0', '0', '0', '0', '0']}
+              w={['100%', '100%', '100%', '100%', '100%', '100%', '100%']}
+              h={['100%', '100%', '100%', '100%', '100%', '100%', '100%']}
+              transform={[
+                'scale(1.1)',
+                'scale(1.1)',
+                'scale(1.3)',
+                'scale(1.3)',
+                'scale(1.1)',
+                'scale(1)',
+                'scale(1)',
+              ]}
             />
             <CardContent>
               <CardTitle color={Styles.g_blackOrange}>
@@ -69,16 +78,24 @@ const Languages = () => {
                 I use it for Competitive Programming.
               </CardDesc>
             </CardContent>
-          </GridItem>
-          <GridItem style={{ transform: 'translateY(100px)' }}>
+          </Card>
+          <Card className="secondary">
             <FloatingImage
               src={CardPattern2}
               alt={'Card Pattern 2'}
-              style={{ transform: 'scale(1.1)' }}
-              t={['0', '1%', '10%', '10%', '10%', '10%', '10%']}
-              l={['0', '-3%', '3%', '3%', '3%', '3%', '3%']}
-              w={['100%', '30%', '20%', '30%', '20%', '30%', '20%']}
-              h={['100%', '30%', '20%', '30%', '20%', '30%', '20%']}
+              t={['0', '0', '0', '0', '0', '0', '0']}
+              l={['0', '0', '0', '0', '0', '0', '0']}
+              w={['100%', '100%', '100%', '100%', '100%', '100%', '100%']}
+              h={['100%', '100%', '100%', '100%', '100%', '100%', '100%']}
+              transform={[
+                'scale(1.1)',
+                'scale(1.1)',
+                'scale(1.3)',
+                'scale(1.1)',
+                'scale(1.1)',
+                'scale(1.2)',
+                'scale(1.2)',
+              ]}
             />
             <CardContent>
               <CardTitle color={Styles.g_blueGreen}>
@@ -104,16 +121,24 @@ const Languages = () => {
                 View blogs I wrote while learning ML & Python and learn from it.
               </CardDesc>
             </CardContent>
-          </GridItem>
-          <GridItem>
+          </Card>
+          <Card className="primary">
             <FloatingImage
               src={CardPattern1}
               alt={'Card Pattern 1'}
-              style={{ transform: 'scale(1.1)' }}
-              t={['0', '1%', '10%', '10%', '10%', '10%', '10%']}
-              l={['0', '-3%', '3%', '3%', '3%', '3%', '3%']}
-              w={['100%', '30%', '20%', '30%', '20%', '30%', '20%']}
-              h={['100%', '30%', '20%', '30%', '20%', '30%', '20%']}
+              t={['0', '0', '0', '0', '0', '0', '0']}
+              l={['0', '0', '0', '0', '0', '0', '0']}
+              w={['100%', '100%', '100%', '100%', '100%', '100%', '100%']}
+              h={['100%', '100%', '100%', '100%', '100%', '100%', '100%']}
+              transform={[
+                'scale(1)',
+                'scale(1.1)',
+                'scale(1.3)',
+                'scale(1.1)',
+                'scale(1)',
+                'scale(1.1)',
+                'scale(1)',
+              ]}
             />
             <CardContent>
               <CardTitle color={Styles.g_blueRed}>Primary Language</CardTitle>
@@ -140,57 +165,11 @@ const Languages = () => {
                 to create Beautiful Harmonies with Javascript.
               </CardDesc>
             </CardContent>
-          </GridItem>
-        </Grid>
+          </Card>
+        </Cards>
       </Container>
-    </article>
+    </Article>
   );
 };
 
 export default Languages;
-
-const CardContent = styled.div`
-  width: 80%;
-  margin: 60px auto;
-  text-align: center;
-`;
-
-const CardTitle = styled.div`
-  font-family: ${Styles.font_gabriela};
-  background: ${(props) => props.color};
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-`;
-
-const CardMain = styled(Flex)`
-  font-size: ${Styles.text_medium};
-  margin: 40px auto;
-`;
-
-const CardSubTitle = styled.div`
-  font-family: ${Styles.font_gloriahallelujah};
-`;
-
-const CardDesc = styled.p`
-  color: ${(props) => props.color};
-  text-align: left;
-  padding-left: 40px;
-  margin-bottom: 20px;
-  font-family: ${Styles.font_normal};
-  font-size: 0.6em;
-  position: relative;
-
-  &::before {
-    content: '🌱';
-    display: inline-block;
-    font-size: ${Styles.text};
-    position: absolute;
-    top: 0;
-    left: 15px;
-  }
-`;
-
-const GridItem = styled.div`
-  position: relative;
-`;
