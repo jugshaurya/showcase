@@ -115,7 +115,7 @@ const Hero = () => {
                 h="44"
                 src={ReactIcon}
                 alt="React Icon"
-                title="{`React\n(Intermediate)`}"
+                title={`React\n(Intermediate)`}
               />
               <Icon
                 w="44"

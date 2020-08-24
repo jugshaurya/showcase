@@ -18,12 +18,12 @@ const UI = () => {
       <Hero />
       <About />
       <Github />
-      {/* 
       <Projects />
       <Toolbox />
       <Experience />
       <Contacts />
       <Extra />
+      {/* 
       <Footer /> */}
     </>
   );

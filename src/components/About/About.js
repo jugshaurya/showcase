@@ -78,15 +78,15 @@ const About = () => {
             <MapOverlayTitle>Newly Learn-ed/ing</MapOverlayTitle>
             <MapOverlayLogos>
               <MapOverlayLogo>
-                <Icon src={GraphqlIcon} w="44px" h="44px" m="0 10px 0 0" />
+                <Icon src={GraphqlIcon} w="44" h="44" m="0 10px 0 0" />
                 <IconText>Graphql</IconText>
               </MapOverlayLogo>
               <MapOverlayLogo>
-                <Icon src={GatsbyIcon} w="44px" h="44px" m="0 10px 0 0" />
+                <Icon src={GatsbyIcon} w="44" h="44" m="0 10px 0 0" />
                 <IconText>Gatsby</IconText>
               </MapOverlayLogo>
               <MapOverlayLogo>
-                <Icon src={FigmaIcon} w="44px" h="44px" m="0 10px 0 0" />
+                <Icon src={FigmaIcon} w="44" h="44" m="0 10px 0 0" />
                 <IconText>Figma</IconText>
               </MapOverlayLogo>
             </MapOverlayLogos>

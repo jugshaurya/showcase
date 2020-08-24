@@ -57,13 +57,7 @@ const Languages = () => {
                 Tertiary Language
               </CardTitle>
               <CardMain>
-                <Icon
-                  src={CIcon}
-                  alt="C++ Icon"
-                  w="64px"
-                  h="64px"
-                  m="0 10px 0 0"
-                />
+                <Icon src={CIcon} alt="C++ Icon" w="64" h="64" m="0 10px 0 0" />
                 <CardSubTitle>C++</CardSubTitle>
               </CardMain>
               <CardDesc color={Styles.darkgreen}>
@@ -105,8 +99,8 @@ const Languages = () => {
                 <Icon
                   src={PythonIcon}
                   alt="Python Icon"
-                  w="64px"
-                  h="64px"
+                  w="64"
+                  h="64"
                   m="0 10px 0 0"
                 />
                 <CardSubTitle>Python</CardSubTitle>
@@ -146,8 +140,8 @@ const Languages = () => {
                 <Icon
                   src={JSIcon}
                   alt="Javascript Icon"
-                  w="64px"
-                  h="64px"
+                  w="64"
+                  h="64"
                   m="0 10px 0 0"
                 />
                 <CardSubTitle>JavaScript</CardSubTitle>
