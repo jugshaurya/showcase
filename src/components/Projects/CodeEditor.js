@@ -4,38 +4,64 @@ import { highlight, languages } from 'prismjs/components/prism-core';
 import 'prismjs/components/prism-clike';
 import 'prismjs/components/prism-javascript';
 import 'prismjs/components/prism-json';
-import './editor.scss';
+
+import { Icon } from '../styles-in-js/shared';
+
+import {
+  EditorLayout,
+  Button,
+  ProjectLinks,
+  ProjectTechStack,
+  EditorBottom,
+  EditorStyles,
+  EditorTop,
+  EditorTitle,
+  Dot,
+} from './CodeEditor.styles';
+
 import GithubGradIcon from '../../static/icons/githubgrad.svg';
 import GoLiveLinksIcon from '../../static/icons/live.svg';
 
-import Title from '../styles-in-js/Title';
-import styled from 'styled-components';
-import * as Styles from '../styles-in-js/theme';
-import {
-  Container,
-  Icon,
-  FloatingImage,
-  Flex,
-  Grid,
-  windmove,
-} from '../styles-in-js/shared';
+import './codeHighlighting.scss';
 
 class CodeEditor extends React.Component {
-  state = { code: this.props.code };
+  constructor(props) {
+    super(props);
+    this.state = { code: this.props.code, showEditor: false };
+  }
+
+  toggleEditor = () => {
+    console.log('sdf');
+    this.setState((prevState) => ({
+      showEditor: !prevState.showEditor,
+    }));
+  };
+
   render() {
+    const {
+      color,
+      icons,
+      project_name,
+      projLinks: { githubLink, liveLink },
+    } = this.props;
+
     return (
-      <div
-        style={{ width: '50%', perspective: '1000px' }}
-        className={this.props.className}
-      >
-        <EditorTop jc="flex-end">
-          <Dot className="dot yellow">-</Dot>
-          <Dot className="dot green">?</Dot>
-          <Dot className="dot red">x</Dot>
+      <EditorLayout>
+        <EditorTop>
+          <EditorTitle color={color}>{project_name}</EditorTitle>
+          <Dot className="dot yellow"> - </Dot>
+          <Dot className="dot green" onClick={this.toggleEditor}>
+            {' '}
+            ~{' '}
+          </Dot>
+          <Dot className="dot red"> x </Dot>
         </EditorTop>
-        <EditorStyles color={this.props.color} style={{ position: 'relative' }}>
+
+        <EditorStyles
+          color={color}
+          className={this.state.showEditor ? 'show-editor' : 'hide-editor'}
+        >
           <Editor
-            // readOnly={true}
             value={this.state.code}
             onValueChange={(code) => this.setState({ code })}
             highlight={(code) => highlight(code, languages.json)}
@@ -47,115 +73,45 @@ class CodeEditor extends React.Component {
           />
         </EditorStyles>
 
-        <EditorBottom jc="space-between">
+        <EditorBottom>
           <ProjectTechStack>
-            {this.props.icons.map(({ IconComp, iconDesc }) => (
+            {icons.map(({ icon, iconDesc }) => (
               <Icon
-                w="24px"
-                h="24px"
+                w="32"
+                h="32"
                 m="0 10px"
-                src={IconComp}
+                src={icon}
                 alt={iconDesc}
                 title={iconDesc}
               />
             ))}
           </ProjectTechStack>
           <ProjectLinks>
-            <Button as="a" href={this.props.projLinks.githubLink}>
+            <Button as="a" href={githubLink} color={color}>
               <Icon
                 src={GithubGradIcon}
                 alt="githubIcon"
-                w="16px"
-                h="16px"
-                m="0 5px 0 0"
+                w="24"
+                h="24"
+                m="0 10px 0 0"
               />
               Github Code
             </Button>
-            <Button as="a" href={this.props.projLinks.liveLink}>
+            <Button as="a" href={liveLink} color={color}>
               <Icon
                 src={GoLiveLinksIcon}
                 alt="golive"
-                w="24px"
-                h="24px"
-                m="0 5px 0 0"
+                w="24"
+                h="24"
+                m="0 10px 0 0"
               />
-              Live Code
+              Go Live
             </Button>
           </ProjectLinks>
         </EditorBottom>
-      </div>
+      </EditorLayout>
     );
   }
 }
 
 export default CodeEditor;
-
-const Button = styled(Flex)`
-  padding: 5px 10px;
-  background: ${Styles.background};
-  text-decoration: none;
-  border: 1px dashed ${Styles.gray};
-  border-radius: 10px;
-  background: ${Styles.black20};
-  color: ${Styles.white};
-  font-family: ${Styles.font_robotomono};
-  font-size: ${Styles.text_xxsmall};
-  margin: 0 10px;
-`;
-const ProjectLinks = styled(Flex)`
-  /* border: 3px solid red; */
-`;
-const ProjectTechStack = styled(Flex)`
-  /* border: 3px solid green; */
-`;
-
-const EditorBottom = styled(Flex)`
-  width: 100%;
-  border-radius: 25px;
-  padding: 5px 10px;
-  margin-top: 10px;
-`;
-
-const EditorStyles = styled.div`
-  * {
-    font-family: ${Styles.font_robotomono};
-  }
-  border: 6px double ${(props) => props.color};
-  border-radius: 25px;
-  background: ${Styles.background};
-  padding: 10px 20px;
-  transform: rotateX(0deg);
-  transform-style: 'preserve-3d';
-  /* &:hover { */
-  transform-origin: top center;
-  animation: ${windmove} 3s infinite linear;
-  /* } */
-`;
-
-const EditorTop = styled(Flex)`
-  border: 10px double ${Styles.gray};
-  width: 100%;
-  border-radius: 25px;
-  padding: 5px 10px;
-  background: ${Styles.background};
-`;
-
-const Dot = styled(Flex)`
-  font-family: ${Styles.font_normal};
-  font-size: ${Styles.text_xxxsmall};
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  margin: 0 5px;
-  font-weight: bold;
-  color: ${Styles.black};
-  &.green {
-    background: ${Styles.green};
-  }
-  &.yellow {
-    background: ${Styles.yellow};
-  }
-  &.red {
-    background: ${Styles.red};
-  }
-`;

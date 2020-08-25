@@ -1,6 +1,5 @@
 /* Syntax highlighting */
 @import '../../styles/colors';
-@import '../../styles/typography';
 
 .token.comment,
 .token.prolog,
@@ -10,7 +9,6 @@
 }
 .token.punctuation {
   color: $red;
-  // padding-bottom: 10px;
 }
 .namespace {
   opacity: 0.7;
@@ -23,8 +21,6 @@
 .token.symbol,
 .token.deleted {
   color: $twitterBlue;
-  // font-size: $text;
-  // letter-spacing: 0.12em;
 }
 .token.selector,
 .token.attr-name,
@@ -33,9 +29,6 @@
 .token.builtin,
 .token.inserted {
   color: $white;
-  // font-size: $text;
-  // line-height: 1.4em;
-  // font-family: $font_robotomono;
 }
 .token.operator,
 .token.entity,
@@ -43,7 +36,6 @@
 .language-css .token.string,
 .style .token.string {
   color: $green;
-  // padding: 0 5px;
 }
 .token.atrule,
 .token.attr-value,
