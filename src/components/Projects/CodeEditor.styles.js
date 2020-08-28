@@ -16,6 +16,11 @@ export const EditorTop = styled(Flex)`
   border-radius: 25px;
   padding: 5px 10px;
   background: ${Styles.background};
+
+  @media ${Styles.device.laptop} {
+    width: 80%;
+    margin: 0 auto;
+  }
 `;
 
 export const EditorTitle = styled.div`

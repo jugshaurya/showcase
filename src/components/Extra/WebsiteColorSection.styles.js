@@ -43,7 +43,6 @@ export const WebsiteColor = styled.div`
     position: absolute;
     text-align: center;
     content: 'Copy it';
-    /* opacity: 0; */
     font-size: 12px;
     width: 100px;
     border-radius: 10px;
@@ -60,5 +59,10 @@ export const WebsiteColor = styled.div`
       display: none;
     }
     margin: -5px 10px;
+  }
+
+  @media ${Styles.device.mobileL} {
+    width: 24px;
+    height: 24px;
   }
 `;

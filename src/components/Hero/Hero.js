@@ -12,7 +12,7 @@ import {
 } from './Hero.styles';
 
 import BookPattern from './BookPattern';
-import Snow from './Snow';
+// import Snow from './Snow';
 
 import NavbarBackground from '../../static/patterns/bg-navbar.svg';
 import BoxPattern from '../../static/patterns/box-pattern.svg';

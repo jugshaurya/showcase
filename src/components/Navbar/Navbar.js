@@ -65,19 +65,17 @@ const Navbar = ({ defaultRoute }) => {
 
   // TODO: Change navbar Background on Scroll
   useEffect(() => {
-    const navbar = document.getElementById('navbar');
-
-    const changeNavbarBackground = (e) => {
-      const Yoffset = Math.round(window.scrollY / 2);
-      if (Yoffset < 150) {
-      } else {
-      }
-    };
-
-    window.addEventListener('scroll', changeNavbarBackground);
-    return () => {
-      window.removeEventListener('scroll', changeNavbarBackground);
-    };
+    // const navbar = document.getElementById('navbar');
+    // const changeNavbarBackground = (e) => {
+    //   const Yoffset = Math.round(window.scrollY / 2);
+    //   if (Yoffset < 150) {
+    //   } else {
+    //   }
+    // };
+    // window.addEventListener('scroll', changeNavbarBackground);
+    // return () => {
+    //   window.removeEventListener('scroll', changeNavbarBackground);
+    // };
   }, []);
 
   return (

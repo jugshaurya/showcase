@@ -9,7 +9,7 @@ import Toolbox from './Toolbox/Toolbox';
 import Extra from './Extra/extra';
 import Footer from './Footer/footer';
 import Experience from './Experience/experience';
-import Contacts from './Contacts/contacts';
+import Contacts from './Contacts/Contacts';
 
 const UI = () => {
   return (

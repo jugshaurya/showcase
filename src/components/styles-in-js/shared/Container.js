@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import * as Styles from '../theme';
 
 export const Container = styled.div`
-  /* border: 3px solid gray; */
   position: relative;
   width: 70vw;
   height: ${(props) => props.height || 'auto'};
@@ -20,7 +19,9 @@ export const Container = styled.div`
     width: 90vw;
   }
   @media ${Styles.device.mobileM} {
+    width: 85vw;
   }
   @media ${Styles.device.mobileS} {
+    width: 85vw;
   }
 `;

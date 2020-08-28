@@ -41,12 +41,12 @@ export const MacDemo = styled(Flex)`
   }
   @media ${Styles.device.mobileL} {
     position: relative;
-    width: 100%;
     top: 0;
     left: 0;
     border: 6px double ${Styles.gray};
     border-radius: 25px;
     overflow: hidden;
+    width: 90%;
   }
 `;
 
@@ -72,5 +72,7 @@ export const Gif = styled.img`
   }
   @media ${Styles.device.mobileL} {
     border: none;
+    width: 90%;
+    height: 90%;
   }
 `;

@@ -1,12 +1,6 @@
 import styled from 'styled-components';
 import * as Styles from '../styles-in-js/theme';
-import {
-  Container,
-  Icon,
-  FloatingImage,
-  Flex,
-  Grid,
-} from '../styles-in-js/shared';
+import { Flex } from '../styles-in-js/shared';
 
 export const GithubActivitySection = styled.div`
   border-radius: 48px;
@@ -29,6 +23,7 @@ export const GithubActivitySection = styled.div`
 
   @media ${Styles.device.mobileL} {
     width: 100%;
+    padding-bottom: 10px;
   }
 
   @media ${Styles.device.mobileM} {
@@ -114,6 +109,11 @@ export const GithubGraph = styled.div`
     }
     @media ${Styles.device.laptopL} {
       margin-left: 0;
+    }
+    @media ${Styles.device.mobileL} {
+      margin-left: 0;
+      display: none;
+      border: none;
     }
   }
 `;

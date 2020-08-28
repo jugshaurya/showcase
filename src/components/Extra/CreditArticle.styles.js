@@ -15,6 +15,10 @@ export const CreditList = styled.div`
   padding: 20px;
   margin: 20px;
   color: ${Styles.gray};
+  @media ${Styles.device.mobileL} {
+    padding: 5px;
+    margin: 5px;
+  }
 `;
 
 export const CreditListItem = styled.div`

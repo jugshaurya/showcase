@@ -1,5 +1,3 @@
-import React from 'react';
-
 // TODO :Correct it by modifying line 108 (path's d value)
 const renderContribSvg = (
   totalIssuePercentage,
