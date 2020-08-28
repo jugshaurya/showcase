@@ -23,8 +23,7 @@ const UI = () => {
       <Experience />
       <Contacts />
       <Extra />
-      {/* 
-      <Footer /> */}
+      <Footer />
     </>
   );
 };

@@ -11,7 +11,7 @@
 [![PR](https://img.shields.io/badge/PR-Welcome-blue.svg)](https://github.com/jugshaurya/showcase)
 [![GitLicense](https://gitlicense.com/badge/jugshaurya/showcase)](https://github.com/jugshaurya/showcase)
 <br/>
-<img src="https://img.shields.io/badge/made%20with-react-cyan.svg" alt="made with React"> <img src="https://img.shields.io/badge/made%20with-gatsby-purple.svg" alt="made with Gatsby"> <img src="https://img.shields.io/badge/made%20with-sass-ff69f4.svg" alt="made with Sass"> <img src="https://img.shields.io/badge/made%20with-styled--component-blueviolet.svg" alt="made with styled-component"><img src="https://img.shields.io/github/last-commit/jugshaurya/showcase" alt="last-commit"> <img src="https://img.shields.io/github/languages/code-size/jugshaurya/showcase" alt="code-size">
+<img src="https://img.shields.io/badge/made%20with-react-cyan.svg" alt="made with React"> <img src="https://img.shields.io/badge/made%20with-gatsby-purple.svg" alt="made with Gatsby"> <img src="https://img.shields.io/badge/made%20with-sass-ff69f4.svg" alt="made with Sass"> <img src="https://img.shields.io/badge/made%20with-styled--component-blueviolet.svg" alt="made with styled-component"> <img src="https://img.shields.io/github/last-commit/jugshaurya/showcase" alt="last-commit"> <img src="https://img.shields.io/github/languages/code-size/jugshaurya/showcase" alt="code-size">
 
 ### 👀 Peek a Boo!
 

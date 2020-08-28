@@ -16,6 +16,7 @@ const Toolbox = () => {
         src={RutherfordBackground}
         alt={'Wallpaper'}
         t={['-380px', '-250px', '-200px', '-200px', '-50px', '-50px', '-50px']}
+        w={['100%', '100%', '100%', '100%', '100%', '100%', '100%']}
         l={[0, 0, 0, 0, 0, 0, 0]}
       />
       <Container>
