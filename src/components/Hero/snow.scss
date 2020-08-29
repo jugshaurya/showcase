@@ -1,6 +1,6 @@
-@import '../../styles/colors';
-// https://codepen.io/alphardex/pen/dyPorwJ + minor Modifications
+$snowColor: linear-gradient(213deg, #e9fa66 3%, #56b8ff 74%, #56b8ff 116%);
 
+// https://codepen.io/alphardex/pen/dyPorwJ + minor Modifications
 @function random_range($min, $max) {
   $rand: random();
   $random_range: $min + floor($rand * (($max - $min) + 1));

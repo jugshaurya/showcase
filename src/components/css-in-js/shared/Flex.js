@@ -8,7 +8,3 @@ export const Flex = styled.div`
   flex-wrap: ${(props) => props.fw || 'no-wrap'};
   gap: ${(props) => props.gap || 0};
 `;
-
-export const SectionTitle = styled(Flex)`
-  margin-bottom: 80px;
-`;

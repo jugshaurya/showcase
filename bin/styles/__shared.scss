@@ -1,10 +1,12 @@
 // various viewports
 
-$mobile: '476px';
-$ipad: '768px';
-$ipadRotate: '1024px';
-$desktop: '1300px';
-
+$mobileS: '360px'; // Galaxy S5
+$mobileM: '375px'; // Iphone X
+$mobileL: '414px'; // Iphone +
+$ipad: '768px'; // tablet
+$laptop: '1024px';
+$laptopL: '1440px';
+$desktop: '2560px';
 /*
  @media ${Styles.device.laptopL} {
  }

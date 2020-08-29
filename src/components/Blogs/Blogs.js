@@ -5,7 +5,7 @@
 
 // // import Navbar from '../Navbar/Navbar';
 // import Footer from '../Footer/footer';
-// import getTableContent from '../../utils/javascript/getTableContent';
+// import getTableContent from '../../utils/getTableContent';
 // import fetchBlogsQuery from './fetchBlogs.query';
 
 // import styled from 'styled-components';

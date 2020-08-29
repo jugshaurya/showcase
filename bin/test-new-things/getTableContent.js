@@ -1,4 +1,5 @@
-const { v4: uuidv4 } = require('uuid');
+const { getTableContent } = require('../../src/utils/getTableContent');
+
 const string1 =
   '/learn-ml/01---supervised-learning/1--regression/06---generating-non-linear-hypothesis-using-linear-regression/';
 const string2 =
@@ -37,56 +38,8 @@ const string4 =
     }
 */
 
-// TODO: Convert it into a Pure function if not
-const getTableContent_helper = (arr, index, n, obj, paths) => {
-  if (index === n - 1) {
-    // To avoid file name clashed in entire repo.
-    const pathid = uuidv4();
-    if (obj.hasOwnProperty('files')) {
-      obj['files'].push(`${arr[n - 1]}_${pathid}`);
-    } else {
-      obj['files'] = [`${arr[n - 1]}_${pathid}`];
-    }
-
-    // check to see if files names clashes
-    if (paths.hasOwnProperty(arr[n - 1]))
-      throw new Error('Same name Files Gotcha');
-
-    paths[`${arr[n - 1]}_${pathid}`] = `${arr
-      .slice(0, index + 1)
-      .join('/')}_${pathid}`;
-    return;
-  }
-
-  if (obj.hasOwnProperty(arr[index])) {
-    const getSome = { ...obj[arr[index]] };
-    getTableContent_helper(arr, index + 1, n, getSome, paths);
-    obj[arr[index]] = { ...getSome };
-    return;
-  }
-
-  const getSome = {};
-  getTableContent_helper(arr, index + 1, n, getSome, paths);
-  obj[arr[index]] = getSome;
-};
-
-const getTableContent = (contents) => {
-  const tableOfContent = {};
-  const paths = {};
-
-  // remove first and last `/` so that while splitting we don't get empty strings
-  const contents_2D = contents.map((content) =>
-    content.substring(1, content.length - 1).split('/')
-  );
-
-  contents_2D.map((content) =>
-    getTableContent_helper(content, 0, content.length, tableOfContent, paths)
-  );
-
-  return [tableOfContent, paths];
-};
-
 const [table, paths] = getTableContent([string1, string2, string3, string4]);
+
 console.log(
   'table =>\n',
   JSON.stringify(table, null, 4),
