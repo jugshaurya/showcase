@@ -4,41 +4,47 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    title: `Shaurya Showcase`,
+    title: `Shaurya Singhal Showcase`,
     description: `Shaurya Personal Portfolio to showcase shaurya and his work at one place from various places.`,
-    author: `@jugshaurya`,
+    url: `https://shaurya.now.sh`, // No trailing slash!
+    image: `src/static/shaurya.png`,
+    twitterUsername: '@jugshaurya',
+    githubUsername: '@jugshaurya',
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-sass`,
-    // {
-    //   resolve: 'gatsby-plugin-react-svg',
-    //   options: {
-    //     rule: {
-    //       include: /assets/,
-    //     },
-    //   },
-    // },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: 'UA-151200931-2',
+        head: true,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Shaurya Singhal`,
+        short_name: `Shaurya Showcase`,
+        start_url: `/`,
+        background_color: `#15171a`,
+        theme_color: `#15171a`,
+        display: `standalone`,
+        icon: `src/static/shaurya.png`, // This path is relative to the root of the site.
+      },
+    },
+    // if u want to remove offline feature later please see this:
+    // https://www.gatsbyjs.com/plugins/gatsby-plugin-offline/?=offline#remove
+    {
+      resolve: `gatsby-plugin-offline`,
+      options: {
+        // need to look out whether it caches inpage section or not else remove #stats
+        precachePages: [`/blogs/*`, `/#stats`],
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
-      },
-    },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    `gatsby-plugin-styled-components`,
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `shaurya-showcase-manifest`,
-        short_name: `showcase`,
-        start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/images/shaurya.png`, // This path is relative to the root of the site.
       },
     },
     // plugin to access github
@@ -65,5 +71,10 @@ module.exports = {
     //     name: 'MediumFeed', // GraphQL query AllMediumFeed
     //   },
     // },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    `gatsby-plugin-styled-components`,
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sass`,
   ],
 };
