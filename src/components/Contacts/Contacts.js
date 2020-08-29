@@ -22,7 +22,7 @@ import DotPattern4 from '../../static/patterns/dotpattern4.svg';
 
 const Contacts = () => {
   return (
-    <ContactsSection>
+    <ContactsSection id="contacts">
       <Container>
         <FloatingImage
           src={DotPattern3}

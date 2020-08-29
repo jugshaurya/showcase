@@ -42,28 +42,28 @@ module.exports = {
       },
     },
     // plugin to access github
-    {
-      resolve: `gatsby-source-git`,
-      options: {
-        name: `Machine-Learning`,
-        remote: `https://github.com/jugshaurya/Machine-Learning`,
-        branch: `master`,
-      },
-    },
-    {
-      resolve: `gatsby-source-git`,
-      options: {
-        name: `learn-python`,
-        remote: `https://github.com/jugshaurya/learn-python`,
-        branch: `master`,
-      },
-    },
-    {
-      resolve: 'gatsby-source-medium-feed',
-      options: {
-        userName: '@shauryasinghal84', // Medium user name
-        name: 'MediumFeed', // GraphQL query AllMediumFeed
-      },
-    },
+    // {
+    //   resolve: `gatsby-source-git`,
+    //   options: {
+    //     name: `Machine-Learning`,
+    //     remote: `https://github.com/jugshaurya/Machine-Learning`,
+    //     branch: `master`,
+    //   },
+    // },
+    // {
+    //   resolve: `gatsby-source-git`,
+    //   options: {
+    //     name: `learn-python`,
+    //     remote: `https://github.com/jugshaurya/learn-python`,
+    //     branch: `master`,
+    //   },
+    // },
+    // {
+    //   resolve: 'gatsby-source-medium-feed',
+    //   options: {
+    //     userName: '@shauryasinghal84', // Medium user name
+    //     name: 'MediumFeed', // GraphQL query AllMediumFeed
+    //   },
+    // },
   ],
 };

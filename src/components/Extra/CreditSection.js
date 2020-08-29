@@ -39,5 +39,6 @@ const Credits = styled.div`
   @media ${Styles.device.mobileL} {
     grid-template-columns: repeat(1, 1fr);
     row-gap: 20px;
+    margin-top: 40px;
   }
 `;

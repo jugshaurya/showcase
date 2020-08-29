@@ -8,7 +8,7 @@ import Projects from './Projects/Projects';
 import Toolbox from './Toolbox/Toolbox';
 import Extra from './Extra/extra';
 import Footer from './Footer/footer';
-import Experience from './Experience/experience';
+import Experience from './Experience/Experience';
 import Contacts from './Contacts/Contacts';
 
 const UI = () => {
@@ -20,7 +20,7 @@ const UI = () => {
       <Github />
       <Projects />
       <Toolbox />
-      <Experience />
+      {/* <Experience /> */}
       <Contacts />
       <Extra />
       <Footer />

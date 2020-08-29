@@ -15,6 +15,7 @@ export const WebsiteColors = styled(Flex)`
 
   @media ${Styles.device.mobileL} {
     margin-bottom: 60px;
+    display: none;
   }
 `;
 

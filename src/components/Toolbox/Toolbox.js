@@ -7,15 +7,16 @@ import { ToolbarSection } from './Toolbox.styles';
 import Title from '../styles-in-js/Title';
 
 import ToolboxIcon from '../../static/icons/toolbox.svg';
-import RutherfordBackground from '../../static/patterns/bg-rutherford.svg';
+import RutherfordBackground from '../../static/patterns/bg-experience.png';
 
 const Toolbox = () => {
   return (
-    <ToolbarSection>
+    <ToolbarSection id="skills">
       <FloatingImage
         src={RutherfordBackground}
+        style={{ transform: 'rotate(180deg)' }}
         alt={'Wallpaper'}
-        t={['-380px', '-250px', '-200px', '-200px', '-50px', '-50px', '-50px']}
+        t={['-80px', '-50px', '-20px', '-20px', '0px', '0px', '0px']}
         w={['100%', '100%', '100%', '100%', '100%', '100%', '100%']}
         l={[0, 0, 0, 0, 0, 0, 0]}
       />

@@ -239,8 +239,8 @@ const RutherfordSkillsSVG = () => {
               font-size="24"
               letter-spacing="0em"
             >
-              <tspan x="331.806" y="852.412">
-                &#60; StyledComponents /&#62;
+              <tspan x="331.806" y="835.412">
+                &#60; Styled-Components /&#62;
               </tspan>
             </text>
             <text
@@ -251,7 +251,7 @@ const RutherfordSkillsSVG = () => {
               font-size="24"
               letter-spacing="0em"
             >
-              <tspan x="320.976" y="798.758">
+              <tspan x="331.806" y="798.758">
                 &#60; SaSS /&#62;
               </tspan>
             </text>
@@ -277,7 +277,7 @@ const RutherfordSkillsSVG = () => {
               font-size="24"
               letter-spacing="0em"
             >
-              <tspan x="64.601" y="550.019">
+              <tspan x="64.601" y="535.019">
                 &#60; Phaser v3 /&#62;
               </tspan>
             </text>
@@ -303,7 +303,7 @@ const RutherfordSkillsSVG = () => {
               font-size="24"
               letter-spacing="0em"
             >
-              <tspan x="785.692" y="245.136">
+              <tspan x="795.692" y="250.136">
                 &#60; Matplotlib /&#62;
               </tspan>
             </text>
@@ -315,7 +315,7 @@ const RutherfordSkillsSVG = () => {
               font-size="24"
               letter-spacing="0em"
             >
-              <tspan x="795.707" y="210.108">
+              <tspan x="795.707" y="215.108">
                 &#60; Pandas /&#62;
               </tspan>
             </text>
@@ -379,7 +379,7 @@ const RutherfordSkillsSVG = () => {
               font-size="24"
               letter-spacing="0em"
             >
-              <tspan x="782.547" y="712.336">
+              <tspan x="782.547" y="710.336">
                 &#60; MongoDB /&#62;
               </tspan>
             </text>
@@ -391,7 +391,7 @@ const RutherfordSkillsSVG = () => {
               font-size="24"
               letter-spacing="0em"
             >
-              <tspan x="787.005" y="753.149">
+              <tspan x="782.005" y="750.149">
                 &#60; Mongoose /&#62;
               </tspan>
             </text>

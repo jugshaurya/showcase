@@ -4,8 +4,6 @@ import styled from 'styled-components';
 import { Container, Flex } from '../styles-in-js/shared';
 import * as Styles from '../styles-in-js/theme';
 
-import '../../styles/footer.scss';
-
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   return (
@@ -54,6 +52,9 @@ const Text = styled.div`
 const FooterSection = styled.section`
   margin: 0;
   background: ${Styles.background};
+  @media ${Styles.device.mobile} {
+    margin-top: 40px;
+  }
 `;
 
 const FooterArticle = styled(Flex)`

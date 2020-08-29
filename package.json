@@ -46,7 +46,7 @@
   "license": "0BSD",
   "scripts": {
     "build": "yarn clean && gatsby build",
-    "develop": "yarn clean && gatsby develop",
+    "develop": "gatsby develop",
     "dev": "gatsby clean && gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "npm run develop",

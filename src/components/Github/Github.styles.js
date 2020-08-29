@@ -97,7 +97,8 @@ export const Figure = styled.figure`
   }
   @media ${Styles.device.mobileL} {
     width: 100%;
-    padding: 10px;
+    height: 100%;
+    padding: 0 10px;
   }
 `;
 

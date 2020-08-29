@@ -76,7 +76,7 @@ const GithubActivityOverview = ({ githubContribSvg, githubInfo }) => {
               </GithubOrganization>
             ))}
           </Activity>
-          <ActivityHeading> Recently Worked on </ActivityHeading>
+          <ActivityHeading> Currently Working on </ActivityHeading>
           <Activity>
             {/* Showing only 3 of them */}
             {repos.slice(0, 3).map((repo) => (

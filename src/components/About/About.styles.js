@@ -62,8 +62,10 @@ export const RotateBox = styled.div`
   @media ${Styles.device.mobileL} {
     /* display: none; */
     /* animation: none; */
-    width: 50px;
+    width: 150px;
     height: 100px;
+    left: 0px;
+    opacity: 0.7;
   }
   @media ${Styles.device.mobileM} {
   }

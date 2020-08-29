@@ -74,7 +74,7 @@ const Github = () => {
   } = stats;
 
   return (
-    <GithubSection>
+    <GithubSection id="stats">
       <FloatingImage
         src={GithubBackground}
         alt={'Wallpaper'}

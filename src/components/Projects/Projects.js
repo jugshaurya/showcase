@@ -21,7 +21,7 @@ import ProjectsBG from '../../static/patterns/bg-projects.png';
 
 const Projects = () => {
   return (
-    <ProjectSection>
+    <ProjectSection id="projects">
       <Container>
         <Title IconComp={RocketIcon} iconDesc={'Projects'} w={'36'} h={'36'} />
         <ProjectsShowcase>
@@ -51,7 +51,7 @@ const Projects = () => {
                 style={{ transform: 'rotate(180deg)' }}
                 alt={'Wallpaper3'}
                 t={['0', '0', '0', '0', '0', '0', '0']}
-                l={['-42%', '-42%', '-45%', '-50%', '-82%', '-82%', '-82%']}
+                l={['-44%', '-44%', '-45%', '-50%', '-82%', '-82%', '-82%']}
               />
               {/* Editor */}
               <CodeEditor

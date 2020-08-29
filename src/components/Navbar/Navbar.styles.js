@@ -43,6 +43,7 @@ export const NavItem = styled(Link)`
   text-decoration: none;
   color: ${Styles.gray};
   margin: 0 10px;
+  font-family: ${Styles.font_gloriahallelujah};
   &.active {
     position: relative;
     color: ${Styles.green};

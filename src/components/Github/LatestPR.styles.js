@@ -41,6 +41,9 @@ export const PRItem = styled(Flex)`
 
   @media ${Styles.device.mobileL} {
     padding: 2px 10px;
+    border-right: 10px solid ${Styles.mapPurple};
+    border-bottom: 1px solid ${Styles.gray};
+    border-top: 1px solid ${Styles.gray};
   }
 `;
 

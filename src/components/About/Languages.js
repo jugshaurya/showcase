@@ -86,9 +86,9 @@ const Languages = () => {
                 'scale(1.1)',
                 'scale(1.3)',
                 'scale(1.1)',
+                'scale(1.05)',
                 'scale(1.1)',
-                'scale(1.2)',
-                'scale(1.2)',
+                'scale(1.1)',
               ]}
             />
             <CardContent>
@@ -130,7 +130,7 @@ const Languages = () => {
                 'scale(1.3)',
                 'scale(1.1)',
                 'scale(1)',
-                'scale(1.1)',
+                'scale(1)',
                 'scale(1)',
               ]}
             />
