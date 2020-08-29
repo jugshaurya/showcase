@@ -1,9 +1,9 @@
 import React from 'react';
 import { Emojione } from 'react-emoji-render';
 
-import { Container, Icon, FloatingImage } from '../styles-in-js/shared';
+import { Container, Icon, FloatingImage } from '../css-in-js/shared';
 import { PRLists, PRList, H3, PRItem, Logo, PRDesc } from './LatestPR.styles';
-import Title from '../styles-in-js/Title';
+import Title from '../shared/Title';
 
 import SwigglyBG from '../../static/patterns/bg-swiggly.svg';
 import PRIcon from '../../static/icons/PR.svg';

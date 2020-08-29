@@ -13,7 +13,7 @@ import TrelloGif from '../static/projects/trello.gif';
 import ClosetGif from '../static/projects/closet.gif';
 import CovidGif from '../static/projects/covid.gif';
 import ShortenerGif from '../static/projects/urlshortner.gif';
-import * as Styles from '../components/styles-in-js/theme';
+import * as Styles from '../components/css-in-js/theme';
 
 const projectDetails = [
   {

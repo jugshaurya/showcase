@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Flex } from '../styles-in-js/shared';
+import { Container, Flex } from '../css-in-js/shared';
 
 import { SiteLogo, Nav, NavList, NavItem, Bars, Bar } from './Navbar.styles';
 import CollapsedNavbar from './CollapsedNavbar';

@@ -9,16 +9,16 @@
 // import fetchBlogsQuery from './fetchBlogs.query';
 
 // import styled from 'styled-components';
-// import * as Styles from '../styles-in-js/theme';
+// import * as Styles from '../css-in-js/theme';
 // import {
 //   Container,
 //   Icon,
 //   FloatingImage,
 //   Flex,
 //   Grid,
-// } from '../styles-in-js/shared';
+// } from '../css-in-js/shared';
 
-// import { font_robotomono } from '../styles-in-js/theme';
+// import { font_robotomono } from '../css-in-js/theme';
 
 // // Note Shaurya : children has the per-blog content
 // const Blogs = ({ children, blogTitle }) => {

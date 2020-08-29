@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import * as Styles from '../styles-in-js/theme';
+import * as Styles from '../css-in-js/theme';
 
 export const Showcase = styled.div`
   height: 100%;

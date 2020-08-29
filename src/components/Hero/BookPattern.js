@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import * as Styles from '../styles-in-js/theme';
+import * as Styles from '../css-in-js/theme';
 import { socialLinks } from '../../resources/socialLinks';
 
 const FloatingBook = styled.svg`

@@ -1,12 +1,12 @@
 import styled from 'styled-components';
-import * as Styles from '../styles-in-js/theme';
+import * as Styles from '../css-in-js/theme';
 import {
   Container,
   Flex,
   rotate,
   Icon,
   FloatingImage,
-} from '../styles-in-js/shared';
+} from '../css-in-js/shared';
 
 export const AboutMe = styled(Container)`
   margin: 250px auto 0;

@@ -2,9 +2,9 @@ import React from 'react';
 
 import RutherfordSkillsSVG from './RutherfordSkillsSVG';
 
-import { Container, FloatingImage } from '../styles-in-js/shared';
+import { Container, FloatingImage } from '../css-in-js/shared';
 import { ToolbarSection } from './Toolbox.styles';
-import Title from '../styles-in-js/Title';
+import Title from '../shared/Title';
 
 import ToolboxIcon from '../../static/icons/toolbox.svg';
 import RutherfordBackground from '../../static/patterns/bg-experience.png';

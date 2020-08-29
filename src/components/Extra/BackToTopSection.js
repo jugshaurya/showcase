@@ -2,8 +2,8 @@ import React from 'react';
 import { Link } from 'gatsby';
 
 import styled from 'styled-components';
-import * as Styles from '../styles-in-js/theme';
-import { Flex, Icon } from '../styles-in-js/shared';
+import * as Styles from '../css-in-js/theme';
+import { Flex, Icon } from '../css-in-js/shared';
 
 import BackIcon from '../../static/icons/back.svg';
 

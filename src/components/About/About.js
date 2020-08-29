@@ -18,7 +18,7 @@ import {
 } from './About.styles';
 
 import Languages from './Languages';
-import { FloatingImage, Icon } from '../styles-in-js/shared';
+import { FloatingImage, Icon } from '../css-in-js/shared';
 
 import ShauryaBackground from '../../static/patterns/bg-shaurya.svg';
 import Shaurya from '../../static/shaurya.png';

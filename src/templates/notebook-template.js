@@ -4,14 +4,14 @@
 // import Blogs from '../components/Blogs/Blogs';
 
 // import styled from 'styled-components';
-// import * as Styles from '../components/styles-in-js/theme';
+// import * as Styles from '../components/css-in-js/theme';
 // import {
 //   Container,
 //   Icon,
 //   FloatingImage,
 //   Flex,
 //   Grid,
-// } from '../components/styles-in-js/shared';
+// } from '../components/css-in-js/shared';
 
 // export default function BlogPost({ data }) {
 //   const html = data.file.childWantedBook.html;

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import * as Styles from '../styles-in-js/theme';
-import { Flex, rotate } from '../styles-in-js/shared';
+import * as Styles from '../css-in-js/theme';
+import { Flex, rotate } from '../css-in-js/shared';
 
 import { Link } from 'gatsby';
 

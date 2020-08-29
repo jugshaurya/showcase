@@ -17,8 +17,8 @@ import {
   Figure,
   Embed,
 } from './Github.styles';
-import Title from '../styles-in-js/Title';
-import { Container, Icon, FloatingImage } from '../styles-in-js/shared';
+import Title from '../shared/Title';
+import { Container, Icon, FloatingImage } from '../css-in-js/shared';
 
 import GithubBackground from '../../static/patterns/bg-github.svg';
 import GithubGradIcon from '../../static/icons/githubgrad.svg';

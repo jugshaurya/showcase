@@ -1,6 +1,6 @@
 import React from 'react';
-import { Container, FloatingImage, Icon } from '../styles-in-js/shared';
-import * as Styles from '../styles-in-js/theme';
+import { Container, FloatingImage, Icon } from '../css-in-js/shared';
+import * as Styles from '../css-in-js/theme';
 
 import {
   Article,

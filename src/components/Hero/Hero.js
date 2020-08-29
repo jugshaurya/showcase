@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Icon, Container, FloatingImage } from '../styles-in-js/shared';
+import { Icon, Container, FloatingImage } from '../css-in-js/shared';
 
 import {
   Showcase,

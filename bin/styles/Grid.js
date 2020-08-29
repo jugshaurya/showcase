@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import * as Styles from '../src/components/css-in-js/theme';
+import * as Styles from '../../src/components/css-in-js/theme';
 
 const checkTypeAndUse = (val, index) =>
   typeof val === 'string' ? val : val[index];

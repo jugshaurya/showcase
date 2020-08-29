@@ -3,8 +3,8 @@ import React from 'react';
 import projectDetails from '../../resources/projectsDetails';
 import CodeEditor from './CodeEditor';
 
-import { Container, FloatingImage } from '../styles-in-js/shared';
-import Title from '../styles-in-js/Title';
+import { Container, FloatingImage } from '../css-in-js/shared';
+import Title from '../shared/Title';
 import {
   ProjectSection,
   ProjectsShowcase,

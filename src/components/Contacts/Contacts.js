@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Title from '../styles-in-js/Title';
-import { Container, FloatingImage, Icon } from '../styles-in-js/shared';
+import Title from '../shared/Title';
+import { Container, FloatingImage, Icon } from '../css-in-js/shared';
 import {
   ContactsSection,
   ContactsArticle,

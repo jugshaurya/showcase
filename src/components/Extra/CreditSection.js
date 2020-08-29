@@ -3,7 +3,7 @@ import React from 'react';
 import CreditArticle from './CreditArticle';
 
 import styled from 'styled-components';
-import * as Styles from '../styles-in-js/theme';
+import * as Styles from '../css-in-js/theme';
 
 import {
   attributionLinks,

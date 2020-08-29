@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { Flex } from '../styles-in-js/shared';
-import * as Styles from '../styles-in-js/theme';
+import { Flex } from '../css-in-js/shared';
+import * as Styles from '../css-in-js/theme';
 
 export const ExperienceSection = styled.section`
   position: relative;

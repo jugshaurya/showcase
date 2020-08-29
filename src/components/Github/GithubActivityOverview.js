@@ -2,7 +2,7 @@ import React from 'react';
 import renderHTML from 'react-render-html';
 
 import renderContribSvg from './renderContribSvg';
-import { Icon } from '../styles-in-js/shared';
+import { Icon } from '../css-in-js/shared';
 
 import {
   GithubActivitySection,
@@ -15,7 +15,7 @@ import {
   GithubRepo,
   GithubGraph,
 } from './GithubActivityOverview.styles';
-import { white, text_xxsmall } from '../styles-in-js/theme';
+import { white, text_xxsmall } from '../css-in-js/theme';
 
 // Helper Method
 const getUniqueOrganizationArrayBasedOnOwnerId = (objArray) => {

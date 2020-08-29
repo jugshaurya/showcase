@@ -5,7 +5,7 @@ import 'prismjs/components/prism-clike';
 import 'prismjs/components/prism-javascript';
 import 'prismjs/components/prism-json';
 
-import { Icon } from '../styles-in-js/shared';
+import { Icon } from '../css-in-js/shared';
 
 import {
   EditorLayout,

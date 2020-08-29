@@ -1,8 +1,8 @@
 import React from 'react';
 
 import styled from 'styled-components';
-import { Container, Flex } from '../styles-in-js/shared';
-import * as Styles from '../styles-in-js/theme';
+import { Container, Flex } from '../css-in-js/shared';
+import * as Styles from '../css-in-js/theme';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();

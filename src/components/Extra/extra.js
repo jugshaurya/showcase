@@ -3,9 +3,9 @@ import React from 'react';
 import BackToTopSection from './BackToTopSection';
 import WebsiteColorSection from './WebsiteColorSection';
 import CreditSection from './CreditSection';
-import Title from '../styles-in-js/Title';
+import Title from '../shared/Title';
 
-import { Container, FloatingImage } from '../styles-in-js/shared';
+import { Container, FloatingImage } from '../css-in-js/shared';
 
 import ExtraBG from '../../static/patterns/bg-credit.svg';
 import ExtraIcon from '../../static/icons/extra.svg';

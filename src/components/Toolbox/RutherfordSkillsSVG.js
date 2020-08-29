@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 
-import * as Styles from '../styles-in-js/theme';
+import * as Styles from '../css-in-js/theme';
 import { SkillsSVG, SkillsSVGBox } from './RutherfordSkillsSVG.styles';
 
 let colorIndex = 0;

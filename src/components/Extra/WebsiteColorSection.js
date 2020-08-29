@@ -1,6 +1,6 @@
 import React from 'react';
 import { WebsiteColors, WebsiteColor } from './WebsiteColorSection.styles';
-import * as Styles from '../styles-in-js/theme';
+import * as Styles from '../css-in-js/theme';
 import copyToClipboard from '../../utils/copyToClipboard';
 
 const colors = [

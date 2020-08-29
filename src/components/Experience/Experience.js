@@ -14,9 +14,9 @@ import {
   CardLink,
   CardDate,
 } from './Experience.styles';
-import Title from '../styles-in-js/Title';
-import { Container, FloatingImage, Icon } from '../styles-in-js/shared';
-import * as Styles from '../styles-in-js/theme';
+import Title from '../shared/Title';
+import { Container, FloatingImage, Icon } from '../css-in-js/shared';
+import * as Styles from '../css-in-js/theme';
 
 import ExperienceBackground from '../../static/patterns/bg-experience.png';
 import CardPattern1 from '../../static/patterns/cardoutline1.svg';
