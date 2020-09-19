@@ -75,8 +75,9 @@ class CodeEditor extends React.Component {
 
         <EditorBottom>
           <ProjectTechStack>
-            {icons.map(({ icon, iconDesc }) => (
+            {icons.map(({ icon, iconDesc }, index) => (
               <Icon
+                key={index}
                 w="32"
                 h="32"
                 m="0 10px"

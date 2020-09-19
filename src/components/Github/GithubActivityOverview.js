@@ -80,15 +80,13 @@ const GithubActivityOverview = ({ githubContribSvg, githubInfo }) => {
           <Activity>
             {/* Showing only 3 of them */}
             {repos.slice(0, 3).map((repo) => (
-              <>
+              <React.Fragment key={repo.id}>
                 {/* // TODO: Update href */}
-                <GithubRepo href="/" key={repo.id}>
-                  {repo.nameWithOwner}
-                </GithubRepo>
+                <GithubRepo href="/">{repo.nameWithOwner}</GithubRepo>
                 <span style={{ color: white, textDecoration: 'none' }}>
                   &nbsp;,&nbsp;
                 </span>
-              </>
+              </React.Fragment>
             ))}
             <span style={{ fontSize: text_xxsmall }}>more...</span>
           </Activity>

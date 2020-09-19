@@ -67,8 +67,8 @@ const Contacts = () => {
               m="40px auto"
             />
             <SocialLinks>
-              {socialLinks.map((link) => (
-                <a href={link.link} rel="noopener noreferrer">
+              {socialLinks.map((link, index) => (
+                <a href={link.link} rel="noopener noreferrer" key={index}>
                   <Icon
                     src={link.icon}
                     alt={link.type}

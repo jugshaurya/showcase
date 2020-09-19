@@ -124,7 +124,7 @@ const RutherfordSkillsSVG = () => {
             id="base"
             d="M881.361 978.616C881.361 978.808 881.353 979.005 881.337 979.197H103.045C103.029 979.005 103.021 978.808 103.021 978.616C103.021 903.617 274.393 920.748 489.325 920.748C824.046 920.748 881.337 920.748 881.361 978.616Z"
             fill="#232529"
-            fill-opacity="0.22"
+            fillOpacity="0.22"
           />
           <path
             id="Polygon2"
@@ -140,7 +140,7 @@ const RutherfordSkillsSVG = () => {
             <path
               d="M682.952 116.198C693.943 111.019 702.956 116.67 703.083 128.82L709.832 775.436C709.959 787.586 701.152 801.633 690.161 806.812L413.269 937.284C402.277 942.463 393.264 936.812 393.138 924.663L386.388 278.046C386.261 265.897 395.069 251.849 406.06 246.67L682.952 116.198Z"
               fill="#24272D"
-              fill-opacity="0.7"
+              fillOpacity="0.7"
             />
           </g>
           <g
@@ -205,9 +205,9 @@ const RutherfordSkillsSVG = () => {
               id="js"
               transform="translate(70.9253 698.367) scale(1.03033 0.983075)"
               fill="black"
-              font-family="Gloria Hallelujah"
-              font-size="18"
-              letter-spacing="0em"
+              fontFamily="Gloria Hallelujah"
+              fontSize="18"
+              letterSpacing="0em"
             >
               <tspan x="9.67254" y="25.9048" style={{ pointerEvents: 'none' }}>
                 JS
@@ -217,7 +217,7 @@ const RutherfordSkillsSVG = () => {
               <path
                 d="M695.075 520.199C661.57 521.988 650.011 477.933 679.473 460.734L848.457 362.085C867.325 351.07 890.719 360.777 895.199 381.48L914.367 470.082C918.611 489.697 903.559 509.066 883.228 510.152L695.075 520.199Z"
                 fill={Styles.green}
-                fill-opacity="0.32"
+                fillOpacity="0.32"
                 ref={lightsRef4}
               />
             </g>
@@ -225,7 +225,7 @@ const RutherfordSkillsSVG = () => {
               <path
                 d="M175.093 705.916C151.338 710.015 141.448 677.658 163.043 666.494L566.23 458.065C577.275 452.355 590.523 457.127 594.98 468.42L646.275 598.411C651.211 610.92 643.032 625.155 629.575 627.478L175.093 705.916Z"
                 fill={Styles.green}
-                fill-opacity="0.32"
+                fillOpacity="0.32"
                 ref={lightsRef5}
               />
             </g>
@@ -234,10 +234,10 @@ const RutherfordSkillsSVG = () => {
             <text
               id="&#60; StyledComponents /&#62;"
               fill="#E10098"
-              fill-opacity="0.5"
-              font-family="Gloria Hallelujah"
-              font-size="24"
-              letter-spacing="0em"
+              fillOpacity="0.5"
+              fontFamily="Gloria Hallelujah"
+              fontSize="24"
+              letterSpacing="0em"
             >
               <tspan x="331.806" y="835.412">
                 &#60; Styled-Components /&#62;
@@ -246,10 +246,10 @@ const RutherfordSkillsSVG = () => {
             <text
               id="&#60; SaSS /&#62;"
               fill="#E10098"
-              fill-opacity="0.5"
-              font-family="Gloria Hallelujah"
-              font-size="24"
-              letter-spacing="0em"
+              fillOpacity="0.5"
+              fontFamily="Gloria Hallelujah"
+              fontSize="24"
+              letterSpacing="0em"
             >
               <tspan x="331.806" y="798.758">
                 &#60; SaSS /&#62;
@@ -260,10 +260,10 @@ const RutherfordSkillsSVG = () => {
             <text
               id="d3"
               fill="#FD7162"
-              fill-opacity="0.5"
-              font-family="Gloria Hallelujah"
-              font-size="24"
-              letter-spacing="0em"
+              fillOpacity="0.5"
+              fontFamily="Gloria Hallelujah"
+              fontSize="24"
+              letterSpacing="0em"
             >
               <tspan x="70.2924" y="495.167">
                 &#60; d3.js /&#62;
@@ -272,10 +272,10 @@ const RutherfordSkillsSVG = () => {
             <text
               id="Phaser"
               fill="#FD7162"
-              fill-opacity="0.5"
-              font-family="Gloria Hallelujah"
-              font-size="24"
-              letter-spacing="0em"
+              fillOpacity="0.5"
+              fontFamily="Gloria Hallelujah"
+              fontSize="24"
+              letterSpacing="0em"
             >
               <tspan x="64.601" y="535.019">
                 &#60; Phaser v3 /&#62;
@@ -286,10 +286,10 @@ const RutherfordSkillsSVG = () => {
             <text
               id="&#60; Numpy /&#62;"
               fill="#FFD200"
-              fill-opacity="0.5"
-              font-family="Gloria Hallelujah"
-              font-size="24"
-              letter-spacing="0em"
+              fillOpacity="0.5"
+              fontFamily="Gloria Hallelujah"
+              fontSize="24"
+              letterSpacing="0em"
             >
               <tspan x="796.052" y="181.934">
                 &#60; Numpy /&#62;
@@ -298,10 +298,10 @@ const RutherfordSkillsSVG = () => {
             <text
               id="&#60; Matplotlib /&#62;"
               fill="#FFD200"
-              fill-opacity="0.5"
-              font-family="Gloria Hallelujah"
-              font-size="24"
-              letter-spacing="0em"
+              fillOpacity="0.5"
+              fontFamily="Gloria Hallelujah"
+              fontSize="24"
+              letterSpacing="0em"
             >
               <tspan x="795.692" y="250.136">
                 &#60; Matplotlib /&#62;
@@ -310,10 +310,10 @@ const RutherfordSkillsSVG = () => {
             <text
               id="&#60; Pandas /&#62;"
               fill="#FFD200"
-              fill-opacity="0.5"
-              font-family="Gloria Hallelujah"
-              font-size="24"
-              letter-spacing="0em"
+              fillOpacity="0.5"
+              fontFamily="Gloria Hallelujah"
+              fontSize="24"
+              letterSpacing="0em"
             >
               <tspan x="795.707" y="215.108">
                 &#60; Pandas /&#62;
@@ -324,10 +324,10 @@ const RutherfordSkillsSVG = () => {
             <text
               id="&#60; Nodejs /&#62;"
               fill="#3CC2AF"
-              fill-opacity="0.5"
-              font-family="Gloria Hallelujah"
-              font-size="24"
-              letter-spacing="0em"
+              fillOpacity="0.5"
+              fontFamily="Gloria Hallelujah"
+              fontSize="24"
+              letterSpacing="0em"
             >
               <tspan x="404.457" y="269.852">
                 &#60; Nodejs /&#62;
@@ -336,10 +336,10 @@ const RutherfordSkillsSVG = () => {
             <text
               id="&#60; Express /&#62;"
               fill="#3CC2AF"
-              fill-opacity="0.5"
-              font-family="Gloria Hallelujah"
-              font-size="24"
-              letter-spacing="0em"
+              fillOpacity="0.5"
+              fontFamily="Gloria Hallelujah"
+              fontSize="24"
+              letterSpacing="0em"
             >
               <tspan x="398.876" y="309.154">
                 &#60; Express /&#62;
@@ -350,10 +350,10 @@ const RutherfordSkillsSVG = () => {
             <text
               id="&#60; Sequelize /&#62;"
               fill="#00CFFD"
-              fill-opacity="0.5"
-              font-family="Gloria Hallelujah"
-              font-size="24"
-              letter-spacing="0em"
+              fillOpacity="0.5"
+              fontFamily="Gloria Hallelujah"
+              fontSize="24"
+              letterSpacing="0em"
             >
               <tspan x="783.713" y="670.514">
                 &#60; Sequelize /&#62;
@@ -362,10 +362,10 @@ const RutherfordSkillsSVG = () => {
             <text
               id="&#60; Postgresql /&#62;"
               fill="#00CFFD"
-              fill-opacity="0.5"
-              font-family="Gloria Hallelujah"
-              font-size="24"
-              letter-spacing="0em"
+              fillOpacity="0.5"
+              fontFamily="Gloria Hallelujah"
+              fontSize="24"
+              letterSpacing="0em"
             >
               <tspan x="784.141" y="631.716">
                 &#60; Postgresql /&#62;
@@ -374,10 +374,10 @@ const RutherfordSkillsSVG = () => {
             <text
               id="&#60; MongoDB /&#62;"
               fill="#00CFFD"
-              fill-opacity="0.5"
-              font-family="Gloria Hallelujah"
-              font-size="24"
-              letter-spacing="0em"
+              fillOpacity="0.5"
+              fontFamily="Gloria Hallelujah"
+              fontSize="24"
+              letterSpacing="0em"
             >
               <tspan x="782.547" y="710.336">
                 &#60; MongoDB /&#62;
@@ -386,10 +386,10 @@ const RutherfordSkillsSVG = () => {
             <text
               id="&#60; Mongoose /&#62;"
               fill="#00CFFD"
-              fill-opacity="0.5"
-              font-family="Gloria Hallelujah"
-              font-size="24"
-              letter-spacing="0em"
+              fillOpacity="0.5"
+              fontFamily="Gloria Hallelujah"
+              fontSize="24"
+              letterSpacing="0em"
             >
               <tspan x="782.005" y="750.149">
                 &#60; Mongoose /&#62;
@@ -405,7 +405,7 @@ const RutherfordSkillsSVG = () => {
                 d="M553 632.197C529.864 632.197 507.445 624.175 489.561 609.498C471.677 594.821 459.435 574.397 454.922 551.706C450.408 529.015 453.902 505.461 464.808 485.057C475.714 464.654 493.357 448.663 514.732 439.809C536.106 430.956 559.889 429.787 582.029 436.503C604.168 443.219 623.293 457.404 636.147 476.64C649 495.877 654.786 518.975 652.518 541.999C650.251 565.023 640.07 586.548 623.711 602.908C614.446 612.223 603.426 619.608 591.289 624.635C579.151 629.663 566.137 632.233 553 632.197V632.197ZM553 432.848C498.219 432.848 453.651 477.416 453.651 532.197C453.651 586.978 498.219 631.545 553 631.545C607.781 631.545 652.348 586.978 652.348 532.197C652.348 477.416 607.781 432.848 553 432.848Z"
                 fill="#F2F6FF"
                 stroke="#ADADAD"
-                stroke-width="4"
+                strokeWidth="4"
                 mask="url(#path-40-inside-1)"
               />
             </g>
@@ -418,7 +418,7 @@ const RutherfordSkillsSVG = () => {
               id="Vector_21"
               d="M469.703 597.032C475.226 597.032 479.703 592.555 479.703 587.032C479.703 581.509 475.226 577.032 469.703 577.032C464.18 577.032 459.703 581.509 459.703 587.032C459.703 592.555 464.18 597.032 469.703 597.032Z"
               fill="#00CFFD"
-              fill-opacity="0.93"
+              fillOpacity="0.93"
             />
             <g id="circle 2">
               <mask id="path-43-inside-2" fill="white">
@@ -428,7 +428,7 @@ const RutherfordSkillsSVG = () => {
                 d="M553 608.394C535.648 608.394 518.833 602.378 505.42 591.37C492.007 580.362 482.826 565.044 479.441 548.026C476.056 531.008 478.677 513.342 486.856 498.04C495.036 482.737 508.268 470.744 524.299 464.104C540.33 457.463 558.167 456.587 574.771 461.624C591.376 466.661 605.72 477.299 615.36 491.727C625 506.154 629.339 523.478 627.639 540.746C625.938 558.014 618.302 574.158 606.033 586.427C599.085 593.414 590.82 598.952 581.717 602.723C572.614 606.494 562.853 608.421 553 608.394ZM553 458.883C511.914 458.883 478.488 492.308 478.488 533.394C478.488 574.48 511.914 607.906 553 607.906C594.086 607.906 627.511 574.48 627.511 533.394C627.511 492.308 594.086 458.883 553 458.883Z"
                 fill="#F2F6FF"
                 stroke="#ADADAD"
-                stroke-width="4"
+                strokeWidth="4"
                 mask="url(#path-43-inside-2)"
               />
             </g>
@@ -436,10 +436,10 @@ const RutherfordSkillsSVG = () => {
               id="React"
               transform="translate(437 520.222)"
               fill={Styles.green}
-              font-family="Roboto"
-              font-size="21.7075"
-              font-weight="bold"
-              letter-spacing="0em"
+              fontFamily="Roboto"
+              fontSize="21.7075"
+              fontWeight="bold"
+              letterSpacing="0em"
             >
               <tspan x="0" y="19.9196" ref={lightsRef6}>
                 React{' '}
@@ -456,7 +456,7 @@ const RutherfordSkillsSVG = () => {
                 d="M553 584.592C541.432 584.592 530.222 580.581 521.28 573.242C512.338 565.904 506.218 555.692 503.961 544.346C501.704 533.001 503.451 521.224 508.904 511.022C514.357 500.82 523.179 492.825 533.866 488.398C544.553 483.971 556.445 483.387 567.514 486.745C578.584 490.103 588.147 497.195 594.573 506.813C601 516.432 603.893 527.981 602.759 539.493C601.625 551.005 596.535 561.767 588.355 569.947C583.723 574.604 578.213 578.297 572.144 580.811C566.076 583.324 559.569 584.61 553 584.592V584.592ZM553 484.917C525.609 484.917 503.326 507.201 503.326 534.592C503.326 561.982 525.609 584.266 553 584.266C580.39 584.266 602.674 561.982 602.674 534.592C602.674 507.201 580.39 484.917 553 484.917Z"
                 fill="#F2F6FF"
                 stroke="#ADADAD"
-                stroke-width="4"
+                strokeWidth="4"
                 mask="url(#path-45-inside-3)"
               />
             </g>
@@ -464,10 +464,10 @@ const RutherfordSkillsSVG = () => {
               id="Graphql"
               transform="translate(578.16 494.7)"
               fill={Styles.green}
-              font-family="Roboto"
-              font-size="21.7075"
-              font-weight="bold"
-              letter-spacing="0em"
+              fontFamily="Roboto"
+              fontSize="21.7075"
+              fontWeight="bold"
+              letterSpacing="0em"
             >
               <tspan x="0" y="19.9196" ref={lightsRef8}>
                 Graphql
@@ -477,10 +477,10 @@ const RutherfordSkillsSVG = () => {
               id="Apollo"
               transform="translate(552.23 592.814)"
               fill={Styles.green}
-              font-family="Roboto"
-              font-size="21.7075"
-              font-weight="bold"
-              letter-spacing="0em"
+              fontFamily="Roboto"
+              fontSize="21.7075"
+              fontWeight="bold"
+              letterSpacing="0em"
             >
               <tspan x="0" y="19.9196" ref={lightsRef9}>
                 Apollo
@@ -490,10 +490,10 @@ const RutherfordSkillsSVG = () => {
               id="Gatsby"
               transform="translate(466.89 442.818)"
               fill={Styles.green}
-              font-family="Roboto"
-              font-size="21.7075"
-              font-weight="bold"
-              letter-spacing="0em"
+              fontFamily="Roboto"
+              fontSize="21.7075"
+              fontWeight="bold"
+              letterSpacing="0em"
             >
               <tspan x="0" y="19.9196" ref={lightsRef10}>
                 Gatsby
@@ -517,7 +517,7 @@ const RutherfordSkillsSVG = () => {
                 d="M553 656C524.08 655.999 496.056 645.972 473.701 627.626C451.346 609.279 436.044 583.749 430.402 555.386C424.76 527.022 429.128 497.58 442.76 472.075C456.393 446.571 478.447 426.582 505.165 415.515C531.883 404.448 561.612 402.988 589.286 411.383C616.96 419.777 640.867 437.508 656.934 461.554C673 485.599 680.232 514.472 677.398 543.252C674.563 572.032 661.837 598.939 641.388 619.388C629.808 631.032 616.033 640.263 600.861 646.547C585.689 652.832 569.422 656.044 553 656ZM553 406.814C484.523 406.814 428.814 462.523 428.814 530.999C428.814 599.476 484.523 655.185 553 655.185C621.476 655.185 677.185 599.476 677.185 530.999C677.185 462.523 621.476 406.814 553 406.814Z"
                 fill="#F2F6FF"
                 stroke="#ADADAD"
-                stroke-width="4"
+                strokeWidth="4"
                 mask="url(#path-51-inside-4)"
               />
             </g>
@@ -531,9 +531,9 @@ const RutherfordSkillsSVG = () => {
             width="331.447"
             height="832.929"
             filterUnits="userSpaceOnUse"
-            color-interpolation-filters="sRGB"
+            colorInterpolationFilters="sRGB"
           >
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feColorMatrix
               in="SourceAlpha"
               type="matrix"
@@ -564,9 +564,9 @@ const RutherfordSkillsSVG = () => {
             width="342.932"
             height="253.192"
             filterUnits="userSpaceOnUse"
-            color-interpolation-filters="sRGB"
+            colorInterpolationFilters="sRGB"
           >
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feBlend
               mode="normal"
               in="SourceGraphic"
@@ -585,9 +585,9 @@ const RutherfordSkillsSVG = () => {
             width="594.313"
             height="348.311"
             filterUnits="userSpaceOnUse"
-            color-interpolation-filters="sRGB"
+            colorInterpolationFilters="sRGB"
           >
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feBlend
               mode="normal"
               in="SourceGraphic"
@@ -607,8 +607,8 @@ const RutherfordSkillsSVG = () => {
             y2="512.567"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#00CFFD" />
-            <stop offset="1" stop-color="#E9FA66" />
+            <stop stopColor="#00CFFD" />
+            <stop offset="1" stopColor="#E9FA66" />
           </linearGradient>
         </defs>
       </SkillsSVG>

@@ -66,6 +66,7 @@ export const ShowcaseMainText = styled.div`
   font-size: ${Styles.text_xxlarge};
   line-height: ${Styles.text_xlarge};
   background: ${Styles.g_blackOrange};
+  background: ${Styles.white};
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
