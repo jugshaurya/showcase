@@ -116,7 +116,7 @@ const capitalize = (str) => {
   return str.charAt(0).toUpperCase() + str.slice(1);
 };
 // Make heading ex- from(1-learn-python) to (1 Learn Python)
-const makeItHeading = (str) => str.split('-').splice(1).join(' ');
+const makeItHeading = (str) => str && str.split('-').splice(1).join(' ');
 // using recursion to render out tables
 const renderTableOfContent = (tableContent) => {
   const [table, paths] = tableContent;
@@ -183,10 +183,11 @@ const AdditionalInfo = styled.div`
 
 // Start
 const BlogSection = styled.div`
-  display: Grid;
+  display: grid;
   justify-content: center;
-  align-items: center;
-  /* grid-template-columns: repeat(5, 1fr); */
+  align-items: flex-start;
+  grid-template-columns: repeat(2, 1fr);
+  vertical-align: top;
   /* margin: 120px auto; */
   /* border: 3px solid orange; */
   /* margin-top: 15vh; */
