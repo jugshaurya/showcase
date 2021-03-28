@@ -37,9 +37,7 @@ module.exports = {
       resolve: `gatsby-plugin-offline`,
       options: {
         // need to look out whether it caches inpage section or not else remove #stats
-        // removing for now - add back later
-        // precachePages: [`/blogs/*`, `/#stats`],
-        precachePages: [`/#stats`],
+        precachePages: [`/blogs/*`, `/#stats`],
       },
     },
     {
@@ -50,29 +48,29 @@ module.exports = {
       },
     },
     // plugin to access github
-    // {
-    //   resolve: `gatsby-source-git`,
-    //   options: {
-    //     name: `Machine-Learning`,
-    //     remote: `https://github.com/jugshaurya/Machine-Learning`,
-    //     branch: `master`,
-    //   },
-    // },
-    // {
-    //   resolve: `gatsby-source-git`,
-    //   options: {
-    //     name: `learn-python`,
-    //     remote: `https://github.com/jugshaurya/learn-python`,
-    //     branch: `master`,
-    //   },
-    // },
-    // {
-    //   resolve: 'gatsby-source-medium-feed',
-    //   options: {
-    //     userName: '@shauryasinghal84', // Medium user name
-    //     name: 'MediumFeed', // GraphQL query AllMediumFeed
-    //   },
-    // },
+    {
+      resolve: `gatsby-source-git`,
+      options: {
+        name: `Machine-Learning`,
+        remote: `https://github.com/jugshaurya/Machine-Learning`,
+        branch: `master`,
+      },
+    },
+    {
+      resolve: `gatsby-source-git`,
+      options: {
+        name: `learn-python`,
+        remote: `https://github.com/jugshaurya/learn-python`,
+        branch: `master`,
+      },
+    },
+    {
+      resolve: 'gatsby-source-medium-feed',
+      options: {
+        userName: '@shauryasinghal84', // Medium user name
+        name: 'MediumFeed', // GraphQL query AllMediumFeed
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-styled-components`,
