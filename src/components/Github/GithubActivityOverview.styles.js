@@ -2,6 +2,12 @@ import styled from 'styled-components';
 import * as Styles from '../css-in-js/theme';
 import { Flex } from '../css-in-js/shared';
 
+const color_calendar_graph_day_bg = '#222222';
+const color_calendar_graph_day_L1_bg = '#4fffa7';
+const color_calendar_graph_day_L2_bg = '#3ddc84';
+const color_calendar_graph_day_L3_bg = '#008d41';
+const color_calendar_graph_day_L4_bg = '#00753b';
+
 export const GithubActivitySection = styled.div`
   border-radius: 48px;
   border: 1px solid ${Styles.gray};
@@ -44,6 +50,26 @@ export const ScrollableSvg = styled.div`
     text {
       fill: ${Styles.gray};
       font-size: 0.8em;
+    }
+
+    rect.ContributionCalendar-day {
+      outline: 1px solid black;
+      shape-rendering: geometricPrecision;
+    }
+    rect.ContributionCalendar-day[data-level='0'] {
+      fill: ${color_calendar_graph_day_bg};
+    }
+    rect.ContributionCalendar-day[data-level='1'] {
+      fill: ${color_calendar_graph_day_L1_bg};
+    }
+    rect.ContributionCalendar-day[data-level='2'] {
+      fill: ${color_calendar_graph_day_L2_bg};
+    }
+    rect.ContributionCalendar-day[data-level='3'] {
+      fill: ${color_calendar_graph_day_L3_bg};
+    }
+    rect.ContributionCalendar-day[data-level='4'] {
+      fill: ${color_calendar_graph_day_L4_bg};
     }
   }
 
