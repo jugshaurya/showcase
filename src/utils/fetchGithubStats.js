@@ -7,6 +7,7 @@ const options = {
   method: 'get',
 };
 
+// Actual code: https://github.com/jugshaurya/productive-weekday/blob/master/visuald3server/api/getGithubStats.js
 // TODO: make backend take username and return his/her stats
 const fetchGithubStats = async (username) => {
   /*

@@ -236,10 +236,10 @@ const Github = () => {
           o={['1', '1', '1', '1', '0', '0', '0']}
         />
       </Container>
-      {/* Rendering only top 15 results */}
+      {/* Rendering only top 30 results */}
       <LatestPRs
-        userSelfPRs={userSelfPRs.slice(0, 15)}
-        userContribPRs={userContribPRs.slice(0, 15)}
+        userSelfPRs={userSelfPRs.slice(0, 30)}
+        userContribPRs={userContribPRs.slice(0, 30)}
       />
     </GithubSection>
   );

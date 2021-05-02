@@ -54,10 +54,10 @@ Font Family: Gloria Hallelujah && Roboto Mono
 
 - [x] Adding Medium Blogs as well: Issue #3
 - [x] Using _Figma_ to Build the site: Issue #26
-- [x] Rendering _Github Activity Svgs_ :Issue #28
+- [x] Rendering _Github Activity Svgs_ : Issue #28
 - [x] Snow Effect
 - [x] Bulb on/off @skills section
-- [ ] Add more blogs via mdx setup
+- [ ] Add more blogs via mdx setup or using Docasaurus: Issue #59
 
 ### 👥 Contribution Guides
 
@@ -120,6 +120,14 @@ Note:- _Problem Solution_
 
 ```cmd
 $ yarn develop or gatsby develop or yarn dev
+```
+
+### 🚀 Deployment
+
+```cmd
+  Go to Netlify
+  add project via github
+  and deploy
 ```
 
 ### Resources
