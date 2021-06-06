@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
-import Layout from '../Layout';
-import SEO from '../seo';
+import Layout from '../Layout/Layout';
+import SEO from '../seo/seo';
 
 // import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/footer';

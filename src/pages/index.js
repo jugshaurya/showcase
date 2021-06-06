@@ -1,8 +1,6 @@
 import React from 'react';
 
-import SEO from '../components/seo';
-import Layout from '../components/Layout';
-import Navbar from '../components/Navbar/Navbar';
+import Layout from '../components/Layout/Layout';
 import Hero from '../components/Hero/Hero';
 import About from '../components/About/About';
 import Github from '../components/Github/Github';
@@ -15,9 +13,7 @@ import Contacts from '../components/Contacts/Contacts';
 
 const IndexPage = () => {
   return (
-    <Layout>
-      <SEO title="Shaurya Showcase | Portfolio" />
-      <Navbar />
+    <Layout seotitle="Shaurya Showcase | Portfolio">
       <Hero />
       <About />
       <Github />

@@ -28,7 +28,7 @@ Font Family: Gloria Hallelujah && Roboto Mono
 - Options:
 
   - ❌ css - using sass actually
-  - ❌ module-css
+  - ❌ css modules - my favorite but trying styled-component this time.
   - ❌ emotion - leaving it 4 next time
   - ✔ sass
   - ✔ styled-component
