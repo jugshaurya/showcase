@@ -58,6 +58,7 @@ Font Family: Gloria Hallelujah && Roboto Mono
 - [x] Snow Effect
 - [x] Bulb on/off @skills section
 - [ ] Add more blogs via mdx setup or using Docasaurus: Issue #59
+- [ ] Render blogs available in mdx-blogs diretory@root : Issue #59 part 2
 
 ### 👥 Contribution Guides
 
