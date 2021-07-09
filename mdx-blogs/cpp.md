@@ -74,38 +74,6 @@
 - Provides cache spatial locality of reference as arrays are stored continously.
 - Have to know size before we create them. Solution: Vector.
 
-## Vector
-
-```cpp
-	vector<int> v;
-	// vector size
-	v.size();
-	// looping over vector
-	for (int i = 0; i < v.size(); ++i){
-		cout<<v[i]<<" ";
-	}
-
-	// looping(no updation) via for each loop
-	for (auto x: v){
-		x+=10; // will not modify vector
-		cout<<x<<" ";
-	}
-	// looping(`updation => use reference`) via for each loop
-	for (auto &x: v){ // & also help in avoiding copying larger objects.
-		x+=10; // will `modify` vector
-		// cout<<x<<" ";
-	}
-	// looping via iterator
-	vector<int>::iterator vit;
-	for(vit=v.begin(); vit!=v.end(); vit++){
-		cout<<*vit<<" ";
-	}
-	// vector initialization
-	vector<int> vec= {10,20,30,40};
-	vector<int> vec{10,20,30,40}; // no equal sign
-	vector<int> vec2(10,5) // 10 elements each with 5 value
-```
-
 ## References
 
 - Creates an alias.
@@ -154,6 +122,40 @@
 	marks = p // error
 ```
 
+## 2d array
+
+```cpp
+	// 2d array of size (10,20) + taking input in it
+	int row =10, col=20;
+	int* arr = new int*[row];
+	for(int i=0; i<row; i++){
+		arr[i] = new int[col];
+		for(int j=0; j<col; j++){
+			cin>>arr[i][j];
+		}
+	}
+
+	// print
+	for(int i=0; i<row; i++){
+		for(int j=0; j<col; j++){
+			cout<<arr[i][j]<<" ";
+		}
+		cout<<endl;
+	}
+
+	// deletion
+	for(int i=0; i<row; i++){
+		delete [] arr[i];
+	}
+	delete [] arr;
+
+```
+
+## Global variables in C++
+
+- variables declared outside any function, even main() are accessed by anyone, anyfunction, anyclass and hence are called global variables.
+- Should not use as it breaks PURE function concept of functinal programming paradigm.
+
 ## C-string
 
 - C string is a 1D character array and are terminated by null character '\0'
@@ -166,6 +168,7 @@
   	char name[] = {'s', 'h', 'a', 'u', 'r', 'y', 'a', '\0'};
   	cout<<name; // more predictable or else do like
   	char name[] ="shaurya" // complier will automatically add '\0'
+
   ```
 
 - utility function to work with cstring are available in `<cstring>` like
@@ -209,7 +212,7 @@
 	- element access
 		- using indexing str[i], operator []() // important
 		- at()
-		- back() // get last item from vector but does not pop it
+		- back() // get last item but does not pop it
 		- front()
 
 	- modifiers
@@ -223,7 +226,7 @@
 
 	- other
 		- c_str() // get cstring from c++ string
-		- substr() // important
+		- substr(begin_index, length_of_substring) // important
 		- compare()
 		- copy(chararray, length, position)
 		- swap()
