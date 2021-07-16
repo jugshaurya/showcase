@@ -2,16 +2,17 @@
 
 - Containers
 
-  - Simple
+  - Simple/sequence Containers
 
     - (vector, list, pair, forward_list(singly linked list))
 
-  - Container Adapter
+  - Container Adapter/ Derived Containers
 
+    - Dont support iterators hence to print the content use while container is empty thing.
     - (build upon simple containers)
     - (stack,queue, deque, heap, priority queue)
 
-  - Associative
+  - Associative Containers
 
     - (set, map, multimap, multiset, unordered_map, unordered_set)
     - unordered map/set uses hashing and has no-order,
@@ -125,23 +126,23 @@ dq.pop_back(10);
   - front()
   - back()
 
-## Priority Queue
+## Priority Queue or heap
 
 - inside <queue>
 - using vector as underline container
 
-  - priority_queue<int> pq; // default is max heap
-  - priority_queue<int, vector<int> , greater<int> > pq; // min heap
+  - `priority_queue<int> pq;` <!-- default is max heap -->
+  - `priority_queue<int, vector<int> , greater<int> > pq;` <!-- min heap -->
   - push() => O(logn)
   - pop() => O(logn)
   - top() => O(1))
   - empty() => O(1)
   - size() => O(1)
 
-- pqmax pq(arr,arr+n) => creates a max heap from an array.
+- `pqmax pq(arr,arr+n)` => creates a max heap from an array.
 
-  - This approach is betters as time complexity to build heap is O(n)
-  - earlier approach of pushing elements one by one is costlier ? Ans is true as it will be nlogn, similer when printing heap, nlogn time.
+  - This approach is better as time complexity to build heap is O(n). It builds heap using bottom-up approach which is O(n).
+  - earlier approach of pushing elements one by one is costlier as it will be nlogn(logn being for each insertion), similar when printing heap, nlogn time.
 
 - Custom Sorting in PQ
 

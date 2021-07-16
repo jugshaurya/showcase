@@ -71,7 +71,7 @@ where c can be anything [O((n^k)*(log^p(n)))]
   - **Heap Sort**
     - O(nlogn) in all cases
   - **Counting Sort**
-    - O(n+range_of_numbers),made stable by keeping count of elements less than ith element array.
+    - O(n+range_of_numbers), made stable by keeping count of elements <= the ith element in original array.
     - **not a comparison based**, **not inplace**, extra O(n+k) space, k for counting occurences and n for output array which will then be copied to original array.
     - useful only when k(range of numbers) is linear to n(n/2, 2n, 5), otherwise counting sort becomes n^2 or worst depending upon k=n^2 or n^3.
     - used as a subroutine for radix sort.
@@ -106,6 +106,62 @@ where c can be anything [O((n^k)*(log^p(n)))]
   - bhari hai toh stack mai daldo, bina kuch kiye.😁
   - halka hai toh pop karte raho jab tak wo halka bhari na hojaye.😁
 
+## Graphs
+
+- G = (V,E)
+- Directed vs Undirected
+- Weighted vs unweighted
+- Path
+  - A physical link and repeting the link is not a concept
+  - v1, v2, v3, v5, v4 is a path.(No repetition)
+  - v1, v2, v3, v5, v1, v2 is not a path.
+- Walk
+  - We can walk along the path & can repeat the path while walking
+  - v1, v2, v3, v5, v4 is also a walk.
+  - v1, v2, v3, v5, v1, v2 is a walk.
+- Graph Representations
+
+  - Adjacency Matrix
+    - Space: O(V\*V)
+    - Operations:
+      - Check if u and v are adjacent is O(1).
+      - Finding vertices adjacent to u is O(V).
+      - Finding degree of u is O(V).
+      - Add/Delete an edge is O(1)
+  - Adjacency List
+
+    - Space: O(V+E) <!-- V for array size and E for list in array -->
+    - can be implemented using dynamic size 2D-array or linked list.
+    - Operations:
+      - Check if u and v are adjacent is O(V).
+      - Finding vertices adjacent to u is O(degree(u)).
+      - Finding degree of u is O(1) `as internal arrays size is stored in v.size()`.
+      - Add/Delete an edge is O(1).
+    - Example
+      - `vector<int> adjList[V]` (array of vectors)
+      - or `vector<vector<int> > v` (vector of vectors)
+
+  - Adjacency list are far more suited than Adjacency mAtrix as most of the scenarios have sparse graphs in real life.
+
+- BFS
+
+  - helps in finding the shortest pAth B/w u and v in an unweighted Graph.
+    - Shortest pAth B/w u and v in an weighted Graph is done using dijistra, whihch is similar to bfs, it is just that it uses priority queue rather than a queue to find the shortest path.
+
+- **Cycle Detection can be done using bfs or dfs**.
+  - how ? (in undirected graphs): see for a vertex, if the vertices adjacent are already visited or not but ignoring the parent vertex.
+    - `Conclusion: check for vertices visitation accept the parent one.`
+  - how ? (in directed graphs):
+    - directed algo fails for `x-->y<--z` graph.
+    - using dfs: we look for the backedge, means while doing dfs we check if adjacent vertex is already availble in recusrion stack or not(maintains an boolean array for what we have pushed to stack till now).
+    - `Conclusion: check for backedge, is vertex already in recusion-stack.`
+    - using bfs: `TODO`
+- Topological sorting (dfs)
+
+- **Handling vertices with value other than integer like strings as the name of city.**
+  - We store the city name and a index in hashmap. (So that finding the index of a city is constant)
+  - along with index and city name in array.(So that finding city from index is constant)
+
 ## Math
 
 `LCM = (a*b)/(gcd(a,b))`
@@ -130,3 +186,6 @@ where c can be anything [O((n^k)*(log^p(n)))]
   	return gcd(b, abs(a-b));
   }
   ```
+
+- stop feeling Sorry for Yourself and do it.
+- We need to mark something visitied, so that next time if we come back to the same thing we know that we already came there once.

@@ -154,7 +154,7 @@
 ## Global variables in C++
 
 - variables declared outside any function, even main() are accessed by anyone, anyfunction, anyclass and hence are called global variables.
-- Should not use as it breaks PURE function concept of functinal programming paradigm.
+- Should not use as it breaks PURE function concept of functional programming paradigm.
 
 ## C-string
 
