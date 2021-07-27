@@ -75,6 +75,61 @@
   functions same as c++strings.Almost all. see in [cpp blog]("./cpp.md")
 ```
 
+- Internal Implementation be like
+
+```cpp
+#include <iostream>
+using namespace std;
+class Vector {
+  int *arr;
+  int num_elements;
+  int capacity;
+
+public:
+  Vector(int size) {
+    arr = new int[size];
+    num_elements = 0;
+    capacity = size;
+  }
+  void insert(int val) {
+    if(num_elements < capacity) {
+        arr[num_elements]=val;
+        num_elements++;
+    } else {
+        resize();
+        arr[num_elements]=val;
+        num_elements++;
+    }
+  }
+
+  int getAt(int index){
+    return arr[index];
+  }
+
+  void resize() {
+    int* tempArr=new int[capacity*2];
+    capacity*=2;
+
+    for(int i=0; i<num_elements; i++) {
+        tempArr[i]=arr[i];
+    }
+
+    delete [] arr;
+    arr=tempArr;
+  }
+
+  int length() {
+    return num_elements;
+  }
+
+  void print() {
+    for(int i=0; i<num_elements; i++)
+        cout << arr[i] << " ";
+    cout << endl;
+  }
+};
+```
+
 ## list and forward-list
 
 ```cpp
@@ -128,7 +183,19 @@ dq.pop_back(10);
 
 ## Priority Queue or heap
 
-- inside <queue>
+- A priority queue is just like a normal queue data structure except that each element inserted is associated with a “priority”.
+- It supports the usual push(), pop(), top() etc operations, but is specifically designed so that its first element is always the greatest of the elements it contains, i.e. max heap.
+- In STL, priority queues take three template parameters:
+
+```cpp
+template <class T, class Container = vector<T>, class Compare = less<typename Container::value_type>> class priority_queue;
+```
+
+- The first element of the template defines the class of each element. It can be user-defined classes or primitive data-types. Like in you case it can be int, float or double.
+- The second element defines the container to be used to store the elements. The standard container classes std::vector and std::dequeue fulfil these requirements. It is usually the vector of the class defined in
+  the first argument. Like in your case it can be vector<int>, vector<float>, vector<double>.
+- The third element is the comparative class. By default it is less<T> but can be changed to suit your need. For min heap it can be changed to greater<T>.
+- inside <queue> header file
 - using vector as underline container
 
   - `priority_queue<int> pq;` <!-- default is max heap -->

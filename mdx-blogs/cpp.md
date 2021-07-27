@@ -70,6 +70,7 @@
 ```
 
 - No index out of bound Checking in c++. 😭
+- The C++ runtime does not perform bounds checking on array indices, so if an array named arr is declared of size 33 and you try to access arr[5], there is no telling what will happen. The program might crash due to a segmentation fault, or it might keep running while giving potentially incorrect results.
 - Arrays are always passed as pointer to functions and length cannot be determined using `sizeof(arr)/sizeof(arr[0])` inside function, therefore have to pass length of array as argument to the function.
 - Provides cache spatial locality of reference as arrays are stored continously.
 - Have to know size before we create them. Solution: Vector.
@@ -124,6 +125,25 @@
 
 ## 2d array
 
+- Using Static memory Allocation
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+  const int row = 2, col = 2;
+  // static array initialization
+  int staticArr[row][col] = { {1, 2}, {3, 4}};
+  cout << "Static two-dimensional array: ";
+  for(int i=0; i<row; i++)
+    for(int j=0; j<col; j++)
+      cout << staticArr[i][j] << " ";
+  cout << endl;
+```
+
+- Using Dynamic memory Allocation
+
 ```cpp
 	// 2d array of size (10,20) + taking input in it
 	int row =10, col=20;
@@ -148,8 +168,30 @@
 		delete [] arr[i];
 	}
 	delete [] arr;
-
 ```
+
+## Recursion on array and strings
+
+- on array,
+
+      	- do a+1, reduce n by 1 or take a index variable to indicate the startint point of array. - Note in character array if array is empty then @index 0 we will have null '\0'.
+
+      		`````cpp
+      		char str[100];
+      		bool isTrue = str[0]=='\0'; // true aayega
+      		```
+      	- check length of character array using s[i]!='\0'
+
+      		````cpp
+      		for(int i=0; s[i]!='\0'; i++){/* Do some work */}
+      		```
+
+      		`````
+
+- on string
+
+      	- do str.substr(index) or take a index variable to indicate the starting point of string.
+      	- Note in string as well if string is empty("") then @index 0 we will have null '\0'.
 
 ## Global variables in C++
 
@@ -160,16 +202,16 @@
 
 - C string is a 1D character array and are terminated by null character '\0'
 
-  ```cpp
-  	// Note: cout<<(address of char array a) -> prints value till found '\0'.
-  	// Note: cout<<(address of int array a) -> prints address..
-  	char name[] = {'s', 'h', 'a', 'u', 'r', 'y', 'a'}
-  	cout<<name; // will print name array complete. // may be a problem so always put null character if declaring this way.
-  	char name[] = {'s', 'h', 'a', 'u', 'r', 'y', 'a', '\0'};
-  	cout<<name; // more predictable or else do like
-  	char name[] ="shaurya" // complier will automatically add '\0'
+```cpp
+	// Note: cout<<(address of char array a) -> prints value till found '\0'.
+	// Note: cout<<(address of int array a) -> prints address..
+	char name[] = {'s', 'h', 'a', 'u', 'r', 'y', 'a'}
+	cout<<name; // will print name array complete. // may be a problem so always put null character if declaring this way.
+	char name[] = {'s', 'h', 'a', 'u', 'r', 'y', 'a', '\0'};
+	cout<<name; // more predictable or else do like
+	char name[] ="shaurya" // complier will automatically add '\0'
 
-  ```
+```
 
 - utility function to work with cstring are available in `<cstring>` like
   - strcpy(s1,s2)
