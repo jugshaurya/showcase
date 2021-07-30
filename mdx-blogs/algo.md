@@ -55,15 +55,29 @@
 | n < 10<sup>12</sup> | = | sqrt(n), sqrt(n)*logn |
 |n < 10<sup>18</sup> | = | logn, O(1), log2n... |
 
+## Solving Recurrences:
+- Recursion Tree Method.
+  - calculate number of functional calls and how much each call costs.
+- Substitution Method
+- Master Theorem 
 
 ## Master's Theorem(**Trick**)
 
-`T(n) = aT(n/b) + c`
-where c can be anything [O((n<sup>k</sup>)*(log<sup>p</sup>(n)))]
+`T(n) = aT(n/b) + f(n)`
+- where c can be anything [O((n<sup>k</sup>)*(log<sup>p</sup>(n)))]
+- and f(n) is a Polynomial Function. means not like n/logn.
+- a should be >=1
+- **Steps:**
+    - calculate n<sup>log_a[base_b]</sup>
+    - if it is same as f(n) then return `f(n)*logn`
+    - else return bigger of them.
 
-- calculate n<sup>log_a[base_b]</sup>
-- if it is same as c then return `c*logn`
-- else return bigger of them.
+- Special Cases
+  - if f(n) = 2^n, Complexity is O(2^n)
+  - if f(n) = n!, Complexity is O(n!)
+
+#### Extended Masters Theorem
+- Google it, No need to learn it!
 
 ## Stabilty & Inplace (Sorting)
 
@@ -79,36 +93,82 @@ where c can be anything [O((n<sup>k</sup>)*(log<sup>p</sup>(n)))]
     -(`Best case complexity O(n)`)
     - (`Inplace`)
   - **Merge Sort**, O(nlogn)
-    - (Divide and Conquer),
+    - (Divide and Conquer Algorithm),
     - (`O(nlogn) in time and O(n) in space`)
     - (`Not Inplace`)
     - used in *External Merge Sorting* [no need to bring complete array at a time to sort, can divide array into chunks that can fit into RAM, and sort individually] [k-way merge is performed here.] [merging k sorted arrays in one go.] [Merge sort uses 2-way merge]
+  - **Quick Sort** O(nlogn)
+    - (Divide and Conquer Algorithm),
+    - Inplace, if no stack space is considered as used in recursion, otherwise not-inplace => Inplace with logn stack space,
+    - `can be made stable` but at the cost of inplace by using extra space by taking naive approach to write partition function which uses extra O(n) space. But since in worst case call stack can take upto to n calls, quicksort is still O(n) space wise so why not do it. 
+    - `conclusion: space is O(n)`, because of stack space + made stable by creating extra array of length n in partition function.
+    - Tail recursive hence is more optimizated for complier as compiler can do tail call elimination and perform code optimization.
+    - Worst case: Array already sorted and we are taking pivot as the first element.
+      - T(n) = T(n-1)+n = O(n^2)
+    - Best case: when pivot always lends in the middle.
+      - T(n) = 2T(n/2)+n = O(nlgn)
+    - Almost best/worst case or rest of the cases: 
+      - Let partition happens like n/10 and 9n/10 [10% and 90% split].
+      - T(n) = T(n/10)+T(9n/10)+n 
+      - Solvin gby recursion tree we get T(n)= O(n*logn) [logn with base 10/9].
+      - **Important**: `Only in one case Quicksort goes to n^2`.
+      - `Even if we have n/100 and 99n/100 [1% and 99% split]split. It will still be nlogn.`
+    - Worst case O(n^2), chance of happening that case can be reduced using randomized QuickSort.
+      - Randomization can be added in picking the pivot element rather than first everytime.
+      - Other can be randomly shuffle the input array. chance of array remains sorted is close to 0 after the shuffling.
+      - but since there still a very very small chance of happening the scenario. Worst case remains O(n^2) but now with lower probability.
+  - **Counting Sort**
+    - O( n + range_of_numbers), made stable by keeping cummulative count of elements <= the ith element in original array.
+    - **not a comparison based**, **not inplace**, extra O(n+k) space, k for counting occurences and n for output array which will then be copied to original array.
+    - useful only when k(range of numbers) is linear to n(n/2, 2n, 5), otherwise counting sort becomes n^2 or worst depending upon k=n^2 or n^3.
+    - used as a subroutine for radix sort.
+    - both space and time complexity is O(n+k)
+  - **Radix Sort**
+    - works even when range of numbers is very large.
+    - works in linear time, even when numbers are in range(n^2, n^3).
+    - use counting sort as subroutine.
+    - `O(d*(n+k))`, d is number of digits in largest number, k is biggest digit in numbers(base of numbers, k=b)(usually 10[decimal] so can be ignored), `O(d*n)`.
+    - space is same as of counting sort. O(n+k) and k=b
+    - Question: -What is the Time Compexity to sort n integers using radix sort in range [n^(k/2), n^k]. where k is independent of n.
+      - Ans: T(n) in radix sort is = O(d*(n+range)), 
+      - range = 10(decimal number system)
+      - d = log(n^k) = number of digits in the largest number.
+      - T(n) = O( k * logn * n) = O(nlogn)
 
 - **Unstable Sort**
   - **Selection Sort** O(n^2)
     - (`Inplace`)
     - (`all case O(n^2)`)
-  - **Quick Sort** O(nlogn)
-    - (Inplace , if no stack space is considered as used in recursion, otherwise not-inplace\*),
-    - can be made stable at the cost of inplace by using extra space by taking naive approach to write partition function which uses extra O(n) space.
-    - Tail recursive hence is more optimizated for complier as compiler can do tail call elimination.
-    - (conclusion: space is O(n), because of stack space)
-    - Worst case O(n^2), chance of happening that case can be avoided using randomized QuickSort.
   - **Heap Sort**
-    - O(nlogn) in all cases
-  - **Counting Sort**
-    - O(n+range_of_numbers), made stable by keeping count of elements <= the ith element in original array.
-    - **not a comparison based**, **not inplace**, extra O(n+k) space, k for counting occurences and n for output array which will then be copied to original array.
-    - useful only when k(range of numbers) is linear to n(n/2, 2n, 5), otherwise counting sort becomes n^2 or worst depending upon k=n^2 or n^3.
-    - used as a subroutine for radix sort.
-  - **Radix Sort**
-    - works even when range of numbers is very large.
-    - works in linaer time, even when numbers are in range(n^2, n^3).
-    - use counting sort as subroutine.
-    - `O(d*(n+k))`, d is number of digits in largest number, k is biggest digit in numbers(base of numbers, k=b)(usually 10 so can be ignored), `O(d*n)`.
-    - space is same as of counting sort.O(n+k) and k=b
+    - θ(nlogn) in all cases(best, worst, average)
+    - There is one case where it is O(n), when almost-all or all elements are same, heapify becomes O(1), hence O(n).
+    - Space complexity is O(1)
   - **Bucket Sort**
     - O(n) best case, O(used_sort_algo_time_to sort_individual_bucket)
+
+- Insertion Vs Selection Sort
+  - Insertion is O(n^2) swaps in worst case
+  - Selection is O(n) swaps in worst case
+  - use selection sort where writing to memory(swaps) is a concern over insertion sort.
+
+- Question : can there be nay comparison based sorting algorithm which is O(n)?.
+  - Ans: No, Since we have to make comparisons and total number of arrangement possible is n!, we make binary decision tree of elements where leaf nodes are all the n! arrangements. Binary tree of height h has 2^h-1 nodes. and 2^(h-1) leaf nodes.
+  - Since not all arrangement will arrive at same height. leaf nodes are less than n! => 
+    n! <= 2^(h-1)  
+    => log(n!) <= h-1 
+    => h >= log(n!)+1 
+    => h = θ(nlogn) [as log(n!) = θ(nlogn)]
+    => we can say h = Ω(nlogn) 
+    - Since to sort the array, we atleast have to follow one path down the deicison tree, total Comparisons are atleast h = nlogn.  
+    - Note: Minimum Number of comparion to sort array based on comparison based sorting is ceil(lg(n!)), ceil because of h >= log(n!)+1.
+
+- Prove [as log(n!) = θ(nlogn)]
+  - Proof:
+    - log(n!) = log1 + log2 + logn3 + ... + log(n/2) + ... + logn <= logn + logn + logn + ... + logn = nlogn 
+      - => log(n!) = O(nlogn)
+    - log(n!) = log1 + log2 + logn3 + ... + log(n/2) + ... + logn >= log(n/2) + log(n/2+1) + log(n/2+2) + ... + log(n) = (n/2)log(n/2) 
+      - => log(n!) = (Ω(nlogn)
+    - => log(n!) = θ(nlogn) Proved.
 
 ## Stack(infix prefix algo and points)
 
@@ -131,6 +191,68 @@ where c can be anything [O((n<sup>k</sup>)*(log<sup>p</sup>(n)))]
 - Conclusion:
   - bhari hai toh stack mai daldo, bina kuch kiye.😁
   - halka hai toh pop karte raho jab tak wo halka bhari na hojaye.😁
+
+## Tree 
+  - height 0 is root=NULL
+  - height starts from 1, level from 1, depth from 0 (follow this convention but 0 can be 1 as well and vice-versa)
+  - depth starts from top. root's depth 0, root-children depth 1 and so on.. 
+  - depth is number of edges between root to that node.
+  - internal node = nodes that are not leaf nodes.; root is also an internal node. 
+
+  - Types of binary tree
+    - full binary tree : every node with  0 or 2 children; need not to be balanced.
+      ```cpp
+     <!-- EXAMPLE -->
+        O
+      /   \
+      O    O
+          /  \
+         O    O
+              / \
+             O   O
+                /  \
+                O   O
+      ```
+    - complete binary tree(CBT)
+      - except last level,rest level are completely filled 
+      - last level has node from Left to Right. No Gaps
+      - number of internal nodes in CBT is floor(n/2)
+        ```cpp
+        <!-- EXAMPLE -->
+              O
+            /   \
+            O     O
+          / \    /
+          O  O   O
+        ```
+    - perfect binary tree
+      - Every level is completely filled.
+      - or say every internal node has 2 children and all leaves node are at same level.
+        ```cpp
+            <!-- EXAMPLE -->
+                O
+              /   \
+              O     O
+            / \    / \
+            O  O   O  O
+          ```
+    - balanced binary tree
+      - every nodes left Subtree height and right Subtree height differnence is not more than 1.
+
+## Hashing , HashFunction(hf), Load Factor and Hash Table
+
+- Collisions are resolved by
+  - Open Addressing
+    - Linear Probing (hf_i(n) = (hf(n) + i) mod m); [hf_i being calculating hf ith time; m is table size]
+    - Quadratic Probing (hf_i(n) = (hf(n) + a*i*i + b*i)) mod m
+    - Double Hashing (hf_i(n) = (hf(n) + i*hf2(n)) mod m)
+  - Seperate chaining
+
+- Load Factor is [(total Slots filled)/(total Slots)] = Average number of keys per slot. = Average length of chain per slot.
+- Slots means table size.
+- Simple Uniform hashing follows, for each key, it is equally likely to be hashed to any slot in table. And it is a requirement for good hash function.
+- To avoid many collisions, we always make sure load factor<=1, geenrally 0.7, when it grows more, we create new table of twice the size and reduce load factor again.
+- Average number of comparions to be performed to search a key =  average chain length = Load Factor
 
 ## Graphs
 
@@ -194,6 +316,7 @@ where c can be anything [O((n<sup>k</sup>)*(log<sup>p</sup>(n)))]
     - using bfs: `TODO`
 
 - Topological sorting (dfs)
+- We need to mark things visited, so that next time if we come back to the same thing we know that we already came there once.
 
 ## Math
 
@@ -221,4 +344,13 @@ where c can be anything [O((n<sup>k</sup>)*(log<sup>p</sup>(n)))]
   ```
 
 - stop feeling Sorry for Yourself and do it.
-- We need to mark something visitied, so that next time if we come back to the same thing we know that we already came there once.
+
+## backtracking
+- Used for Constrained Assignement problems like N-Queen, Rat in a maze, Sudoku Solver.
+- In these problems brute force solution tries all possible combinations and hence high in complexities
+- But backtacking is beign smart about trying the combinations. If while following one of the combination, we find out that it is going to invalid, we simply reject that path, go back and try new path. (Hence not going blindly in one direction, saving lot of time.)
+
+## Some Points to Ponder
+
+- Binary Search only works on sorted array.(monotonic functions) 
+- Binary Search does not work on sorted linked list beacuse getting the middle element will take O(n) in itself.. 

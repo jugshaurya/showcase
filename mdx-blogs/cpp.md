@@ -170,6 +170,12 @@ int main() {
 	delete [] arr;
 ```
 
+- Can be stored in memory in 
+	- Row Major Order (RMO)
+		- Store continously row wise
+	- Column Major Order (CMO)
+		- Store continously col wise
+
 ## Recursion on array and strings
 
 - on array,
@@ -396,25 +402,104 @@ Note: `int+double= double, int-double=double, int/double=double, double/int=doub
   - Why? let employyee is a baseclass and teacher, gardner, manager are baseclasses and each(base and sub) have a calculatesalary method. we want to store all salaries of differnet employees in a array.
   - since array can only hold homogeneous values. we have to use `Employee* salaries[100]` we can push each object of base classes into it. and call calculatesalary() in a loop. it work only if calculatesalary is virtual in baseclass.
 
-## Questions to be answered!
+## Questions answered!
 
 - what is Amortized Analysis?
+	- Ans:  Analysing the complexity approximately that if work is equally distributed, what is the work each one is doing.
+	- Actual time complexity is sum of all subtasks, some of them is big & some is small but when you some them it is averaged out.
+	- 1,1,1,1,n,1,1,1,1,n,1,1,1,1 = (2n+12)/n = O(1)
+	- 1,2,1,1,4,1,1,1,1,8,1,1,1,1,1,1,1,1 = can be seen as each of them is doing 1.5 work rather than some 1 some 4,8,16. This is Amortized.
 
-```
-Is it ? actual time complexity is sum of all subtasks, some of them is big some is small but when you some them it is averaged out.
-1,1,1,1,n,1,1,1,1,n,1,1,1,1 = (2n+12)/n = O(1) ?
-is it ??
 
-```
+- Use of tail recursion in compiler or how it optimizes the performance ?
+	- add goto statement and change parameter explicitely and make instruction jump to start.
+	- ex1: print n natural numbers
+	```cpp
+	// tail recursion 
+	void printNNumbers(int n){
+		if(n<0){
+			return;
+		}
+		cout<<n<<" ";
+		return printNNumbers(n-1);
+	}
+	```
+
+	```cpp
+	// Tail Recursion after Optimization (TRO)
+	// Done Automatically by Compilers in Compiler's Code Optimization phase
+	// Avoid adding a new entry to call Stack.
+	// Avoid call registration, CALL/JUMP and RETURN Function instructions. 
+	// Converting call stack calls(recursive calls) to iterative
+	// Hence optimizing performance
+
+	void printNNumbers(int n){
+		label comeback:
+		if(n<0){
+			return;
+		}
+		cout<<n<<" ";
+		n = n-1;
+		goto comeback ;
+	}
+	```
+
+	- ex2: calculation of factorial
+	
+	```cpp
+	// not-tail recursion  (head recursion)
+	// Why? Because after the recurion is done, I still have operations to perform, multiply by n here. 
+	int fact(int n){
+		if(n==0){
+			return 1;
+		}
+		return n * fact(n-1);
+	}
+	```
+
+	```cpp
+	// tail recursion
+	void fact(int n, int &ans){
+		if(n == 0){
+			ans = 1
+			return;
+		}
+		ans = ans * n;
+		fact(n-1, ans);
+	}
+
+	int fact(int n){
+		int ans = 1;
+		factHelper(n, ans);
+		return ans;
+	}
+	```
+	
+	```cpp
+	// Tail Recursion Optimization (TRO)
+	void factHelper(int n, int &ans){
+		label comeback:
+		if(n == 0){
+			ans = 1
+			return;
+		}
+		ans = ans * n;
+		n = n-1;
+		goto comeback ;
+	}
+	int fact(int n){
+		int ans = 1;
+		factHelper(n, ans);
+		return ans;
+	}
+	```
+
+## Questions to be answered!
 
 - NP Hard Problems?
 
-- Small Omega
-- Small oh
-
 - expansion of logn is harmonic sum of first n natural number(1+1/2+1/3+1/4+1/5+...)?
 
-- Use of tail recursion in compiler or how it optimizes the performance.
 
 ## Quotes
 

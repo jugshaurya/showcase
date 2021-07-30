@@ -188,12 +188,12 @@ dq.pop_back(10);
 - In STL, priority queues take three template parameters:
 
 ```cpp
-template <class T, class Container = vector<T>, class Compare = less<typename Container::value_type>> class priority_queue;
+template <class T, class Container = vector<T>, class Compare = less<typename Container::value_type>>
+class priority_queue;
 ```
 
 - The first element of the template defines the class of each element. It can be user-defined classes or primitive data-types. Like in you case it can be int, float or double.
-- The second element defines the container to be used to store the elements. The standard container classes std::vector and std::dequeue fulfil these requirements. It is usually the vector of the class defined in
-  the first argument. Like in your case it can be vector<int>, vector<float>, vector<double>.
+- The second element defines the container to be used to store the elements. The standard container classes std::vector and std::dequeue fulfill these requirements. It is usually the vector of the class defined in the first argument. Like in our case it can be vector<int>, vector<float>, vector<double>.
 - The third element is the comparative class. By default it is less<T> but can be changed to suit your need. For min heap it can be changed to greater<T>.
 - inside <queue> header file
 - using vector as underline container
@@ -206,12 +206,30 @@ template <class T, class Container = vector<T>, class Compare = less<typename Co
   - empty() => O(1)
   - size() => O(1)
 
-- `pqmax pq(arr,arr+n)` => creates a max heap from an array.
+- **Important**
+  - `pqmax pq(arr,arr+n)` => creates a max heap from an array.
+    - This approach is better as time complexity to build heap is O(n). It builds heap using bottom-up approach which is O(n).
+      -  It does it as: Creating a array and putting all array elements in it. Then going backward from last internal node(floor(n/2)), it calls heapify(). = Bottom up approach.
+      - Proof: Let Tree is Perfect tree, which is also a CBT right? Yes. Evry Perfect tree is a CBT
+      - then all internal nodes at till h-1 and at h there will all be leaves node. If we look what we are doing
+      ```cpp
+      <!-- Code:  -->
+      for every node from floor(n/2) to 1:
+        heapify(node)
+      ```
+      - We can say for nodes at height h-1(#nodes = 2^(h-2); assuming heights starts from 1.). We call heapify at max 1 time only. 
+      - for nodes at height h-2(#nodes = 2^(h-3)). We call heapify at max 2 time only.  and so on.
+      - worst case Time will be
+      - 2^(h-2) + [2^(h-3)]*2 + 2^(h-4)*3 + .... = 2^(h-2) * (1+ 2/2^1 + 3/2^2 + 4/2^3 + ...)
+      - Also we know total number of nodes = n = 2^h - 1
+      - (1+ 2/2^1 + 3/2^2 + 4/2^3 + ...) approximately 3
+      - Hence, Complexity is O(n). Woof! Phew!
+    - earlier approach of pushing elements one by one is costlier and it will be O(nlogn) (logi being for each insertion), similar when printing heap, nlogn time.
 
-  - This approach is better as time complexity to build heap is O(n). It builds heap using bottom-up approach which is O(n).
-  - earlier approach of pushing elements one by one is costlier as it will be nlogn(logn being for each insertion), similar when printing heap, nlogn time.
+- In CBT. total number of internal nodes are floor(n/2)
+- It also implies leaves starts from floor(n/2) + 1 and goes till n. 
 
-- Custom Sorting in PQ
+- Custom Sorting in PQ: Have to use Comparotr class/struct and implement () opearator
 
   ```cpp
     struct myCmp {
