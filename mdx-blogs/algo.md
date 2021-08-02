@@ -254,10 +254,10 @@
 - To avoid many collisions, we always make sure load factor<=1, geenrally 0.7, when it grows more, we create new table of twice the size and reduce load factor again.
 - Average number of comparions to be performed to search a key =  average chain length = Load Factor
 
-## Graphs
+## Graph Data Structure
 
 - G = (V,E)
-- Directed vs Undirected
+- Directed(ordered edge pair) vs Undirected(unordered edge pair)
 - Weighted vs unweighted
 - Path
   - A physical link and repeting the link is not a concept
@@ -267,6 +267,14 @@
   - We can walk along the path & can repeat the path while walking
   - v1, v2, v3, v5, v4 is also a walk.
   - v1, v2, v3, v5, v1, v2 is a walk.
+- Bridge or cut edge or cut-arcs
+  - An edge removal of which increases the number of connected components in a graph.
+  - or edge removal of which graph becomes disconnected.
+- Articulation Point or cut vertices
+  - Vertex removal of which disconnects the connected graph is called cut vertex.
+  - vertex removal of which increases the number of connected components in a graph.
+- Biconnected Graph
+  - IF removal of any one vertex doesn't disconect the graph, graph is called biconnected(connected through 2 ways).
 - Tree is an acyclic connected Graph.
 - If a graph is connected then
   - minimum no. of edges = n-1 = Tree
@@ -280,9 +288,9 @@
       - Finding vertices adjacent to u is O(V).
       - Finding degree of u is O(V).
       - Add/Delete an edge is O(1)
-  - Adjacency List
 
-    - Space: O(V+E) <!-- V for array size and E for list in array -->
+  - Adjacency List
+    - Space: O(V+E) <!-- V for array size and E for total list size in chaining -->
     - can be implemented using dynamic size 2D-array or linked list.
     - Operations:
       - Check if u and v are adjacent is O(V).
@@ -293,6 +301,19 @@
       - `vector<int> adjList[V]` (array of vectors).
       - or `unordered_map<int> adjList[V]` (array of hashmaps).
       - or `vector<vector<int> > v` (vector of vectors).
+      - or `vector<list<int> > v` (vector of list).
+      - or `unordered_map<vector<int> > v` (hashmap of vectors).
+      - or `unordered_map<list<int> > v` (hashmap of lists).
+
+  - Edge List
+    - Used when we required sorting based on edge weights like in Finding MST
+    - [(0,3), (0,2),(1,4),(2,4)] 
+    - list/vector/array of pair(src, dest)
+    - list/vector/array of triplet(weight, src,dest)
+  
+  - Implicit Graph
+    - Graph given in form of 2d Matrix where there is 4 way connectivity(movement can be top,right,down,left) or 8-way connectivity(All 8 directions to move). 
+    - FloodFill Algorithm
 
   - Adjacency list are far more suited than Adjacency matrix as most of the scenarios have sparse graphs in real life.
   - **Handling vertices with value other than integer like strings as the name of city.**
@@ -300,22 +321,32 @@
     - along with index and city name in array.(So that finding city from index is constant)
 
 - BFS
-
-  - helps in finding the shortest path b/w u and v in an unweighted Graph.
+ 
+  - helps in finding the shortest path b/w u and v in an `unweighted` Graph(Single Source Shortest Path, SSSP).
+  - Works in both directed and undirected graphs.
     - Shortest path b/w u and v in an weighted Graph is done using dijikstra, which is similar to bfs, it is just that it uses priority queue rather than a queue to find the shortest path.
 
 - **Cycle Detection can be done using bfs or dfs**.
 
-  - how? (`In undirected graphs`): check for a vertex, if the vertices adjacent are already visited or not but ignoring the parent vertex.
-    - `Conclusion: check for vertices visitation accept the parent one.`
+  - how? (`In undirected graphs`): How? check for any vertex, if the adjacent vertices are already visited or not but ignoring the parent vertex.
+    - can be done by bfs or dfs.
+    - `Conclusion: check for vertices visitation except the parent one.`
+ 
   - how? (`In directed graphs`):
-
     - directed algo (previous point) fails for `x-->y<--z` graph.
     - using dfs: we look for the backedge, means while doing dfs we check if adjacent vertex is already available in recursion stack or not(maintains an boolean array for what we have pushed to stack till now).
     - `Conclusion: check for backedge, is vertex already in recursion-stack.`
-    - using bfs: `TODO`
+    - using bfs: `TODO`/does not exist!
 
+- Bipartite Graph?
+  - We can divide all vertices in two sets such that all edges of the graph are from one set to another set.
+  - Either we can chenck for odd-length cycle
+  - Or we color nodes and see violation occurs
 - Topological sorting (dfs)
+  - Works for DAG
+  - Done via BFS(Khan's Algorithm) - remove the node with indegree 0. keep doing it.
+  - Done via DFS - Save the nodes when none of its neighours remained to be visited. print output in reverse order.
+    - can save in a list and use push_front to save the node(basically appendToHead). and then print list.
 - We need to mark things visited, so that next time if we come back to the same thing we know that we already came there once.
 
 ## Math

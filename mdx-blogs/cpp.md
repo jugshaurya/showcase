@@ -504,3 +504,88 @@ Note: `int+double= double, int-double=double, int/double=double, double/int=doub
 ## Quotes
 
 > > "A problem well-seen is a problem well solved"
+
+
+- The #1 reason people fail interviews is lack of confidence!
+	● Nervousness == Lack of confidence
+	● Forgetting stuff == Lack of confidence
+	● Memorizing == Lack of confidence
+
+- 3 pillars of Interviewing along with Consistent Practising
+	- CS Fundamentals
+	- Problem Solving Strategy
+	- Self Confidence
+- turn your interviewing into a repeatable system.
+- 6 step system for solving any coding interview question, even if I’ve never seen it before
+- prematurely optimizing our code actually hurts us more than it helps
+- The 3 “hail mary” strategies to use when you’re really stuck
+- How to avoid your mind going blank when facing a hard problem
+- "go to inerview thinking you are the answer to their problem.” - George Clooney
+- The best interviewees are good at problem solving. Not pattern recognition
+- treat each hint as a small deduction because They may be trying to guide you away from common pitfalls
+- impostor syndrome:  Every one is way better/smarter than me.
+- If you practice hard problems, then your interview will be easy by comparison
+- You don’t know if you’re ready or not until you try
+- If you mess up, you can always interview again in the future
+- Brainstorm edge cases at the beginning and define assumptions
+
+- What are the goals of practicing?
+	- ○ Simulate real-world interview
+	- ○ Identify and improve weaknesses
+	- ○ Become comfortable with the tools and systems
+	- ○	Avoid Rehashing what you’re already good at
+
+
+- Simulate real-world interview
+	- ● Hand write code
+	- ● Talk out loud as you go
+	- ● Test your code by hand
+	- ● Apply the strategies
+			- 1. Understand the problem [3-5 minutes]
+				- Make sure that you really know what is being asked. Take your time here.
+				- Go through the example inputs and outputs. How does the input get that output?
+			- 2. Find a brute force solution [5 minutes]
+			- 3. Optimize your solution [15 minutes]
+			- 4. Code your solution [15 minutes]
+				- When you get to coding, it should just be “translating” the work you’ve already done
+			- 5. Test your solution [5 minutes]
+			
+- Your interviewer wants to help you
+○ The toughest interviews are when I try to help someone and they won’t let me .Don’t try to prove yourself
+● Only your interviewer really knows what they are looking for
+● It’s an easy way to get them to like you
+
+
+Interview practice
+○ Pramp
+○ Gainlo
+○ Interviewing.io
+
+Other practice
+- ○ Toastmasters
+- ○ Wedding toasts
+- ○ Video yourself
+- ○ Actual interviews
+
+```
+After a week or two (if they don’t email)
+Reply to the previous email:
+Hey FIRSTNAME -
+Hope all is well with you. I hadn’t heard back from you so I just wanted to check in and see if there was any more progress on my interview feedback.
+Thanks!
+```
+
+```
+Just wanted to bump this up in your inbox in case you missed it. Would love to discuss X.
+```
+
+
+- Research the company
+- Prepare a short description of each major project
+
+- How to structure your answers
+	- ● The STAR technique
+	- ● Situation (1-2 sentences)
+	- ● Task (1 sentence)
+	- ● Action (3-5 sentences)
+	- ● Result (3-5 sentences)
