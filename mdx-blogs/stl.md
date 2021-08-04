@@ -439,6 +439,12 @@ class priority_queue;
 -	count(container.begin(), container.end(), value_tobe_counted) // <algorithm>
 -	fill(container.begin(), container.end(), value_tobe_filled) // <algorithm>
 -	fill(arr, arr+n, value_tobe_filled) // <algorithm>
+  - fill works on all cases(setting 0,-1,true,false,9,5,-3) in static/dynamic array.
+  - memset works for setting (`0 and -1, false, true`) ONLY.  
+  - memset(arr, value, sizeof(arr))
+  - memset(arr, value, sizeof(arr)*arr_size) // For dynamically created array as arr will be a pointer. 
+
+  - Conclusion Use fill. No need to use memset.
 -	rotate(first_iterator, middle_iterator, last_iterator) // <algorithm>
 -	reverse(container.begin(), container.end()) // reverse container, container also includes string.
 -	reverse(a,a+n) // reverse array
@@ -446,5 +452,5 @@ class priority_queue;
 - srand(time(NULL)) // time in ctime
 - prev_permutation(container.begin(), container.end()) //O(n)
 - next_permutation(container.begin(), container.end()) //O(n)
-- **Note: Use member functions of container if available. There are more optimized.**
+- **Note: Use member functions of container if available rather than using global ones. There are more optimized.**
 ```

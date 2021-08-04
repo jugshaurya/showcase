@@ -505,7 +505,9 @@ Note: `int+double= double, int-double=double, int/double=double, double/int=doub
 
 > > "A problem well-seen is a problem well solved"
 
+- stop feeling Sorry for Yourself and do it.
 
+## Byte by Byte
 - The #1 reason people fail interviews is lack of confidence!
 	● Nervousness == Lack of confidence
 	● Forgetting stuff == Lack of confidence

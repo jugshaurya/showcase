@@ -324,59 +324,150 @@
  
   - helps in finding the shortest path b/w u and v in an `unweighted` Graph(Single Source Shortest Path, SSSP).
   - Works in both directed and undirected graphs.
-    - Shortest path b/w u and v in an weighted Graph is done using dijikstra, which is similar to bfs, it is just that it uses priority queue rather than a queue to find the shortest path.
+    - Shortest path b/w u and v in an weighted Graph is done using dijikstra, which is similar to BFS, it is just that it uses priority queue rather than a queue to find the shortest path.
 
-- **Cycle Detection can be done using bfs or dfs**.
+- **Cycle Detection can be done using BFS or DFS**.
 
-  - how? (`In undirected graphs`): How? check for any vertex, if the adjacent vertices are already visited or not but ignoring the parent vertex.
-    - can be done by bfs or dfs.
+  - (`In undirected graphs`):how? check for any vertex, if the adjacent vertices are already visited or not but ignoring the parent vertex.
+    - can be done by BFS or DFS.
     - `Conclusion: check for vertices visitation except the parent one.`
  
   - how? (`In directed graphs`):
-    - directed algo (previous point) fails for `x-->y<--z` graph.
-    - using dfs: we look for the backedge, means while doing dfs we check if adjacent vertex is already available in recursion stack or not(maintains an boolean array for what we have pushed to stack till now).
-    - `Conclusion: check for backedge, is vertex already in recursion-stack.`
-    - using bfs: `TODO`/does not exist!
+    - directed algo (previous point) fails for `3-->1<--2` graph.(for loop will go to 1 then 2 then 3).
+    - using DFS: we look for the backedge, means while doing DFS we check if adjacent vertex is already available in recursion stack or not (maintains an boolean array for what we have pushed to stack till now)(or we can use visited array for same, 0 means not visited, 1 means visited but not in stack, 2 means visited and in stack).
+    - `Conclusion: check for backedge,i.e. Is vertex already in recursion-stack?`
+    - same can also work in undirected graphs(above case.) But Leave parent vertex as well ofcourse.
+    - using BFS: `TODO`
 
 - Bipartite Graph?
   - We can divide all vertices in two sets such that all edges of the graph are from one set to another set.
   - Either we can chenck for odd-length cycle
   - Or we color nodes and see violation occurs
-- Topological sorting (dfs)
+
+- Topological sorting (DFS)
   - Works for DAG
-  - Done via BFS(Khan's Algorithm) - remove the node with indegree 0. keep doing it.
+  - Done via BFS(Kahn's Algorithm) - remove the node with indegree 0. keep doing it.
   - Done via DFS - Save the nodes when none of its neighours remained to be visited. print output in reverse order.
     - can save in a list and use push_front to save the node(basically appendToHead). and then print list.
+    - can save it in stack as then print the stack.
 - We need to mark things visited, so that next time if we come back to the same thing we know that we already came there once.
 
 ## Math
 
-`LCM = (a*b)/(gcd(a,b))`
+- Prime Numbers
+  - Go till Sqrt(n)
+  - If a number is prime >=5,  then either is of form 6n-1 or 6n+1. But not vice-versa(25,49 are not prime)
 
-- GCD via Euclid theorem in sqrt(max(a,b))
-  rules - gcd(a,0) = a - gcd(0,a) = a - gcd of two number don't change, if we update larger number with differnce of numbers.
+- Sieve of Erathosthenes (Find all prime numbers from 0 to N)
+  - NloglogN
 
-  - Euclid algo of subtraction
+- Segmented Sieve (Find all prime numbers in range [L,U], where L,U <10^12 and L-U <=10^6) 
+  - Problem with Normal Sieve is that it need to form and array of Size N(10^12 here). Now this limits the range of N as we cannot create an array of Size N as big as 10^12. Hence we use Segmented Sieve
+  - Just map array index to range. 0th index to L, 1st to L+1 and so on ... 
+  - Hence need to create an array of size U-L only, which is 10^6 , whihc we can create.
 
+- GCD/HCF via Euclid theorem.
+  - Euclid algo of multiplication: `BEST`: O(log min(a,b)) 
+    - Facts
+      - If one is 0, ans is the other one.  
+      - gcd of two number doesn't change, if we update larger number with reminder of two.
+      ```
+      int gcd(int a, int b){
+        if(b == 0) return a
+        if(a == 0) return b
+        return gcd(b, a%b);
+      }
+      ```
+  - Euclid algo of subtraction - Time complexity is O(max(a,b)). If a=1 and b=n then it will run n times.
+    - Facts
+      - If one is 0, ans is the other one.  
+      - gcd of two number doesn't change, if we update larger number with difference of two.
+      ```
+      int gcd(int a, int b){
+        if(b == 0) return a
+        if(a == 0) return b
+        return gcd(b, abs(a-b));
+      }
+      ```
+- `LCM = (a*b)/(gcd(a,b))`
+
+- Extended Euclidean Algorithm O(log min(a,b))
+  - It gives us the solution (x,y) such that `Ax+ By = gcd(A,B)` holds
+    - Solving it
+      ```
+      Ax+ By = gcd(A,B) -------- 1
+      [as we know gcd(A,B) = gcd(B,A%B)] ---- 2 
+      gcd(B,A%B) = Bx' + (A%B)y' from 1
+      [we Also know that A%B = A- floor(A/B)*B] from Quotient-remainder theorme 
+      gcd(B,A%B) = Bx' + (A - floor(A/B)*B)y'
+      gcd(B,A%B) = B(x' - y'*floor(A/B)) + Ay'
+      [from 2]
+      we get, Ax + By = B(x' - y'*floor(A/B)) + Ay'
+      ```
+
+      ```
+      => x = y' and
+      => y = x' - y'*floor(A/B)
+      ```
+  - Helps us find the multiplicative Modulo Inverse of a Number
+
+
+- Modular Arithmetic
+  - Distributive Properties
+    - (a + b) % m = (a % m + b % m ) % m
+    - (a - b) % m = (a % m - b % m + m) % m
+    - (a * b) % m = (a % m * b % m ) % m
+    - (a / b) % m = (a * inverse(b))% m 
+      - (a / b) % m  = (a % m * inverse(b) % m ) % m
+      - (a / b) % m = (a % m * MMI(b,m)) % m
+
+- inverse(b)%m is called **Modulo Multiplicative Inverse**.
+  - Multiplicative Inverse of x is y, if xy = 1.
+  - Modulo Multiplicative Inverse of x is y wrt m, if xy = 1 (mod m) or (xy)mod m = 1 or xy is congrent to 1 mod m.
+  - Naive Approach O(m): 
+    - To find the y. we can put y from (0 to m-1) in xy mod m and check which one is giving 1.That will the MMI of x wrt m.
+    - Ex- 2 is MMI of 3 wrt 5.
+  - Note: For every value, MMI may not Exist. Just like inverse(0) does not exist.
+  - **If gcd(x,m)=1, then only MMI of x exist wrt m**.(A & m should be co-prime)
+  - **Extended Euclidean Algorthim Approach to find MMI: Optimized** O(log(min(A,M)))
+    - We know that Ax + By = gcd(A,B) holds for some (x,y)
+    - We want to find out MMI of A wrt to M then:-
+    - => Ax + My = gcd(A,M) = 1(so that MMI exist); taking mod on both side
+    - => (Ax + My) mod M = 1 mod M
+    - => Ax mod M + My mod M = 1 mod M
+    - => Ax mod M + 0 = 1 mod M
+    - => Ax mod M = 1 mod M => x is the MMI of A as Ax = 1 mod M
+    - We can find that x using Extended Euclidean Algo(EEA).
+    - Conclusion: To find MMI of A wrt M. 
+      - Check gcd(A,M) = 1
+      - & Find x in Ax + My = 1 using EEA
+      - x = y' & y =  x' - (A/M) * y'
+    - ONce we get the MMI we can put it into (a / b) % m = (a % m * MMI(b,m)) % m and get the answer.
+    - IF MMI is coming -ve add m to it.
+
+- Modular Exponentiation. (Finding a^b mod m)
+  - power(a,b,m)
+    - Naive Approach : power(a,b,m) = (a * power(a,b,m)) modm
+    - Log(exponent) Approach : 
+      - power(a,b,m) = b is Even: (power(a,b/2,m)* power(a,b/2,m)) modm
+      -              = b is Odd:  (a * power(a,b/2,m) * power(a,b/2,m)) modm
+    - Dont forget to use a*b modm = (a mod m *b mod m) mod m
+
+- Handling Values larger than long long via mod
+  - Reprexsent value as string
+  - now how to take mod of string number?
+  - start from left and do result = (result*10 + (int)(str[i]-'0'))%m, for all i's.
   ```
-  int gcd(int a, int b){
-  	if(b == 0) return a
-  	return gcd(b, a%b);
-  }
+    string num = "2141904793704971047934701374"
+    int mod = 101;
+    int result = 0;
+    for(int i = 0; str[i]!='\0'; i++){
+      result = (result*10 + (int)(str[i]-'0')) % m;
+    }
+    cout<<result<<endl; 
   ```
+## Backtracking
 
-  - Euclid algo of multiplication
-
-  ```
-  int gcd(int a, int b){
-  	if(b == 0) return a
-  	return gcd(b, abs(a-b));
-  }
-  ```
-
-- stop feeling Sorry for Yourself and do it.
-
-## backtracking
 - Used for Constrained Assignement problems like N-Queen, Rat in a maze, Sudoku Solver.
 - In these problems brute force solution tries all possible combinations and hence high in complexities
 - But backtacking is beign smart about trying the combinations. If while following one of the combination, we find out that it is going to invalid, we simply reject that path, go back and try new path. (Hence not going blindly in one direction, saving lot of time.)
@@ -385,3 +476,7 @@
 
 - Binary Search only works on sorted array.(monotonic functions) 
 - Binary Search does not work on sorted linked list beacuse getting the middle element will take O(n) in itself.. 
+
+
+## Questions: 
+- Look for circular Queue, rear, front, emoyt or full conditions.I don't get those.
