@@ -320,6 +320,8 @@
     - We store the city name and a index in hashmap. (So that finding the index of a city is constant)
     - along with index and city name in array.(So that finding city from index is constant)
 
+- We need to mark things visited, so that next time if we come back to the same thing we know that we already came there once.
+
 - BFS
  
   - helps in finding the shortest path b/w u and v in an `unweighted` Graph(Single Source Shortest Path, SSSP).
@@ -350,7 +352,51 @@
   - Done via DFS - Save the nodes when none of its neighours remained to be visited. print output in reverse order.
     - can save in a list and use push_front to save the node(basically appendToHead). and then print list.
     - can save it in stack as then print the stack.
-- We need to mark things visited, so that next time if we come back to the same thing we know that we already came there once.
+
+- Strongly Connected Digraphs(Connectivity in Directed Graph)
+  - Directed graph are strong connected if there exist a **directed path** b/w each pair of vertices. 
+  - And components which are strongly connected are called Strongly connected Components of Grpah.
+
+- Weakly Connected Graph
+  - Directed Graph which is not strongly connected, But If we remove the direction of edges and it becomes Connected graph. then it is weakly connected.
+
+- Spanning Tree
+  - concept for undirected Graphs only. Is it ?
+  - A graph can have multiple spanning trees
+  - A graph can have multiple Minimum spanning trees but of equal lengths. because of minimum
+    - An unweighted graph(w=1 for every edge) has multiple MSTs of length #nodes-1
+
+- MST 
+  - Prims and Kruskal's Algorithms
+  - `Kruskal's Algorithms (For Undirected Graph)`
+    - Greedy Algo, `Complexity O(E*logE)` ; as E = V^2 => logE = 2LogV => `Complexity O(ElogV)`
+    - It Pick Edges one by one
+    - Uses `Union Find` Data structure (DSU : Disjoint Set Union)
+    - `Sorts edges` in non-decreasing order by weight
+    - Pick the edge(u---> v) if it is not forming a cycle. i.e u and v belongs to different sets.
+  - `Prim's Algorithm (For Undirected Graphs)` O(ElogV)
+    - Used Min Heap.
+    - Also a Greedy Approach.
+    - It Pick Vertices one by one.and update the neighbour distance if distance is less than already assigned. Intitally all are infinity.
+
+- DSU
+  - Find and Union with optimization
+    - Path Compression
+    - Union By rank
+
+- Properties of Spanning trees(ST)
+  - #edges in MST = V-1.
+  - Spanning Trees is maximally acyclic => If we add one more edge to ST, graph will have cycle.
+  - Spanning Trees is minimally connected => If we remove one edge from ST, graph will become disconnected.
+  - There may exist many ST of same weight.
+  - If each edge has distinct weight, then we will have exactly one unique MST.
+  - Cycle Property: For any Cycle C in a graph, if the edge weight is larger than all other edges in C. Then that edge cannot be a part of MST. 
+  - Min-cost-edge : If the minimum weightde edge in Graph is Unique, Then it will always belong to MST.
+
+- Shortest Distance
+   - Dijikstra
+   - Bellmon ford
+   - Floyd Warshall
 
 ## Math
 
@@ -466,6 +512,7 @@
     }
     cout<<result<<endl; 
   ```
+
 ## Backtracking
 
 - Used for Constrained Assignement problems like N-Queen, Rat in a maze, Sudoku Solver.

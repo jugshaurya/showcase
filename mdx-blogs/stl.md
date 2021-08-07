@@ -13,10 +13,14 @@
     - (stack,queue, deque, heap, priority queue)
 
   - Associative Containers
+    - implement sorted Data structure; data can be searched in O(logn)
+    - set, map, multimap, multiset
+    - ordered map/set have an order and are implemented as self balancing BST(Red balck Trees).
 
-    - (set, map, multimap, multiset, unordered_map, unordered_set)
-    - unordered map/set uses hashing and has no-order,
-    - ordered map/set have an order and are implemented as self balancing bst.
+  - unordered Associative Containers
+    - implement unordered Data structure; data can be searched in O(1)
+    - unordered_set, unordered_map, unordered_multimap, unordered_multiset
+    - unordered map/set uses hashing and has no-order.
 
 - Algorithms
 
@@ -27,10 +31,79 @@
 
 - Iterators (only 5 types)
 
-  - An object(like pointer) that points to an element in container.
+  - An object(like pointer) that points to an element in container, helps in accessing data within the container.
   - We use iterator to move through elements of container.
-  - random access iterators are like pointer as we do arithmatic on pointer.
-  - forward, bidirectional, input,output iterators only moves one at a time(+1, ++) and are not like pointers.
+  - Random access iterators are like pointer like we do arithmatic on pointer(so we can jump via these iterator).
+  - Forward, Bidirectional, Input, Output iterators only moves one at a time(+1, ++) and are not like pointers.
+  - Why use them: Iterators helps in moving inside the container irrespective of type of container, whether it is map, set,vector,list... 
+
+- Comparator/Functor/Comparion object
+  - helps in writing our own comparison function that can be passed to algorithms to make comparisons
+  - It is basically an object(cmp) of a class that has `() operator` overloadded so to call comparison using cmp(Car A, CarB).
+
+```cpp
+// Example: Template + Iterator + Comparator
+
+// generic function to find something in a container
+template<class Iterator, class T, class Comparator>
+Iterator search(Iterator start, Iterator end, T key, Comparator cmp ){
+  // Iterator - Thanks to iterator, to work irrespective of Container.
+  while(start!=end){
+    if(cmp(*start, key)){ // Thanks to Generic Comparator 
+      return start;
+    }
+    start++;
+  }
+  return end;
+}
+
+class Car{
+  string name;
+  float price;
+  public:
+    Car(){
+    }
+    Car(string name, float price){
+      this->name = name;
+      this->price = price;
+    }
+};
+
+class CarComparator{
+  bool operator()(Car A,  CarB){
+    return A.price <B.price;
+  }
+};
+
+int main(){
+  Car BMW("BMW", 100);
+  Car Tesla("Tesla", 2000);
+
+  CarComparator cmp;
+
+  vector<Car> cv;
+  cv.push_back(BMW);
+  cv.push_back(Tesla);
+  auto it = search(cv.begin(), cv.end(), BMW, cmp);
+  if(it == cv.end()){
+    cout<<"Car Not Found in vector";
+  }else{
+    cout<<"Car Found in vector: "<<it->name<<endl;
+  }
+
+  list<Car> cl; // independent of Container- Thanks to Iterator.
+  cl.push_back(BMW);
+  cl.push_back(Tesla);
+  auto it = search(cl.begin(), cl.end(), BMW, cmp);
+  if(it == cl.end()){
+    cout<<"Car Not Found in list";
+  }else{
+    cout<<"Car Found in list: "<<it->name<<endl;
+  }
+  
+}
+
+```
 
 ## Vector
 
@@ -133,7 +206,23 @@ public:
 ## list and forward-list
 
 ```cpp
-	list<int> l; // doubly linked list
+	list<int> l{2,3,4,5,5}; // doubly linked list
+  /* 
+  methods available:-
+  - l.push_back() 
+  - l.push_front() 
+  - l.pop_back() 
+  - l.pop_front() 
+  - l.remove(val)
+  - l.erase(iterator)
+  - l.insert(iterator, value)
+  - l.sort()
+  - l.reverse()
+  - l.empty()
+  - l.front()
+  - l.back()
+ */
+
 	forward_list<int> fl; // singly linked list
 ```
 
@@ -197,7 +286,6 @@ class priority_queue;
 - The third element is the comparative class. By default it is less<T> but can be changed to suit your need. For min heap it can be changed to greater<T>.
 - inside <queue> header file
 - using vector as underline container
-
   - `priority_queue<int> pq;` <!-- default is max heap -->
   - `priority_queue<int, vector<int> , greater<int> > pq;` <!-- min heap -->
   - push() => O(logn)
@@ -207,14 +295,14 @@ class priority_queue;
   - size() => O(1)
 
 - **Important**
-  - `pqmax pq(arr,arr+n)` => creates a max heap from an array.
+  - `pqmax pq(arr, arr+n)` => creates a max heap from an array.
     - This approach is better as time complexity to build heap is O(n). It builds heap using bottom-up approach which is O(n).
       -  It does it as: Creating a array and putting all array elements in it. Then going backward from last internal node(floor(n/2)), it calls heapify(). = Bottom up approach.
       - Proof: Let Tree is Perfect tree, which is also a CBT right? Yes. Evry Perfect tree is a CBT
-      - then all internal nodes at till h-1 and at h there will all be leaves node. If we look what we are doing
+      - then all internal nodes at till h-1 and at h there will all be leaves node. If we look what we are doing.
       ```cpp
-      <!-- Code:  -->
-      for every node from floor(n/2) to 1:
+        /* Code:  */
+        for every node from floor(n/2) to 1:
         heapify(node)
       ```
       - We can say for nodes at height h-1(#nodes = 2^(h-2); assuming heights starts from 1.). We call heapify at max 1 time only. 
@@ -232,13 +320,13 @@ class priority_queue;
 - Custom Sorting in PQ: Have to use Comparotr class/struct and implement () opearator
 
   ```cpp
-    struct myCmp {
+    struct PairCmp {
       bool operator()(Pair a , Pair b) {
         return a.second > b.second;
       }
     };
 
-    priority_queue<Pair, vector<Pair>, myCmp> pq;
+    priority_queue<Pair, vector<Pair>, PairCmp> pq;
     pq.push({100, 20});
     pq.push({150, 200});
     pq.push({190, 120});
@@ -254,11 +342,11 @@ class priority_queue;
 - Application
 
   - Dijikstra Algorithm
-  - Prism Algorithm
+  - Prim's Algorithm
   - Huffman Coding
   - Heapsort
 
-## Set
+## set inside #include<set>
 
 - uses RBTree as data structure.
 - set<int> s;
@@ -308,7 +396,7 @@ class priority_queue;
 - Application
   - Store stream of data in a sorted way.
 
-## Map
+## map inside #include<map>
 
 - uses RBTree as data structure.
 - map<int, int> m;
@@ -320,11 +408,12 @@ class priority_queue;
       - if present then use [] to access or modify
       - else dont.
     - other function is insert({key,value}), but no need to use it.
+  - insert(make_pair(key,value)) or insert({key,value})
   - find() => logn
   - count() => logn
-  - size() => O(1)
   - erase() => logn
   - clear()
+  - size() => O(1)
   - begin() => O(1)
   - end() => O(1)
   - empty() => O(1)
@@ -338,7 +427,7 @@ class priority_queue;
 - Application same as set.
   - Sorted Stream of data with key value pairs
 
-## Unordered_Set
+## unordered_set inside #include<unordered_set>
 
 - uses Hashing as the data structure.
 - no ordering here
@@ -369,7 +458,7 @@ class priority_queue;
 
 ```
 
-## Unordered_Map
+## unordered_map inside #include<unordered_map>
 
 - uses Hashing as the data structure.
 - no ordering here
@@ -400,11 +489,15 @@ class priority_queue;
 
 ```
 
+- multiset inside #include<set>
+- multimap inside #include<map>
+
 ## STL Algorithms(More Functions)
 
 ```cpp
 - max()
 - min()
+- swap(a,b)
 - INT_MAX // (in #include<climits>)
 - INT_MIN // (in #include<climits>)
 - *max_element(v.begin(), v.end()) // *max_element(arr, arr+n) // <algorithm>
@@ -421,18 +514,19 @@ class priority_queue;
 		bool mycomp(pair a, pair b ){
 			return a.second < b.second // sort according to second in increasing order
 		}
-- lower_bound(container.begin(), container.end(), value_tobe_searched) // <algorithm>
-  - returns Iterator pointing to first element equal to or greater than key, or end().
-  - This function returns the first element of a subsequence of elements that matches the given key.
-  - If unsuccessful it returns an iterator pointing to the first element that has a greater value than given key or end() if no such element exists.
-- upper_bound(container.begin(), container.end(), value_tobe_searched) // <algorithm>
-    - returns upper element.
-    - Iterator pointing to the first element greater than key, or end().
-- iteator lower_bound(arr, arr + n, value_tobe_searched) // <algorithm>
-- iteator upper_bound(arr, arr + n, value_tobe_searched) // <algorithm>
+- iterator find(container.begin(), container.end(), value_tobe_searched) // linear search
 - bool binary_search(arr, arr + n, value_tobe_searched) // <algorithm>
 - bool binary_search(container.begin(), container.end(), value_tobe_searched) // <algorithm>
 - bool binary_search(container.begin(), container.end(), value_tobe_searched, mycmp) // <algorithm>
+- lower_bound(container.begin(), container.end(), value_tobe_searched) // <algorithm>
+  - returns Iterator pointing to first element equal to or greater than key, or end().
+  - This function returns the first element of a subsequence of elements that matches the given key.
+  - If unsuccessful it returns an iterator pointing to the first element that has a greater value than given key or end() if no such greater element exists.
+- upper_bound(container.begin(), container.end(), value_tobe_searched) // <algorithm>
+    - returns upper element.
+    - Iterator pointing to the first element greater than key, or end().
+- iterator lower_bound(arr, arr + n, value_tobe_searched) // <algorithm>
+- iterator upper_bound(arr, arr + n, value_tobe_searched) // <algorithm>
 -	is_permutation(container1.begin(), container1.end(), container2.begin()) // <algorithm>
 -	is_permutation(a, a + n, b) // <algorithm>
 -	count(a, a + n, value_tobe_counted) // <algorithm>
@@ -454,3 +548,4 @@ class priority_queue;
 - next_permutation(container.begin(), container.end()) //O(n)
 - **Note: Use member functions of container if available rather than using global ones. There are more optimized.**
 ```
+

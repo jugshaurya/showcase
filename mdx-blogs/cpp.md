@@ -74,6 +74,15 @@
 - Arrays are always passed as pointer to functions and length cannot be determined using `sizeof(arr)/sizeof(arr[0])` inside function, therefore have to pass length of array as argument to the function.
 - Provides cache spatial locality of reference as arrays are stored continously.
 - Have to know size before we create them. Solution: Vector.
+- couting int array will give you address of first interger, whereas couting char arry will printing all characters till null character.
+```cpp
+	int arr[10] = {1,2,3};
+	char ch_arr[10] = {'1','2','3', '\0'};
+	
+	cout<<arr<<endl; // print address of 1(arr[0])
+	cout<<ch_arr<<endl; // print "123".
+
+```
 
 ## References
 
@@ -212,8 +221,8 @@ int main() {
 	// Note: cout<<(address of char array a) -> prints value till found '\0'.
 	// Note: cout<<(address of int array a) -> prints address..
 	char name[] = {'s', 'h', 'a', 'u', 'r', 'y', 'a'}
-	cout<<name; // will print name array complete. // may be a problem so always put null character if declaring this way.
-	char name[] = {'s', 'h', 'a', 'u', 'r', 'y', 'a', '\0'};
+	cout<<name; // will print name array complete. // may have a problem, so always put null character if declaring this way.
+	char name[] = {'s', 'h', 'a', 'u', 'r', 'y', 'a', '\0'}; // recommended
 	cout<<name; // more predictable or else do like
 	char name[] ="shaurya" // complier will automatically add '\0'
 
@@ -296,7 +305,7 @@ Note: `int+double= double, int-double=double, int/double=double, double/int=doub
 ```cpp
 	// cin.getline(arr, maxsize, [delimiter]) // default delimiter='\n'
 	cin.getline(para, 1000);
-	cin.getline(para, 1000, ' '); //becomes cin
+	cin.getline(para, 1000, ' '); // becomes cin
 	cin.getline(para, 1000, '.'); // keep taking at max 1000 chars or till you got .
 ```
 
@@ -401,6 +410,41 @@ Note: `int+double= double, int-double=double, int/double=double, double/int=doub
   - but if we make function in vechile as virtual than car's print will be called.
   - Why? let employyee is a baseclass and teacher, gardner, manager are baseclasses and each(base and sub) have a calculatesalary method. we want to store all salaries of differnet employees in a array.
   - since array can only hold homogeneous values. we have to use `Employee* salaries[100]` we can push each object of base classes into it. and call calculatesalary() in a loop. it work only if calculatesalary is virtual in baseclass.
+
+## passing function to a function in cpp
+
+- pass bool (&fun)(int a, int b) as parameter. It is basically declaration of function  + wrapping function name in braces. & is to avoid copy. 
+
+```cpp
+	// look last parameter
+	void sortByMe(int*arr, int*arrend, bool (&fun)(int a, int b))
+
+	bool cmp(int a, int b){
+		return a<b;
+	}
+
+	sortByMe(arr,arr+n, cmp)
+```
+
+- Example 2
+
+```cpp
+void wrapper(void (&gift)()){
+	cout<<"wrapper"<<endl;
+	gift();
+}
+
+void first_class_function(){
+	cout<<"first class function"<<endl;
+}
+
+int32_t main(){
+	fastIO();
+	/** code here */
+	wrapper(first_class_function);	
+	return 0;
+}
+```	
 
 ## Questions answered!
 
