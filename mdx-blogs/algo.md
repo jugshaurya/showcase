@@ -259,37 +259,36 @@
 - G = (V,E)
 - Directed(ordered edge pair) vs Undirected(unordered edge pair)
 - Weighted vs unweighted
-- Path
+- **Path**
   - A physical link and repeting the link is not a concept
   - v1, v2, v3, v5, v4 is a path.(No repetition)
   - v1, v2, v3, v5, v1, v2 is not a path.
-- Walk
+- **Walk**
   - We can walk along the path & can repeat the path while walking
   - v1, v2, v3, v5, v4 is also a walk.
   - v1, v2, v3, v5, v1, v2 is a walk.
-- Bridge or cut edge or cut-arcs
+- **Bridge or cut edge or cut-arcs**
   - An edge removal of which increases the number of connected components in a graph.
   - or edge removal of which graph becomes disconnected.
-- Articulation Point or cut vertices
+- **Articulation Point or cut vertices**
   - Vertex removal of which disconnects the connected graph is called cut vertex.
   - vertex removal of which increases the number of connected components in a graph.
-- Biconnected Graph
+- **Biconnected Graph**
   - IF removal of any one vertex doesn't disconect the graph, graph is called biconnected(connected through 2 ways).
 - Tree is an acyclic connected Graph.
 - If a graph is connected then
   - minimum no. of edges = n-1 = Tree
   - maximum no. of edges = nC2 in undirected, 2\*nC2 in directed.
-- Graph Representations
 
-  - Adjacency Matrix
+- **Graph Representations**
+  - *Adjacency Matrix*
     - Space: O(V\*V)
     - Operations:
       - Check if u and v are adjacent is O(1).
       - Finding vertices adjacent to u is O(V).
       - Finding degree of u is O(V).
       - Add/Delete an edge is O(1)
-
-  - Adjacency List
+  - *Adjacency List*
     - Space: O(V+E) <!-- V for array size and E for total list size in chaining -->
     - can be implemented using dynamic size 2D-array or linked list.
     - Operations:
@@ -304,14 +303,12 @@
       - or `vector<list<int> > v` (vector of list).
       - or `unordered_map<vector<int> > v` (hashmap of vectors).
       - or `unordered_map<list<int> > v` (hashmap of lists).
-
-  - Edge List
+  - *Edge List*
     - Used when we required sorting based on edge weights like in Finding MST
     - [(0,3), (0,2),(1,4),(2,4)] 
     - list/vector/array of pair(src, dest)
     - list/vector/array of triplet(weight, src,dest)
-  
-  - Implicit Graph
+  - *Implicit Graph*
     - Graph given in form of 2d Matrix where there is 4 way connectivity(movement can be top,right,down,left) or 8-way connectivity(All 8 directions to move). 
     - FloodFill Algorithm
 
@@ -319,21 +316,16 @@
   - **Handling vertices with value other than integer like strings as the name of city.**
     - We store the city name and a index in hashmap. (So that finding the index of a city is constant)
     - along with index and city name in array.(So that finding city from index is constant)
-
-- We need to mark things visited, so that next time if we come back to the same thing we know that we already came there once.
-
-- BFS
- 
+  - We need to mark things visited, so that next time if we come back to the same thing we know that we already came there once.
+- **BFS**
   - helps in finding the shortest path b/w u and v in an `unweighted` Graph(Single Source Shortest Path, SSSP).
   - Works in both directed and undirected graphs.
     - Shortest path b/w u and v in an weighted Graph is done using dijikstra, which is similar to BFS, it is just that it uses priority queue rather than a queue to find the shortest path.
 
 - **Cycle Detection can be done using BFS or DFS**.
-
   - (`In undirected graphs`):how? check for any vertex, if the adjacent vertices are already visited or not but ignoring the parent vertex.
     - can be done by BFS or DFS.
     - `Conclusion: check for vertices visitation except the parent one.`
- 
   - how? (`In directed graphs`):
     - directed algo (previous point) fails for `3-->1<--2` graph.(for loop will go to 1 then 2 then 3).
     - using DFS: we look for the backedge, means while doing DFS we check if adjacent vertex is already available in recursion stack or not (maintains an boolean array for what we have pushed to stack till now)(or we can use visited array for same, 0 means not visited, 1 means visited but not in stack, 2 means visited and in stack).
@@ -341,32 +333,32 @@
     - same can also work in undirected graphs(above case.) But Leave parent vertex as well ofcourse.
     - using BFS: `TODO`
 
-- Bipartite Graph?
+- **Bipartite Graph?**
   - We can divide all vertices in two sets such that all edges of the graph are from one set to another set.
   - Either we can chenck for odd-length cycle
   - Or we color nodes and see violation occurs
 
-- Topological sorting (DFS)
+- **Topological sorting (DFS)**
   - Works for DAG
   - Done via BFS(Kahn's Algorithm) - remove the node with indegree 0. keep doing it.
   - Done via DFS - Save the nodes when none of its neighours remained to be visited. print output in reverse order.
     - can save in a list and use push_front to save the node(basically appendToHead). and then print list.
     - can save it in stack as then print the stack.
 
-- Strongly Connected Digraphs(Connectivity in Directed Graph)
+- **Strongly Connected Digraphs(Connectivity in Directed Graph)**
   - Directed graph are strong connected if there exist a **directed path** b/w each pair of vertices. 
   - And components which are strongly connected are called Strongly connected Components of Grpah.
 
-- Weakly Connected Graph
+- **Weakly Connected Graph**
   - Directed Graph which is not strongly connected, But If we remove the direction of edges and it becomes Connected graph. then it is weakly connected.
 
-- Spanning Tree
+- **Spanning Tree**
   - concept for undirected Graphs only. Is it ?
   - A graph can have multiple spanning trees
   - A graph can have multiple Minimum spanning trees but of equal lengths. because of minimum
     - An unweighted graph(w=1 for every edge) has multiple MSTs of length #nodes-1
 
-- MST 
+- **MST**
   - Prims and Kruskal's Algorithms
   - `Kruskal's Algorithms (For Undirected Graph)`
     - Greedy Algo, `Complexity O(E*logE)` ; as E = V^2 => logE = 2LogV => `Complexity O(ElogV)`
@@ -379,12 +371,12 @@
     - Also a Greedy Approach.
     - It Pick Vertices one by one.and update the neighbour distance if distance is less than already assigned. Intitally all are infinity.
 
-- DSU
+- **DSU**
   - Find and Union with optimization
     - Path Compression
     - Union By rank
 
-- Properties of Spanning trees(ST)
+- **Properties of Spanning trees(ST)**
   - #edges in MST = V-1.
   - Spanning Trees is maximally acyclic => If we add one more edge to ST, graph will have cycle.
   - Spanning Trees is minimally connected => If we remove one edge from ST, graph will become disconnected.
@@ -393,7 +385,7 @@
   - Cycle Property: For any Cycle C in a graph, if the edge weight is larger than all other edges in C. Then that edge cannot be a part of MST. 
   - Min-cost-edge : If the minimum weightde edge in Graph is Unique, Then it will always belong to MST.
 
-- Shortest Distance
+- **Shortest Distance**
    - Dijikstra
    - Bellmon ford
    - Floyd Warshall

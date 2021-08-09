@@ -1,4 +1,5 @@
 @import './colors';
+
 $font_path: '../static/fonts';
 $font_normal: 'monospace';
 $font_gabriela: 'Gabriela';
@@ -19,14 +20,6 @@ $font_normal: 'monospace';
   }
 }
 
-@mixin textColorGradient($gradient) {
-  background: -webkit-#{$gradient};
-  background-clip: text;
-  text-fill-color: transparent;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
 @include font-face($font_gabriela, $font_gabriela_filename, $font_path);
 @include font-face(
   $font_gloriahallelujah,
@@ -34,3 +27,11 @@ $font_normal: 'monospace';
   $font_path
 );
 @include font-face($font_robotomono, $font_robotomono_filename, $font_path);
+
+@mixin textColorGradient($gradient) {
+  background: -webkit-#{$gradient};
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

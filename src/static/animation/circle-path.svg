@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="360" height="120"  viewBox="-10 10 360 55">
+  <path d="M-1,1.499h83c0,0,10.5,1,10.5,11.25s-10.25,12.25-10.25,12.25h-43.5c0,0-10.75,0.75-11.75,11.5s9.75,12.25,9.75,12.25H343.5"
+        stroke="#529fd9" stroke-width="2" fill="none" id="wire"></path>
+  <circle cx="" cy="" r="8" fill="#529fd9">
+    <animateMotion dur="1.6s" repeatCount="indefinite">
+      <mpath xlink:href="#wire"></mpath>
+    </animateMotion>
+  </circle>
+</svg>
