@@ -1,3 +1,5 @@
+# Algorithms
+
 ## Time and Space Complexity
 
 - Best Case (Omege Ω) -> Lower Bound.
@@ -99,9 +101,9 @@
     - used in *External Merge Sorting* [no need to bring complete array at a time to sort, can divide array into chunks that can fit into RAM, and sort individually] [k-way merge is performed here.] [merging k sorted arrays in one go.] [Merge sort uses 2-way merge]
   - **Quick Sort** O(nlogn)
     - (Divide and Conquer Algorithm),
-    - Inplace, if no stack space is considered as used in recursion, otherwise not-inplace => Inplace with logn stack space,
-    - `can be made stable` but at the cost of inplace by using extra space by taking naive approach to write partition function which uses extra O(n) space. But since in worst case call stack can take upto to n calls, quicksort is still O(n) space wise so why not do it. 
-    - `conclusion: space is O(n)`, because of stack space + made stable by creating extra array of length n in partition function.
+    - Inplace, if no stack space is considered as used in recursion, otherwise not-inplace.
+    - `Stable` but as in partition function, the same elements(If a1,a2; a1==a2 is the order) then if a1 is swapped comparing with pivot, then a2 will also be swapped with pivot and since a1 comes first, swapped first => placed first and before a2.
+    - In worst case call stack can take upto to n calls, quicksort is O(n) space wise. `conclusion: space is O(n)`, because of stack space.
     - Tail recursive hence is more optimizated for complier as compiler can do tail call elimination and perform code optimization.
     - Worst case: Array already sorted and we are taking pivot as the first element.
       - T(n) = T(n-1)+n = O(n^2)
@@ -169,6 +171,10 @@
     - log(n!) = log1 + log2 + logn3 + ... + log(n/2) + ... + logn >= log(n/2) + log(n/2+1) + log(n/2+2) + ... + log(n) = (n/2)log(n/2) 
       - => log(n!) = (Ω(nlogn)
     - => log(n!) = θ(nlogn) Proved.
+
+## Binary Search
+- Binary Search only works on sorted array.(monotonic functions) 
+- Binary Search does not work on sorted linked list beacuse getting the middle element will take O(n) in itself.. 
 
 ## Stack(infix prefix algo and points)
 
@@ -511,11 +517,118 @@
 - In these problems brute force solution tries all possible combinations and hence high in complexities
 - But backtacking is beign smart about trying the combinations. If while following one of the combination, we find out that it is going to invalid, we simply reject that path, go back and try new path. (Hence not going blindly in one direction, saving lot of time.)
 
-## Some Points to Ponder
+## DP
+  - Exhaustively searching all possible paths but also saving common subpaths in between and not going to same path again.
 
-- Binary Search only works on sorted array.(monotonic functions) 
-- Binary Search does not work on sorted linked list beacuse getting the middle element will take O(n) in itself.. 
+## Greedy
+  - Going toward the local optimal solution which will eventually result into global optimal solution.
+  - Not possible for every real world problem.
+  - Fractional Knapsack
+    - Sort by val/wt => value of 1kg of item.
+  - Huffman Coding
+    - Start making the tree taking 2 least frequent characters.
+  - Job Sequence with Deadlines
+  - Optimal Merge Pattern
+    - Merging n-sorted arrays
+      - Two ways
+      - 1. Perform n-way merge
+      - 2. Perform multiple 2-way merge(in total n-1 2-way merges) (here comes optimal merge pattern problem)
+        - What is the minimum no of operations required to perform multiple 2-way merges of n sorted arrays.
+        - seems like matrix Chain multiplication problem of DP
+        - But since cost of merging is simply sum of lemgth of arrays.(n1+n2). We can do it greedily.
+        - By Picking 2 smallest array and 2-way merge them everytime.
+  - Prim's Algo for MST
+  - Krushkal's Algo for MST 
+
+## Interactive Problems
+  - Problems in which our solution deals/interact/talk with the online-judge/problem-grader.
+  - It requires to flush the output as soon as we want to print something on screen.
+  - Generally, People uses ios::base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL); Which leads to storing the output in buffer and outputing on screen all together when program terminates.
+  - It is fine for other problems which are not interacting with the judge. As this flushing in the end make our program faster.
+  - But in Interactive problems we want to flush things. Hence we use `cout<<flush`; or `cout<<endl;` as `cout<<'\n'<<flush is equivallent to cout<<endl`;
+  - That's why in other problems we uses '\n' instead of endl;
+  - But here we need to use endl.
+  - Conclusion : use endl instead of '\n' here. 
+
+- Links:
+  - www.codeforces.com/gym/101021/problem/1/
+  - www.codeforces.com/problemset/problem/1167/B/
+  - www.codeforces.com/problemset/problem/1207/E/
+
+## Policy Based Datastructures
+
+  - Declaration, namespace, Headers, typedef for easier use
+    ```cpp
+      #include <ext/pb_ds/assoc_container.hpp>
+      #include <ext/pb_ds/trie_policy.hpp>
+      using namespace __gnu_pbds;
+      typedef tree<int, null_type, less<int>, rb_tree_tag, tree_order_statistics_node_update> pbds;
+    ```
+
+  - Working  & Important Function
+    - It works like a ordered set + 
+    - a function to return kth smallest element. `find_by_order(k)` [O(logn) time] + 
+    - a function to find #elements less than k. `order_of_key(k)` [O(logn) time].
+  
+  - code
+  ```cpp
+    pbds s;
+    // insert in any order- stored always in sorted order.(rb tree)
+    s.insert(6);
+    s.insert(5);
+    s.insert(1);
+    s.insert(3);
+    s.insert(10);
+    s.insert(10); // No duplicates are added.
+
+    // cannot iterate over set this way.
+    // but can do with pbds
+    for (int i = 0; i < s.size(); i++) {
+      auto it = s.find_by_order(i); // finding ith smallest element.
+      cout << *it << " ";
+    }
+    // above output: 1 3 5 6 10 
+    cout << endl;
+
+    for (int i = 0; i < 10; i++) {
+      auto order = s.order_of_key(i); // finding ith smallest element.
+      cout << order << " ";
+    }
+    // above output: 0 0 1 1 2 2 3 4 4 4 : - #elements smaller than index
+    cout << endl;
+  ```
+  - Question : Inversion count
+    ```cpp
+      int n;
+      cin>>n;
+      int arr[n];
+
+      for(int i=0; i<n;i++){
+        cin>>arr[i];
+      }
+
+      int count = 0;
+      for(int i=0; i<n;i++){
+        count += St.size() - St.order_of_key(a[i]);
+        St.insert(a[i]);
+      }
+
+      cout<<count<<endl;
+
+    ```
+  
+## LRU Cache
+
+- One of the Page Replacement Strategies/Algo.
+- Page fault occurs in Virtual memory concept due to lack of availibilty of frames in main memory.
+
+- Others are: FIFO, LFU, Optimal
+-  
+
 
 
 ## Questions: 
 - Look for circular Queue, rear, front, emoyt or full conditions.I don't get those.
+- Is it true?, I think so
+  - we cannot remove a specific element from heap. can always only remove min only if it is  a minheap?
+  - If we want sorted order and also want to remove specifc element in future. we should use set.

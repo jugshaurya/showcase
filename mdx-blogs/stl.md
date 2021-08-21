@@ -105,6 +105,8 @@ int main(){
 
 ```
 
+- Note: All STL containers are passed by value. So make sure to use & in formal parameters in case you want to reflect changes done inside function into STL container.
+
 ## Vector
 
 - Dynamic Size
@@ -227,13 +229,26 @@ public:
 ```
 
 ## deque
-
+- **VVI IMP** : Even though it is a queue, random access is possible in the case of deque. => can acess dq[i] in constant time.
+- can use deque always instead of stack and queue.
 ```cpp
 deque<int> dq;
 dq.push_front(10);
 dq.pop_front(20);
 dq.push_back(10);
 dq.pop_back(10);
+
+// random acess iterator
+  deque<int> dq;
+  dq.push_back(10);
+  dq.push_back(20);
+  dq.push_back(30);
+  dq.push_back(40);
+  dq.push_back(50);
+  dq.push_back(60);
+
+  cout<< dq[3] <<endl;
+  cout<< dq.at(4) <<endl;
 ```
 
 ## Stack
@@ -295,7 +310,21 @@ class priority_queue;
   - size() => O(1)
 
 - **Important**
-  - `pqmax pq(arr, arr+n)` => creates a max heap from an array.
+  - Use this ⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇
+  - `pqmax pq(arr, arr+n)` => creates a max heap from an array.`(**Inplace** Algorithm to convert array into heap- 2 ways, top down, and bottom up)`. Top down is unoptimized and bottom up is optimzed.
+  
+    - **Top Down Approach**
+      - start from left of array and keep on making array till ith index as heap.
+      - Time Complexity.
+        - For h=1, operations = 1
+        - For h=2, operations = 2*1 (for both nodes at h=2, at max need to move 1 step above)
+        - For h=3, operations = 4*2 (for both nodes at h=3, at max need to move 2 step above)
+        - For h=4, operations = 8*3 (for both nodes at h=4, at max need to move 3 step above)
+        - ...
+        - For h=h, operations = 2^(h-1) * h 
+      - Total = summation(2^(h-1) * h) => AGP. = 2+ n*(logn-1). = O(nlogn). Solved it by hand.
+
+    - **Bottom up Approach**
     - This approach is better as time complexity to build heap is O(n). It builds heap using bottom-up approach which is O(n).
       -  It does it as: Creating a array and putting all array elements in it. Then going backward from last internal node(floor(n/2)), it calls heapify(). = Bottom up approach.
       - Proof: Let Tree is Perfect tree, which is also a CBT right? Yes. Evry Perfect tree is a CBT
