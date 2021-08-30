@@ -393,7 +393,16 @@ Note: `int+double= double, int-double=double, int/double=double, double/int=doub
   - Encapsulation
   - Polymorphism
   - Inheritance, Composition.
+	- 4 differnet special fns that are always available in a class
+		- Constructor
+		- Destructor
+		- Copy Constructor
+		- Copy assignment operator
 
+	- Copy constructor vs copy assignemnt operator calling
+		- Book b = c; // copy Constructor is called here, and can only be called once.
+		- Book b;.
+		- b=c; // copy assignemnt operator is called here, can be called multiple times.
 ## Polymorphism
 
 - Compile Time Polymorphism
@@ -635,3 +644,11 @@ Just wanted to bump this up in your inbox in case you missed it. Would love to d
 	- ● Task (1 sentence)
 	- ● Action (3-5 sentences)
 	- ● Result (3-5 sentences)
+
+	## Referral
+		- Ask what works they do. means know their work
+	- STAR Method
+		- Situation -What Happended?
+		- Task - What was your job?
+		- Action - what did you do?
+		- Result - So what?
