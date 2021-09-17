@@ -243,7 +243,8 @@ int main() {
 - available in `#include<string>`
 - take input via cin (till whitespace)
 - use `getline(cin, variable)` to get complete line as input
-
+- Checking if a character exist in a string or not.
+	- return str.find(ch) != string::npos
 - methods on str object (str.method())
 
 ```cpp
@@ -403,6 +404,7 @@ Note: `int+double= double, int-double=double, int/double=double, double/int=doub
 		- Book b = c; // copy Constructor is called here, and can only be called once.
 		- Book b;.
 		- b=c; // copy assignemnt operator is called here, can be called multiple times.
+
 ## Polymorphism
 
 - Compile Time Polymorphism
