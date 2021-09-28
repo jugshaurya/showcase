@@ -10,8 +10,6 @@
 - Uses `process per user` client/server Model. => Each user is granted/given a process which will remain alive till user closes the connection.
 - Programs run by client connects to server instance & requests read and write operations.
 
-
-
 - Relations = Table
 - Tuple = Row
 - Attribute = Column 

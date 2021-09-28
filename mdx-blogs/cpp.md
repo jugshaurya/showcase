@@ -305,6 +305,7 @@ Note: `int+double= double, int-double=double, int/double=double, double/int=doub
 
 ```cpp
 	// cin.getline(arr, maxsize, [delimiter]) // default delimiter='\n'
+	char para[1000];
 	cin.getline(para, 1000);
 	cin.getline(para, 1000, ' '); // becomes cin
 	cin.getline(para, 1000, '.'); // keep taking at max 1000 chars or till you got .
@@ -654,3 +655,29 @@ Just wanted to bump this up in your inbox in case you missed it. Would love to d
 		- Task - What was your job?
 		- Action - what did you do?
 		- Result - So what?
+
+## Other Tips
+- Do Time Management -> based on score of questions
+
+- Problem Statement
+- Input
+- Output
+- Explanation (optional/maybe given, maybe not)
+- Constraints
+-  Stacks
+	- two loops in which inner loops is dependent on outer loop (j is dependent on i) => Use Stack for optimization.
+	- Same Questions
+		- Next greater to Right
+		- Next smallest to Right
+		- Previous greater to left
+		- Previous smaller to left
+		- Stock Span
+		- Area under histogram
+		- Rain Water Trapping
+		- 
+
+- Recursion
+	- IBH Method 
+	- Recusion tree Method
+	- Choice Method
+

@@ -102,7 +102,7 @@
   - **Quick Sort** O(nlogn)
     - (Divide and Conquer Algorithm),
     - Inplace, if no stack space is considered as used in recursion, otherwise not-inplace.
-    - `Stable` but as in partition function, the same elements(If a1,a2; a1==a2 is the order) then if a1 is swapped comparing with pivot, then a2 will also be swapped with pivot and since a1 comes first, swapped first => placed first and before a2.
+    - `Stable`, as in partition function, the same elements(If a1,a2; a1==a2 is the order) then if a1 is swapped comparing with pivot, then a2 will also be swapped with pivot and since a1 comes first, swapped first => placed first and before a2.
     - In worst case call stack can take upto to n calls, quicksort is O(n) space wise. `conclusion: space is O(n)`, because of stack space.
     - Tail recursive hence is more optimizated for complier as compiler can do tail call elimination and perform code optimization.
     - Worst case: Array already sorted and we are taking pivot as the first element.
