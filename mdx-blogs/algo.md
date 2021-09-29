@@ -200,11 +200,11 @@
 
 ## Tree 
   - height 0 is root=NULL
-  - height starts from 1, level from 1, depth from 0 (follow this convention but 0 can be 1 as well and vice-versa)
+  - height starts from 1, level from 1, depth from 0 (follow this convention) =>  Level starts from 1, height of tree is the maximum level, depth of node is always level of node - 1
   - depth starts from top. root's depth 0, root-children depth 1 and so on.. 
   - depth is number of edges between root to that node.
   - internal node = nodes that are not leaf nodes.; root is also an internal node. 
-
+  - Tree problems follows recursive structure. Mostly all the problems can be solved by dividing the problems in subproblems and making recursive calls on subtrees.
   - Types of binary tree
     - full binary tree : every node with  0 or 2 children; need not to be balanced.
       ```cpp
