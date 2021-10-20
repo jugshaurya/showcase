@@ -185,6 +185,28 @@ int main() {
 	- Column Major Order (CMO)
 		- Store continously col wise
 
+## pairs - auto destructuring
+
+```cpp
+	
+	vector<pair<int, bool>> vp;
+	
+	vp.push_back(make_pair(2,true));
+	vp.push_back({3,false});
+	vp.push_back({4,false});
+	vp.push_back({5,true});
+
+	for(auto x: vp){
+		cout << vp.first << " " << vp.second <<endl;
+	}
+
+	// auto Destructing - GOOD
+	for(auto [a,b]: vp){
+		cout << a << " " << b <<endl;
+	}
+
+```
+
 ## Recursion on array and strings
 
 - on array,
