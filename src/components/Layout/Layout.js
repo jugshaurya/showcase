@@ -4,7 +4,7 @@ import Navbar from '../Navbar/Navbar';
 import SEO from '../seo/seo';
 
 import GlobalStyles from '../css-in-js/global.styles';
-import '../styles/global.scss';
+import '../../styles/global.scss';
 
 const Layout = ({ seotitle, children }) => {
   return (

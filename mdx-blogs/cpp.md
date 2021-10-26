@@ -75,10 +75,11 @@
 - Provides cache spatial locality of reference as arrays are stored continously.
 - Have to know size before we create them. Solution: Vector.
 - couting int array will give you address of first interger, whereas couting char arry will printing all characters till null character.
+
 ```cpp
 	int arr[10] = {1,2,3};
 	char ch_arr[10] = {'1','2','3', '\0'};
-	
+
 	cout<<arr<<endl; // print address of 1(arr[0])
 	cout<<ch_arr<<endl; // print "123".
 
@@ -97,12 +98,15 @@
 
 - Can be assigned later.
 - Can refer to another location.
-- Can be null
+- Can be null.
 - **Avoid copying of larger objects during function calls.**
 - **Helps in modifying the passed parameters to function.**
 - helps in returing multiple values.(just pass variables as pointer as arguments to function and assign return values to them).
-- Helps in Dynamic Memory Allocation
+- Helps in Dynamic Memory Allocation.
 - In Implementing Data structures.
+- `*` and `++` are both unary operators and have right to left associativity.
+- Subtraction b/w pointers(p1-p2) is possible iff both points to same array and p1>=p2.
+- Addition, Multiplication, divisible are not feasible on pointers.
 
 ## pointers and array
 
@@ -179,18 +183,14 @@ int main() {
 	delete [] arr;
 ```
 
-- Can be stored in memory in 
-	- Row Major Order (RMO)
-		- Store continously row wise
-	- Column Major Order (CMO)
-		- Store continously col wise
+- Can be stored in memory in - Row Major Order (RMO) - Store continously row wise - Column Major Order (CMO) - Store continously col wise
 
 ## pairs - auto destructuring
 
 ```cpp
-	
+
 	vector<pair<int, bool>> vp;
-	
+
 	vp.push_back(make_pair(2,true));
 	vp.push_back({3,false});
 	vp.push_back({4,false});
@@ -265,8 +265,7 @@ int main() {
 - available in `#include<string>`
 - take input via cin (till whitespace)
 - use `getline(cin, variable)` to get complete line as input
-- Checking if a character exist in a string or not.
-	- return str.find(ch) != string::npos
+- Checking if a character exist in a string or not. - return str.find(ch) != string::npos
 - methods on str object (str.method())
 
 ```cpp
@@ -416,17 +415,14 @@ Note: `int+double= double, int-double=double, int/double=double, double/int=doub
   - Data Hiding (Access Modifiers)
   - Encapsulation
   - Polymorphism
-  - Inheritance, Composition.
-	- 4 differnet special fns that are always available in a class
-		- Constructor
-		- Destructor
-		- Copy Constructor
-		- Copy assignment operator
+  - Inheritance, Composition. - 4 differnet special fns that are always available in a class - Constructor - Destructor - Copy Constructor - Copy assignment operator
 
-	- Copy constructor vs copy assignemnt operator calling
-		- Book b = c; // copy Constructor is called here, and can only be called once.
-		- Book b;.
-		- b=c; // copy assignemnt operator is called here, can be called multiple times.
+    ```
+
+    ng
+    e.
+    - Book b;.
+    ```
 
 ## Polymorphism
 
@@ -447,7 +443,7 @@ Note: `int+double= double, int-double=double, int/double=double, double/int=doub
 
 ## passing function to a function in cpp
 
-- pass bool (&fun)(int a, int b) as parameter. It is basically declaration of function  + wrapping function name in braces. & is to avoid copy. 
+- pass bool (&fun)(int a, int b) as parameter. It is basically declaration of function + wrapping function name in braces. & is to avoid copy.
 
 ```cpp
 	// look last parameter
@@ -475,109 +471,92 @@ void first_class_function(){
 int32_t main(){
 	fastIO();
 	/** code here */
-	wrapper(first_class_function);	
+	wrapper(first_class_function);
 	return 0;
 }
-```	
+```
 
 ## Questions answered!
 
-- what is Amortized Analysis?
-	- Ans:  Analysing the complexity approximately that if work is equally distributed, what is the work each one is doing.
-	- Actual time complexity is sum of all subtasks, some of them is big & some is small but when you some them it is averaged out.
-	- 1,1,1,1,n,1,1,1,1,n,1,1,1,1 = (2n+12)/n = O(1)
-	- 1,2,1,1,4,1,1,1,1,8,1,1,1,1,1,1,1,1 = can be seen as each of them is doing 1.5 work rather than some 1 some 4,8,16. This is Amortized.
+- what is Amortized Analysis? - Ans: Analysing the complexity approximately that if work is equally distributed, what is the work each one is doing. - Actual time complexity is sum of all subtasks, some of them is big & some is small but when you some them it is averaged out. - 1,1,1,1,n,1,1,1,1,n,1,1,1,1 = (2n+12)/n = O(1) - 1,2,1,1,4,1,1,1,1,8,1,1,1,1,1,1,1,1 = can be seen as each of them is doing 1.5 work rather than some 1 some 4,8,16. This is Amortized.
 
+* Use of tail recursion in compiler or how it optimizes the performance ? - add goto statement and change parameter explicitely and make instruction jump to start. - ex1: print n natural numbers
+  `cpp // tail recursion void printNNumbers(int n){ if(n<0){ return; } cout<<n<<" "; return printNNumbers(n-1); }`
 
-- Use of tail recursion in compiler or how it optimizes the performance ?
-	- add goto statement and change parameter explicitely and make instruction jump to start.
-	- ex1: print n natural numbers
-	```cpp
-	// tail recursion 
-	void printNNumbers(int n){
-		if(n<0){
-			return;
-		}
-		cout<<n<<" ";
-		return printNNumbers(n-1);
-	}
-	```
+      	```cpp
+      	// Tail Recursion after Optimization (TRO)
+      	// Done Automatically by Compilers in Compiler's Code Optimization phase
+      	// Avoid adding a new entry to call Stack.
+      	// Avoid call registration, CALL/JUMP and RETURN Function instructions.
+      	// Converting call stack calls(recursive calls) to iterative
+      	// Hence optimizing performance
 
-	```cpp
-	// Tail Recursion after Optimization (TRO)
-	// Done Automatically by Compilers in Compiler's Code Optimization phase
-	// Avoid adding a new entry to call Stack.
-	// Avoid call registration, CALL/JUMP and RETURN Function instructions. 
-	// Converting call stack calls(recursive calls) to iterative
-	// Hence optimizing performance
+      	void printNNumbers(int n){
+      		label comeback:
+      		if(n<0){
+      			return;
+      		}
+      		cout<<n<<" ";
+      		n = n-1;
+      		goto comeback ;
+      	}
+      	```
 
-	void printNNumbers(int n){
-		label comeback:
-		if(n<0){
-			return;
-		}
-		cout<<n<<" ";
-		n = n-1;
-		goto comeback ;
-	}
-	```
+      	- ex2: calculation of factorial
 
-	- ex2: calculation of factorial
-	
-	```cpp
-	// not-tail recursion  (head recursion)
-	// Why? Because after the recurion is done, I still have operations to perform, multiply by n here. 
-	int fact(int n){
-		if(n==0){
-			return 1;
-		}
-		return n * fact(n-1);
-	}
-	```
+      	```cpp
+      	// not-tail recursion  (head recursion)
+      	// Why? Because after the recurion is done, I still have operations to perform, multiply by n here.
+      	int fact(int n){
+      		if(n==0){
+      			return 1;
+      		}
+      		return n * fact(n-1);
+      	}
+      	```
 
-	```cpp
-	// tail recursion
-	void fact(int n, int &ans){
-		if(n == 0){
-			ans = 1
-			return;
-		}
-		ans = ans * n;
-		fact(n-1, ans);
-	}
+      	```cpp
+      	// tail recursion
+      	void fact(int n, int &ans){
+      		if(n == 0){
+      			ans = 1
+      			return;
+      		}
+      		ans = ans * n;
+      		fact(n-1, ans);
+      	}
 
-	int fact(int n){
-		int ans = 1;
-		factHelper(n, ans);
-		return ans;
-	}
-	```
-	
-	```cpp
-	// Tail Recursion Optimization (TRO)
-	void factHelper(int n, int &ans){
-		label comeback:
-		if(n == 0){
-			ans = 1
-			return;
-		}
-		ans = ans * n;
-		n = n-1;
-		goto comeback ;
-	}
-	int fact(int n){
-		int ans = 1;
-		factHelper(n, ans);
-		return ans;
-	}
-	```
+      	int fact(int n){
+      		int ans = 1;
+      		factHelper(n, ans);
+      		return ans;
+      	}
+      	```
+
+      	```cpp
+      	// Tail Recursion Optimization (TRO)
+      	void factHelper(int n, int &ans){
+      		label comeback:
+      		if(n == 0){
+      			ans = 1
+      			return;
+      		}
+      		ans = ans * n;
+      		n = n-1;
+      		goto comeback ;
+      	}
+      	int fact(int n){
+      		int ans = 1;
+      		factHelper(n, ans);
+      		return ans;
+      	}
+      	```
 
 ## Questions to be answered!
 
 - NP Hard Problems?
 
 - expansion of logn is harmonic sum of first n natural number(1+1/2+1/3+1/4+1/5+...)?
-
 
 ## Quotes
 
@@ -586,15 +565,13 @@ int32_t main(){
 - stop feeling Sorry for Yourself and do it.
 
 ## Byte by Byte
-- The #1 reason people fail interviews is lack of confidence!
-	● Nervousness == Lack of confidence
-	● Forgetting stuff == Lack of confidence
-	● Memorizing == Lack of confidence
 
-- 3 pillars of Interviewing along with Consistent Practising
-	- CS Fundamentals
-	- Problem Solving Strategy
-	- Self Confidence
+- The #1 reason people fail interviews is lack of confidence!
+  ● Nervousness == Lack of confidence
+  ● Forgetting stuff == Lack of confidence
+  ● Memorizing == Lack of confidence
+
+- 3 pillars of Interviewing along with Consistent Practising - CS Fundamentals - Problem Solving Strategy - Self Confidence
 - turn your interviewing into a repeatable system.
 - 6 step system for solving any coding interview question, even if I’ve never seen it before
 - prematurely optimizing our code actually hurts us more than it helps
@@ -603,38 +580,19 @@ int32_t main(){
 - "go to inerview thinking you are the answer to their problem.” - George Clooney
 - The best interviewees are good at problem solving. Not pattern recognition
 - treat each hint as a small deduction because They may be trying to guide you away from common pitfalls
-- impostor syndrome:  Every one is way better/smarter than me.
+- impostor syndrome: Every one is way better/smarter than me.
 - If you practice hard problems, then your interview will be easy by comparison
 - You don’t know if you’re ready or not until you try
 - If you mess up, you can always interview again in the future
 - Brainstorm edge cases at the beginning and define assumptions
 
-- What are the goals of practicing?
-	- ○ Simulate real-world interview
-	- ○ Identify and improve weaknesses
-	- ○ Become comfortable with the tools and systems
-	- ○	Avoid Rehashing what you’re already good at
+- What are the goals of practicing? - ○ Simulate real-world interview - ○ Identify and improve weaknesses - ○ Become comfortable with the tools and systems - ○ Avoid Rehashing what you’re already good at
 
-
-- Simulate real-world interview
-	- ● Hand write code
-	- ● Talk out loud as you go
-	- ● Test your code by hand
-	- ● Apply the strategies
-			- 1. Understand the problem [3-5 minutes]
-				- Make sure that you really know what is being asked. Take your time here.
-				- Go through the example inputs and outputs. How does the input get that output?
-			- 2. Find a brute force solution [5 minutes]
-			- 3. Optimize your solution [15 minutes]
-			- 4. Code your solution [15 minutes]
-				- When you get to coding, it should just be “translating” the work you’ve already done
-			- 5. Test your solution [5 minutes]
-			
-- Your interviewer wants to help you
-○ The toughest interviews are when I try to help someone and they won’t let me .Don’t try to prove yourself
-● Only your interviewer really knows what they are looking for
-● It’s an easy way to get them to like you
-
+* Simulate real-world interview - ● Hand write code - ● Talk out loud as you go - ● Test your code by hand - ● Apply the strategies - 1. Understand the problem [3-5 minutes] - Make sure that you really know what is being asked. Take your time here. - Go through the example inputs and outputs. How does the input get that output? - 2. Find a brute force solution [5 minutes] - 3. Optimize your solution [15 minutes] - 4. Code your solution [15 minutes] - When you get to coding, it should just be “translating” the work you’ve already done - 5. Test your solution [5 minutes]
+* Your interviewer wants to help you
+  ○ The toughest interviews are when I try to help someone and they won’t let me .Don’t try to prove yourself
+  ● Only your interviewer really knows what they are looking for
+  ● It’s an easy way to get them to like you
 
 Interview practice
 ○ Pramp
@@ -642,6 +600,7 @@ Interview practice
 ○ Interviewing.io
 
 Other practice
+
 - ○ Toastmasters
 - ○ Wedding toasts
 - ○ Video yourself
@@ -659,26 +618,21 @@ Thanks!
 Just wanted to bump this up in your inbox in case you missed it. Would love to discuss X.
 ```
 
-
 - Research the company
 - Prepare a short description of each major project
 
-- How to structure your answers
-	- ● The STAR technique
-	- ● Situation (1-2 sentences)
-	- ● Task (1 sentence)
-	- ● Action (3-5 sentences)
-	- ● Result (3-5 sentences)
+- How to structure your answers - ● The STAR technique - ● Situation (1-2 sentences) - ● Task (1 sentence) - ● Action (3-5 sentences) - ● Result (3-5 sentences)
 
-	## Referral
-		- Ask what works they do. means know their work
-	- STAR Method
-		- Situation -What Happended?
-		- Task - What was your job?
-		- Action - what did you do?
-		- Result - So what?
+      	## Referral
+      		- Ask what works they do. means know their work
+      	- STAR Method
+      		- Situation -What Happended?
+      		- Task - What was your job?
+      		- Action - what did you do?
+      		- Result - So what?
 
 ## Other Tips
+
 - Do Time Management -> based on score of questions
 
 - Problem Statement
@@ -686,20 +640,6 @@ Just wanted to bump this up in your inbox in case you missed it. Would love to d
 - Output
 - Explanation (optional/maybe given, maybe not)
 - Constraints
--  Stacks
-	- two loops in which inner loops is dependent on outer loop (j is dependent on i) => Use Stack for optimization.
-	- Same Questions
-		- Next greater to Right
-		- Next smallest to Right
-		- Previous greater to left
-		- Previous smaller to left
-		- Stock Span
-		- Area under histogram
-		- Rain Water Trapping
-		- 
+- Stacks - two loops in which inner loops is dependent on outer loop (j is dependent on i) => Use Stack for optimization. - Same Questions - Next greater to Right - Next smallest to Right - Previous greater to left - Previous smaller to left - Stock Span - Area under histogram - Rain Water Trapping -
 
-- Recursion
-	- IBH Method 
-	- Recusion tree Method
-	- Choice Method
-
+- Recursion - IBH Method - Recusion tree Method - Choice Method
