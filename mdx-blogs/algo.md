@@ -239,7 +239,8 @@
 - internal node = nodes that are not leaf nodes.; root is also an internal node.
 - Tree problems follows recursive structure. Mostly all the problems can be solved by dividing the problems in subproblems and making recursive calls on subtrees.
 - Types of binary tree
-  - full binary tree : every node with 0 or 2 children; need not to be balanced.
+
+  - full/strict binary tree : every node with 0 or 2 children; need not to be balanced.
     ```cpp
     <!-- EXAMPLE -->
       O
@@ -252,7 +253,12 @@
               /  \
               O   O
     ```
-  - complete binary tree(CBT)
+    - In a full BT, If number of leaf nodes are n, then number of internal nodes are n-1.
+    - In a full BT, If number of internal nodes are n, then number of leaf nodes are n+1 .
+    - LeafNodes = internalNodes + 1 (always leafNode > Internal Node)
+    - Total number of nodes in a Full BT with n internal nodes = 2n+1(n + n+1).
+    - Total number of nodes in a Full BT with n leaf nodes = 2n-1(n + n-1).
+  - Complete binary tree(CBT)
     - except last level,rest level are completely filled
     - last level has node from Left to Right. No Gaps
     - number of internal nodes in CBT is floor(n/2)
@@ -276,7 +282,19 @@
           O  O   O  O
       ```
   - balanced binary tree
+
     - every nodes left Subtree height and right Subtree height differnence is not more than 1.
+
+  - To construct the unique BST from given preorder or postorder, Time Complexity = O(nlogn).
+  - No unique BT is possible from given pre and post order.
+    - Ex: pre ABC, post CBA. two skew trees are possible ABC(left skew) and ABC(right skew)
+  - To construct a unique BT, we must have inorder with either pre or post in a Time Complexity = O(n^2).
+  - (In + pre) or (In + post) = O(nlogn), if Inorder is sorted.
+  - (In + pre) or (In + post) = O(n^2), if Inorder is not sorted.
+
+  - Total number of BSTs possible with n nodes
+    - Since each node tries to be the root
+    - Total number is f(n) = `f(0)*f(n-1) + f(1)*f(n-2) + f(2)*f(n-3) + f(3)*f(n-4)+...` = ((2n)Cn)/(n+1) = Catalan number, where f(0) = 1, f(1) = 1, f(2) = 2, f(3) = 5, f(4) = 14, f(5) = 42
 
 ## Hashing , HashFunction(hf), Load Factor and Hash Table
 
@@ -287,18 +305,17 @@
 - Coliisions are also called `Probes`.
 
 - Collisions are resolved by :-
-  - Open Addressing or Closed hashing
-    - Linear Probing (hf_i(n) = (hf(n) + i) mod m); [hf_i being calculating hf ith time; m is table size]
+  - **Open Addressing or Closed hashing**
+    - **Linear Probing** (hf_i(n) = (hf(n) + i) mod m); [hf_i being calculating hf ith time; m is table size]
       - Side Effect of Linear Probing: Produces `Primary Clustering`
       - Primary Clustering: - In case of Linear Probing, If two keys are mapped to same starting location in a hash table then both follows the same path unnecessarilly in a linear fashion as a result of which search time increases. To avoid this problem, we use Quadratic Probing.
       - Time for succesfull search = (1/LF)\*ln(1/(1-LF)) on an average.
       - Time for unsuccesfull search = 1/(1-LF) on an average.
-    - Quadratic Probing (hf_i(n) = (hf(n) + a*i*i + b\*i)) mod m, typically a=1 & b=0
+    - **Quadratic Probing** (hf_i(n) = (hf(n) + a*i*i + b\*i)) mod m, typically a=1 & b=0.
       - Side Effect of Quadratic Probing: Produces `Secondary Clustering`
-      - Secondary Clustering: - In case of Linear Probing, If two keys are mapped to same starting location in a hash table then both follows the same path unnecessarilly in a linear fashion as a result of which search time increases. To avoid this problem, we use Double hashing.
-    - Double Hashing (hf_i(n) = (hf(n) + i\*hf2(n)) mod m)
-    - Secondary Clustering
-  - Open Hashing or Seperate chaining
+      - Secondary Clustering: #TODO - To avoid this problem, we use Double hashing.
+    - **Double Hashing** (hf_i(n) = (hf(n) + i\*hf2(n)) mod m)
+  - **Open Hashing or Seperate chaining**
     - Time for succesfull search = 1 + LF/2 on an average.
     - Time for unsuccesfull search = 1 + LF on an average.
     - Slots means table size.
