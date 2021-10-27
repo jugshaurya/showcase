@@ -42,17 +42,17 @@
         cout<<endl;
       }
     ```
-  - Segmented Sieve (Find all prime numbers in range [L,U], where L,U <10^12 and L-U <=10^6) 
-    - Problem with Normal Sieve is that it need to form and array of Size N(10^12 here). Now this limits the range of N as we cannot create an array of Size N as big as 10^12 in memory. Hence we use Segmented Sieve.
-    - Step1: Calculate all primes till sqrtN and mark multiple of these primes in segemented Sieve array as false.
-    - Step2: Just map array index to range. 0th index to L, 1st to L+1 and so on ... 
-    - Hence need to create an array of size U-L only, which is 10^6 , which we can create in memory.
+  - Segmented Sieve (Find all prime numbers in the range [L, U], where L, U <10^12 and L-U <=10^6) 
+    - Problem with Normal Sieve is that it needs to form an array of Size N(10^12 here). Now this limits the range of N as we cannot create an array of Size N as big as 10^12 in memory. Hence we use a Segmented Sieve.
+    - Step1: Calculate all primes till sqrtN and mark a multiple of these primes in the segmented Sieve array as false.
+    - Step2: Just map array index to the range. 0th index to L, 1st to L+1, and so on ... 
+    - Hence need to create an array of size U-L only, which is 10^6, which we can create in memory.
 
 - GCD/HCF via Euclid theorem.
   - Euclid algo of multiplication: `BEST`: O(log min(a,b)) 
     - Facts
       - If one is 0, ans is the other one.  
-      - gcd of two number doesn't change, if we update larger number with reminder of two.
+      - gcd of two numbers doesn't change if we update larger number with reminder of two.
       ```
       int gcd(int a, int b){
         if(b == 0) return a
@@ -63,7 +63,7 @@
   - Euclid algo of subtraction - Time complexity is O(max(a,b)). If a=1 and b=n then it will run n times.
     - Facts
       - If one is 0, ans is the other one.  
-      - gcd of two number doesn't change, if we update larger number with difference of two.
+      - gcd of two numbers doesn't change, if we update larger number with difference of two.
       ```
       int gcd(int a, int b){
         if(b == 0) return a
