@@ -61,7 +61,7 @@
 
 - working with data (Gatsby DataLayer).
 - loading data into react components via `<StaticQuery> or pageQuery` after trying query in graphiQL.(8000/\_\_\_graphql).
-- data can be from API, Headless CMS, JSON, Markdown, site metadata, and we can use graphql to get this data, type of data,
+- data can be from API, Headless CMS, JSON, Markdown, siteMetaData, and we can use graphql to get this data, type of data,
 
 - Page Query is used `only in pages` and we can `pass variables` in page-query.
 - Static Query can be used in `pages as well as other` as well, but `variables can not be passed` in static query.
@@ -75,7 +75,7 @@
 }
 ```
 
-- gatsby config file only accepts certain keys so can't just put your defined key there. the ex- data key is not allowed whereas site metadata is allowed because of gatsby internal plugin for SEO(so get more graphql files by installing more and more plugins!).
+- gatsby config file only accepts certain keys so can't just put your defined key there. the ex- data key is not allowed whereas siteMetaData is allowed because of gatsby internal plugin for SEO(so get more graphql files by installing more and more plugins!).
 - `<StaticQuery query={query} render={(data)=>{return (JSX using data)}}/>, useStaticQuery(graphql`query`)`
 - render={function} is render-props concept
 - `pageQuery` is a concept of exporting a graphql query from a page component and accessing data via props passed to page component, `no` separate hook or component like `<PageQuery/> exist`.
