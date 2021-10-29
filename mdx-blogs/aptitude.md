@@ -110,7 +110,7 @@
   - pie chart
 
 ## Deductive Logic Problems
-  - Deriving a conclusion from a single/multiple proposition called premises.
+  - Deriving a conclusion from a single/multiple propositions called premises.
 
 ## 
 
@@ -122,5 +122,5 @@
 
 ### Questions ?
 
-- See If you can find aptitude by gradeup.
+- See If you can find aptitude by grade up.
 - Search for finding the domain of Logarithmic functions(class 11th)
