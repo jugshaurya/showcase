@@ -35,4 +35,4 @@
 | `\l`                       | prints all databases list             |
 | `\q`                       | to quit                               |
 | `createuser --interactive` | creating new role                     |
-| `created newdb`           | creating a new database with name newdb |
+| `createdb newdb`           | creating a new database with name newdb |
