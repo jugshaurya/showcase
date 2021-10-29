@@ -1,15 +1,15 @@
 # React Notes
 
-- A javascript Library for building User Interfaces.
+- A Javascript Library for building User Interfaces.
 
 - Declarative
-- Component Based
+- Component-Based
 - Composition over Inheritance
 
 - Can write directly on
 
   - codepen
-    - create a new pen, and add babel preprocessor,react cdn,react-dom cdn
+    - create a new pen, and add babel preprocessor, react CDN,react-dom CDN
   - jsbin
     - can write javascript
 
@@ -22,8 +22,8 @@
 
 - With all these libraries/frameworks we can build,
 
-  - Single page apps (only one html page, content is rerendered on Client side) as well as
-  - Multi page apps (multiple HTML pages, content is rendered on server and send to client side).
+  - Single page apps (only one HTML page, content is rerendered on Client-side) as well as
+  - Multi-page apps (multiple HTML pages, content is rendered on the server and sent to client-side).
 
 - CRA(create-react-app)(A build Workflow)
 
@@ -31,9 +31,9 @@
   - can use latest javascript features/syntax.
   - yarn/npm + webpack bundler + babel transpiler + webpack dev server + hot reloading + many more...
 
-- Class Based React (before v16) - Olddie
+- Class-Based React (before v16) - Oldie
 
-  - always change state via `this.setState({key:updatedValue})`, just add what you want to update, it will merge available state with this object and then update to newstate with it.
+  - always change state via `this.setState({key:updatedValue})`. Just add what you want to update, it will merge the available state with this object and then update to a new state with it.
 
 - Container/stateful/smart componetns
 - Component/stateless/dumb/presentational componen
