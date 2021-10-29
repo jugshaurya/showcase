@@ -32,15 +32,15 @@
 
 - Iterators (only 5 types)
 
-  - An object(like pointer) that points to an element in container, helps in accessing data within the container.
-  - We use iterator to move through elements of container.
-  - `Random access iterators` are like pointer like we do arithmatic on pointer(so we can jump via these iterator).
+  - An object(like a pointer) that points to an element in the container, helps in accessing data within the container.
+  - We use an iterator to move through elements of the container.
+  - `Random access iterators` are like pointers like we do arithmetic on the pointer(so we can jump via these iterators).
   - `Forward`, `Bidirectional`, `Input`, `Output` iterators only moves one at a time(+1, ++) and are not like pointers.
-  - Why use them: Iterators helps in moving inside the container irrespective of type of container, whether it is map, set,vector,list... 
+  - Why to use them: Iterators help in moving inside the container irrespective of the type of container, whether it is a map, set, vector, list... 
 
-- Comparator/Functor/Comparion object
-  - helps in writing our own comparison function that can be passed to algorithms to make comparisons
-  - It is basically an object(cmp) of a class that has `() operator` overloadded so to call comparison using cmp(Car A, CarB).
+- Comparator/Functor/Comparison object
+  - helps in writing our comparison function that can be passed to algorithms to make comparisons
+  - It is an object(cmp) of a class that has `() operator` overloaded so to call comparison using cmp(Car A, CarB).
 
 ```cpp
 // Example: Template + Iterator + Comparator
@@ -114,10 +114,10 @@ int main(){
 - Rich Library functions
 - Easy to know size via `.size()`
 - No need to pass size to function
-- Can be returned from function
+- Can be returned from the function
 - Initialized with default values
-- Can easily copy a vector to other via v1 = v2
-- Passed by value to function. so if you want to modify the vector make sure to use & and make vector pass by reference.
+- Can easily copy a vector to another via v1 = v2
+- Passed by value to function. so if you want to modify the vector make sure to use & and make the vector pass by reference.
 
 ```cpp
 	vector<int> v;
@@ -230,7 +230,7 @@ forward_list<int> fl; // singly linked list
 ```
 
 ## deque
-- **VVI IMP**: **Even though it is a queue, random access is possible in the case of deque. => can access dq[i] in constant time.**
+- **VVI IMP**: **Even though it is a queue, random access is possible in the case of the deque. => can access dq[i] in constant time.**
 - can use deque always instead of stack and queue.
 
 ```cpp
@@ -291,17 +291,17 @@ cout<<endl;
 ## Priority Queue or heap
 
 - A priority queue is just like a normal queue data structure except that each element inserted is associated with a “priority”.
-- It supports the usual push(), pop(), top() etc operations, but is specifically designed so that its first element is always the greatest of the elements it contains, i.e. max heap.
+- It supports the usual push(), pop(), top(), etc operations, but is specifically designed so that its first element is always the greatest of the elements it contains, i.e. max heap.
 - In STL, priority queues take three template parameters:
 ```cpp
 template <class T, class Container = vector<T>, class Compare = less<typename Container::value_type>>
 class priority_queue;
 ```
-- The first element of the template defines the class of each element. It can be user-defined classes or primitive data-types. Like in you case it can be int, float or double.
+- The first element of the template defines the class of each element. It can be user-defined classes or primitive data types. Like in your case it can be int, float, or double.
 - The second element defines the container to be used to store the elements. The standard container classes std::vector and std::dequeue fulfill these requirements. It is usually the vector of the class defined in the first argument. Like in our case it can be `vector<int>, vector<float>, vector<double>`.
-- The third element is the comparative class. By default it is `less<T>` but can be changed to suit your need. For min heap it can be changed to `greater<T>`.
+- The third element is a comparative class. By default, it is `less<T>` but can be changed to suit your need. For min heap it can be changed to `greater<T>`.
 - inside <queue> header file only
-- using vector as underline container
+- using vector as the underline container
   - `priority_queue<int> pq;` <!-- default is max heap -->
   - `priority_queue<int, vector<int> , greater<int> > pq;` <!-- min heap -->
   - push() => O(logn)
@@ -311,9 +311,9 @@ class priority_queue;
   - size() => O(1)
 - **Important**
   - Use this ⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇
-  - `pqmax pq(arr, arr+n)` => creates a max heap from an array rather than pusing elements one by one.`(**Inplace** Algorithm to convert array into heap- 2 ways, top down, and bottom up)`. Top down is unoptimized and bottom up is optimzed.
-    - `Top Down Approach`
-      - start from left of array and keep on making array till ith index as heap.
+  - `pqmax pq(arr, arr+n)` => creates a max heap from an array rather than pushing elements one by one.`(**Inplace** Algorithm to convert the array into a heap- 2 ways, top-down, and bottom-up)`. Top-down is unoptimized and bottom-up is optimized.
+    - `Top-Down Approach`
+      - start from the left of the array and keep on making array till ith index as the heap.
       - Time Complexity.
         - For h=1, operations = 1
         - For h=2, operations = 2*1 (for both nodes at h=2, at max need to move 1 step above,i.e. the top)
@@ -322,9 +322,9 @@ class priority_queue;
         - ...
         - For h=h, operations = 2^(h-1) * h 
       - Total = summation(2^(h-1) * h) => AGP. = 2+ n*(logn-1). = O(nlogn). Solved by hand.
-    - `Bottom up Approach`
-    - This approach is better as time complexity to build heap is O(n). It builds heap using bottom-up approach which is O(n).
-      - It does it as: Creating a array and putting all array elements in it. Then going backward from last internal node(floor(n/2)) and calls heapify(i).
+    - `Bottom-up Approach`
+    - This approach is better as the time complexity to build heap is O(n). It builds heap using a bottom-up approach which is O(n).
+      - It does it as: Creating an array and putting all array elements in it. Then going backward from last internal node(floor(n/2)) and calls heapify(i).
       - Proof: Let Tree is Perfect tree, which is also a CBT right? Yes. Every Perfect tree is a CBT.
       - => all internal nodes are till height h-1. and all leave nodes are at height h. If we look what we are doing.
       ```cpp
@@ -332,14 +332,14 @@ class priority_queue;
         for every node from floor(n/2) to 1:
         heapify(node)
       ```
-      - We can say for nodes at height h-1 (#nodes = 2^(h-2); assuming heights starts from 1.). We call heapify at max 1 time only. 
-      - for nodes at height h-2(#nodes = 2^(h-3)). We call heapify at max 2 time only.  and so on.
+      - We can say for nodes at height h-1 (#nodes = 2^(h-2); assuming heights start from 1.). We call heapify at max 1 time only. 
+      - for nodes at height h-2(#nodes = 2^(h-3)). We call heapify at max 2 times only.  and so on.
       - worst case Time will be 2^(h-2) + [2^(h-3)]*2 + 2^(h-4)*3 + .... = 2^(h-2) * (1+ 2/2^1 + 3/2^2 + 4/2^3 + ...)
       - Also we know total number of nodes = n = 2^h - 1 and (1+ 2/2^1 + 3/2^2 + 4/2^3 + ...) is approximately 3.
       - Hence, Complexity is O(n).
     - earlier approach of pushing elements one by one is costlier and it will be O(nlogn) (logi being for each insertion), similar when printing heap, nlogn time.
 - In CBT. total number of internal nodes are floor(n/2)
-- It also implies leaves starts from floor(n/2) + 1 and goes till n. 
+- It also implies leaves start from the floor(n/2) + 1 and go till n. 
 - Custom Sorting in PQ: Have to use Comparotr class/struct and implement () opearator
   ```cpp
     struct PairCmp {
@@ -362,7 +362,7 @@ class priority_queue;
   ```
 
 - Application
-  - Dijikstra Algorithm
+  - Dijkstra Algorithm
   - Prim's Algorithm
   - Huffman Coding
   - Heapsort
@@ -370,11 +370,11 @@ class priority_queue;
 ## set 
 
 - inside #include<set>
-- uses RBTree as data structure.
+- uses RBTree as a data structure.
 - set<int> s;
   - insert() => logn
   - find() => logn
-    - to check if element is present or not.
+    - to check if the element is present or not.
     - returns iterator if found else return end() iterator.
   - count() => logn
     - returns 1 or 0
@@ -387,9 +387,9 @@ class priority_queue;
   - empty() => O(1)
   <!--  as elements are sorted in set. -->
   - lower_bound() => logn
-    - returns Iterator pointing to first element equal to or greater than key, or end(). This function returns the first element of a subsequence of elements that matches the given key. If unsuccessful it returns an iterator pointing to the first element that has a greater value than given key or end() if no such element exists.
+    - returns Iterator pointing to first element equal to or greater than key, or end(). This function returns the first element of a subsequence of elements that matches the given key. If unsuccessful it returns an iterator pointing to the first element that has a greater value than the given key or end() if no such element exists.
   - upper_bound() => logn
-    - returns upper element.
+    - returns the upper element.
     - Iterator pointing to the first element greater than key, or end().
 - `Always sorted output` when print. can make `decreasing using set<int, greater<int> > s;`
 - `No Duplicates` are stored.
@@ -414,7 +414,7 @@ class priority_queue;
 ```
 
 - Application
-  - Store stream of data in a sorted way.
+  - Store a stream of data in a sorted way.
 
 ## map 
 	
@@ -545,9 +545,9 @@ bool mycomp(pair a, pair b ){
 - lower_bound(container.begin(), container.end(), value_tobe_searched) // <algorithm>
   - returns Iterator pointing to first element equal to or greater than key, or end().
   - This function returns the first element of a subsequence of elements that matches the given key.
-  - If unsuccessful it returns an iterator pointing to the first element that has a greater value than given key or end() if no such greater element exists.
+  - If unsuccessful it returns an iterator pointing to the first element that has a greater value than the given key or end() if no such greater element exists.
 - upper_bound(container.begin(), container.end(), value_tobe_searched) // <algorithm>
-    - returns upper element.
+    - returns the upper element.
     - Iterator pointing to the first element greater than key, or end().
 - iterator lower_bound(arr, arr + n, value_tobe_searched) // <algorithm>
 - iterator upper_bound(arr, arr + n, value_tobe_searched) // <algorithm>
@@ -569,5 +569,5 @@ bool mycomp(pair a, pair b ){
 - prev_permutation(container.begin(), container.end()) // O(n)
 - next_permutation(container.begin(), container.end()) // O(n)
 
-**Note: Use member functions of container if available rather than using global ones. There are more optimized.**
+**Note: Use member functions of the container if available rather than using global ones. There are more optimized.**
 

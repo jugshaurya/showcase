@@ -1,9 +1,9 @@
 # DS and Algo Notes
 
-- `C++` programs are compiled and are architectural-dependent, means you have to compile the source code for different OS/machine to work.
-- `JAVA` produces bytecode which is machine independent as machines have machine specific JVM available.
-- `Python` is an interpreted Language and runs/execute code line by line and generate output for each line and then look at next line.
-- `Javascript` is a single threaded Language, more close to python in some sense.
+- `C++` programs are compiled and are architectural-dependent, which means you have to compile the source code for different OS/machines to work.
+- `JAVA` produces bytecode which is machine independent as machines have machine-specific JVM available.
+- `Python` is an interpreted Language and runs/executes code line by line and generates output for each line and then looks at the next line.
+- `Javascript` is a single-threaded Language, more close to python in some sense.
 
 ## datatypes
 
@@ -26,7 +26,7 @@
   - static_cast<double> x/y
   - only typecasts if possible otherwise throws error.
 
-## Precedennce and Associativity
+## Precedence and Associativity
 
 `RULE: PUMA'S REBL TAC`
 
@@ -71,10 +71,10 @@
 
 - No index out of bound Checking in c++. 😭
 - The C++ runtime does not perform bounds checking on array indices, so if an array named arr is declared of size 33 and you try to access arr[5], there is no telling what will happen. The program might crash due to a segmentation fault, or it might keep running while giving potentially incorrect results.
-- Arrays are always passed as pointer to functions and length cannot be determined using `sizeof(arr)/sizeof(arr[0])` inside function, therefore have to pass length of array as argument to the function.
-- Provides cache spatial locality of reference as arrays are stored continously.
-- Have to know size before we create them. Solution: Vector.
-- couting int array will give you address of first interger, whereas couting char arry will printing all characters till null character.
+- Arrays are always passed as pointers to functions and length cannot be determined using `sizeof(arr)/sizeof(arr[0])` inside function, therefore have to pass the length of the array as an argument to the function.
+- Provides cache spatial locality of reference as arrays are stored continuously.
+- Have to know the size before we create them. Solution: Vector.
+- counting int array will give you the address of the first integer, whereas counting char array will print all characters till null character.
 
 ```cpp
 	int arr[10] = {1,2,3};
@@ -101,11 +101,11 @@
 - Can be null.
 - **Avoid copying of larger objects during function calls.**
 - **Helps in modifying the passed parameters to function.**
-- helps in returing multiple values.(just pass variables as pointer as arguments to function and assign return values to them).
+- helps in returning multiple values. (just pass variables as a pointer as arguments to a function and assign return values to them).
 - Helps in Dynamic Memory Allocation.
 - In Implementing Data structures.
 - `*` and `++` are both unary operators and have right to left associativity.
-- Subtraction b/w pointers(p1-p2) is possible iff both points to same array and p1>=p2.
+- Subtraction b/w pointers(p1-p2) is possible if both points to the same array and p1>=p2.
 - Addition, Multiplication, divisible are not feasible on pointers.
 
 ## pointers and array
@@ -183,7 +183,7 @@ int main() {
 	delete [] arr;
 ```
 
-- Can be stored in memory in - Row Major Order (RMO) - Store continously row wise - Column Major Order (CMO) - Store continously col wise
+- Can be stored in memory in - Row Major Order (RMO) - Store continuously row-wise - Column Major Order (CMO) - Store continuously col wise
 
 ## pairs - auto destructuring
 
@@ -209,9 +209,9 @@ int main() {
 
 ## Recursion on array and strings
 
-- on array,
+- on the array,
 
-      	- do a+1, reduce n by 1 or take a index variable to indicate the startint point of array. - Note in character array if array is empty then @index 0 we will have null '\0'.
+      	- do a+1, reduce n by 1, or take an index variable to indicate the starting point of the array. - Note in character array if the array is empty then @index 0 we will have null '\0'.
 
       		`````cpp
       		char str[100];
@@ -233,11 +233,11 @@ int main() {
 ## Global variables in C++
 
 - variables declared outside any function, even main() are accessed by anyone, anyfunction, anyclass and hence are called global variables.
-- Should not use as it breaks PURE function concept of functional programming paradigm.
+- Should not use as it breaks the PURE function concept of the functional programming paradigm.
 
 ## C-string
 
-- C string is a 1D character array and are terminated by null character '\0'
+- C string is a 1D character array and is terminated by null character '\0'
 
 ```cpp
 	// Note: cout<<(address of char array a) -> prints value till found '\0'.
@@ -260,12 +260,12 @@ int main() {
 
 ## and c++-string
 
-- c++ string is builtin top of cstring and is a String Class which stores characters as sequence of bytes.
-- memory is allocated dynamically(no need to get length of string first).
+- c++ string is builtin on top of cstring and is a String Class that stores characters as a sequence of bytes.
+- memory is allocated dynamically(no need to get the length of the string first).
 - available in `#include<string>`
 - take input via cin (till whitespace)
-- use `getline(cin, variable)` to get complete line as input
-- Checking if a character exist in a string or not. - return str.find(ch) != string::npos
+- use `getline(cin, variable)` to get the complete line as input
+- Checking if a character exists in a string or not. - return str.find(ch) != string::npos
 - methods on str object (str.method())
 
 ```cpp
@@ -322,7 +322,7 @@ Note: `int+double= double, int-double=double, int/double=double, double/int=doub
 
 ## cin vs cin.getline()
 
-- getline also take space b/w values as one entity. same as input() in python.
+- getline also takes space b/w values as one entity. same as input() in python.
 
 ```cpp
 	// cin.getline(arr, maxsize, [delimiter]) // default delimiter='\n'
@@ -373,8 +373,8 @@ Note: `int+double= double, int-double=double, int/double=double, double/int=doub
 ## Struct vs class
 
 - Use Struct to bundle multiple items together.
-- everything is `public by default in struct` and `private by default in class`.Else everything is same!
-- when in hurry use struct like pair(why? becoz, default public).
+- everything is `public by default in struct` and `private by default in class`.Else everything is the same!
+- when in a hurry use struct like pair(why? because, the default public).
 
   ```cpp
   struct Pair{
@@ -401,7 +401,7 @@ Note: `int+double= double, int-double=double, int/double=double, double/int=doub
 - operator new
   - returns the pointer to the memory allocated.
   - always used for dynamic memory allocation.
-  - calls constructor for objects of class or struct
+  - calls the constructor for objects of class or struct
   -
 
 ## OOPS
@@ -429,21 +429,21 @@ Note: `int+double= double, int-double=double, int/double=double, double/int=doub
 - Compile Time Polymorphism
   - `Function overloading`
   - `Operator overloading`
-  - `Function overridding`
-  - `Operator overridding`
+  - `Function overriding
+  - `Operator overriding
   - `Default Arguments`
-- RunTime Polymorphism
-  - `virtual functions`: so to call function based on object rather than pointer.
-  - Happens when we have a **baseclass pointer pointing to sub class object. (Vehicle\* v = new car)**, btw vice-versa is not possible.
-  - let both Vehicle and Car has a print function.
+- Runtime Polymorphism
+  - `virtual functions`: so to call function based on the object rather than pointer.
+  - Happens when we have a **baseclass pointer pointing to a subclass object. (Vehicle\* v = new car)**, btw vice-versa is not possible.
+  - let both Vehicle and Car have a print function.
   - v -> print() will call vehicles print, not car prints.
-  - but if we make function in vechile as virtual than car's print will be called.
-  - Why? let employyee is a baseclass and teacher, gardner, manager are baseclasses and each(base and sub) have a calculatesalary method. we want to store all salaries of differnet employees in a array.
-  - since array can only hold homogeneous values. we have to use `Employee* salaries[100]` we can push each object of base classes into it. and call calculatesalary() in a loop. it work only if calculatesalary is virtual in baseclass.
+  - but if we make function in the vehicle virtual then the car's print will be called.
+  - Why? let employee is a baseclass and teacher, gardener, manager are baseclasses and each(base and sub) have a calculatesalary method. we want to store all salaries of different employees in an array.
+  - since the array can only hold homogeneous values. we have to use `Employee* salaries[100]` we can push each object of base classes into it. and call calculatesalary() in a loop. it works only if calculatesalary is virtual in baseclass.
 
 ## passing function to a function in cpp
 
-- pass bool (&fun)(int a, int b) as parameter. It is basically declaration of function + wrapping function name in braces. & is to avoid copy.
+- pass bool (&fun)(int a, int b) as a parameter. It is basically a declaration of function + wrapping function name in braces. & is to avoid copy.
 
 ```cpp
 	// look last parameter
@@ -556,7 +556,7 @@ int32_t main(){
 
 - NP Hard Problems?
 
-- expansion of logn is harmonic sum of first n natural number(1+1/2+1/3+1/4+1/5+...)?
+- expansion of logn is a harmonic sum of the first n natural number(1+1/2+1/3+1/4+1/5+...)?
 
 ## Quotes
 
@@ -577,10 +577,10 @@ int32_t main(){
 - prematurely optimizing our code actually hurts us more than it helps
 - The 3 “hail mary” strategies to use when you’re really stuck
 - How to avoid your mind going blank when facing a hard problem
-- "go to inerview thinking you are the answer to their problem.” - George Clooney
-- The best interviewees are good at problem solving. Not pattern recognition
+- "go to interview thinking you are the answer to their problem.” - George Clooney
+- The best interviewees are good at problem-solving. Not pattern recognition
 - treat each hint as a small deduction because They may be trying to guide you away from common pitfalls
-- impostor syndrome: Every one is way better/smarter than me.
+- impostor syndrome: Everyone is way better/smarter than me.
 - If you practice hard problems, then your interview will be easy by comparison
 - You don’t know if you’re ready or not until you try
 - If you mess up, you can always interview again in the future
@@ -588,9 +588,9 @@ int32_t main(){
 
 - What are the goals of practicing? - ○ Simulate real-world interview - ○ Identify and improve weaknesses - ○ Become comfortable with the tools and systems - ○ Avoid Rehashing what you’re already good at
 
-* Simulate real-world interview - ● Hand write code - ● Talk out loud as you go - ● Test your code by hand - ● Apply the strategies - 1. Understand the problem [3-5 minutes] - Make sure that you really know what is being asked. Take your time here. - Go through the example inputs and outputs. How does the input get that output? - 2. Find a brute force solution [5 minutes] - 3. Optimize your solution [15 minutes] - 4. Code your solution [15 minutes] - When you get to coding, it should just be “translating” the work you’ve already done - 5. Test your solution [5 minutes]
+* Simulate real-world interview - ● Handwrite code - ● Talk out loud as you go - ● Test your code by hand - ● Apply the strategies - 1. Understand the problem [3-5 minutes] - Make sure that you really know what is being asked. Take your time here. - Go through the example inputs and outputs. How does the input get that output? - 2. Find a brute force solution [5 minutes] - 3. Optimize your solution [15 minutes] - 4. Code your solution [15 minutes] - When you get to coding, it should just be “translating” the work you’ve already done - 5. Test your solution [5 minutes]
 * Your interviewer wants to help you
-  ○ The toughest interviews are when I try to help someone and they won’t let me .Don’t try to prove yourself
+  ○ The toughest interviews are when I try to help someone and they won’t let me. Don’t try to prove yourself
   ● Only your interviewer really knows what they are looking for
   ● It’s an easy way to get them to like you
 
@@ -633,13 +633,13 @@ Just wanted to bump this up in your inbox in case you missed it. Would love to d
 
 ## Other Tips
 
-- Do Time Management -> based on score of questions
+- Do Time Management -> based on the score of questions
 
 - Problem Statement
 - Input
 - Output
 - Explanation (optional/maybe given, maybe not)
 - Constraints
-- Stacks - two loops in which inner loops is dependent on outer loop (j is dependent on i) => Use Stack for optimization. - Same Questions - Next greater to Right - Next smallest to Right - Previous greater to left - Previous smaller to left - Stock Span - Area under histogram - Rain Water Trapping -
+- Stacks - two loops in which inner loops are dependent on outer loop (j is dependent on i) => Use Stack for optimization. - Same Questions - Next greater to Right - Next smallest to Right - Previous greater to left - Previous smaller to left - Stock Span - Area under histogram - Rain Water Trapping -
 
-- Recursion - IBH Method - Recusion tree Method - Choice Method
+- Recursion - IBH Method - Recursion tree Method - Choice Method
