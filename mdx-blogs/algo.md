@@ -87,22 +87,23 @@
 - Substitution Method
 - Master Theorem
 
-## Master's Theorem(**Trick**)
+## Master's Theorem(**with Trick**)
 
-`T(n) = aT(n/b) + f(n)`
+`T(n) = aT(n/b) + c`
 
 - where c can be anything [O((n<sup>k</sup>)*(log<sup>p</sup>(n)))]
-- and f(n) is a Polynomial Function. means not like n/logn.
-- a should be >=1
-- **Steps:**
+- and c is a Polynomial Function. means not like n/logn.
+- a should be >= 1
 
+- **Steps/Trick:**
   - calculate n<sup>log_a[base_b]</sup>
-  - if it is same as f(n) then return `f(n)*logn`
+  - if it is same as c then return `c*logn`
   - else return bigger of them.
 
 - Special Cases
-  - if f(n) = 2^n, Complexity is O(2^n)
-  - if f(n) = n!, Complexity is O(n!)
+  - if c = 2^n, Complexity is O(2^n)
+  - if c = n!, Complexity is O(n!)
+  - Why? beacuse n<sup>log_a[base_b]</sup> will always be less than n!, 2^n.
 
 #### Extended Masters Theorem
 
@@ -594,6 +595,10 @@
 
 - Others are: FIFO, LFU, Optimal
 -
+
+## NP-hard and NP-complete Problems
+- NonPolynomial-Hard Problems are those which we don't yet know, if there exist an algorithm that bounds the solution to that problem in polynomial time.
+- NP Complete problems means solution to the given problem is the combination of some polynomial time solutions which makes the original problems solved in polynomial time. OR we can say, original problem is reducable to the problem that we know is solvable in polynomial time.
 
 ## Questions:
 

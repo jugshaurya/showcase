@@ -265,6 +265,9 @@ int main() {
 - available in `#include<string>`
 - take input via cin (till whitespace)
 - use `getline(cin, variable)` to get the complete line as input
+- **Appending characters/string to a string**
+	- `s += "something" // O(1) as no new string is created.` Why? as internally it is implemented as character arr/vector and doing `+=` is like doing vector.push_back(). thats why string have push_back()/pop_back() method
+	- `s = s + "something" // O(n) as here new string is created.`
 - Checking if a character exists in a string or not. - return str.find(ch) != string::npos
 - methods on str object (str.method())
 
@@ -295,7 +298,7 @@ int main() {
 		- front()
 
 	- modifiers
-		- operator +=() // important // with other <=, < ,> ...
+		- operator +=() // with other variations <=, < ,> ...
 		- append()
 		- push_back()
 		- pop_back() // only pops it does not return the popped value.
@@ -305,7 +308,7 @@ int main() {
 
 	- other
 		- c_str() // get cstring from c++ string
-		- substr(begin_index, length_of_substring) // important
+		- substr(begin_index, length_of_substring) // **important
 		- compare()
 		- copy(chararray, length, position)
 		- swap()
@@ -552,6 +555,15 @@ int32_t main(){
       	}
       	```
 
+## C++11 features
+
+- Anonymous functions(return type will be infered as `bool` by compiler)
+
+```cpp
+sort(a, a+n, [] (Student s1, Student s2) {
+		return s1.name<s2.name
+});
+```
 ## Questions to be answered!
 
 - NP Hard Problems?

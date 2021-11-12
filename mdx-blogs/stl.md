@@ -2,7 +2,7 @@
 
 - Containers
 
-  - Simple/sequence Containers
+  - Simple/Sequence Containers
 
     - (`vector`, `list`, `pair`, `forward_list`(singly linked list))
 
@@ -16,6 +16,7 @@
     - implement sorted Data structure; data can be searched in O(logn)
     - `set`, `map`, `multimap`, `multiset`
     - ordered map/set have an order and are implemented as self balancing BST(Red balck Trees).
+    - Keys may not need be integral. requirement: operator`<` should be defined.
 
   - unordered Associative Containers
     - implement unordered Data structure; data can be searched in O(1)
@@ -108,7 +109,7 @@ int main(){
 
 - Note: **All STL containers are passed by value**. So make sure to use `&` in formal parameters in case you want to reflect changes done inside function into STL container.
 
-## Vector
+## Vector<T>
 
 - Dynamic Size
 - Rich Library functions
@@ -118,6 +119,7 @@ int main(){
 - Initialized with default values
 - Can easily copy a vector to another via v1 = v2
 - Passed by value to function. so if you want to modify the vector make sure to use & and make the vector pass by reference.
+- v.size() returns a unsigned interger. So if size is 0 and we do v.szie()-1, it will be 0-1 = All 1s in unsigned. so always do `int(v.size())` to get -1 not All 1s in unsigned interger which becomes 2^31-1 or 2^63-1.
 
 ```cpp
 	vector<int> v;
@@ -205,7 +207,10 @@ public:
 };
 ```
 
-## list and forward-list
+## list<T> and forward-list<T>
+
+- you cannot call sort(l.begin(), l.end()) because sort required random access iterator but l.begin() or l.end() returns bidirectional iterators.
+- Instead `use l.sort()` to sort.
 
 ```cpp
 
@@ -229,10 +234,10 @@ list<int> l{2,3,4,5,5}; // doubly linked list
 forward_list<int> fl; // singly linked list
 ```
 
-## deque
+## deque<T>
 - **VVI IMP**: **Even though it is a queue, random access is possible in the case of the deque. => can access dq[i] in constant time.**
 - can use deque always instead of stack and queue.
-
+- O(1) random access to any element.
 ```cpp
 deque<int> dq;
 dq.push_front(10);
@@ -253,9 +258,10 @@ cout<< dq[3] <<endl;
 cout<< dq.at(4) <<endl;
 ```
 
-## Stack
+## Stack<T>
 
 - A container Adapter that uses deque as underline container.
+- No random Access,No iterators, No range-based loops, No curly braced-initialization.
 - inside <stack>
   - push()
   - top()
@@ -276,9 +282,10 @@ while(!scopy.empty()){
 cout<<endl;
 ```
 
-## Queue
+## Queue<T>
 
 - A Container Adapter based on deque as well.
+- No random Access,No iterators, No range-based loops, No curly braced-initialization.
 - inside <queue>
   - queue<int> q;
   - push()
@@ -288,7 +295,7 @@ cout<<endl;
   - front()
   - back()
 
-## Priority Queue or heap
+## Priority Queue<T> or heap<T>
 
 - A priority queue is just like a normal queue data structure except that each element inserted is associated with a “priority”.
 - It supports the usual push(), pop(), top(), etc operations, but is specifically designed so that its first element is always the greatest of the elements it contains, i.e. max heap.
@@ -367,7 +374,7 @@ class priority_queue;
   - Huffman Coding
   - Heapsort
 
-## set 
+## set<T> 
 
 - inside #include<set>
 - uses RBTree as a data structure.
@@ -416,7 +423,7 @@ class priority_queue;
 - Application
   - Store a stream of data in a sorted way.
 
-## map 
+## map <T,U>
 	
 - inside #include<map>
 - uses RBTree as data structure.
@@ -445,7 +452,7 @@ class priority_queue;
 - Application same as set.
   - Sorted Stream of data with key value pairs
 
-## unordered_set 
+## unordered_set <T>
 	
 - inside #include<unordered_set>
 - uses Hashing as the data structure.
@@ -476,7 +483,7 @@ class priority_queue;
   }
 ```
 
-## unordered_map
+## unordered_map<T,U>
 
 - inside #include<unordered_map>
 - uses Hashing as the data structure.
