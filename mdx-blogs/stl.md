@@ -2,23 +2,23 @@
 
 - Containers
 
-  - Simple/Sequence Containers
+  - **Simple/Sequence Containers**
 
     - (`vector`, `list`, `pair`, `forward_list`(singly linked list))
 
-  - Container Adapter/ Derived Containers
+  - **Container Adapter/ Derived Containers**
 
     - Don't support iterators, hence to print the content, use while container is empty thing.
     - (build upon simple containers)
     - (`stack`,`queue`, `deque`, `heap`, `priority queue`)
 
-  - Associative Containers
+  - **Associative Containers**
     - implement sorted Data structure; data can be searched in O(logn)
     - `set`, `map`, `multimap`, `multiset`
     - ordered map/set have an order and are implemented as self balancing BST(Red balck Trees).
     - Keys may not need be integral. requirement: operator`<` should be defined.
 
-  - unordered Associative Containers
+  - **unordered Associative Containers**
     - implement unordered Data structure; data can be searched in O(1)
     - `unordered_set`, `unordered_map`, `unordered_multimap`, `unordered_multiset`
     - unordered map/set uses hashing and has no-ordering.
@@ -102,7 +102,6 @@ int main(){
   }else{
     cout<<"Car Found in list: "<<it->name<<endl;
   }
-  
 }
 
 ```
@@ -395,9 +394,14 @@ class priority_queue;
   <!--  as elements are sorted in set. -->
   - lower_bound() => logn
     - returns Iterator pointing to first element equal to or greater than key, or end(). This function returns the first element of a subsequence of elements that matches the given key. If unsuccessful it returns an iterator pointing to the first element that has a greater value than the given key or end() if no such element exists.
+    - **(always returns first element >= key), `so if we want to find < key, we do lower_bound() - 1`**
   - upper_bound() => logn
+    - **(always returns first element > key), `so if we want to find <= key, we do upper_bound() - 1`**
     - returns the upper element.
     - Iterator pointing to the first element greater than key, or end().
+  - **VVVVVImp: Note for lower and upper bound functions**.
+    - If you are doing -1(it--). Make sure returned iterator doesn't points to begin(). and
+    - If you are doing +1(it++). Make sure returned iterator doesn't points to end() or rbegin().
 - `Always sorted output` when print. can make `decreasing using set<int, greater<int> > s;`
 - `No Duplicates` are stored.
 - All begin() and end() access containers can use short for-loop(`for (auto &x: set_name)`) for printing
@@ -451,6 +455,7 @@ class priority_queue;
 - as well as for loop with iterators.
 - Application same as set.
   - Sorted Stream of data with key value pairs
+- SideNote: Always use map instead of unordered_map as map guarantees to have operations in logn time. but unordered_map can in worst case goes to O(n). So using map inside for(1..n) loop can result in n square rather than nlgn. But if you get TLE from map. replace map with unordered_map and try to submit. 
 
 ## unordered_set <T>
 	
@@ -571,7 +576,8 @@ bool mycomp(pair a, pair b ){
 - rotate(first_iterator, middle_iterator, last_iterator) // <algorithm>
 - reverse(container.begin(), container.end()) // reverse container, container also includes string.
 - reverse(a, a+n) // reverse array
-- rand() // cstdlib
+- int rand() // cstdlib 
+- random_shuffle(v.begin(), v.end()) // cstdlib
 - srand(time(NULL)) // time in ctime
 - prev_permutation(container.begin(), container.end()) // O(n)
 - next_permutation(container.begin(), container.end()) // O(n)

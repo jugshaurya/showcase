@@ -604,5 +604,5 @@
 
 - Look for circular Queue, rear, front, emoyt or full conditions. I don't get those.
 - Is it true? I think so
-  - we cannot remove a specific element from the heap. can always only remove min only if it is a minheap?
-  - If we want sorted order and also want to remove a specific element in the future. we should use a set.
+  - we cannot remove/find a specific element from the heap. can always only remove min only if it is a minheap? Ans. True, pq dont have find,begin,erase functions.
+  - If we want sorted order and also want to remove a specific element in the future. we use a set/multiset.

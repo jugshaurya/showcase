@@ -7,6 +7,9 @@
 <p align="center">Shaurya Showcase | Portfolio</p>
 <p align="center">Software Developer + Open Source Contributor</p>
 
+<br>
+<br>
+
 [![PR](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/jugshaurya/showcase)
 [![PR](https://img.shields.io/badge/PR-Welcome-blue.svg)](https://github.com/jugshaurya/showcase)
 [![GitLicense](https://gitlicense.com/badge/jugshaurya/showcase)](https://github.com/jugshaurya/showcase)
@@ -21,8 +24,6 @@ _🦄 Shaurya Personal Portfolio to showcase shaurya and his work at one place f
 ![](./readme-images/showcase2.png)
 ![](./readme-images/showcase3.png)
 
-Font Family: Gloria Hallelujah && Roboto Mono
-
 ### 🌈 CSS:
 
 - Options:
@@ -35,6 +36,7 @@ Font Family: Gloria Hallelujah && Roboto Mono
   - ✔ classnames - A simple JavaScript utility for conditionally joining classNames together.
 
 - **Choice**: Using a combination of sass and styled component along with classnames.
+- Font Family: Gloria Hallelujah && Roboto Mono
 
 - Tech Used
   - Gatsby
@@ -146,4 +148,4 @@ Shaurya Singhal
 
 #### License
 
-This project is licensed under the 0BSD License
+This project is licensed under the 0BSD License.
