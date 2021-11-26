@@ -1,4 +1,4 @@
-## Advance Datastructures and Algorithms For competitive Programming
+## Advance DataStructures and Algorithms For Competitive Programming
 
 #### Number Theory/ Math
 
@@ -192,15 +192,44 @@
     ``` 
 
 - Calculating `ncr mod p`
-  - Naive ways is pretty straightfroward, 
-    - just use for loop to calculatate factorial -> O(n). 
+  - ncr is the number of ways of `choosing r` objects out of `n distinct` elements.
+  - Naive ways(Factorial Method) is pretty straightfroward, 
+    - just use for loop to calculate factorial -> O(n). 
+    - Factorial[0] = 1, Factorial[i] = (Factorial[i-1]*i)%p
+    - Note: P should be prime for Inverse to exist.(So we cann't use this method if P is not prime.)
     - calculate MMI of denominators via fermet's result -> O(logp).
-    - total = O(n + logp) = O(n)
-  - Let we have no. of testcases = 1e5 and for each test case n can go upto 1e5.
-    - we get TLE.
-    - Major thing that was O(n) was calculating factorial via for loop.
-    - pre-computation/caching Approach: calcute factorial of numbers till N in an array. and then use them in calculation for each test case.   
-    - Time Complexity: O(t*(1 + logp)) < 1e8. No TLE 😁.
+    - total = O(nlogp) = O(nlogp)
+    - Let we have no. of testcases = 1e5 and for each test case n can go upto 1e5.
+      - we get TLE.
+      - Major thing that was O(n) was calculating factorial via for loop.
+      - pre-computation/caching Approach: calcute factorial of numbers till N in an array. and then use them in calculation for each test case.   
+      - we can also precompute the MMI of numbers to make everything for a test case O(1). 
+      - Time Complexity: O(t*(1 + logp)) < 1e8. No TLE 😁.
+  - Pascal's triangle Method 
+    - ncr = (n-1)c(r-1) + (n-1)c(r) i.e sum of previous rows same column and column-1 elements. 
+    ``` 
+          1
+        1 2 1
+       1 3 3 1
+      1 4 6 4 1
+     1 5 10 10 5 1
+    ```
+    - can maintain a matrix to store these values O(n^2).so use when n<=4000
+    - can work for any p even if it is not prime, i.e composite.
+
+  - Multiplication Method
+    - works when `n can be of very big order(10^18)` but either `r` or `n-r` is small(< 10^6).
+    - we can cancel many numerator terms as either r or n-r will be of order n. 
+    - Here also P must be prime(same reason as above, there will be terms in denominator).
+  
+- Some formulas of Binomial Coefficients
+  - nc0 + nc1 + nc2 +.....ncn = 2^n
+  - 0*nc0 + 1*nc1 + 2*nc2 +.....ncn = n*2^(n-1)
+  - kck + (k+1)ck + (k+2)ck +.....nck = (n+1)c(k+1)
+  - nC0 + (n-1)C1+ (n-2)C2+ (n-3)C3 + ... + (n/2)Cn/2 = Fib(n+1)
+  - number of solutions of x1+x2+x3+...xn = R, where each 0<=xi<=R.(Bar and stick formula)
+    - `# solutions = (n+R-1)C(n-1) = (n+R-1)CR `
+  - Lucas Theorem - works for small p and large n, **LATER***
 
 - Handling Values larger than long long via mod
   - Represent value as string
@@ -216,6 +245,7 @@
     cout<<result<<endl; 
   ```
   - or use Python 😁
+
 
 #### Prefix and Partial Sums
 
@@ -251,6 +281,13 @@
     - We are given a graph G = (V,E), with costs on the edges, and we want to find a spanning tree of minimum cost. We use Kruskal’s algorithm, which sorts the edges in order of increasing cost, and tries to add them in that order, leaving edges out only if they create a cycle with the previously selected edges.
     - Proof of Correctness for Kruskal’s Algorithm: Let T = (V,F) be the spanning tree produced by Kruskal’s algorithm, and let T∗ = (V,F∗) be a minimum spanning tree. If T is not optimal then F∗ 6= F, and there is an edge e ∈ F∗ such that e /∈ F. Then e creates a cycle C in the graph T + e, and at least one edge f of this cycle crosses the cut defined by T∗ − e. Furthermore, the reason e is not in F must be that when the algorithm considered adding e, the rest of C was already in the tree. Since we consider edges in increasing order of cost, this means that e must be the most expensive edge in C, and so cost(f) ≤ cost(e). If we add the edge f to the graph T∗ − {e}, then we reconnect the graph and create a spanning tree.
     - Also, cost(T∗ − {e}∪{f}) = cost(T∗) −cost(e) +cost(f) ≤ cost(T∗), and so we have created a new spanning tree of no more cost than T∗, but with one more edge in common with T. We can do this for every edge that differs between T and T∗. The two trees differ on at most all n − 1 edges, so after n − 1 steps we obtain the tree T of no more cost than T∗. This contradicts the assumption that T was not optimal.
+
+
+
+#### Binary Search
+
+- try to map questoin to check() function which makes question answer a monotonic function.
+
 
 #### Others
 
