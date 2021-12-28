@@ -1,11 +1,35 @@
-## Dynamic Programming - Coding Blocks Advance
+## Dynamic Programming
 
+- All about remembering the Past.
 - Optimal Substructure
+  - Can express bigger problem in small sub-problems of same type (Recurrence Relation).
+  - This property is also available in Divide and Conquer, all recursion problems.  
 - Overlapping Subproblem
-
+  - This property is the giveaway that given problem is a DP Problem.
+  
 - 💎 - Important
-- ✔ - Done
+- ✔  - Done
 - 🌟 - Do once more
+
+## Some Initialization Points 
+-----------------------------
+
+```cpp
+  // In global scope
+  vector<int> dp;
+  int n;
+
+  void solve (){
+    // resetting dp array for every test case
+    dp.clear();
+    dp.resize(n);
+    dp.assign(n,0); // or dp = vector<int>(n,0);
+  }
+
+  int main(){
+    int t; cin>>t; while(t--) solve();
+  }
+```
 
 ### 1-D DP
 ----------
@@ -17,9 +41,9 @@
   - Bottom Up DP: Space optimzed:  Time: O(n), Space: O(1) as only last two past things are to be remembered.
   - `TODO:` Via Matrix Exponentiation: Time: O(logn), See in advance-ds.md file.
   - `TODO:` Binet's Formula, Works for small fib numbers. Formula = (phi^n - (-phi)^(-n)) / sqrt(5)
-  - `TODO:` Codeforces Hack(codeforces.com/blog/entry/14516/) - O(logn * loglogn)
-    - If n is even , f(n) = f(n/2)*f(n/2) - f(n/2-1)* f(n/2-1) ; half^2 - (half-1)^2
-    - If n is odd , f(n) = f(n/2)*f(n/2+1) - f(n/2)* f(n/2-1) ; half^(half+1) - half*(half-1)2
+  - `TODO:` [Codeforces Hack](codeforces.com/blog/entry/14516/) - O(logn * loglogn)
+    - If n is even, f(n) = f(n/2)*f(n/2) - f(n/2-1)* f(n/2-1) ;i.e. half^2 - (half-1)^2
+    - If n is odd, f(n) = f(n/2)*f(n/2+1) - f(n/2)* f(n/2-1) ;i.e. half*(half+1) - half*(half-1)
   - Properties of Fibonacci Numbers
     1. **Sum of first N fibonacci number** = (n+2)th Fibonacci - 1
       - F0 + F1 + F2 + ... + Fn = F(n+2) - 1
@@ -29,7 +53,7 @@
       - gcd(Fn,Fm) = F(gcd(n,m))
 - Min Coin Change ✔
 - Min Steps to One ✔
-- Count Number of Binary strings with no 1s together(no two ones are consecutive) ✔
+- Count Number of Binary strings with no 1s together (no two ones are consecutive) ✔
 - Friends Pairing ✔
 - Maximum Subarray Sum ✔
   - Kadane's Algorithm 
@@ -41,5 +65,7 @@
 
 - Wines Problem ✔
 - Catalan Number ✔
-- Ways to make change of money using coins array 🌟 ✔
-  - Min Coin Change ✔ is a different problem as: In this question we need to find the number of ways to make change, out of which which one is the minimum was the min coin change problem.
+- Ways to make Coin change of money using coins array 🌟 ✔
+  - Min Coin Change ✔ is a different problem as: there here we required to find the number of ways to make change, out of which one is the minimum answer and that was the min coin change problem.
+
+

@@ -633,16 +633,22 @@ Just wanted to bump this up in your inbox in case you missed it. Would love to d
 - Research the company
 - Prepare a short description of each major project
 
-- How to structure your answers - ● The STAR technique - ● Situation (1-2 sentences) - ● Task (1 sentence) - ● Action (3-5 sentences) - ● Result (3-5 sentences)
+- How to structure your answers 
+	- ● The STAR technique 
+		- ● Situation (1-2 sentences) 
+		- ● Task (1 sentence) 
+		- ● Action (3-5 sentences) 
+		- ● Result (3-5 sentences)
 
-      	## Referral
-      		- Ask what works they do. means know their work
-      	- STAR Method
-      		- Situation -What Happended?
-      		- Task - What was your job?
-      		- Action - what did you do?
-      		- Result - So what?
+## Referral
 
+- Ask what works they do. means know their work
+- STAR Method
+	- Situation -What Happended?
+	- Task - What was your job?
+	- Action - what did you do?
+	- Result - So what?
+ 
 ## Other Tips
 
 - Do Time Management -> based on the score of questions

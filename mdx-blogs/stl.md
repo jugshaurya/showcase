@@ -208,7 +208,7 @@ public:
 
 ## list<T> and forward-list<T>
 
-- you cannot call sort(l.begin(), l.end()) because sort required random access iterator but l.begin() or l.end() returns bidirectional iterators.
+- you can not call sort(l.begin(), l.end()) because sort required random access iterator but l.begin() or l.end() returns bidirectional iterators.
 - Instead `use l.sort()` to sort.
 
 ```cpp

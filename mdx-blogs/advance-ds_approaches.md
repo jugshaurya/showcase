@@ -286,9 +286,19 @@
 
 #### Binary Search
 
-- try to map questoin to check() function which makes question answer a monotonic function.
+- try to map question to check(x) function which maps question's answer a monotonic function.
 
 
+#### Bit Manipulation
+
+- `__builtin_popcount()` = count #set bits.
+- `__builtin_clz()`  = count leading zeros.
+- `__builtin_ctz()` = count trailing zeros.
+- All are provided by compiler.
+- get ith bit of a number n, two ways:
+  - `(n>>i) & 1` => use this one. 
+  - `n & (1<<i)` => if i>32, then `1<<i` will not give correct result, use `1LL<<i` instead if want to use this expression only.
+  
 #### Others
 
 - Segment Trees
@@ -307,3 +317,4 @@
 - String Algorithms
   - Naive
   - KMP
+- Binary Lifting

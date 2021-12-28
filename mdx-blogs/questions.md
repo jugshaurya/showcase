@@ -20,30 +20,14 @@
 - largest subarray with zero sum		[takeUforward]
 
 
-Largest Subarray Sum   					
-Two Sum
-4 Sum
-3 Sum
-Largest subarray sum circular 				
-Largest bitonic subarray sum
-Rotate Array
-Pair Sum
-Sort array with 0 and 1
-Median of 2 sorted Array
-Count Subarrays with distinct elements
-
-
 ## Binary Search												Done (🌟 times)
 
 - [Search Element in rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/). [CB, LM, ]
 - [Search Peak Element in rotated Sorted Array]	
-
-
-
-Book Allocation
-CB Scholarship
-Painting partition
-Agressive cow 
+- Book Allocation
+- CB Scholarship
+- Painting partition
+- Agressive cow 
 
 
 
@@ -59,15 +43,15 @@ Agressive cow
 - Largest rectangle in  Histogram		[takeUforward]
 - best time to buy and sell stock		[takeUforward]
 
-
-Stock span
-Histogram Rectangle Area
-Minmax
-Rain Water Trapping 
-Just Next greater
-Just next smaller
-Just prev smaller
-Just prev greater
+- Stack using 2 queue
+- Stock span
+- Histogram Rectangle Area
+- Minmax
+- Rain Water Trapping 
+- Just Next greater
+- Just next smaller
+- Just prev smaller
+- Just prev greater
 
  		
 ## Queue		
@@ -77,7 +61,8 @@ Just prev greater
 
 
 ## Linked List
-- reverse LL		[takeUforward]
+
+- reverse LL	[takeUforward]
 - middle of a linked list		[takeUforward]
 - merge two sorted lists		[takeUforward]
 - remove Nth node from end of ll		[takeUforward]
@@ -90,11 +75,12 @@ Just prev greater
 - finf the starting point fo cycle		[takeUforward]
 - flatting of LL		[takeUforward]
 - rotate a LL		[takeUforward] - [Done]
-- Clone a L with next an drandom pointer		[takeUforward]
+- Clone a LL with next and random pointer		[takeUforward]
+- 
 
 ## Graph
 
-- Rotten oranges BFS	[takeUforward]	
+- Rotten oranges BFS	[takeUforward]	🌟
 
 ## Misc
 - sliding window maximum	[takeUforward]
@@ -143,8 +129,25 @@ Just prev greater
 - kth element of 2 sorted arrays		[takeUforward]
 - powerset| print all subsequence		[takeUforward]
 		
+
+- subarray sum,-> kadane,dp
+- Largest Subarray Sum   					
+- Largest subarray sum circular 				
+- Largest bitonic subarray sum
+- find subarray with target sum
+- find subarray with target Zero
+- Two Sum
+- Pair Sum
+- 4 Sum
+- 3 Sum
+- Rotate Array
+- Sort array with 0 and 1
+- Median of 2 sorted Array
+- Count Subarrays with distinct elements
+
 		
-		
+
+- LRU cache
 <!-- https://www.youtube.com/playlist?list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma		
 https://www.youtube.com/watch?v=OYqYEM1bMK8&list=PLgUwDviBIf0q8Hkd7bK2Bpryj2xVJk8Vk&ab_channel=takeUforward		
 https://www.youtube.com/watch?v=9uaXG62Y8Uw&list=PLgUwDviBIf0rf5CQf_HFt35_cF04d8dHN&ab_channel=takeUforward		
