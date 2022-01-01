@@ -80,7 +80,7 @@
   - along with index and city name in array.(So that finding city from index is constant)
 - We need to mark things visited, so that next time if we come back to the same thing we know that we already came there once.
 
-### Cycle Detection can be done using BFS or DFS.
+### Cycle Detection can be done using BFS or DFS or DSU.
 
 - (`In undirected graphs`):how? check for any vertex, if the adjacent vertices are already visited or not but ignoring the parent vertex.
   - can be done by BFS or DFS.
@@ -90,7 +90,14 @@
   - **using DFS:** we look for the back edge, which means while doing DFS we check if an adjacent vertex is already available in recursion stack or not (maintains a boolean array for what we have pushed to stack till now)(or we can use visited array for same, 0 means not visited, 1 means visited but not in stack, 2 means visited and in the stack).
   - `Conclusion: check for backedge,i.e. Is vertex already in recursion-stack?`
   - same can also work in undirected graphs(above case.) But Leave parent vertex as well(of course).
-  - **using BFS:** `TODO`
+  - **using BFS:** `TODO`? Is it possible via BFS?
+  - Using DSU: 
+    - while making the graphs, find if any edge's both vertices belongs to same set or not.
+
+- `Note:` **Backedge**: 
+  - If a node's neighbour is visited and not its parent, that edge is called backedge.
+  - While doing dfs, if a vertex points to the node in call stack, then it is a backedge.
+  - and if atleast one backedge exist in a graph, then it always contains a cycle.   
 
 ### Bipartite Graphs
 
@@ -102,53 +109,105 @@
   - 2 colorable graphs[Bichromatic] are bipartite (=> chromatic Number of such graph is 2).
   - Notation: **K<sub>n,m</sub>** whereas Complete graph notation is K<sub>n</sub>
 
-### Topological sorting (DFS)
+### DSU (Disjoint Set Union)/(Union and Find)
 
-  - Works for DAG
-  - Done via BFS(Kahn's Algorithm) - remove the node with indegree 0. keep doing it.
-  - Done via DFS - Save the nodes when none of its neighbors remained to be visited. print output in reverse order.
-    - can save in a list and use push_front to save the node(basically appendToHead). and then print the list.
-    - can save it in the stack as then print the stack.
+  - Union and Find both complexity will be O(V).
+    - One Find(A) will be O(V).
+  ```cpp
+    // initially parent of all vertices is -1.
+    vector<int> parent(V,-1); 
+    int find(int idx){
+      if(parent[idx]==-1) return idx;
+      return find(parent[idx]);
+    }
+  ```
+    - One Union(A,B) will be O(V). [btw, union internally uses find()]
+  
+  ```cpp
+    // initially parent of all vertices is -1.
+    vector<int> parent(V,-1); 
+    int find(int idx){
+      if(parent[idx]==-1) return idx;
+      return find(parent[idx]);
+    }
 
-### Strongly Connected Digraphs(Connectivity in Directed Graph)
+    void union(int idx1, int idx2){
+      int p1 = find(idx1);
+      int p2 = find(idx2);
+      if(p1!=p2) parent[p1] = p2; // can be parent[p2] = p1; as well.
+      // else they belong to the same set dont do anything -> Cycle !!!
+    }
+  ```
+  - Optimizations making DSU O(1) amortized, Proof not discussed.
+    - Path Compression
+      - Name says it all
+      - just one change in find fn(), return parent[idx] = find(parent[idx]);
+      ```cpp
+        int find(int idx){
+          if(parent[idx]==-1) return idx;
+          // path compression
+          return parent[idx] = find(parent[idx]);
+        }
+      ``` 
+      - Example let graph was like: 
+      ```diagram
+             3
+            / \
+            4  2
+            /   \
+            5    1
+            /   
+            6
+      ```
+      - while finding out the ultimate parent of 6, we make 4, 5,6 direct children of 3 and return 3(see code).
+      ```diagram
+                3
+             / / / \
+            4 5 6   2
+                     \
+                      1
+      ```
+    - Union By Rank
+      - while doing the set union, attach smaller tree on to bigger one and not vice-versa so that whiel finding out the ultimate parent of a vertex, path traversal remains smaller and not increased.
+      - to find out which tree is bigger, we add extra variable to every vertex, which say subtree(s) size of the vertex(how many children, called `rank` are attached to a node, so that while doing union, we connect lower rank vertex to higher).
+      - Example: let skew tree be 4-->3-->2-->1 and 5-->6, here we make 1 as parent of 5 and not vice versa, because 1 has 3 more children whereas 5 has only one. If we would have done vice-versa, then finding ultimate parent of 2,3,4 would have increased by one. 
+      ```cpp
+       // initially parent of all vertices is -1.
+      vector<int> parent(V,-1); 
+       // initially rank of all vertices is 1.
+      vector<int> rank(V,1); 
+      int find(int idx){
+        if(parent[idx]==-1) return idx;
+        // path compression optimization
+        return parent[idx] = find(parent[idx]);
+      }
 
-  - Directed graph is strongly connected if there exists a **directed path** b/w each pair of vertices.
-  - And components that are strongly connected are called Strongly connected Components of Graph.
-
-### Weakly Connected Graph
-
-  - Directed Graph which is not strongly connected, But If we remove the direction of edges and it becomes a Connected graph. then it is weakly connected.
+      void union(int idx1, int idx2){
+        int p1 = find(idx1);
+        int p2 = find(idx2);
+        if(p1!=p2) {
+          // union by rank optimization
+          if(rank[p1]<rank[p2]){
+              // means p1 has less chilren => 
+              parent[p1] = p2;
+              // children of p2 increases by rank(p1)
+              rank[p2]+= p1;
+          }else{
+              parent[p2] = p1;
+              rank[p1] += rank[p2]
+          }
+        }
+      }
+      ```
 
 ### Spanning Tree
-
   - concept for undirected Graphs only. Is it ?
-  - A graph can have multiple spanning trees
+  - A graph can have multiple spanning trees.
   - A graph can have multiple Minimum spanning trees but of equal lengths. because of minimum
-    - An unweighted graph(w=1 for every edge) has multiple MSTs of length #nodes-1
+    - Example: An unweighted graph(w=1 for every edge) has multiple MSTs of length (#nodes-1)
 
-### MST
-
-  - Prims and Kruskal's Algorithms
-  - `Kruskal's Algorithms (For Undirected Graph)`
-    - Greedy Algo, `Complexity O(E*logE)` ; as E = V^2 => logE = 2LogV => `Complexity O(ElogV)`
-    - It Picks Edges one by one
-    - Uses `Union Find` Data structure (DSU : Disjoint Set Union)
-    - `Sorts edges` in non-decreasing order by weight
-    - Pick the edge(u---> v) if it is not forming a cycle. i.e u and v belong to different sets.
-  - `Prim's Algorithm (For Undirected Graphs)` O(ElogV)
-    - Used Min Heap.
-    - Also a Greedy Approach.
-    - It Picks Vertices one by one. and update the neighbor distance if the distance is less than already assigned. Initially, all are infinity.
-
-### DSU
-
-  - Find and Union with optimization
-    - Path Compression
-    - Union By rank
-
-### Properties of Spanning trees(ST)
-
-  - #edges in MST = V-1.
+### Properties of Spanning trees(ST)/MST
+  - #edges in ST = V-1.
   - Spanning Trees is maximally acyclic => If we add one more edge to ST, the graph will have a cycle.
   - Spanning Trees is minimally connected => If we remove one edge from ST, graph will become disconnected.
   - There may exist many ST of same weight.
@@ -156,7 +215,29 @@
   - Cycle Property: For any Cycle C in a graph, if the edge weight is larger than all other edges in C. Then that edge cannot be a part of MST.
   - Min-cost-edge : If the minimum weighted edge in Graph is Unique, Then it will always belong to MST.
 
-### Shortest Distance
+### Finding MST
+
+  - Prims and Kruskal's Algorithms
+  - `Kruskal's Algorithms (For Undirected Graph)`
+    - Greedy Algo, `Complexity O(E*logE)` ; as E = V^2 => logE = 2LogV => `Complexity O(ElogV)`
+    - `space complexity: O(V+E)`, 
+      - O(V) to maintain rank and parent array in union find.
+      - and O(E) to store and sort edges by weight.
+    - It Picks Edges one by one
+    - Uses `Union Find` Data structure (DSU : Disjoint Set Union)
+    - `Sorts edges` in non-decreasing order by weight
+    - Pick the edge(u---> v) if it is not forming a cycle. i.e u and v belong to different sets.
+  
+  - `Prim's Algorithm (For Undirected Graphs)` O(ElogE) = O(ElogV)
+    - Uses Min Heap/set to find minimum of edge weights.
+    - `space complexity: O(V+E)`, 
+      - O(E) to maintain heap. 
+      - and O(V+E) to maintain graph.
+    - Also a Greedy Approach.
+    - It starts from source vertex, add respective edges into set, find one with minimum weight(selected-edge) and add to MST, further add edges of selected-edges-end-vertex into set and so on(if set gives an edge whose endpoints are already covered into MST, we leave that edge, because if we choose that edge, it will create cycle).
+  - Prim's algorithm is significantly faster in the limit when you've got a really dense graph with many more edges than vertices. Kruskal performs better in typical situations (sparse graphs) because it uses simpler data structures and sorts edge list.
+
+### Shortest Distance Algorithms
   - _Single Source Shortest Path (SSSP)_
     - *BFS Algortihm*
       - helps in finding the shortest path b/w u and v in an `unweighted` Graph.
@@ -176,18 +257,48 @@
         for k(0,V):
           for i(0,V):
             for j(0,V):
-  *            dist[i][j] = min(dist[i][j], dist[i][k] + dist[k][j]); 
+              dist[i][j] = min(dist[i][j], dist[i][k] + dist[k][j]); 
       ```
 
+### MultiSource BFS
+
+1. push all the sources into queue and do the BFS.
+2. Used when need to find the shortest distance from multiple points (feels like spreading of virus to neighbours one at time.).
+
+### 0-1 BFS
+
+1. uses deque
+
+## Articulation Points(CutPoint) and Bridges
+
+- Discovered Time
+- Lowest Time
+- Edge is Bridege: If lowestTime[child] > DiscoveredTime[currentNode]
+- vertex is a cutpoint: If lowestTime[child] >= DiscoveredTime[currentNode]
+  - Special Case: Root is cutpoint, if number of child in a DFS tree of graph is > 1.
+
+### Topological sorting
+
+  - Works for DAG
+  - via BFS (Kahn's Algorithm) - remove the node with indegree 0. keep doing it.
+  - via DFS - Save the nodes when none of its neighbors remained to be visited. print output in reverse order.
+    - can save in a list and use push_front to save the node(basically appendToHead). and then print the list.
+    - can save it in the stack as then print the stack.
+
+### Strongly Connected Digraphs(Connectivity in Directed Graph)
+
+  - Directed graph is strongly connected if there exists a **directed path** b/w every pair of vertices.
+  - And components that are strongly connected are called Strongly connected Components of Graph.
+  - Strongly component <=> Directed Cycle.
+  - Condensed Connected Graph
+
+### Tree
+ 
 ### *E*ulerian path
   - a path that covers every and all *e*dges exactly once. 
 
 ### Hamiltonian path
   - a path that covers every and all vertices exactly once. 
-
-### Various other techniques
-  - MultiSource BFS
-  - 0-1 BFS
 
 ### Later
 
@@ -195,4 +306,8 @@
 - Binary Lifting
 - Euler Tour
 - Network Flow
-- Bridges and Articualtion Points
+
+
+### Weakly Connected Graph
+
+  - Directed Graph which is not strongly connected, But If we remove the direction of edges and it becomes a Connected graph. then it is weakly connected.
