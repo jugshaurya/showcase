@@ -131,26 +131,7 @@
     - (`O(nlogn) in time and O(n) in space`)
     - (`Not Inplace`)
     - used in _External Merge Sorting_ [no need to bring complete array at a time to sort, can divide the array into chunks that can fit into RAM, and sort individually][k-way merge is performed here.] [merging k sorted arrays in one go.][merge sort uses 2-way merge]
-  - **Quick Sort** O(nlogn)
-    - (Divide and Conquer Algorithm),
-    - Inplace, if no stack space is considered as used in recursion, otherwise not-inplace.
-    - `Stable`, as in partition function, the same elements(If a1,a2; a1==a2 is the order) then if a1 is swapped compared with pivot, then a2 will also be swapped with pivot and since a1 comes first, swapped first => placed first and before a2.
-    - In the worst case call stack can take up to n calls, quicksort is O(n) space-wise. `conclusion: space is O(n)`, because of stack space.
-    - Tail recursive hence is more optimized for complier as the compiler can do tail call elimination and perform code optimization.
-    - Worst case: Array already sorted and we are taking pivot as the first element.
-      - T(n) = T(n-1)+n = O(n^2)
-    - Best case: when pivot always lends in the middle.
-      - T(n) = 2T(n/2)+n = O(nlgn)
-    - Almost best/worst case or rest of the cases:
-      - Let partition happens like n/10 and 9n/10 [10% and 90% split].
-      - T(n) = T(n/10)+T(9n/10)+n
-      - Solvin gby recursion tree we get T(n)= O(n\*logn) [logn with base 10/9].
-      - **Important**: `Only in one case Quicksort goes to n^2`.
-      - `Even if we have n/100 and 99n/100 [1% and 99% split]split. It will still be nlogn.`
-    - Worst case O(n^2), the chance of happening that case can be reduced using randomized QuickSort.
-      - Randomization can be added in picking the pivot element rather than first everytime.
-      - Other can be randomly shuffle the input array. chance of the array remaining sorted is close to 0 after the shuffling.
-      - but since there is still a very very small chance of happening the scenario. The worst case remains O(n^2) but now with lower probability.
+  
   - **Counting Sort**
     - O( n + range_of_numbers), made stable by keeping cumulative count of elements <= the ith element in the original array.
     - **not a comparison based**, **not inplace**, extra O(n+k) space, k for counting occurrences, and n for output array which will then be copied to the original array.
@@ -170,7 +151,28 @@
       - T(n) = O( k _ logn _ n) = O(nlogn)
 
 - **Unstable Sort**
-
+  - **Quick Sort** O(nlogn)
+    - (Divide and Conquer Algorithm),
+    - Inplace, if no stack space is considered as used in recursion, otherwise not-inplace.
+    - `Not Stable`, as in partition function, the same elements(If a1,a2; a1==a2 is the order) then if a1 is swapped compared with pivot, then a2 will also be swapped with pivot and since a1 comes first, swapped first => placed in last and then placing a2 before a1(as filling from back).
+    - However, Stable version exists for Quicksort, see wikipedia
+    - In the worst case call stack can take up to n calls, quicksort is O(n) space-wise. 
+    - `space is O(n)`, because of stack space.
+    - Tail recursive hence is more optimized for complier as the compiler can do tail call elimination and perform code optimization.
+    - Worst case: Array already sorted and we are taking pivot as the first element.
+      - T(n) = T(n-1)+ n = O(n^2)
+    - Best case: when pivot always lends in the middle.
+      - T(n) = 2T(n/2)+ n = O(nlgn)
+    - Almost best/worst case or rest of the cases:
+      - Let partition happens like n/10 and 9n/10 [10% and 90% split].
+      - T(n) = T(n/10)+T(9n/10)+n
+      - Solving by recursion tree we get T(n)= O(n\*logn) [logn with base 10/9].
+      - **Important**: `Only in one case Quicksort goes to n^2`.
+      - `Even if we have n/100 and 99n/100 [1% and 99% split]split. It will still be nlogn.`
+    - Worst case O(n^2), the chance of happening that case can be reduced using randomized QuickSort.
+      - Randomization can be added in picking the pivot element rather than first everytime.
+      - Other can be randomly shuffle the input array. chance of the array remaining sorted is close to 0 after the shuffling.
+      - but since there is still a very very small chance of happening the scenario. The worst case remains O(n^2) but now with much lower probability.
   - **Heap Sort**
     - θ(nlogn) in all cases (best, worst, average)
     - There is one case where it is O(n), when almost-all or all elements are the same, heapify becomes O(1), hence O(n).
@@ -185,7 +187,6 @@
   - use selection sort where writing to memory(swaps) is a concern over insertion sort.
 
 - Question: can there be nay comparison based sorting algorithm which is O(n)?.
-
   - Ans: No, Since we have to make comparisons and the total number of arrangements possible is n!, we make a binary decision tree of elements where leaf nodes are all the n! arrangements. A binary tree of height h has 2^h-1 nodes. and 2^(h-1) leaf nodes.
   - Since not all arrangement will arrive at same height. leaf nodes are less than n! =>
     n! <= 2^(h-1)  
@@ -234,7 +235,7 @@
 ## Tree
 
 - height 0 is root=NULL
-- height starts from 1, level from 1, depth from 0 (follow this convention) => Level starts from 1, the height of the tree is the maximum level, depth of a node is always level of the node - 1
+- height starts from 0, level from 1, depth from 0 (follow this convention) => the height of the tree is the maximum depth of all nodes.
 - depth starts from the top. root's depth 0, root-children depth 1, and so on..
 - depth is the number of edges between the root to that node.
 - internal node = nodes that are not leaf nodes.; the root is also an internal node.

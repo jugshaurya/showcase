@@ -330,23 +330,23 @@ class priority_queue;
       - Total = summation(2^(h-1) * h) => AGP. = 2+ n*(logn-1). = O(nlogn). Solved by hand.
     - `Bottom-up Approach`
     - This approach is better as the time complexity to build heap is O(n). It builds heap using a bottom-up approach which is O(n).
-      - It does it as: Creating an array and putting all array elements in it. Then going backward from last internal node(floor(n/2)) and calls heapify(i).
+      - It does it as:  going backward from last internal node of array (floor(n/2)) and calls heapify(i).
       - Proof: Let Tree is Perfect tree, which is also a CBT right? Yes. Every Perfect tree is a CBT.
       - => all internal nodes are till height h-1. and all leave nodes are at height h. If we look what we are doing.
       ```cpp
         /* Code:  */
         for every node from floor(n/2) to 1:
-        heapify(node)
+          heapify(node)
       ```
       - We can say for nodes at height h-1 (#nodes = 2^(h-2); assuming heights start from 1.). We call heapify at max 1 time only. 
       - for nodes at height h-2(#nodes = 2^(h-3)). We call heapify at max 2 times only.  and so on.
       - worst case Time will be 2^(h-2) + [2^(h-3)]*2 + 2^(h-4)*3 + .... = 2^(h-2) * (1+ 2/2^1 + 3/2^2 + 4/2^3 + ...)
       - Also we know total number of nodes = n = 2^h - 1 and (1+ 2/2^1 + 3/2^2 + 4/2^3 + ...) is approximately 3.
       - Hence, Complexity is O(n).
-    - earlier approach of pushing elements one by one is costlier and it will be O(nlogn) (logi being for each insertion), similar when printing heap, nlogn time.
+    - Approach of pushing elements one by one is costlier and it will be O(nlogn) (logi being for each insertion), similar when printing heap, nlogn time.
 - In CBT. total number of internal nodes are floor(n/2)
 - It also implies leaves start from the floor(n/2) + 1 and go till n. 
-- Custom Sorting in PQ: Have to use Comparotr class/struct and implement () opearator
+- Custom Sorting in PQ: Have to use Comparator class/struct and implement () opearator
   ```cpp
     struct PairCmp {
       bool operator()(Pair a , Pair b) {

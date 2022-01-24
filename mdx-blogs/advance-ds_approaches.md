@@ -299,6 +299,12 @@
   - `(n>>i) & 1` => use this one. 
   - `n & (1<<i)` => if i>32, then `1<<i` will not give correct result, use `1LL<<i` instead if want to use this expression only.
   
+### Linked List
+  - The Diff-Pointer Technique (Finding Difference in length of LLs using pointers)
+    - eg: Find intersection node of LL.
+  - The Slow-and-Fast-pointer Technique 
+    - eg: Find middle node of LL.
+
 #### Others
 
 - Segment Trees

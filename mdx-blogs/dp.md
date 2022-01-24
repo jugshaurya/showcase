@@ -1,10 +1,10 @@
 ## Dynamic Programming
 
 - All about remembering the Past.
-- Optimal Substructure
+- `Optimal Substructure`
   - Can express bigger problem in small sub-problems of same type (Recurrence Relation).
   - This property is also available in Divide and Conquer, all recursion problems.  
-- Overlapping Subproblem
+- `Overlapping Subproblem`
   - This property is the giveaway that given problem is a DP Problem.
   
 - 💎 - Important
@@ -30,6 +30,35 @@
     int t; cin>>t; while(t--) solve();
   }
 ```
+
+
+
+### General structure of Dp functions
+----------
+
+```cpp
+int dp[N][M]; // dp array
+// function with state and constraints
+// In knapsack, 
+// form state:  the index we are currently working in our problem.
+// constraint state:  W, we cannot go above bags Weight.
+function rec (<form state(s)>, <constraint state(s)>){ 
+  // Pruning cases
+  // Base cases
+  // cache check
+  // recursive code and computation
+  // save and return
+}
+```
+
+- Note:
+  - Time complexity of DP problems = `#states * (1 + Average cost of transitions)`
+- Transitions means number of recursive calls.
+- Cost of Transition = extra time taken besides recusive calls.
+- #states is basically dp array size.
+
+- Note2: 
+  - In DP problems, we need to think/practise on finding states(both form and constraints) and transitions needed to solve the problem.
 
 ### 1-D DP
 ----------
@@ -69,3 +98,24 @@
   - Min Coin Change ✔ is a different problem as: there here we required to find the number of ways to make change, out of which one is the minimum answer and that was the min coin change problem.
 
 
+
+- #ways to get change of n, withour permutations
+  - dp(i, taken) = dp(i-taken, taken) + dp(i, taken + 1);
+- Maximum subarray sum
+  - dp(ending_at_i) = arr[i] + max(0, dp(i-1));
+- Knapsack
+  - 0/1
+  - Fractional Knapsack
+  - Colourful Knapsack
+
+- LIS
+  - n^2
+  - nlogn approach [** To be Done]
+
+- LCS with one array having only disctinct elements
+  - reduces to LIS
+- General LCS 
+  - O(n^2)
+
+- Selecting items from either ends
+  - dp(i,j)
