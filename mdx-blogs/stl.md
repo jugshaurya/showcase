@@ -406,7 +406,6 @@ class priority_queue;
 - `No Duplicates` are stored.
 - All begin() and end() access containers can use short for-loop(`for (auto &x: set_name)`) for printing
 - as well as for loop with iterators.
-
 ```cpp
   // Set for custom datatypes
   struct Person{
@@ -423,6 +422,8 @@ class priority_queue;
     cout<<person.name<<endl;
   }
 ```
+- **Imp:** Set can not update an element. It have to delete the old val and insert the new val. let say set already has pair<40,30>, now i want to change value to <40,100>. Then i have to find pair<40,30> using auto it = set.find({40,30}), erase it set.erase(it).and then insert the new val set.insert({40,100});
+
 
 - Application
   - Store a stream of data in a sorted way.

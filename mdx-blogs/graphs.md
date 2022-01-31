@@ -246,10 +246,10 @@
     - *Dijkstra's Algorithm*
       - we try to fix the distances we can from source.
       - (fails on -ve weighted cycle)
-    - *Bellman's Ford Algorithm*
+    - *Bellman's Ford Algorithm* O(V*E)
       - relax all the edges |V| -1 number of times.
   - _All Pair Shortest Path(APSP)_
-    - *Floyd Warshall Algorithm*
+    - *Floyd Warshall Algorithm* O(V^3)
       - requires adacency matrix only.
       - fills the 2D-distance matrix via a dp solution.
       - initialize matrix with large values , Infinity.

@@ -134,6 +134,13 @@
 
 	p =  marks // valid
 	marks = p // error
+
+	// this concept is differnt for character/char array(i.e. char*)
+	char val='A';
+	cout<<&val<<endl; // prints A rather than adress of A, 
+	// it is because of operator overloading of <<, 
+	// we can still print adress of char using typecasting of char adress (char*) to void*
+	cout<<(void*) &val <<endl; // prints address here.
 ```
 
 ## 2d array
@@ -247,6 +254,7 @@ int main() {
 	char name[] = {'s', 'h', 'a', 'u', 'r', 'y', 'a', '\0'}; // recommended
 	cout<<name; // more predictable or else do like
 	char name[] ="shaurya" // complier will automatically add '\0'
+
 
 ```
 

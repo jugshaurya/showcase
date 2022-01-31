@@ -305,6 +305,28 @@
   - The Slow-and-Fast-pointer Technique 
     - eg: Find middle node of LL.
 
+### Trie
+- A trie (pronounced as "try") or prefix tree is a tree data structure used to efficiently store and retrieve keys in a dataset of strings.
+- Use for fast re`trie`val of data or Autocompletion of words.
+- can use hashtable instead of trie to store all words with prefixes as key
+```
+  - words = {"bad" , "ban" , ......}
+  - let each word is atmost m words(let say 20) long and we have n words. 
+  hashtable:-
+  key |  values
+  b   |  [bad,ban]
+  ba  |  [bad,ban]
+  bad |  [bad]
+  ban |  [ban]
+
+  space complexity Ω(m*n)
+  Insertion = Deletion = O(m) // inserting for each prefixes
+  Searching/retrieval = O(1) for any prefix.
+```
+- But we use trie (26-ary tree) because common prefixes are inserted into trie only once, saving a lot of space
+- Space complexity is much less than O(m*n)
+- Searching/iseriton/deletion  = O(m) = O(length of word) = O(20) = constant.
+- spacing is better, rest is almost constant => we use tries instead.
 #### Others
 
 - Segment Trees

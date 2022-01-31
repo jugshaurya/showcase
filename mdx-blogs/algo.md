@@ -105,6 +105,18 @@
   - if c = n!, Complexity is O(n!)
   - Why? beacuse n<sup>log_a[base_b]</sup> will always be less than n!, 2^n.
 
+## Master's Theorem for subtract and conquer recurrences(**with Trick**)
+
+`T(n) = aT(n-b) + c`
+
+- where c can be anything [O((n<sup>k</sup>)*(log<sup>p</sup>(n)))]
+- and c is a Polynomial Function. means not like n/logn.
+
+- **Steps/Trick:**
+  - If a<1, T(n) = c
+  - If a=1, T(n) = c*n
+  - If a>1, T(n) = c*a<sup>(n/b)</sup>
+
 #### Extended Masters Theorem
 
 - Google it, No need to learn it!
@@ -436,15 +448,8 @@
 
   ```
 
-## LRU Cache
-
-- One of the Page Replacement Strategies/Algo.
-- Page fault occurs in the Virtual memory concept due to lack of availability of frames in the main memory.
-
-- Others are: FIFO, LFU, Optimal
--
-
-## NP-hard and NP-complete Problems
+## P, NP-hard and NP-complete Problems
+- P problems are those whose solution exists and are solvable in polynomial time.
 - NonPolynomial-Hard Problems are those which we don't yet know, if there exist an algorithm that bounds the solution to that problem in polynomial time.
 - NP Complete problems means solution to the given problem is the combination of some polynomial time solutions which makes the original problems solved in polynomial time. OR we can say, original problem is reducable to the problem that we know is solvable in polynomial time.
 
@@ -454,3 +459,10 @@
 - Is it true? I think so
   - we cannot remove/find a specific element from the heap. can always only remove min only if it is a minheap? Ans. True, pq dont have find,begin,erase functions.
   - If we want sorted order and also want to remove a specific element in the future. we use a set/multiset.
+  - set(BST STL) vs heap
+    - set and heap both store elements in order.
+    - but in heap we can only remove/erase top most elements, thus `don't` have pq.find() in it.
+    - whereas in set we can erase-and-add(i.e update) any element irrespective of index of elements in set using s.find() , s.erase(), s.insert().
+    - That is why we uses set, instead of minheap in Dijkstra for C++.
+
+
