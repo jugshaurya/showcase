@@ -457,12 +457,15 @@
 
 - Look for circular Queue, rear, front, emoyt or full conditions. I don't get those.
 - Is it true? I think so
-  - we cannot remove/find a specific element from the heap. can always only remove min only if it is a minheap? Ans. True, pq dont have find,begin,erase functions.
+  - we cannot remove/find a specific element from the heap. can always only remove min only if it is a minheap? 
+    - Ans. True, pq dont have find,begin,erase functions.
   - If we want sorted order and also want to remove a specific element in the future. we use a set/multiset.
   - set(BST STL) vs heap
     - set and heap both store elements in order.
     - but in heap we can only remove/erase top most elements, thus `don't` have pq.find() in it.
     - whereas in set we can erase-and-add(i.e update) any element irrespective of index of elements in set using s.find() , s.erase(), s.insert().
     - That is why we uses set, instead of minheap in Dijkstra for C++.
+    - In general, in C++ , whenever we are required heap functionality and we also want to remove non-min/max element, min element is at set.begin() and max at set.rbegin();
+    - => **always use set/Multiset.** 
 
 

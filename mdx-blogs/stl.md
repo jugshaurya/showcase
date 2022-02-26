@@ -118,7 +118,13 @@ int main(){
 - Initialized with default values
 - Can easily copy a vector to another via v1 = v2
 - Passed by value to function. so if you want to modify the vector make sure to use & and make the vector pass by reference.
-- v.size() returns a unsigned interger. So if size is 0 and we do v.szie()-1, it will be 0-1 = All 1s in unsigned. so always do `int(v.size())` to get -1 not All 1s in unsigned interger which becomes 2^31-1 or 2^63-1.
+- **NOTE:** 
+  - v.size() returns an unsigned integer. 
+  - So if `size is 0` and we do `v.size() - i`, it will be 0 - i. 
+  - => a very big positive number( >10^9 in 32 bit and >10^18 in 64 bit) 
+  - => loop runs for a very long time. 
+  - so always do `int(v.size())` to get 0-1 = -1 and not All 1s in unsigned interger which becomes 2^31-1 or 2^63-1.
+  - or dont subtract anything from v.size() at all.
 
 ```cpp
 	vector<int> v;
@@ -406,6 +412,13 @@ class priority_queue;
 - `No Duplicates` are stored.
 - All begin() and end() access containers can use short for-loop(`for (auto &x: set_name)`) for printing
 - as well as for loop with iterators.
+
+```cpp
+  // we can initialize the set with vector
+  vector<int> v={1,3,5,67,8,3,2};
+  set<int> s(v.begin(), v.end()); 
+```
+
 ```cpp
   // Set for custom datatypes
   struct Person{
@@ -580,8 +593,9 @@ bool mycomp(pair a, pair b ){
 - int rand() // cstdlib 
 - random_shuffle(v.begin(), v.end()) // cstdlib
 - srand(time(NULL)) // time in ctime
-- prev_permutation(container.begin(), container.end()) // O(n)
-- next_permutation(container.begin(), container.end()) // O(n)
+- bool prev_permutation(container.begin(), container.end()) // O(n)
+- bool next_permutation(container.begin(), container.end()) // O(n)
+- bool is_sorted(container.begin(), container.end()) // O(n)
 
 **Note: Use member functions of the container if available rather than using global ones. There are more optimized.**
 

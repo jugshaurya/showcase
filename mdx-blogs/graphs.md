@@ -90,7 +90,7 @@
   - **using DFS:** we look for the back edge, which means while doing DFS we check if an adjacent vertex is already available in recursion stack or not (maintains a boolean array for what we have pushed to stack till now)(or we can use visited array for same, 0 means not visited, 1 means visited but not in stack, 2 means visited and in the stack).
   - `Conclusion: check for backedge,i.e. Is vertex already in recursion-stack?`
   - same can also work in undirected graphs(above case.) But Leave parent vertex as well(of course).
-  - **using BFS:** `TODO`? Is it possible via BFS?
+  - **using BFS:** using Kahn's Algo for topological sorting. If after doing kahn's algo onto graph(maybe disconnected). if some vertex is still not visited => cycle exist.(see below in the page for more clarity).
   - Using DSU: 
     - while making the graphs, find if any edge's both vertices belongs to same set or not.
 
@@ -240,16 +240,18 @@
 ### Shortest Distance Algorithms
   - _Single Source Shortest Path (SSSP)_
     - *BFS Algortihm*
-      - helps in finding the shortest path b/w u and v in an `unweighted` Graph.
+      - helps in finding the shortest path b/w u and v in an `unweighted or equal weighted` Graph.
       - Works for both directed and undirected graphs.
         - Shortest path b/w u and v in a weighted Graph is done using Dijkstra, which is similar to BFS, rather than a queue, it uses a priority queue/ordered_set to pick the node with minimum weight from current node out of all the available options.
-    - *Dijkstra's Algorithm*
+    - *0-1 BFS*
+      - Find single source shorted paths to all nodes with edge weights of 0 or 1.
+    - *Dijkstra's Algorithm* O((V+E)*logV) = O((V+E)*logE)
       - we try to fix the distances we can from source.
       - (fails on -ve weighted cycle)
     - *Bellman's Ford Algorithm* O(V*E)
       - relax all the edges |V| -1 number of times.
   - _All Pair Shortest Path(APSP)_
-    - *Floyd Warshall Algorithm* O(V^3)
+    - *Floyd Warshall Algorithm* O(V*V*V) = O(V^3)
       - requires adacency matrix only.
       - fills the 2D-distance matrix via a dp solution.
       - initialize matrix with large values , Infinity.
@@ -279,11 +281,69 @@
 
 ### Topological sorting
 
-  - Works for DAG
-  - via BFS (Kahn's Algorithm) - remove the node with indegree 0. keep doing it.
-  - via DFS - Save the nodes when none of its neighbors remained to be visited. print output in reverse order.
+  - Works only for DAG
+  - via **BFS (Kahn's Algorithm)** - remove the node with indegree 0. keep doing it.
+    - Kahn is useful in the cases where we are finding topological in directed `cyclic` graph.
+    - because nodes present in a directed cycle will never have indegress==0 and hence it will not go into the queue. and hence remains unvisted. => we can detect the nodes that are a part of cycle. and if some node is univisted that means there exist atleast a cycle in graph. 
+    ```cpp
+      int n,m;
+      vector<int> gr[100100];
+      int indegree[100100];
+      vector<int> topo;
+
+      void kahn(){
+        queue<int> q;
+        for(int i=0;i<n;i++){
+          if(indegree[i]==0) q.push(i);
+        }
+
+        while(!q.empty()){
+          int f = q.front();
+          q.pop();
+          topo.push_back(f);
+          for(auto v: gr[f]){
+            indegree[v]--;
+            if(indegree[v]==0) q.push(v);
+          }
+        }
+      }
+
+      void solve(){
+        cin>>n,m;
+        for(int i=0;i<n;i++){
+          int a,b;
+          cin>>a>>b;
+          gr[b].push_back(a)
+        }
+
+        for(int i=0;i<n;i++){
+          if(!vis[i]){
+            dfs(i);
+          }
+        }
+
+        bool isCyclePresent = false;
+        for(int i=0;i<n;i++){
+          if(!vis[i]){
+            isCyclePresent = true;
+          }
+        }
+
+        if(isCyclePresent) {
+          cout<<"Cycle Is Present";
+          return;
+        }
+
+        reverse(topo.begin(), topo.end());        
+      }
+
+    ```
+  - via **DFS** - Save the nodes when none of its neighbors remained to be visited. print output in reverse order.
     - can save in a list and use push_front to save the node(basically appendToHead). and then print the list.
     - can save it in the stack as then print the stack.
+  - Application of Topological sorting:-
+    - 1. Finding Lexiographically smallest Toppological ordering.
+      - Use Kahn's Algo but instead of queue, use priority queue/set.
 
 ### Strongly Connected Digraphs(Connectivity in Directed Graph)
 
