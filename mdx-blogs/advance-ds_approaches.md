@@ -135,6 +135,8 @@
       }
       ```
   - Euclid algo of subtraction - Time complexity is O(max(a,b)). If a=1 and b=n then it will run n times.
+    - The GCD of two integers may also be worked out by repeatedly replacing the larger of them by the difference of the two.
+    - This simpler version of Euclid's algorithm is less efficient than the usual one described above (using Euclidean division rather than mere subtraction) but it can be convenient in proofs and other theoretical arguments. 
     - Facts
       - If one is 0, ans is the other one.  
       - gcd of two numbers doesn't change if we update a larger number with the difference of two.
@@ -159,7 +161,7 @@
     - => gcd(A,B) divided (Ax+By) as well.
     - => gcd(A,B) divided (C) as well. -----(2)
     - => If (2) is not true, no integral solutions exist for above equation.
-
+    - solution of theses equation (1) are ` x = x' + (b/d)*t and y = y' - (a/d)*t`
 ### Extended Euclidean Algorithm O(log(min(a,b)))
   - It gives us the solution (x,y) such that `Ax  + By = gcd(A,B)` holds
     - x and y will always have integral solutions (Beacuse C = gcd(A,B) which obviously divided by gcd(A,B)).

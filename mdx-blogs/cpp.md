@@ -437,14 +437,14 @@ Note: `int+double= double, int-double=double, int/double=double, double/int=doub
 
 ## Polymorphism
 
-- Compile Time Polymorphism
+- Compile Time Polymorphism (static/early Binding)
   - `Function overloading`
   - `Operator overloading`
+  - `Default Arguments`
+- Runtime Polymorphism (Dynamic/late Binding)
   - `Function overriding
   - `Operator overriding
-  - `Default Arguments`
-- Runtime Polymorphism
-  - `virtual functions`: so to call function based on the object rather than pointer.
+  - `virtual functions`: so to call function based on the object rather than pointer.(A way to achieve function overriding).
   - Happens when we have a **baseclass pointer pointing to a subclass object. (Vehicle\* v = new car)**, btw vice-versa is not possible.
   - let both Vehicle and Car have a print function.
   - v -> print() will call vehicles print, not car prints.
