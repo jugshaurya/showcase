@@ -419,24 +419,20 @@ Note: `int+double= double, int-double=double, int/double=double, double/int=doub
 
 - Use when we have many entities like working with database(models), making banking software, designing bank system etc.
 - **Concepts**
-
   - Class
   - Object
-  - Abstracting(APIs)
+  - Abstraction (APIs)
   - Data Hiding (Access Modifiers)
   - Encapsulation
   - Polymorphism
-  - Inheritance, Composition. - 4 differnet special fns that are always available in a class - Constructor - Destructor - Copy Constructor - Copy assignment operator
-
-    ```
-
-    ng
-    e.
-    - Book b;.
-    ```
+  - Inheritance, Composition. 
+	- 4 different special functions that are always available in a class 
+		- Constructor 
+		- Destructor 
+		- Copy Constructor 
+		- Copy assignment operator
 
 ## Polymorphism
-
 - Compile Time Polymorphism (static/early Binding)
   - `Function overloading`
   - `Operator overloading`
@@ -452,7 +448,7 @@ Note: `int+double= double, int-double=double, int/double=double, double/int=doub
   - Why? let employee is a baseclass and teacher, gardener, manager are baseclasses and each(base and sub) have a calculatesalary method. we want to store all salaries of different employees in an array.
   - since the array can only hold homogeneous values. we have to use `Employee* salaries[100]` we can push each object of base classes into it. and call calculatesalary() in a loop. it works only if calculatesalary is virtual in baseclass.
 
-## passing function to a function in cpp
+## Passing function to a function in cpp
 
 - pass bool (&fun)(int a, int b) as a parameter. It is basically a declaration of function + wrapping function name in braces. & is to avoid copy.
 

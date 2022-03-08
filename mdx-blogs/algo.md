@@ -369,12 +369,13 @@
 
 - Problems in which our solution deals/interact/talk with the online judge/problem-grader.
 - It requires to flush the output as soon as we want to print something on screen.
-- Generally, People uses ios::base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL); Which leads to storing the output in buffer and outputing on screen all together when program terminates.
+- Generally, People uses fast io,i.e. `ios::base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);` Which leads to storing the output in buffer and outputing on screen all together when program terminates.
 - It is fine for other problems which are not interacting with the judge. As this flushing in the end make our program faster.
 - But in Interactive problems we want to flush things. Hence we use `cout<<flush`; or `cout<<endl;` as `cout<<'\n'<<flush is equivalent to cout<<endl`;
 - That's why in other problems we uses '\n' instead of endl;
 - But here we need to use endl.
-- Conclusion: use endl instead of '\n' here.
+- Conclusion: **use endl instead of '\n' here and problem solution will become interactive**
+  - just comment out -> # define endl '\n'.
 
 - Links:
   - www.codeforces.com/gym/101021/problem/1/
