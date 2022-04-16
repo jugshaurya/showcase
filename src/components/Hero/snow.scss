@@ -1,3 +1,5 @@
+@use "sass:math";
+
 $snowColor: linear-gradient(213deg, #e9fa66 3%, #56b8ff 74%, #56b8ff 116%);
 
 // https://codepen.io/alphardex/pen/dyPorwJ + minor Modifications
@@ -23,8 +25,8 @@ $snowColor: linear-gradient(213deg, #e9fa66 3%, #56b8ff 74%, #56b8ff 116%);
     $random-x: random(1000000) * $width;
     $random-offset: random_range(-100000, 100000) * $width;
     $random-x-end: $random-x + $random-offset;
-    $random-x-end-yoyo: $random-x + ($random-offset / 2);
-    $random-yoyo-time: random_range(30000, 80000) / 100000;
+    $random-x-end-yoyo: $random-x + math.div($random-offset , 2);
+    $random-yoyo-time: math.div(random_range(30000, 80000) , 100000);
     $random-yoyo-y: $random-yoyo-time * 100vh;
     $random-scale: random(10000) * 0.0001;
     $fall-duration: random_range(10, 30) * 1s;

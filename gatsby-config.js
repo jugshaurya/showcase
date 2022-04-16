@@ -37,7 +37,7 @@ module.exports = {
       resolve: `gatsby-plugin-offline`,
       options: {
         // need to look out whether it caches inpage section or not else remove #stats
-        precachePages: [`/blogs/*`, `/#stats`],
+        precachePages: [`/#stats`], // TODO: add later `/blogs/*`,
       },
     },
     {
@@ -64,13 +64,13 @@ module.exports = {
         branch: `master`,
       },
     },
-    {
-      resolve: 'gatsby-source-medium-feed',
-      options: {
-        userName: '@shauryasinghal84', // Medium user name
-        name: 'MediumFeed', // GraphQL query AllMediumFeed
-      },
-    },
+    // {
+    //   resolve: "gatsby-source-medium-feed",
+    //   options: {
+    //     userName: "@shauryasinghal84", // Medium user name
+    //     name: "MediumFeed", // GraphQL query AllMediumFeed
+    //   },
+    // },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-styled-components`,
