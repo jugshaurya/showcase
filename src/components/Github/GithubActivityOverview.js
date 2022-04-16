@@ -1,5 +1,5 @@
 import React from 'react';
-// import renderHTML from 'react-render-html';
+import parse from 'html-react-parser';
 
 import renderContribSvg from './renderContribSvg';
 import { Icon } from '../css-in-js/shared';
@@ -49,14 +49,14 @@ const GithubActivityOverview = ({ githubContribSvg, githubInfo }) => {
   return (
     <GithubActivitySection>
       <ScrollableSvg>
-        {/* {renderHTML(
+        {parse(
           githubContribSvg
             .replace(/#ebedf0/g, '#222222')
             .replace(/#9be9a8/g, '#4fffa7')
             .replace(/#40c463/g, '#3DDC84')
             .replace(/#30a14e/g, '#008D41')
             .replace(/#216e39/g, '#00753b')
-        )} */}
+        )}
       </ScrollableSvg>
       <GithubActivities>
         <GithubActivity>
@@ -93,13 +93,13 @@ const GithubActivityOverview = ({ githubContribSvg, githubInfo }) => {
         </GithubActivity>
         <GithubActivity>
           <GithubGraph>
-            {/* {renderHTML(
+            {parse(
               renderContribSvg(
                 totalIssuePercentage,
                 totalCommitPercentage,
                 totalPRsPercentage
               )
-            )} */}
+            )}
           </GithubGraph>
         </GithubActivity>
       </GithubActivities>
