@@ -10,7 +10,7 @@ import BackIcon from '../../static/icons/back.svg';
 const BackToTopSection = () => {
   return (
     <BackToTop>
-      <BackLink to="#top">
+      <BackLink to="#navbar">
         Back to Top
         <Icon src={BackIcon} alt={'back Icon'} w="24" h="24" m={'0 0 0 10px'} />
       </BackLink>
