@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import CountUp from 'react-countup';
+import VisibilitySensor from 'react-visibility-sensor';
 
 import GithubActivityOverview from './GithubActivityOverview';
 import LatestPRs from './LatestPRs';
@@ -32,6 +33,18 @@ import PRIcon from '../../static/icons/PR.svg';
 import Lady from '../../static/lady.svg';
 import Boy from '../../static/boy.svg';
 import { motion } from 'framer-motion';
+
+const MakeCountUpWhenInView = ({ end }) => (
+  <>
+    <CountUp end={end} redraw={true} duration={2}>
+      {({ countUpRef, start }) => (
+        <VisibilitySensor onChange={start} delayedCall>
+          <span ref={countUpRef} />
+        </VisibilitySensor>
+      )}
+    </CountUp>
+  </>
+);
 
 const Github = () => {
   const [svg, setSvg] = useState('');
@@ -75,7 +88,14 @@ const Github = () => {
   } = stats;
 
   return (
-    <GithubSection id="stats">
+    <GithubSection
+      id="stats"
+      className="tertiary"
+      data-aos="fade-in"
+      data-aos-duration="9000"
+      data-aos-easing="ease-in-out-back"
+      data-aos-delay="50"
+    >
       <FloatingImage
         src={GithubBackground}
         alt={'Wallpaper'}
@@ -113,12 +133,12 @@ const Github = () => {
               Contributed to
             </GithubType>
             <Counter>
-              <CountUp start={0} end={totalContributedTo} duration={5} />
+              <MakeCountUpWhenInView end={totalContributedTo} />
             </Counter>
           </GithubAction>
           <GithubAction className="pr">
             <Counter>
-              <CountUp start={0} end={totalPRs} duration={5} />
+              <MakeCountUpWhenInView end={totalPRs} />
             </Counter>
             <GithubType>
               <Icon
@@ -143,12 +163,12 @@ const Github = () => {
               Stars
             </GithubType>
             <Counter>
-              <CountUp start={0} end={totalStars} duration={5} />
+              <MakeCountUpWhenInView end={totalStars} />
             </Counter>
           </GithubAction>
           <GithubAction>
             <Counter>
-              <CountUp start={0} end={totalIssues} duration={5} />
+              <MakeCountUpWhenInView end={totalIssues} />
             </Counter>
             <GithubType>
               <Icon
@@ -173,14 +193,19 @@ const Github = () => {
               Commits
             </GithubType>
             <Counter>
-              <CountUp start={0} end={totalCommits} duration={5} />
+              <MakeCountUpWhenInView end={totalCommits} />
             </Counter>
           </GithubAction>
         </GithubActions>
       </Container>
 
       <Container>
-        <GithubSvgSection>
+        <GithubSvgSection
+          data-aos="fade-in"
+          data-aos-duration="5000"
+          data-aos-easing="ease-in-out"
+          data-aos-delay="500"
+        >
           <GithubActivityOverview
             githubContribSvg={svg}
             githubInfo={{
@@ -192,7 +217,12 @@ const Github = () => {
             }}
           />
         </GithubSvgSection>
-        <WakatimeStats>
+        <WakatimeStats
+          data-aos="fade-in"
+          data-aos-duration="5000"
+          data-aos-easing="ease-in-out"
+          data-aos-delay="500"
+        >
           <Figure>
             <Embed src="https://wakatime.com/share/@jugshaurya/a750f08f-2404-4f77-8df8-849d0a8f4109.svg" />
           </Figure>

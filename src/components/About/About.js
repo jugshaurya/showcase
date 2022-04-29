@@ -30,7 +30,7 @@ import { motion } from 'framer-motion';
 
 const About = () => {
   return (
-    <section id="about" style={{ position: 'relative' }}>
+    <section id="about" style={{ position: 'relative', marginTop: '150px' }}>
       <Languages />
       <article className="languages" style={{ position: 'relative' }}>
         <AboutMe data-aos="fade-in">

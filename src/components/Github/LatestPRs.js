@@ -28,7 +28,21 @@ const LatestPRs = ({ userSelfPRs, userContribPRs }) => {
           // animate={{ x: -50 }}
         >
           <FloatingImage
-            style={{ transform: 'rotate(180deg)' }}
+            as={motion.img}
+            animate={{
+              x: 0,
+              y: [20, -20, 20],
+              borderBottom: '10px double #56b8ff',
+              rotate: 270,
+              opacity: 1,
+            }}
+            transition={{
+              type: 'spring',
+              damping: 10,
+              stiffness: 100,
+              duration: 2,
+              repeat: Infinity,
+            }}
             src={TriangleIcon}
             alt={'TriangleIcon'}
             t={['0', '0', '0', '0', '0', '0', '0']}
@@ -43,7 +57,21 @@ const LatestPRs = ({ userSelfPRs, userContribPRs }) => {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
-              <Logo>
+              <Logo
+                as={motion.div}
+                animate={{
+                  rotate: [10, -10, 10],
+                  y: [0, 0, 0],
+                  x: [-5, 5, -5],
+                }}
+                transition={{
+                  type: 'spring',
+                  damping: 10,
+                  stiffness: 100,
+                  duration: 2,
+                  repeat: Infinity,
+                }}
+              >
                 <Icon
                   src={pr.repository.owner.avatarUrl}
                   alt={'Organization'}
@@ -63,9 +91,27 @@ const LatestPRs = ({ userSelfPRs, userContribPRs }) => {
             </PRItem>
           ))}
         </PRList>
-        <PRList drag="x" dragConstraints={{ left: -50, right: 50 }}>
+        <PRList
+          as={motion.div}
+          drag="x"
+          dragConstraints={{ left: -50, right: 50 }}
+        >
           <FloatingImage
-            style={{ transform: 'rotate(180deg)' }}
+            as={motion.img}
+            animate={{
+              x: 0,
+              y: [20, -20, 20],
+              borderBottom: '10px double #56b8ff',
+              rotate: 180,
+              opacity: 1,
+            }}
+            transition={{
+              type: 'spring',
+              damping: 10,
+              stiffness: 100,
+              duration: 2,
+              repeat: Infinity,
+            }}
             src={TriangleIcon}
             alt={'TriangleIcon'}
             t={[0, 0, 0, 0, 0, 0, 0]}
@@ -80,7 +126,21 @@ const LatestPRs = ({ userSelfPRs, userContribPRs }) => {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
-              <Logo>
+              <Logo
+                as={motion.div}
+                animate={{
+                  rotate: [10, -10, 10],
+                  y: [0, 0, 0],
+                  x: [-5, 5, -5],
+                }}
+                transition={{
+                  type: 'spring',
+                  damping: 10,
+                  stiffness: 100,
+                  duration: 2,
+                  repeat: Infinity,
+                }}
+              >
                 <Icon
                   src={pr.repository.owner.avatarUrl}
                   alt={'Organization'}
@@ -102,6 +162,15 @@ const LatestPRs = ({ userSelfPRs, userContribPRs }) => {
         </PRList>
       </PRLists>
       <FloatingImage
+        as={motion.img}
+        animate={{ x: 0, y: [10, -10, 10] }}
+        transition={{
+          type: 'spring',
+          damping: 10,
+          stiffness: 100,
+          duration: 2,
+          repeat: Infinity,
+        }}
         style={{ transform: 'rotate(-10deg)' }}
         src={SwigglyBG}
         alt={'SwigglyBG'}

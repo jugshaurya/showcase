@@ -11,7 +11,7 @@
   z-index: 100;
   background-color: $twitterBlue;
   box-shadow: 0 0 20px  $twitterBlue ,0 0 60px  $twitterBlue,0 0 100px  $twitterBlue;
-  animation: colors 5s infinite;
+  animation: colors 3s infinite;
 }
 
 @keyframes colors {
@@ -32,7 +32,9 @@
   opacity: 0.2;
   transform: translate(-30%, -30%);
   border-radius: 50% ;
-
+  border-top-left-radius: 0;
+  // border-bottom-right-radius: 0;
+  
 }
 
 .curser-fixed-top-left{
