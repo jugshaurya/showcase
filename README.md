@@ -34,6 +34,8 @@ _🦄 Shaurya Personal Portfolio to showcase shaurya and his work at one place f
   - ✔ sass
   - ✔ styled-component
   - ✔ classnames - A simple JavaScript utility for conditionally joining classNames together.
+  - ✔ Framer Motion
+  - ✔ AOS
 
 - **Choice**: Using a combination of sass and styled component along with classnames.
 - Font Family: Gloria Hallelujah && Roboto Mono

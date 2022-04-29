@@ -21,6 +21,8 @@ import JSIcon from '../../static/icons/js.svg';
 import PythonIcon from '../../static/icons/python.svg';
 import CIcon from '../../static/icons/c.svg';
 
+import { motion } from 'framer-motion';
+
 const Languages = () => {
   return (
     <Article id="languages">
@@ -35,11 +37,16 @@ const Languages = () => {
       <Container>
         <Cards>
           <Card
+            as={motion.div}
+            animate={{ x: 0, y: [10, -10, 10] }}
+            transition={{
+              type: 'spring',
+              damping: 10,
+              stiffness: 100,
+              duration: 2,
+              repeat: Infinity,
+            }}
             className="tertiary"
-            data-aos="slide-right"
-            data-aos-duration="7000"
-            data-aos-easing="ease-in-out-back"
-            data-aos-delay="50"
           >
             <FloatingImage
               src={CardPattern3}
@@ -60,7 +67,7 @@ const Languages = () => {
             />
             <CardContent>
               <CardTitle color={Styles.g_blackOrange}>
-                Secondary Language
+                Primary Language
               </CardTitle>
               <CardMain>
                 <Icon src={CIcon} alt="C++ Icon" w="64" h="64" m="0 10px 0 0" />
@@ -80,7 +87,7 @@ const Languages = () => {
             </CardContent>
           </Card>
           <Card
-            className="secondary"
+            className="tertiary"
             data-aos="fade-in"
             data-aos-duration="9000"
             data-aos-easing="ease-in-out-back"
@@ -129,7 +136,7 @@ const Languages = () => {
             </CardContent>
           </Card>
           <Card
-            className="primary"
+            className="secondary"
             data-aos="slide-left"
             data-aos-duration="11000"
             data-aos-easing="ease-in-out-back"
@@ -153,7 +160,7 @@ const Languages = () => {
               ]}
             />
             <CardContent>
-              <CardTitle color={Styles.g_blueRed}>Primary Language</CardTitle>
+              <CardTitle color={Styles.g_blueRed}>Secondary Language</CardTitle>
               <CardMain>
                 <Icon
                   src={JSIcon}

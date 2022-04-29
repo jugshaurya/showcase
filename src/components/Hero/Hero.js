@@ -65,6 +65,15 @@ const Hero = () => {
       />
 
       <FloatingImage
+        as={motion.img}
+        animate={{ x: 0, y: [20, -20, 20] }}
+        transition={{
+          type: 'spring',
+          damping: 10,
+          stiffness: 100,
+          duration: 2,
+          repeat: Infinity,
+        }}
         src={BoxPattern}
         alt={'Box Pattern'}
         t={['350px', '400px', '400px', '220px', '180px', '180px', '180px']}

@@ -1,0 +1,45 @@
+@import './../styles/global.scss';
+
+.cursor{
+  width: 20px;
+  height: 20px;
+  // border: 2px solid $blue;
+  position: absolute;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 100;
+  background-color: $twitterBlue;
+  box-shadow: 0 0 20px  $twitterBlue ,0 0 60px  $twitterBlue,0 0 100px  $twitterBlue;
+  animation: colors 5s infinite;
+}
+
+@keyframes colors {
+  0%{
+    filter: hue-rotate(0deg);
+  }
+  100%{
+    filter: hue-rotate(360deg);
+  }
+}
+
+.cursor:before{
+  content:'';
+  position: absolute;
+  background-color: $twitterBlue;
+  width: 50px;
+  height: 50px;
+  opacity: 0.2;
+  transform: translate(-30%, -30%);
+  border-radius: 50% ;
+
+}
+
+.curser-fixed-top-left{
+  position: fixed;
+}
+.curser-fixed-top-right{
+  position: fixed;
+  top: 15%;
+  right: -1%;
+}

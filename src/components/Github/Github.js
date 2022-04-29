@@ -31,6 +31,7 @@ import StarsIcon from '../../static/icons/stars.svg';
 import PRIcon from '../../static/icons/PR.svg';
 import Lady from '../../static/lady.svg';
 import Boy from '../../static/boy.svg';
+import { motion } from 'framer-motion';
 
 const Github = () => {
   const [svg, setSvg] = useState('');
@@ -218,6 +219,15 @@ const Github = () => {
           zi={[-2]}
         />
         <FloatingImage
+          as={motion.img}
+          animate={{ x: 0, y: [20, -20, 20] }}
+          transition={{
+            type: 'spring',
+            damping: 10,
+            stiffness: 100,
+            duration: 2,
+            repeat: Infinity,
+          }}
           src={Lady}
           alt={'Lady'}
           t={['15%', '5%', '5%', '15%', '15%', '15%', '15%']}
@@ -227,6 +237,15 @@ const Github = () => {
           o={['1', '1', '1', '1', '0', '0', '0']}
         />
         <FloatingImage
+          as={motion.img}
+          animate={{ x: 0, y: [20, -20, 20] }}
+          transition={{
+            type: 'spring',
+            damping: 10,
+            stiffness: 100,
+            duration: 2,
+            repeat: Infinity,
+          }}
           src={Boy}
           alt={'Boy'}
           b={['10%', '10%', '5%', '10%', '10%', '10%', '10%']}

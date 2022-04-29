@@ -3,7 +3,7 @@ import * as Styles from '../css-in-js/theme';
 import {
   Container,
   Flex,
-  rotate,
+  rotateAndColor,
   Icon,
   FloatingImage,
 } from '../css-in-js/shared';
@@ -36,11 +36,11 @@ export const RotateBox = styled.div`
   height: 303px;
   top: 600px;
   left: 40px;
-  background: ${Styles.green};
+  background: ${Styles.g_blueGreen};
   border-radius: 39px;
   transform: rotate(60deg);
   z-index: -2;
-  animation: ${rotate} 4s linear infinite;
+  animation: ${rotateAndColor} 10s linear infinite;
 
   @media ${Styles.device.laptopL} {
     width: 305px;

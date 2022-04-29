@@ -4,6 +4,7 @@ import { Flex } from '../css-in-js/shared';
 
 export const Article = styled.article`
   position: relative;
+  margin-top: 100px;
   @media ${Styles.device.laptopL} {
     margin-top: -100px;
   }
