@@ -54,7 +54,7 @@ const Languages = () => {
             />
             <CardContent>
               <CardTitle color={Styles.g_blackOrange}>
-                Tertiary Language
+                Secondary Language
               </CardTitle>
               <CardMain>
                 <Icon src={CIcon} alt="C++ Icon" w="64" h="64" m="0 10px 0 0" />
@@ -93,7 +93,7 @@ const Languages = () => {
             />
             <CardContent>
               <CardTitle color={Styles.g_blueGreen}>
-                Secondary Language
+                Tertiary Language
               </CardTitle>
               <CardMain>
                 <Icon
