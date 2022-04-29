@@ -34,7 +34,13 @@ const Languages = () => {
 
       <Container>
         <Cards>
-          <Card className="tertiary">
+          <Card
+            className="tertiary"
+            data-aos="slide-right"
+            data-aos-duration="7000"
+            data-aos-easing="ease-in-out-back"
+            data-aos-delay="50"
+          >
             <FloatingImage
               src={CardPattern3}
               alt={'Card Pattern 3'}
@@ -73,7 +79,13 @@ const Languages = () => {
               </CardDesc>
             </CardContent>
           </Card>
-          <Card className="secondary">
+          <Card
+            className="secondary"
+            data-aos="fade-in"
+            data-aos-duration="9000"
+            data-aos-easing="ease-in-out-back"
+            data-aos-delay="50"
+          >
             <FloatingImage
               src={CardPattern2}
               alt={'Card Pattern 2'}
@@ -116,7 +128,13 @@ const Languages = () => {
               </CardDesc>
             </CardContent>
           </Card>
-          <Card className="primary">
+          <Card
+            className="primary"
+            data-aos="slide-left"
+            data-aos-duration="11000"
+            data-aos-easing="ease-in-out-back"
+            data-aos-delay="50"
+          >
             <FloatingImage
               src={CardPattern1}
               alt={'Card Pattern 1'}

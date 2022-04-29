@@ -8,13 +8,10 @@ import Title from '../shared/Title';
 
 import ToolboxIcon from '../../static/icons/toolbox.svg';
 import RutherfordBackground from '../../static/patterns/bg-experience.png';
-import Back from '../../static/patterns/m3.png';
-import './toolbar.scss';
 
 const Toolbox = () => {
   return (
     <ToolbarSection id="skills">
-      <img src={Back} id="test" alt="back" />
       <FloatingImage
         src={RutherfordBackground}
         style={{ transform: 'rotate(180deg)' }}

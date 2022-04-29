@@ -24,6 +24,7 @@ import GraphqlIcon from '../../static/icons/graphql.svg';
 import GatsbyIcon from '../../static/icons/gatsby.svg';
 import FigmaIcon from '../../static/icons/figma.svg';
 import Bag from '../../static/icons/bag.svg';
+import { motion } from 'framer-motion';
 
 const Hero = () => {
   // Bag Move Animation on scroll < 300px
@@ -88,13 +89,26 @@ const Hero = () => {
             />
             <ShowcaseText>Hi, I'm</ShowcaseText>
             <ShowcaseBar span="2" />
-            <ShowcaseMainText span="3">Shaurya Singhal</ShowcaseMainText>
+            <ShowcaseMainText
+              span="3"
+              as={motion.div}
+              whileHover={{ scale: 1.2 }}
+              drag
+              dragConstraints={{
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+              }}
+            >
+              Shaurya Singhal
+            </ShowcaseMainText>
             <ShowcaseBar span="2" />
             <ShowcaseText>Software Developer</ShowcaseText>
           </ShowcaseTop>
 
           <ShowcaseBottom>
-            <ShowcaseLogos span="3">
+            <ShowcaseLogos span="3" as={motion.div} whileHover={{ scale: 1.1 }}>
               <Icon
                 w="44"
                 h="44"

@@ -26,13 +26,14 @@ import MapSVG from '../../static/map.svg';
 import GraphqlIcon from '../../static/icons/graphql.svg';
 import GatsbyIcon from '../../static/icons/gatsby.svg';
 import FigmaIcon from '../../static/icons/figma.svg';
+import { motion } from 'framer-motion';
 
 const About = () => {
   return (
     <section id="about" style={{ position: 'relative' }}>
       <Languages />
       <article className="languages" style={{ position: 'relative' }}>
-        <AboutMe>
+        <AboutMe data-aos="fade-in">
           <AboutBackground
             src={ShauryaBackground}
             alt={'Shaurya BG'}
@@ -45,6 +46,13 @@ const About = () => {
           <RotateBox />
           <H3>Hello, I'm Shaurya</H3>
           <ShauIcon
+            as={motion.img}
+            whileHover={{ scale: 1.2, rotate: 45, borderRadius: '10%' }}
+            whileTap={{
+              scale: 0.8,
+              rotate: -90,
+              borderRadius: '100%',
+            }}
             src={Shaurya}
             title="@jugshaurya"
             alt="shaurya"
@@ -66,7 +74,7 @@ const About = () => {
             </MilestonePlace>
           </Milestone>
         </AboutMe>
-        <Map>
+        <Map data-aos="fade-in">
           <FloatingImage
             src={MapSVG}
             alt={'world Map'}

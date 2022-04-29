@@ -21,7 +21,7 @@ export const Cards = styled.div`
   align-items: center;
   grid-template-columns: repeat(3, 1fr);
   gap: 60px;
-
+  perspective: 6000;
   @media ${Styles.device.laptopL} {
     gap: 70px;
   }

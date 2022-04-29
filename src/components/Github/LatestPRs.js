@@ -1,5 +1,6 @@
 import React from 'react';
 import { Emojione } from 'react-emoji-render';
+import { motion } from 'framer-motion';
 
 import { Container, Icon, FloatingImage } from '../css-in-js/shared';
 import { PRLists, PRList, H3, PRItem, Logo, PRDesc } from './LatestPR.styles';
@@ -19,7 +20,13 @@ const LatestPRs = ({ userSelfPRs, userContribPRs }) => {
         h={'36'}
       />
       <PRLists>
-        <PRList>
+        <PRList
+          as={motion.div}
+          drag="x"
+          dragConstraints={{ left: -50, right: 50 }}
+          // initial={{ x: 0 }}
+          // animate={{ x: -50 }}
+        >
           <FloatingImage
             style={{ transform: 'rotate(180deg)' }}
             src={TriangleIcon}
@@ -30,7 +37,12 @@ const LatestPRs = ({ userSelfPRs, userContribPRs }) => {
           />
           <H3>Open Source PRs'</H3>
           {userContribPRs.map((pr) => (
-            <PRItem key={pr.id}>
+            <PRItem
+              key={pr.id}
+              as={motion.div}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
               <Logo>
                 <Icon
                   src={pr.repository.owner.avatarUrl}
@@ -51,7 +63,7 @@ const LatestPRs = ({ userSelfPRs, userContribPRs }) => {
             </PRItem>
           ))}
         </PRList>
-        <PRList>
+        <PRList drag="x" dragConstraints={{ left: -50, right: 50 }}>
           <FloatingImage
             style={{ transform: 'rotate(180deg)' }}
             src={TriangleIcon}
@@ -62,7 +74,12 @@ const LatestPRs = ({ userSelfPRs, userContribPRs }) => {
           />
           <H3>Personal PRs'</H3>
           {userSelfPRs.map((pr) => (
-            <PRItem key={pr.id}>
+            <PRItem
+              key={pr.id}
+              as={motion.div}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
               <Logo>
                 <Icon
                   src={pr.repository.owner.avatarUrl}
