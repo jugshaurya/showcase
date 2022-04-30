@@ -1,11 +1,17 @@
-import React, { useRef, useState } from 'react';
-
+import React, { useRef, useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import * as Styles from '../css-in-js/theme';
 import { SkillsSVG, SkillsSVGBox } from './RutherfordSkillsSVG.styles';
 
 let colorIndex = 0;
 
 const RutherfordSkillsSVG = () => {
+  // set timeout to colors
+  useEffect(() => {
+    const timer = setTimeout(() => changeColor(), 800);
+    return () => clearTimeout(timer);
+  });
+
   const [on, setOn] = useState(false);
   const bulbRef = useRef();
   const lightsRef1 = useRef();
@@ -45,21 +51,31 @@ const RutherfordSkillsSVG = () => {
       lightsRef9.current.style.fill = choice;
       lightsRef10.current.style.fill = choice;
     } else {
-      lightsRef1.current.style.fill = Styles.mapPurple;
-      lightsRef2.current.style.fill = Styles.mapPurple;
-      lightsRef3.current.style.fill = Styles.mapPurple;
-      lightsRef4.current.style.fill = Styles.mapPurple;
-      lightsRef5.current.style.fill = Styles.mapPurple;
-      lightsRef6.current.style.fill = Styles.mapPurple;
-      lightsRef7.current.style.fill = Styles.mapPurple;
-      lightsRef8.current.style.fill = Styles.mapPurple;
-      lightsRef9.current.style.fill = Styles.mapPurple;
-      lightsRef10.current.style.fill = Styles.mapPurple;
+      lightsRef1.current.style.fill = Styles.white;
+      lightsRef2.current.style.fill = Styles.white;
+      lightsRef3.current.style.fill = Styles.white;
+      lightsRef4.current.style.fill = Styles.white;
+      lightsRef5.current.style.fill = Styles.white;
+      lightsRef6.current.style.fill = Styles.white;
+      lightsRef7.current.style.fill = Styles.white;
+      lightsRef8.current.style.fill = Styles.white;
+      lightsRef9.current.style.fill = Styles.white;
+      lightsRef10.current.style.fill = Styles.white;
     }
   };
 
   return (
-    <SkillsSVGBox>
+    <SkillsSVGBox
+      as={motion.div}
+      animate={{ x: 0, y: [10, -10, 10] }}
+      transition={{
+        type: 'spring',
+        damping: 10,
+        stiffness: 100,
+        duration: 2,
+        repeat: Infinity,
+      }}
+    >
       <SkillsSVG
         width="1000"
         height="1000"
@@ -474,7 +490,7 @@ const RutherfordSkillsSVG = () => {
               </tspan>
             </text>
             <text
-              id="Apollo"
+              id="C++"
               transform="translate(552.23 592.814)"
               fill={Styles.green}
               fontFamily="Roboto"
@@ -483,7 +499,7 @@ const RutherfordSkillsSVG = () => {
               letterSpacing="0em"
             >
               <tspan x="0" y="19.9196" ref={lightsRef9}>
-                Apollo
+                C++
               </tspan>
             </text>
             <text
