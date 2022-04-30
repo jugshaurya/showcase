@@ -46,7 +46,7 @@ const Languages = () => {
               duration: 2,
               repeat: Infinity,
             }}
-            className="tertiary"
+            className="primary"
           >
             <FloatingImage
               src={CardPattern3}
@@ -83,55 +83,6 @@ const Languages = () => {
               </CardDesc>
               <CardDesc color={Styles.darkgreen}>
                 I use it for Competitive Programming.
-              </CardDesc>
-            </CardContent>
-          </Card>
-          <Card
-            className="tertiary"
-            data-aos="fade-in"
-            data-aos-duration="9000"
-            data-aos-easing="ease-in-out-back"
-            data-aos-delay="50"
-          >
-            <FloatingImage
-              src={CardPattern2}
-              alt={'Card Pattern 2'}
-              t={['0', '0', '0', '0', '0', '0', '0']}
-              l={['0', '0', '0', '0', '0', '0', '0']}
-              w={['100%', '100%', '100%', '100%', '100%', '100%', '100%']}
-              h={['100%', '100%', '100%', '100%', '100%', '100%', '100%']}
-              transform={[
-                'scale(1.1)',
-                'scale(1.1)',
-                'scale(1.3)',
-                'scale(1.1)',
-                'scale(1.05)',
-                'scale(1.1)',
-                'scale(1.1)',
-              ]}
-            />
-            <CardContent>
-              <CardTitle color={Styles.g_blueGreen}>
-                Tertiary Language
-              </CardTitle>
-              <CardMain>
-                <Icon
-                  src={PythonIcon}
-                  alt="Python Icon"
-                  w="64"
-                  h="64"
-                  m="0 10px 0 0"
-                />
-                <CardSubTitle>Python</CardSubTitle>
-              </CardMain>
-              <CardDesc color={Styles.red}>
-                A Language that helped me explore the world of Machine Learning
-                and Jupyter Notebooks and eventually helped in getting my first
-                Internship as a TA; helping students learn DATA STRUCTURE &
-                ALGORITHMS.
-              </CardDesc>
-              <CardDesc color={Styles.red}>
-                View blogs I wrote while learning ML & Python and learn from it.
               </CardDesc>
             </CardContent>
           </Card>
@@ -182,6 +133,55 @@ const Languages = () => {
               <CardDesc color={Styles.blue}>
                 React, Redux, Graphql, Gatsby are all the instrument that I use
                 to create Beautiful Harmonies with Javascript.
+              </CardDesc>
+            </CardContent>
+          </Card>
+          <Card
+            className="tertiary"
+            data-aos="fade-in"
+            data-aos-duration="9000"
+            data-aos-easing="ease-in-out-back"
+            data-aos-delay="50"
+          >
+            <FloatingImage
+              src={CardPattern2}
+              alt={'Card Pattern 2'}
+              t={['0', '0', '0', '0', '0', '0', '0']}
+              l={['0', '0', '0', '0', '0', '0', '0']}
+              w={['100%', '100%', '100%', '100%', '100%', '100%', '100%']}
+              h={['100%', '100%', '100%', '100%', '100%', '100%', '100%']}
+              transform={[
+                'scale(1.1)',
+                'scale(1.1)',
+                'scale(1.3)',
+                'scale(1.1)',
+                'scale(1.05)',
+                'scale(1.1)',
+                'scale(1.1)',
+              ]}
+            />
+            <CardContent>
+              <CardTitle color={Styles.g_blueGreen}>
+                Tertiary Language
+              </CardTitle>
+              <CardMain>
+                <Icon
+                  src={PythonIcon}
+                  alt="Python Icon"
+                  w="64"
+                  h="64"
+                  m="0 10px 0 0"
+                />
+                <CardSubTitle>Python</CardSubTitle>
+              </CardMain>
+              <CardDesc color={Styles.red}>
+                A Language that helped me explore the world of Machine Learning
+                and Jupyter Notebooks and eventually helped in getting my first
+                Internship as a TA; helping students learn DATA STRUCTURE &
+                ALGORITHMS.
+              </CardDesc>
+              <CardDesc color={Styles.red}>
+                View blogs I wrote while learning ML & Python and learn from it.
               </CardDesc>
             </CardContent>
           </Card>

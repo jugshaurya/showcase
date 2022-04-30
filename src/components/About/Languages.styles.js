@@ -44,24 +44,6 @@ export const Cards = styled.div`
 
 export const Card = styled.div`
   position: relative;
-  &.primary {
-    transform: translateY(0px);
-  }
-  &.secondary {
-    transform: translateY(100px);
-    @media ${Styles.device.mobileL} {
-      transform: translateY(0);
-    }
-    @media ${Styles.device.mobileL} {
-      order: 1;
-    }
-  }
-  &.tertiary {
-    transform: translateY(200px);
-    @media ${Styles.device.ipad} {
-      display: none;
-    }
-  }
 `;
 
 export const CardContent = styled.div`
