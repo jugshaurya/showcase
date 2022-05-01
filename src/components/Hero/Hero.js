@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Icon, Container, FloatingImage } from '../css-in-js/shared';
 import { motion } from 'framer-motion';
-import TypeWriterEffect from 'react-typewriter-effect';
+
+import TypeWriter from './typewriter';
 
 import {
   Showcase,
@@ -21,7 +22,6 @@ import BoxPattern from '../../static/patterns/box-pattern.svg';
 import JSIcon from '../../static/icons/js.svg';
 import NodeIcon from '../../static/icons/node.svg';
 import ReactIcon from '../../static/icons/react.svg';
-import ReduxIcon from '../../static/icons/redux.svg';
 import CIcon from '../../static/icons/c.svg';
 import GraphqlIcon from '../../static/icons/graphql.svg';
 import GatsbyIcon from '../../static/icons/gatsby.svg';
@@ -108,7 +108,8 @@ const Hero = () => {
             </ShowcaseMainText>
             <ShowcaseBar span="2" />
             <ShowcaseText>
-              <TypeWriterEffect
+              <TypeWriter />
+              {/* <TypeWriterEffect
                 textStyle={{
                   color: 'inherit',
                   fontSize: 'inherit',
@@ -124,7 +125,7 @@ const Hero = () => {
                 multiTextDelay={1000}
                 typeSpeed={30}
                 multiTextLoop={true}
-              />
+              /> */}
             </ShowcaseText>
           </ShowcaseTop>
 
