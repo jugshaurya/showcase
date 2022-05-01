@@ -24,6 +24,8 @@ _🦄 Shaurya Personal Portfolio to showcase shaurya and his work at one place f
 ![](./readme-images/showcase2.png)
 ![](./readme-images/showcase3.png)
 
+![](./src/static/projects/showcase.gif)
+
 ### 🌈 CSS:
 
 - Options:
