@@ -46,7 +46,12 @@ class CodeEditor extends React.Component {
     } = this.props;
 
     return (
-      <EditorLayout>
+      <EditorLayout
+        data-aos="fade-in"
+        data-aos-duration="2000"
+        data-aos-easing="ease-in-out"
+        data-aos-delay="100"
+      >
         <EditorTop>
           <EditorTitle color={color}>{project_name}</EditorTitle>
           <Dot className="dot yellow"> - </Dot>
@@ -88,7 +93,13 @@ class CodeEditor extends React.Component {
             ))}
           </ProjectTechStack>
           <ProjectLinks>
-            <Button as="a" href={githubLink} color={color}>
+            <Button
+              as="a"
+              href={githubLink}
+              color={color}
+              target="_blank"
+              onClick={() => window.open(githubLink)}
+            >
               <Icon
                 src={GithubGradIcon}
                 alt="githubIcon"
@@ -98,7 +109,13 @@ class CodeEditor extends React.Component {
               />
               Github Code
             </Button>
-            <Button as="a" href={liveLink} color={color}>
+            <Button
+              as="a"
+              href={liveLink}
+              color={color}
+              target="_blank"
+              onClick={() => window.open(liveLink)}
+            >
               <Icon
                 src={GoLiveLinksIcon}
                 alt="golive"

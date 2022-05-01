@@ -204,7 +204,7 @@ const Github = () => {
           data-aos="fade-in"
           data-aos-duration="5000"
           data-aos-easing="ease-in-out"
-          data-aos-delay="500"
+          data-aos-delay="300"
         >
           <GithubActivityOverview
             githubContribSvg={svg}
@@ -221,7 +221,7 @@ const Github = () => {
           data-aos="fade-in"
           data-aos-duration="5000"
           data-aos-easing="ease-in-out"
-          data-aos-delay="500"
+          data-aos-delay="300"
         >
           <Figure>
             <Embed src="https://wakatime.com/share/@jugshaurya/a750f08f-2404-4f77-8df8-849d0a8f4109.svg" />

@@ -26,10 +26,6 @@ const links = [
     name: 'Skills',
     href: '/#skills',
   },
-  // {
-  //   name: 'Blogs',
-  //   href: '/blogs',
-  // },
   {
     name: 'Experience',
     href: '/#experience',
@@ -92,10 +88,20 @@ const Navbar = ({ defaultRoute }) => {
                   to={link.href}
                   className={active === link.href ? 'active' : ''}
                   onClick={() => setActive(link.href)}
+                  target="_blank"
                 >
                   {link.name}
                 </NavItem>
               ))}
+              <NavItem
+                as="a"
+                key="blogs"
+                href="https://notes.jugshaurya.in/"
+                target="_blank"
+                onClick={() => window.open('https://notes.jugshaurya.in/')}
+              >
+                Blogs
+              </NavItem>
             </NavList>
           </Flex>
         </Container>
