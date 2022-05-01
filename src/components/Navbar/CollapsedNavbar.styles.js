@@ -5,10 +5,10 @@ import { Flex, rotate } from '../css-in-js/shared';
 import { Link } from 'gatsby';
 
 export const NavbarCurtain = styled.div`
-  width: 100vw;
+  width: 50vw;
+  top: 2%;
+  right: 45%;
   position: fixed;
-  left: 0;
-  top: 0;
   z-index: 10;
   overflow-x: hidden;
   transition: height 0.2s;
@@ -16,9 +16,7 @@ export const NavbarCurtain = styled.div`
 `;
 
 export const CurtainContent = styled(Flex)`
-  border: 8px double ${Styles.gray};
   position: absolute;
-  top: 0%;
   width: 100%;
   height: 100%;
   text-align: center;
@@ -28,7 +26,7 @@ export const CrossButton = styled.span`
   cursor: pointer;
   display: inline-block;
   position: absolute;
-  top: 20px;
+  top: -10px;
   right: 20px;
   font-size: ${Styles.text_xxlarge};
   animation: ${rotate} 5s linear infinite;

@@ -65,7 +65,12 @@ const Projects = () => {
                 project_name={project.name}
               />
               {/* Gif */}
-              <MacDemo>
+              <MacDemo
+                data-aos="fade-in"
+                data-aos-duration="2000"
+                data-aos-easing="ease-in-out"
+                data-aos-delay="300"
+              >
                 <Mac src={AppleIMac} alt={project.name} />
                 <Gif src={project.gif} alt={project.name} />
               </MacDemo>

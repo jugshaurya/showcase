@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import * as Styles from '../css-in-js/theme';
 import { socialLinks } from '../../resources/socialLinks';
 import { motion } from 'framer-motion';
+
 const FloatingBook = styled.svg`
   position: absolute;
   top: 100px;
@@ -41,12 +42,30 @@ const FloatingBook = styled.svg`
   }
 `;
 
+const svgVariants = {
+  hidden: {
+    opacity: 0,
+    rotate: -180,
+    scale: 1.2,
+  },
+  visible: {
+    rotate: 0,
+    opacity: 1,
+    scale: 1,
+    transition: { type: 'spring', stiffness: 100, duration: 1 },
+  },
+};
+
 // TODO: Optimize the svgs
 const BookPattern = () => {
   const [{ link: githubLink }, { link: linkedinLink }, { link: twitterLink }] =
     socialLinks;
   return (
     <FloatingBook
+      as={motion.svg}
+      variants={svgVariants}
+      initial="hidden"
+      animate="visible"
       id="book-pattern"
       width="869"
       height="990"

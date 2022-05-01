@@ -2,7 +2,7 @@ import React from 'react';
 import { WebsiteColors, WebsiteColor } from './WebsiteColorSection.styles';
 import * as Styles from '../css-in-js/theme';
 import copyToClipboard from '../../utils/copyToClipboard';
-
+import { motion } from 'framer-motion';
 const colors = [
   Styles.black,
   Styles.green,
@@ -24,7 +24,15 @@ const colors = [
 
 const WebsiteColorSection = () => {
   return (
-    <WebsiteColors>
+    <WebsiteColors
+      as={motion.div}
+      animate={{ y: 0, x: [-20, 20, -20] }}
+      transition={{
+        type: 'tween',
+        duration: 2,
+        repeat: Infinity,
+      }}
+    >
       {colors.map((color) => (
         <WebsiteColor
           key={color}

@@ -17,7 +17,7 @@ const BeautifulCursor = () => {
   return (
     <>
       <div className="cursor"></div>
-      <div className="cursor curser-fixed-top-left"></div>
+      {/* <div className="cursor curser-fixed-top-left"></div> */}
       {/* add bulb on top right */}
       {/* <div className="cursor curser-fixed-top-right"></div> */}
     </>

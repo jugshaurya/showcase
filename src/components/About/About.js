@@ -63,7 +63,7 @@ const About = () => {
             around me to see new insight into the world; whether it is figuring
             out the data or to drive a new concept out of it or to build an
             already existing app that is changing the world. I enjoy all kinds
-            of creating plus solving the problems that come along with the app.
+            of creations + solving the problems that come along with the app.
           </Description>
           <Milestone>
             <MilestoneLink href="https://confirm.udacity.com/QQN2KHS5">

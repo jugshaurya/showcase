@@ -45,6 +45,15 @@ export const Dot = styled(Flex)`
     background: ${Styles.green};
     @media ${Styles.device.mobileL} {
       cursor: pointer;
+      &::after {
+        content: '📌';
+        position: absolute;
+        color: white;
+        background-color: $twitterBlue;
+        opacity: 0.2;
+        transform: translate(-30%, -30%);
+        border-radius: 50%;
+      }
     }
   }
   &.yellow {

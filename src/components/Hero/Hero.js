@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
 import { Icon, Container, FloatingImage } from '../css-in-js/shared';
+import { motion } from 'framer-motion';
+import TypeWriterEffect from 'react-typewriter-effect';
 
 import {
   Showcase,
@@ -20,31 +22,13 @@ import JSIcon from '../../static/icons/js.svg';
 import NodeIcon from '../../static/icons/node.svg';
 import ReactIcon from '../../static/icons/react.svg';
 import ReduxIcon from '../../static/icons/redux.svg';
+import CIcon from '../../static/icons/c.svg';
 import GraphqlIcon from '../../static/icons/graphql.svg';
 import GatsbyIcon from '../../static/icons/gatsby.svg';
 import FigmaIcon from '../../static/icons/figma.svg';
 import Bag from '../../static/icons/bag.svg';
-import { motion } from 'framer-motion';
 
 const Hero = () => {
-  // Bag Move Animation on scroll < 300px
-  useEffect(() => {
-    const MAX_MOVEMENT = 300;
-    const bag = document.getElementById('bag');
-
-    const scrollBag = (e) => {
-      const Yoffset = Math.round(window.scrollY / 2);
-      if (Yoffset > MAX_MOVEMENT) return;
-      bag.style.transform = `translateX(${Yoffset}px) rotate(270deg)`;
-      bag.style.transition = `0.01s ease-in-out`;
-    };
-
-    window.addEventListener('scroll', scrollBag);
-    return () => {
-      window.removeEventListener('scroll', scrollBag);
-    };
-  }, []);
-
   return (
     <section id="hero" style={{ position: 'relative' }}>
       <Snow />
@@ -88,6 +72,16 @@ const Hero = () => {
         <Showcase>
           <ShowcaseTop>
             <FloatingImage
+              as={motion.img}
+              initial={{ rotate: 270 }}
+              animate={{ y: 0, x: [0, 100, 0] }}
+              transition={{
+                type: 'spring',
+                damping: 10,
+                stiffness: 100,
+                duration: 2,
+                repeat: Infinity,
+              }}
               id="bag"
               style={{ transform: 'rotate(-90deg)' }}
               src={Bag}
@@ -113,14 +107,32 @@ const Hero = () => {
               Shaurya Singhal
             </ShowcaseMainText>
             <ShowcaseBar span="2" />
-            <ShowcaseText>Software Developer</ShowcaseText>
+            <ShowcaseText>
+              <TypeWriterEffect
+                textStyle={{
+                  color: 'inherit',
+                  fontSize: 'inherit',
+                }}
+                cursorColor="white"
+                multiText={[
+                  'Software Engineer',
+                  'Software Developer',
+                  'OpenSource',
+                  'Qualified Gate',
+                ]}
+                startDelay={2000}
+                multiTextDelay={1000}
+                typeSpeed={30}
+                multiTextLoop={true}
+              />
+            </ShowcaseText>
           </ShowcaseTop>
 
           <ShowcaseBottom>
             <ShowcaseLogos span="3" as={motion.div} whileHover={{ scale: 1.1 }}>
               <Icon
-                w="44"
-                h="44"
+                w="48"
+                h="48"
                 src={JSIcon}
                 alt="JS Icon"
                 title={`Javascript\n(Intermediate)`}
@@ -141,11 +153,11 @@ const Hero = () => {
                 title={`React\n(Intermediate)`}
               />
               <Icon
-                w="44"
-                h="44"
-                src={ReduxIcon}
-                alt="Redux Icon"
-                title={`Redux\n(Intermediate)`}
+                w="48"
+                h="48"
+                src={CIcon}
+                alt="C++ Icon"
+                title={`C++\n(Intermediate)`}
               />
               <Icon
                 w="44"
