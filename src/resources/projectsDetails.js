@@ -11,6 +11,7 @@ import SassIcon from '../static/icons/sass.svg';
 import WeekdayGif from '../static/projects/weekday.gif';
 import TrelloGif from '../static/projects/trello.gif';
 import ClosetGif from '../static/projects/closet.gif';
+import ShowcaseGif from '../static/projects/showcase.gif';
 import CovidGif from '../static/projects/covid.gif';
 import ShortenerGif from '../static/projects/urlshortner.gif';
 import * as Styles from '../components/css-in-js/theme';
@@ -136,7 +137,7 @@ const projectDetails = [
     ],
     githubLink: 'https://github.com/jugshaurya/showcase',
     liveLink: '#later',
-    gif: TrelloGif,
+    gif: ShowcaseGif,
     description: `
     {
       "project_name": "Shaurya Showcase",
@@ -213,7 +214,7 @@ const projectDetails = [
     ],
     githubLink: 'https://github.com/jugshaurya/mario',
     liveLink: '/#',
-    gif: ClosetGif,
+    gif: ShowcaseGif,
     description: `
     {
       "project_name": "Mario Bros Lvl 1",
