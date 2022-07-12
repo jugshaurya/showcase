@@ -1,7 +1,7 @@
 {
   "name": "shaurya-showcase",
   "private": true,
-  "description": "Shaurya Personal Portfolio to showcase shaurya and his work at one place from various places.",
+  "description": "Shaurya Personal Portfolio to showcase Shaurya and his work at one place from various places.",
   "author": "Shaurya Singhal <shauryasinghal84@gmail.com>",
   "version": "2.0.0",
   "dependencies": {
