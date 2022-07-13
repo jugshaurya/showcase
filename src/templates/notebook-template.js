@@ -6,15 +6,23 @@ import Blogs from '../pages/blogs';
 import styled from 'styled-components';
 import * as Styles from '../components/css-in-js/theme';
 
+import * as ipynb from 'ipynb2html';
+import { Document } from 'nodom';
+
 export default function BlogPost({ data }) {
-  const html = 'dsf';
+  const renderNotebook = ipynb.createRenderer(new Document());
+  const content = data.file.childWantedBook.internal.content;
+  const notebook = JSON.parse(content);
+  const html = renderNotebook(notebook).outerHTML;
+  const html2 = data.file.childWantedBook.html;
+
   const title = data.file.childWantedBook.fileAbsolutePath.split('/');
   return (
     <>
       <Blogs blogTitle={title[title.length - 1]}>
         <Blog
           dangerouslySetInnerHTML={{
-            __html: html,
+            __html: html2,
           }}
         ></Blog>
       </Blogs>
@@ -30,25 +38,10 @@ export const query = graphql`
         slug
       }
       childWantedBook {
+        html
         fileAbsolutePath
-        metadata {
-          kernelspec {
-            display_name
-            language
-            name
-          }
-          language_info {
-            codemirror_mode {
-              name
-              version
-            }
-            mimetype
-            file_extension
-            name
-            nbconvert_exporter
-            pygments_lexer
-            version
-          }
+        internal {
+          content
         }
       }
     }

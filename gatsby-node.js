@@ -1,5 +1,8 @@
 const path = require('path');
-const nb = require('notebookjs');
+
+const ipynb = require('ipynb2html');
+const { Document } = require('nodom');
+
 const { createFilePath } = require(`gatsby-source-filesystem`);
 
 exports.onPreInit = () => {
@@ -47,9 +50,14 @@ exports.onCreateNode = async (
       type: `WantedBook`,
     },
   };
+
+  const renderNotebook = ipynb.createRenderer(new Document());
+  const notebook = JSON.parse(content);
+  const html = renderNotebook(notebook).outerHTML;
+  jupyterNode.html = html;
   jupyterNode.json = JSON.parse(content);
   jupyterNode.metadata = jupyterNode.json.metadata;
-  jupyterNode.html = nb.parse(jupyterNode.json);
+
   if (node.internal.type === `File`) {
     jupyterNode.fileAbsolutePath = node.absolutePath;
   }

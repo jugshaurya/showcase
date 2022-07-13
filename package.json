@@ -25,6 +25,8 @@
     "gatsby-source-git": "^1.1.0",
     "gatsby-transformer-sharp": "^4.12.1",
     "html-react-parser": "^1.4.11",
+    "ipynb2html": "^0.3.0",
+    "nodom": "^2.4.0",
     "notebookjs": "^0.6.7",
     "prismjs": "^1.27.0",
     "prop-types": "^15.8.1",
