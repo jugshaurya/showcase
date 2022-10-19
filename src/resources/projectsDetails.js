@@ -14,6 +14,7 @@ import ClosetGif from '../static/projects/closet.gif';
 import ShowcaseGif from '../static/projects/showcase.gif';
 import CovidGif from '../static/projects/covid.gif';
 import ShortenerGif from '../static/projects/urlshortner.gif';
+import MergeVideosImg from '../static/projects/mergevideos.png';
 import * as Styles from '../components/css-in-js/theme';
 
 const projectDetails = [
@@ -218,7 +219,7 @@ const projectDetails = [
     ],
     githubLink: 'https://github.com/jugshaurya/merge-videos',
     liveLink: '',
-    gif: ShortenerGif,
+    gif: MergeVideosImg,
     description: `
     {
 
