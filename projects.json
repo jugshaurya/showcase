@@ -8,7 +8,7 @@
       "MongoDB + moongose",
       "Node + Express",
       "d3.js (for racecar barchart)",
-      "Cherrio (for WebScrapping)"
+      "Cheerio.js (for WebScrapping)"
     ],
     "deployed": ["netlify"]
   },
@@ -71,5 +71,13 @@
     "why": "This Project helped me visualize the data over the world map, showing virus spread in countries along with the affected people and how people should unite together to stop this infectious disease.",
     "tech_used": ["React.js", "Node + Express", "geojson", "mapbox-gl", "Sass"],
     "deployed": ["now.sh"]
+  },
+
+  "project7": {
+    "project_name": "Merge Videos",
+    "description": "😄😄 Merge Videos inside a directory into a single video :) Doesn't matter how deep are they hidden.",
+    "why": "Because Saves more than 50% of time wasted moving around and playing videos one by one.",
+    "tech_used": ["Node"],
+    "deployed": [""]
   }
 }

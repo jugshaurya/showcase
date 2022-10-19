@@ -204,6 +204,39 @@ const projectDetails = [
   },
   {
     id: 'project_5',
+    color: Styles.twitterBlue,
+    name: 'Merge Videos',
+    icons: [
+      {
+        icon: JSIcon,
+        iconDesc: 'Javascript',
+      },
+      {
+        icon: NodeIcon,
+        iconDesc: 'Node',
+      },
+    ],
+    githubLink: 'https://github.com/jugshaurya/merge-videos',
+    liveLink: '',
+    gif: ShortenerGif,
+    description: `
+    {
+
+      "project_name": "Merge Videos",
+      
+      "description": "😄😄 Merge Videos inside a directory into a single video :) Doesn't matter how deep are they hidden.",
+      
+      "why?": "Because Saves more than 50% of time wasted moving around and playing videos one by one.",
+      
+      "tech_used": [
+        "Node", 
+      ],
+      "deployed": [""]
+    }
+  `,
+  },
+  {
+    id: 'project_6',
     color: Styles.green,
     name: 'Mario Bros Lvl 1',
     icons: [
@@ -234,7 +267,7 @@ const projectDetails = [
   `,
   },
   {
-    id: 'project_6',
+    id: 'project_7',
     color: Styles.red,
     name: 'Covid19 Visualizer',
     icons: [
@@ -275,7 +308,7 @@ const projectDetails = [
   `,
   },
   {
-    id: 'project_7',
+    id: 'project_8',
     color: Styles.purple,
     name: 'URL Shortener',
     icons: [
