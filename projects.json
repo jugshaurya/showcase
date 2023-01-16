@@ -25,7 +25,7 @@
       "MDN Drag & Drop",
       "multer"
     ],
-    "deployed": ["now.sh"]
+    "deployed": ["vercel.app"]
   },
 
   "project3": {
@@ -70,7 +70,7 @@
     "description": "Visualizer to show the impact of covid19 over the entire world with popups demonstrating Cases, Deaths, and Recovery.",
     "why": "This Project helped me visualize the data over the world map, showing virus spread in countries along with the affected people and how people should unite together to stop this infectious disease.",
     "tech_used": ["React.js", "Node + Express", "geojson", "mapbox-gl", "Sass"],
-    "deployed": ["now.sh"]
+    "deployed": ["vercel.app"]
   },
 
   "project7": {

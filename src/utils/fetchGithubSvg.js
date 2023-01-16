@@ -1,4 +1,4 @@
-const SERVER_URL = 'https://productive-weekday-server.now.sh';
+const SERVER_URL = 'https://productive-weekday-server.vercel.app';
 
 const fetchGithubSvg = async (username) => {
   const svgURL = `${SERVER_URL}/user/${username}?requireSvg=true`;
