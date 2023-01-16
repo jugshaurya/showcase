@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const STATS_API_URL = 'https://productive-weekday-server.now.sh/mystats';
+const STATS_API_URL = 'https://productive-weekday-server.vercel.app/mystats';
 
 const options = {
   url: STATS_API_URL,

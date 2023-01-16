@@ -144,7 +144,7 @@ $ yarn develop or gatsby develop or yarn dev
 #### Author
 
 Shaurya Singhal
-@[jugshaurya](https://shaurya.now.sh)
+@[jugshaurya](https://jugshaurya.in)
 
 #### Version
 

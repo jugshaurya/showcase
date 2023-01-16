@@ -87,7 +87,7 @@ const projectDetails = [
       },
     ],
     githubLink: 'https://github.com/jugshaurya/trello-clone',
-    liveLink: 'https://clone-trello.now.sh/',
+    liveLink: 'https://clone-trello.vercel.app/',
     gif: TrelloGif,
     description: `
     {
@@ -106,7 +106,7 @@ const projectDetails = [
         "multer"
       ],
 
-      "deployed": ["now.sh"]
+      "deployed": ["vercel.app"]
     }
   `,
   },
@@ -286,7 +286,7 @@ const projectDetails = [
       },
     ],
     githubLink: 'https://github.com/jugshaurya/covid19app',
-    liveLink: 'https://covid19shau.now.sh/',
+    liveLink: 'https://covid19shau.vercel.app/',
     gif: CovidGif,
     description: `
     {
@@ -304,7 +304,7 @@ const projectDetails = [
         "Sass"
       ],
 
-      "deployed": ["now.sh"]
+      "deployed": ["vercel.app"]
     }
   `,
   },
@@ -323,7 +323,7 @@ const projectDetails = [
       },
     ],
     githubLink: 'https://github.com/jugshaurya/shortener',
-    liveLink: 'https://little.now.sh/',
+    liveLink: 'https://little.vercel.app/',
     gif: ShortenerGif,
     description: `
     {
@@ -341,7 +341,7 @@ const projectDetails = [
         "MongoDB + moongose", 
       ],
 
-      "deployed": ["now.sh"]
+      "deployed": ["vercel.app"]
     }
   `,
   },

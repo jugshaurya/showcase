@@ -6,7 +6,7 @@ module.exports = {
   siteMetadata: {
     title: `Shaurya Singhal Showcase`,
     description: `Shaurya Personal Portfolio to showcase shaurya and his work at one place from various places.`,
-    url: `https://shaurya.now.sh`, // No trailing slash!
+    url: `https://shaurya.vercel.app`, // No trailing slash!
     image: `src/static/shaurya.png`,
     twitterUsername: '@jugshaurya',
     githubUsername: '@jugshaurya',
