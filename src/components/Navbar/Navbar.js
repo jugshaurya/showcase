@@ -96,9 +96,11 @@ const Navbar = ({ defaultRoute }) => {
               <NavItem
                 as="a"
                 key="blogs"
-                href="https://notes.jugshaurya.in/"
+                href="https://notes.jugshaurya.vercel.app/"
                 target="_blank"
-                onClick={() => window.open('https://notes.jugshaurya.in/')}
+                onClick={() =>
+                  window.open('https://notes.jugshaurya.vercel.app/')
+                }
               >
                 Blogs
               </NavItem>
