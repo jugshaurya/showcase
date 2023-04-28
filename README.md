@@ -137,6 +137,11 @@ $ yarn develop or gatsby develop or yarn dev
   and deploy
 ```
 
+```cmd
+  Push to Github,
+  vercel will take it from there!
+```
+
 ### Resources
 
 ### App Info
