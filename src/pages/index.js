@@ -12,6 +12,8 @@ import Footer from '../components/Footer/footer';
 import Contacts from '../components/Contacts/Contacts';
 import BeautifulCursor from '../hooks/beautifulCursor';
 
+import { Analytics } from '@vercel/analytics/react';
+
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -51,6 +53,7 @@ const IndexPage = () => {
         {/* <br /> */}
         {/* <Link to="/medium-post-page/"> Go to Meduim Posts</Link> */}
       </Layout>
+      <Analytics />
     </>
   );
 };

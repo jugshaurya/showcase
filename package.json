@@ -5,6 +5,7 @@
   "author": "Shaurya Singhal <shauryasinghal84@gmail.com>",
   "version": "2.0.0",
   "dependencies": {
+    "@vercel/analytics": "^1.0.0",
     "aos": "^3.0.0-beta.6",
     "axios": "^0.26.1",
     "babel-plugin-styled-components": "^2.0.7",
