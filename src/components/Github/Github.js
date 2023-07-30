@@ -47,7 +47,7 @@ const MakeCountUpWhenInView = ({ end }) => (
 );
 
 const Github = () => {
-  const [svg, setSvg] = useState('');
+  const [svg, setSvg] = useState(null);
   const [stats, setStats] = useState({
     name: '',
     totalStars: 0,
@@ -69,7 +69,7 @@ const Github = () => {
   }, []);
 
   useEffect(() => {
-    fetchGithubSvg('jugshaurya').then((svg) => setSvg(svg));
+    fetchGithubSvg('jugshaurya').then((svg) => setSvg(svg.dataset));
   }, []);
 
   const {

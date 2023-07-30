@@ -2,6 +2,7 @@ import React from 'react';
 import parse from 'html-react-parser';
 
 import renderContribSvg from './renderContribSvg';
+import GithubSvg from "./GithubSvg"
 import { Icon } from '../css-in-js/shared';
 
 import {
@@ -49,14 +50,15 @@ const GithubActivityOverview = ({ githubContribSvg, githubInfo }) => {
   return (
     <GithubActivitySection>
       <ScrollableSvg>
-        {parse(
+        {/* {parse(
           githubContribSvg
             .replace(/#ebedf0/g, '#222222')
             .replace(/#9be9a8/g, '#4fffa7')
             .replace(/#40c463/g, '#3DDC84')
             .replace(/#30a14e/g, '#008D41')
             .replace(/#216e39/g, '#00753b')
-        )}
+        )} */}
+        <GithubSvg githubContribSvg={githubContribSvg}/>
       </ScrollableSvg>
       <GithubActivities>
         <GithubActivity>

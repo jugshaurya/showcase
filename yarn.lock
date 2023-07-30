@@ -2564,6 +2564,11 @@
     "@typescript-eslint/types" "4.33.0"
     eslint-visitor-keys "^2.0.0"
 
+"@uiw/react-heat-map@^2.1.1":
+  version "2.1.1"
+  resolved "https://registry.npmjs.org/@uiw/react-heat-map/-/react-heat-map-2.1.1.tgz#aa4759e7496dc24c449a4e3526f083bedfb413eb"
+  integrity sha512-O1rearMnhb+Fl0iZww+0/cpBijKYod3fIBhX1k/CzyKgkIE98N2XPmMzKh2Q2XeuUwnaGKjF5I5GjgZ75BJrUA==
+
 "@vercel/analytics@^1.0.0":
   version "1.0.0"
   resolved "https://registry.npmjs.org/@vercel/analytics/-/analytics-1.0.0.tgz#7041bf3f14d65ab685f053b2fab09c605d12543e"
