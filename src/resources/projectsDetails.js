@@ -41,7 +41,7 @@ const projectDetails = [
       },
     ],
     githubLink: 'https://github.com/jugshaurya/productive-weekday',
-    liveLink: 'https://productive-weekday.netlify.com',
+    liveLink: 'https://productive-weekday.netlify.app/',
     gif: WeekdayGif,
     description: `
     {
